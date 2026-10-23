@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Remisión de Ganado</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#f3f3f3; --win:#fff; --panel:#fafafa; --line:#d9d9d9; --ink:#222; --muted:#7a7a7a;
+  --acc:#1f6fc4; --accl:#e6f0fb; --row:#eaf2fb; --dis:#aaa; --title:#fff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#1d2126;--win:#262b31;--panel:#2b3138;--line:#3d444c;--ink:#e6e9ec;--muted:#98a2ad;--accl:#243449;--row:#2a3a4d;--dis:#6b737c;--title:#2b3138}
+}
+:root[data-theme="dark"]{--bg:#1d2126;--win:#262b31;--panel:#2b3138;--line:#3d444c;--ink:#e6e9ec;--muted:#98a2ad;--accl:#243449;--row:#2a3a4d;--dis:#6b737c;--title:#2b3138}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:12px "Segoe UI",system-ui,sans-serif;overflow:hidden;position:relative}
+img.i{display:block;flex:none}
+button{font:inherit;color:inherit;cursor:pointer}
+/* ---- ventana principal (fondo) ---- */
+.app{position:absolute;inset:0;display:flex;flex-direction:column}
+.apptitle{display:flex;align-items:center;gap:8px;padding:6px 12px;color:var(--muted)}
+.apptitle img{width:18px;height:18px}
+.mods{display:flex;gap:6px;padding:0 20px 6px;border-bottom:1px solid var(--line);overflow-x:auto}
+.mod{display:flex;align-items:center;gap:6px;padding:4px 14px 6px;font-size:21px;font-weight:700;letter-spacing:.01em;background:none;border:0;border-bottom:3px solid transparent;white-space:nowrap}
+.mod img{width:34px;height:34px}
+.mod.on{border-color:var(--acc)}
+.sub{display:flex;gap:0;padding:10px 20px 0}
+.sbtn{display:flex;align-items:center;gap:6px;padding:6px 12px;background:var(--win);border:1px solid var(--line);border-bottom:0}
+.sbtn img{width:20px;height:20px}
+.tabsbar{display:flex;padding:8px 20px 0;gap:2px}
+.tabsbar button{padding:6px 14px;background:var(--panel);border:1px solid var(--line);border-bottom:0}
+.tabsbar button.on{background:var(--win)}
+.body{flex:1;display:flex;min-height:0;padding:0 0 22px}
+.opts{width:220px;border-right:1px solid var(--line);background:var(--win);padding:0 12px;margin-left:8px}
+.opts h5{margin:0 -12px 10px;padding:8px 12px;font-weight:400;border-bottom:1px solid var(--line)}
+.fld{display:flex;align-items:center;gap:8px;margin:8px 0}
+.fld label{width:40px}
+.sel,.inp{flex:1;border:1px solid var(--line);background:var(--win);border-radius:3px;padding:6px 8px;color:var(--ink);min-width:0}
+.big{display:flex;align-items:center;gap:12px;width:100%;margin:6px 0;padding:6px 10px;background:var(--win);border:1px solid var(--line);border-radius:3px;height:46px}
+.big img{width:36px;height:36px}.big span{flex:1;text-align:center}
+.big.on{border-color:var(--acc);box-shadow:inset 0 0 0 1px var(--acc)}
+.big:hover{background:var(--accl)}
+.fondogrid{flex:1;background:var(--win);margin:0 8px}
+.status{position:absolute;left:0;right:0;bottom:0;display:flex;gap:18px;padding:3px 12px;background:var(--panel);border-top:1px solid var(--line);color:var(--muted)}
+/* ---- ventana modal ---- */
+.veil{position:absolute;inset:0;background:rgba(0,0,0,.08)}
+.win{position:absolute;left:236px;top:90px;right:130px;bottom:24px;background:var(--win);border:1px solid var(--line);box-shadow:0 8px 40px rgba(0,0,0,.28);display:flex;flex-direction:column;min-width:760px}
+.wtitle{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--title)}
+.wtitle img{width:18px;height:18px}.wtitle b{font-weight:400}.wtitle .sp{flex:1}
+.wtitle button{border:0;background:none;font-size:18px;padding:0 14px;line-height:1}
+.wtitle button:hover{background:var(--accl)}
+.tool{display:flex;gap:6px;padding:4px 10px 8px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.tb{display:flex;align-items:center;gap:6px;padding:4px 8px;background:none;border:1px solid transparent;border-radius:3px;font-size:13px}
+.tb img{width:20px;height:20px}
+.tb:hover:not(:disabled){background:var(--accl);border-color:var(--line)}
+.tb:disabled{color:var(--dis);cursor:default}.tb:disabled img{opacity:.4;filter:grayscale(1)}
+.wbody{flex:1;padding:14px 12px 12px 18px;background:var(--panel);display:flex;flex-direction:column;min-height:0}
+.ptabs{display:flex;gap:2px;margin-bottom:-1px;position:relative;z-index:1}
+.ptabs button{padding:6px 14px;background:var(--panel);border:1px solid var(--line);border-bottom:0}
+.ptabs button.on{background:var(--win);border-top:2px solid var(--acc);padding-top:5px}
+.page{flex:1;border:1px solid var(--line);background:var(--win);padding:10px 12px;display:none;flex-direction:column;min-height:0;gap:8px}
+.page.on{display:flex}
+.row{display:flex;align-items:center;gap:10px}
+.row>label{white-space:nowrap}
+.noimg{width:50px;text-align:center;color:var(--muted);line-height:1.1}
+.radios{flex:1;display:flex;justify-content:space-between;padding:8px 24px 8px 6px;border:1px solid var(--line)}
+.radios label{display:flex;align-items:center;gap:6px;cursor:pointer}
+.radios input{appearance:none;width:18px;height:18px;border:1px solid var(--dis);border-radius:50%;margin:0;display:grid;place-items:center;background:var(--win)}
+.radios input:checked{border:2px solid var(--acc)}
+.radios input:checked::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--acc)}
+.grids{flex:1;display:flex;gap:10px;min-height:0}
+.gbox{flex:1;border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.gscroll{flex:1;overflow:auto}
+table{border-collapse:collapse;width:100%}
+th{position:sticky;top:0;background:var(--win);font-weight:400;padding:7px 8px;border:1px solid var(--line);border-top:0;text-align:center;white-space:nowrap}
+td{padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap;text-align:center}
+tbody tr{cursor:pointer}tbody tr:nth-child(even){background:var(--row)}tbody tr:hover{background:var(--accl)}
+.frow td{padding:3px 6px;background:var(--win);border-bottom:1px solid var(--line)}
+.frow img{width:16px;height:16px;margin:auto}
+.chk{display:inline-block;width:18px;height:14px;background:var(--acc);border-radius:3px;position:relative}
+.chk::after{content:"";position:absolute;left:4px;right:4px;top:6px;height:2px;background:#fff}
+.foot{display:flex;justify-content:space-around;padding:8px;border-top:1px solid var(--line)}
+.pill{border:1px solid var(--line);padding:5px 22px;border-radius:3px;background:var(--win)}
+.empty{padding:30px;text-align:center;color:var(--muted)}
+.toast{position:fixed;right:20px;bottom:40px;background:#222;color:#fff;padding:8px 14px;border-radius:4px;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+.toast.show{opacity:1}
+.back{position:fixed;left:8px;bottom:26px;z-index:8;padding:4px 10px;border:1px solid var(--line);background:var(--win);border-radius:3px;text-decoration:none;color:var(--ink)}
+</style>
+</head>
+<body>
+<!-- ============ ventana de fondo: sistema principal ============ -->
+<div class="app">
+  <div class="apptitle"><img src="Kit_semantico/svg/vaca.svg" alt=""><span>Control Ganadero PRO</span></div>
+  <div class="mods" id="mods"></div>
+  <div class="sub">
+    <div class="sbtn"><img src="Kit_semantico/svg/carpeta.svg" alt="">Catalogos ⌄</div>
+    <div class="sbtn"><img src="Kit_semantico/svg/camion.svg" alt="">Compras</div>
+  </div>
+  <div class="tabsbar"><button class="on">Reses Feedlot</button><button>Reses Maquila</button></div>
+  <div class="body">
+    <div class="opts">
+      <h5>Opciones</h5>
+      <div class="fld"><label>Desde</label><input class="inp" value="1/10/2026"></div>
+      <div class="fld"><label>Hasta</label><input class="inp" value="31/10/2026"></div>
+      <button class="big"><img src="Kit_semantico/svg/Buscar.svg" alt=""><span>Buscar</span></button>
+      <button class="big on"><img src="Kit_semantico/svg/Nuevo.svg" alt=""><span>Nuevo</span></button>
+      <button class="big"><img src="Kit_semantico/svg/VerDetalle.svg" alt=""><span>Ver Detalles</span></button>
+      <button class="big"><img src="Kit_semantico/svg/Imprimir.svg" alt=""><span>Imprimir</span></button>
+      <button class="big"><img src="Kit_semantico/svg/Exportar.svg" alt=""><span>Exportar</span></button>
+    </div>
+    <div class="fondogrid"></div>
+  </div>
+  <div class="status"><span>Sistema: ControlGanaderoPro</span><span>Rol: Gerencia</span><span>Usuario: admin</span><span>ControlGanaderoPro @ Publicación v2026.100.76.5</span></div>
+</div>
+<div class="veil"></div>
+
+<!-- ============ ventana modal: Remisión de Ganado ============ -->
+<div class="win">
+  <div class="wtitle"><img src="Kit_semantico/svg/camion.svg" alt=""><b>Remision de Ganado</b><span class="sp"></span><button title="Minimizar">–</button><button title="Maximizar">▢</button><button title="Cerrar" onclick="toast('Ventana cerrada (simulación)')">✕</button></div>
+  <div class="tool">
+    <button class="tb" onclick="toast('Imprimir remisión')"><img src="Kit_semantico/svg/Imprimir.svg" alt="">Imprimir</button>
+    <button class="tb" onclick="toast('Remisión guardada')"><img src="Kit_semantico/svg/Guardar.svg" alt="">Guardar</button>
+    <button class="tb" id="bEnviar" disabled onclick="toast('Remisión enviada')"><img src="Kit_semantico/svg/Enviar.svg" alt="">Enviar</button>
+    <button class="tb" onclick="showTab(1)"><img src="Kit_semantico/svg/camion-usuario.svg" alt="">Transportitas</button>
+    <button class="tb" onclick="toast('Cargar archivo de aretes')"><img src="Kit_semantico/svg/arete-rfid-mas.svg" alt="">Cargar Aretes</button>
+    <button class="tb" onclick="toast('Exportar aretes a Excel')"><img src="Kit_semantico/svg/arete-rfid-flecha.svg" alt="">Exportar Aretes</button>
+    <button class="tb" onclick="toast('Ayuda')"><img src="Kit_semantico/svg/ayuda.svg" alt="">Ayuda</button>
+  </div>
+  <div class="wbody">
+    <div class="ptabs"><button class="on" onclick="showTab(0)">Remisión</button><button onclick="showTab(1)">Transportistas</button></div>
+
+    <div class="page on" id="p0">
+      <div class="row" style="justify-content:flex-end">
+        <div class="noimg" style="margin-right:auto"><img src="Kit_semantico/svg/camion-mas.svg" width="34" height="34" alt=""></div>
+        <label>Fecha:</label><input class="inp" style="flex:none;width:150px" value="20/10/2026">
+        <label>Hora Salida:</label><input class="inp" style="flex:none;width:140px" value="00:00:00">
+      </div>
+      <div class="row"><label style="width:120px">Tipo de Remisión:</label>
+        <div class="radios" id="radios">
+          <label><input type="radio" name="tr" checked>Traslado</label><label><input type="radio" name="tr">Sacrificio</label>
+          <label><input type="radio" name="tr">Venta</label><label><input type="radio" name="tr">Ajuste</label>
+        </div></div>
+      <div class="row"><label style="width:120px">Origen:</label>
+        <select class="sel" id="origen"><option value=""></option><option>Corrales Feedlot</option><option>Corrales Maquila</option></select>
+        <label>Destino:</label>
+        <select class="sel" id="destino"><option value=""></option><option>Rastro TIF 12</option><option>Rancho El Sauz</option><option>Engorda Norte</option></select></div>
+      <div class="row"><label style="width:120px">Tipo de Selección:</label>
+        <select class="sel" style="flex:none;width:150px"><option>Corral</option><option>Lote</option><option>Arete</option></select>
+        <label>Corral:</label>
+        <select class="sel" id="corral" style="flex:none;width:120px"></select>
+        <button class="tb" style="border-color:var(--line)" onclick="addAll()"><img src="Kit_semantico/svg/vaca-mas.svg" alt="">Añadir Todos</button>
+        <button class="tb" style="border-color:var(--line)" onclick="clearAll()"><img src="Kit_semantico/svg/LimpiarFiltros.svg" alt="">Limpiar</button>
+      </div>
+      <div class="grids">
+        <div class="gbox"><div class="gscroll"><table><thead><tr><th>Arete</th><th>Peso</th><th>Lote</th></tr></thead>
+          <tbody id="izq"></tbody></table></div></div>
+        <div class="gbox"><div class="gscroll"><table>
+          <thead><tr><th style="width:50px">Selec...</th><th>Id Registro</th><th>Arete</th><th>Peso</th><th>Ordinario</th><th>Id Lote</th><th>Corral</th><th>Causa</th></tr>
+          <tr class="frow"><td><span class="chk"></span></td><td>=</td><td><img src="Kit_semantico/svg/Filtrar.svg" alt=""></td><td>=</td><td><span class="chk"></span></td><td>=</td><td><img src="Kit_semantico/svg/Filtrar.svg" alt=""></td><td><img src="Kit_semantico/svg/Filtrar.svg" alt=""></td></tr></thead>
+          <tbody id="der"></tbody></table></div>
+          <div class="foot"><span class="pill" id="fTodos">Todos: 0</span><span class="pill" id="fPeso">Peso: 0...</span><span class="pill" id="fCorral">Corral: 0</span></div></div>
+      </div>
+    </div>
+
+    <div class="page" id="p1">
+      <div class="row"><label style="width:100px">Transportista:</label><select class="sel"><option>Transportes del Norte</option><option>Fletes Ramírez</option></select>
+        <label>Placas:</label><input class="inp" value="TX-482-B"></div>
+      <div class="row"><label style="width:100px">Operador:</label><select class="sel"><option>J. Hernández</option><option>M. Salazar</option></select>
+        <label>Jaula:</label><input class="inp" value="JA-12"></div>
+      <div class="empty">Datos del transporte de la remisión (maqueta).</div>
+    </div>
+  </div>
+</div>
+<a class="back" href="index.html">← Simulador</a>
+<div class="toast" id="toast"></div>
+
+<script>
+const ic=n=>`Kit_semantico/svg/${n}.svg`;
+const $=id=>document.getElementById(id);
+function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),1600)}
+try{const s=localStorage.getItem("tema");if(s)document.documentElement.dataset.theme=s}catch(e){}
+
+/* módulos superiores */
+[["PROCESOS","engranaje",1],["RESES","vaca"],["FEEDLOT","comedero"],["P. ALIMENTOS","saco-alimento"],["SANIDAD","botiquin"],
+ ["CRIANZA","cerca"],["MAQUILA","vaca-circulo"],["REPORTES","grafico-circular"],["AJUSTES","engranaje"]]
+.forEach(([t,i,on])=>$("mods").insertAdjacentHTML("beforeend",`<button class="mod ${on?"on":""}"><img src="${ic(i)}" alt="">${t}</button>`));
+
+/* datos simulados */
+const corrales=["C-01","C-02","C-03","C-04","C-05"];
+const reses={};corrales.forEach((c,k)=>reses[c]=Array.from({length:8+k*3},(_,i)=>({arete:"MX-"+(48000+k*100+i*7),peso:Math.round(300+((i*53+k*17)%180)),lote:"L"+(k+1),corral:c})));
+let sel=[]; // reses en la remisión
+const cs=$("corral");cs.innerHTML='<option value=""></option>'+corrales.map(c=>`<option>${c}</option>`).join("");
+cs.onchange=drawIzq;
+
+function drawIzq(){
+  const c=cs.value;const lst=(reses[c]||[]).filter(r=>!sel.includes(r));
+  $("izq").innerHTML=lst.length?lst.map(r=>`<tr ondblclick="addOne('${r.arete}','${c}')"><td>${r.arete}</td><td>${r.peso}</td><td>${r.lote}</td></tr>`).join(""):
+   `<tr><td colspan="3" class="empty" style="border:0">${c?"Sin reses disponibles":"Elige un corral"}</td></tr>`;
+}
+function drawDer(){
+  $("der").innerHTML=sel.map((r,i)=>`<tr onclick="rm(${i})"><td><span class="chk"></span></td><td>${1000+i}</td><td>${r.arete}</td><td>${r.peso}</td><td></td><td>${r.lote}</td><td>${r.corral}</td><td></td></tr>`).join("");
+  $("fTodos").textContent="Todos: "+sel.length;
+  $("fPeso").textContent="Peso: "+sel.reduce((a,r)=>a+r.peso,0).toLocaleString("es-MX")+" kg";
+  $("fCorral").textContent="Corral: "+new Set(sel.map(r=>r.corral)).size;
+  $("bEnviar").disabled=!sel.length;
+}
+function addAll(){const c=cs.value;if(!c){toast("Elige un corral primero");return}sel=sel.concat((reses[c]||[]).filter(r=>!sel.includes(r)));drawIzq();drawDer()}
+function addOne(a,c){const r=reses[c].find(x=>x.arete===a);if(r&&!sel.includes(r))sel.push(r);drawIzq();drawDer()}
+function rm(i){sel.splice(i,1);drawIzq();drawDer()}
+function clearAll(){sel=[];drawIzq();drawDer()}
+function showTab(n){document.querySelectorAll(".page").forEach((p,i)=>p.classList.toggle("on",i===n));document.querySelectorAll(".ptabs button").forEach((b,i)=>b.classList.toggle("on",i===n))}
+drawIzq();drawDer();
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Iconos que ya no existen en el kit (renombrados o eliminados) y hay que quitar
+# de ControlGanadero: archivo en Resources + registro en resx / Designer / vbproj.
+# Uno por linea, con o sin .svg. Lo que sigue a # es comentario.
+# Cuando renombres un icono en el kit, anota aqui el nombre VIEJO y ejecuta
+# sincronizar_resources.py --aplicar. Si el codigo todavia usa My.Resources.<viejo>,
+# el script avisa y no toca nada hasta que lo cambies.
+
+corral        # ahora es cerca

@@ -1,0 +1,11 @@
+<svg width="32" height="32" version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+    <g fill="#24AC88">
+        <rect x="19" y="22" width="10" height="20"/>
+        <rect x="6" y="8" width="10" height="34"/>
+        <rect x="32" y="30" width="10" height="12"/>
+    </g>
+    <g fill="#24465B">
+        <polygon points="42,12 32,22 42,22"/>
+        <rect x="32" y="6.9" transform="matrix(.707 -.707 .707 .707 .059 28.142)" width="4" height="14.1"/>
+    </g>
+</svg>

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+
+# repos descargados como inspiracion (108 MB, ver notice.md)
+Inspiracion/
+flat-color-icons/
+phosphor-core/
+icons/
+
+# respaldos automaticos de los scripts: con git ya no hacen falta en el repo
+Respaldos/

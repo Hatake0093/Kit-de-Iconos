@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Registrar ternero</title>
+  <g transform="translate(2 -3)">
+  <!-- Cuerpo recogido y pequeñas patas delanteras. -->
+  <path fill="#F4E1CF" d="M27 32h14c10 0 16 6 16 14 0 7-6 11-15 11H22c-8 0-12-4-12-10 0-7 7-15 17-15Z"/>
+  <path fill="#B9472B" d="M38 32h3c8 0 13 4 15 10-7 3-13 0-13-4 0-3-2-4-5-6Z"/>
+  <path d="M17 48v6h10m5-5v5h7" fill="none" stroke="#B9472B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 54h3m9 0h3" fill="none" stroke="#24465B" stroke-width="4" stroke-linecap="round"/>
+  <!-- Orejas caídas, frente amplia y hocico corto de una cría. -->
+  <path fill="#B9472B" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z"/>
+  <path fill="#E56876" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z"/>
+  <path fill="#F4E1CF" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z"/>
+  <path fill="#B9472B" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z"/>
+  <circle cx="16" cy="30" r="1.7" fill="#24465B"/>
+  <circle cx="27" cy="30" r="1.7" fill="#24465B"/>
+  <rect x="10" y="35" width="23" height="12" rx="6" fill="#B9472B"/>
+  <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#24465B"/>
+  <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#24465B"/>
+  </g>
+  <circle cx="51" cy="51" r="13" fill="#FFFFFF"/>
+  <circle cx="51" cy="51" r="11" fill="#24AC88"/>
+  <path d="M46 51h10m-5-5v10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+</svg>

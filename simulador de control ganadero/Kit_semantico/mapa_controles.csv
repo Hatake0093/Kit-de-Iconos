@@ -1,0 +1,215 @@
+﻿control,texto_boton,icono,origen_kit
+BarButtonItem181,Alimentación,comedero,A
+BarButtonItem185,Calendario,calendario,B
+BarButtonItem193,Reeimplantes,jeringa,B
+BarButtonItem196,Reporte de Pesaje,bascula-lista,A
+BarButtonItem203,Causas,documento-alerta,B
+BarButtonItem204,Causas,documento-alerta,B
+BarButtonItem205,Causas,documento-alerta,B
+BarButtonItem207,Enfermeria,botiquin,B
+BarSubItem1,Catalogos,carpeta,B
+BarSubItem2,Catalogos,carpeta,B
+BarSubItem3,Catalogos,carpeta,B
+bbi,Archivos XML,documento-codigo,A
+bbiAlimentacion,Alimentación,comedero,A
+bbiAlimentos,Alimentos,saco-alimento,A
+bbiAltasDestete,Altas por Destete,vaca-mas,B
+bbiBuscadorReses,Buscador de Reses,vaca-lupa,A
+bbiCalibraciones,Calibraciones,bascula-check,B
+bbiCalidadAgua,Calidad de Agua,gota-agua,B
+bbiCausaOrdinarioVenta,Causas de Ordinarios/Venta,etiqueta-alerta,A
+bbiCausasMuerte,Causas de Muerte,lapida-alerta,A
+bbiCausasSanidad,Causas de Deteccion,documento-alerta,B
+bbiCentroReportes,Centro de Reportes,GraficaPastel,B
+bbiCompradores,Compradores,usuario-dinero,A
+bbiCompras,Compras de Ganado,carrito,A
+bbiComprasProgramadores,Compras de Programadores,carrito-check,A
+bbiConfigurarOffline,Configurar Offline,engranaje,B
+bbiConsolidado,Consolidado,barras-mas,A
+bbiConsumo,Consumo,comedero-bajada,A
+bbiControlCalidad,Control de Calidad,matraz-check,A
+bbiCorralesAux,Corrales Auxiliares,cerca,B
+bbiDeteccion,Detección,cruz-lupa,A
+bbiDeteccionesElectronicos,Detecciones de Aretes,arete-rfid-lupa,B
+bbiDietas,Lista de Dietas,saco-lista,A
+bbiDinamicoCompras,Dinamico de Compras,barras-dinero,A
+bbiDistancias,Distancias,regla,A
+bbiDueños,Dueños,usuarios,A
+bbiEnfermeria,Enfermeria,botiquin,B
+bbiEvaluacionDeteccion,Evaluacion de Deteccion,cruz-check,A
+bbiEvaluacionImplantes,Evaluacion de Implantes,jeringa-check,B
+bbiExistenciaGanado,Existencia Ganado,vaca,B
+bbiFormacionCorrales,Formacion de Corrales,cerca-mas,B
+bbiFormatosBA,Formatos BA,documento,A
+bbiGraficaAlimento,Graficas (Alimento),GraficaLineas,B
+bbiGraficas,Graficas,GraficaLineas,B
+bbiGraficasGerencial,Graficas Gerenciales,GraficaBarras,B
+bbiGraficoAlimentacion,Grafico de Alimentacion,GraficaLineas,B
+bbiHistoricoImplantes,Historico de Implantes,jeringa-reloj,B
+bbiImplantadores,Implantadores,usuario-mas,A
+bbiImplantes,Implantes,jeringa,B
+bbiImproductivos,Reporte de Ordinarios,documento-bajada,B
+bbiLiquidaciones,Liquidaciones,moneda-check,A
+bbiListaCorrales,Lista de Corrales,cerca,B
+bbiListaEquipos,Lista de Equipos,engranaje,B
+bbiListaIndicadores,Indicadores,medidor,A
+bbiListaLecturas,Lecturas,comedero-lupa,A
+bbiListaRecepciones,Lista de Recepcion,camion-mas,B
+bbiListaReses,Lista de Reses,vaca,B
+bbiListaResesCrianza,Reses Crianza,vaca,B
+bbiListaResesDesarrollo,Reses Desarrollo,vaca-flecha,B
+bbiListaResesFeedLot,Reses Feedlot,comedero-subida,A
+bbiListaResesInactivos,Reses Inactivas,vaca-menos,B
+bbiListaResesMaquila,Reses Maquila,vaca-circulo,B
+bbiListaResesSinRegistro,Reses sin Registrar,vaca-alerta,A
+bbiListaRutasDieta,Rutas de Dietas,saco-flecha,A
+bbiLoteCrianza,Lote de Crianza,cerca,B
+bbiMortalidadReses,Mortalidad de Reses,lapida,A
+bbiMovimientoCorrales,Movimiento en Corrales,flechas-intercambio,B
+bbiMovimientosPorLote,Movimientos por Lote,flechas-intercambio,B
+bbiNacimientos,Crianza,crianza,propuesta
+propuesta:Terneros,Terneros,ternero,propuesta
+propuesta:Registrar ternero,Registrar ternero,ternero-mas,propuesta
+propuesta:Cuidado de terneros,Cuidado de terneros,ternero-corazon,propuesta
+propuesta:Historial de partos,Historial de partos,huella-luna-cuna,propuesta
+propuesta:Registro de nacimientos,Registro de nacimientos,ternero-reloj-registro,propuesta
+bbiOperadores,Operadores,usuario-check,A
+bbiParoEquipos,Paro de Equipos,engranaje-pausa,B
+bbiPesajeMateriaPrima,Pesaje de Materia Prima,bascula,B
+bbiPlanDietas,Plan de Dietas,calendario-reloj,B
+bbiPorcentajes,Porcentajes de Servicio,porcentaje,B
+bbiProductos,Productos,frasco-medicina,B
+bbiProtocolos,Protocolos,documento-check,B
+bbiReciboPagos,Recibo de Pagos,documento-dinero,A
+bbiRemisiones,Remisiones,camion,B
+bbiReparto,Reparto,camion-flecha,B
+bbiReporteCalidad,Pruebas a Formulas,matraz-lupa,A
+bbiReporteCrianza,Reporte de Crianza,documento-mas,B
+bbiReporteGerencial,Reporte Gerencial,barras-flecha,A
+bbiReporteImplantes,Reporte de Implantes,documento-mas,B
+bbiReportePesaje,Reporte de Pesaje,bascula-lista,A
+bbiReporteRechazos,Reporte de Rechazos,prohibido,A
+bbiReporteReparto,Reporte de Reparto,documento-flecha,B
+bbiResesSinRegistro,Reses Sin Registro,vaca-alerta,A
+bbiResesVenta,Reses Vendidas,vaca-flecha,B
+bbiResumenCorrales,Resumen Corrales,cerca-lupa,A
+bbiRoles,Roles,escudo-check-verde,B
+bbiSanidadCrianza,Sanidad (Crianza),botiquin-verde,B
+bbiSistemaOffline,Sistema Offline,nube-x,A
+bbiTransportistas,Transportistas,camion-usuario,B
+bbiTraslado,Traslado,flechas-intercambio,B
+bbiUsers,Users,usuario,A
+bbiVentas,Venta de Ordinarios,etiqueta-dinero,A
+bbiZonas,Zonas,mapa-pin,B
+bsiC_PlantaAlimentos,Catalogos (Planta),carpeta,B
+bsiC_Procesos,Catalogos (Procesos),carpeta,B
+bsiC_Sanidad,Catalogos (Sanidad),carpeta-verde,B
+btnAreasTrabajo,Areas de Trabajo,mapa-pin,B
+btnCierreFormacion,Cierres de Formacion,cerca-check,B
+btnProtocolosInicio,Protocolos de Inicio,documento-flecha,B
+iExit,Exit,salida,B
+iHelp,Help,ayuda,B
+sBase,Base datos,BaseDatos,A
+siStatus,Conexion Servidor,nube-flecha,A
+sRol,Rol,escudo-gris,A
+propuesta:Movimientos por Lote,Movimientos por Lote,vaca-intercambio,propuesta
+propuesta:Buscar,Buscar,Buscar,propuesta
+propuesta:Crear Lote,Crear Lote,Nuevo,propuesta
+propuesta:Editar Lote,Editar Lote,Editar,propuesta
+propuesta:Datos de Corral,Datos de Corral,ListaTareas,propuesta
+propuesta:Opciones Corral,Opciones Corral,Cuadricula,propuesta
+propuesta:ReImplante,ReImplante,jeringa-flecha,propuesta
+propuesta:Cambiar Fecha Salida,Cambiar Fecha Salida,calendario-flecha,propuesta
+propuesta:Iniciar Retiro,Iniciar Retiro,salida,propuesta
+propuesta:PreCierre de Corral,PreCierre de Corral,cerca-reloj,propuesta
+propuesta:Cierre de Corral,Cierre de Corral,cerca-x,propuesta
+propuesta:Exportar,Exportar,Exportar,propuesta
+propuesta:Reportes,Reportes,GraficaPastel,propuesta
+propuesta:Mapa de Corrales,Mapa de Corrales,mapa,propuesta
+propuesta:Generar Calendario,Generar Calendario,calendario-mas,propuesta
+propuesta:Mover Corral,Mover Corral,cerca-flecha,propuesta
+propuesta:Liberar reses,Liberar reses,vaca-salida,propuesta
+propuesta:Cambiar a Alimentacion,Cambiar a Alimentacion,comedero,propuesta
+propuesta:Cambiar Ruta de Dieta,Cambiar Ruta de Dieta,saco-flecha,propuesta
+propuesta:Cambiar a Produccion,Cambiar a Produccion,cerca-estrella,propuesta
+propuesta:Cambiar Fecha de Salida,Cambiar Fecha de Salida,calendario-flecha,propuesta
+propuesta:Cambiar a Corral del FeedLot,Cambiar a Corral del FeedLot,cerca-intercambio,propuesta
+propuesta:Ver Datos Corral,Ver Datos Corral,TablaDatos,propuesta
+propuesta:Historial de Lote,Historial de Lote,Historial,propuesta
+propuesta:Historial de Corral,Historial de Corral,cerca-reloj,propuesta
+propuesta:Tabla de Ganancia,Tabla de Ganancia,tabla-dinero,propuesta
+propuesta:Resumen de Corrales,Resumen de Corrales,cerca-lupa,propuesta
+propuesta:Programacion de Salidas,Programacion de Salidas,camion-lista,propuesta
+propuesta:Distribucion Corrales,Distribucion Corrales,GraficaHistograma,propuesta
+propuesta:Detalle de Corral,Detalle de Corral,cerca-lista,propuesta
+propuesta:Programacion de Implantes,Programacion de Implantes,jeringa-lista,propuesta
+propuesta:Seleccionar Todos,Seleccionar Todos,seleccionar-todos,propuesta
+propuesta:Mover de Corral,Mover de Corral,cerca-flecha,propuesta
+propuesta:Ver Compra,Ver Compra,carrito-lupa,propuesta
+propuesta:Cambiar Arete IPSA,Cambiar Arete IPSA,arete-rfid-flecha,propuesta
+propuesta:Cambiar Arete Interno,Cambiar Arete Interno,arete-flecha,propuesta
+propuesta:Separar Lotes,Separar Lotes,vaca-separar,propuesta
+propuesta:Muerte,Muerte,vaca-calavera,propuesta
+propuesta:Resumen de Movimientos,Resumen de Movimientos,documento-intercambio,propuesta
+propuesta:Reporte de Muertes,Reporte de Muertes,lapida,propuesta
+propuesta:Distribucion de Corrales,Distribucion de Corrales,GraficaHistograma,propuesta
+propuesta:Salida a Matadero,Salida a Matadero,camion-flecha,propuesta
+propuesta:Indicadores/Nuevo,Nuevo,Nuevo,propuesta
+propuesta:Indicadores/Modificar,Modificar,Editar,propuesta
+propuesta:Indicadores/Operadores,Operadores,usuarios,propuesta
+propuesta:Indicadores/Ver Servicios,Ver Servicios,camion-lista,propuesta
+propuesta:Indicadores/Descargar,Descargar,indicador-abajo,propuesta
+propuesta:Indicadores/Descargar Horometro,Descargar Horometro,medidor-abajo,propuesta
+propuesta:Indicadores/Cargar Alimentacion,Cargar Alimentacion,indicador-arriba,propuesta
+propuesta:Indicadores/Enviar Operadores,Enviar Operadores,usuario-flecha,propuesta
+propuesta:Indicadores/Ver Log File,Ver Log File,documento-reloj,propuesta
+propuesta:Indicadores/Copiar Programacion,Copiar Programacion,calendario-copiar,propuesta
+propuesta:Indicadores/Exportar,Exportar,Exportar,propuesta
+propuesta:Movimiento en Corrales,Movimiento en Corrales,cerca-intercambio,propuesta
+propuesta:Traslado,Traslado,mapa-flecha,propuesta
+propuesta:Lote de Crianza,Lote de Crianza,cerca-circulo,propuesta
+propuesta:Protocolos de Inicio,Protocolos de Inicio,documento-estrella,propuesta
+propuesta:Lista de Reses,Lista de Reses,vaca-lista,propuesta
+propuesta:Corral frontal/Base,Corral frontal / Base,corral-frontal,propuesta
+propuesta:Corral frontal/Agregar,Corral frontal / Agregar,corral-frontal-mas,propuesta
+propuesta:Corral frontal/Quitar,Corral frontal / Quitar,corral-frontal-menos,propuesta
+propuesta:Corral frontal/Confirmar,Corral frontal / Confirmar,corral-frontal-check,propuesta
+propuesta:Corral frontal/Cerrar,Corral frontal / Cerrar,corral-frontal-x,propuesta
+propuesta:Corral frontal/Buscar,Corral frontal / Buscar,corral-frontal-lupa,propuesta
+propuesta:Corral frontal/Listado,Corral frontal / Listado,corral-frontal-lista,propuesta
+propuesta:Corral frontal/Trasladar,Corral frontal / Trasladar,corral-frontal-flecha,propuesta
+propuesta:Corral frontal/Historial,Corral frontal / Historial,corral-frontal-reloj,propuesta
+propuesta:Corral frontal/Intercambio,Corral frontal / Intercambio,corral-frontal-intercambio,propuesta
+propuesta:Corral frontal/Ubicación,Corral frontal / Ubicación,corral-frontal-pin,propuesta
+propuesta:Corral frontal/Destacado,Corral frontal / Destacado,corral-frontal-estrella,propuesta
+propuesta:Corral frontal/Sectores,Corral frontal / Sectores,corral-frontal-circulo,propuesta
+propuesta:Corral frontal/Alerta,Corral frontal / Alerta,corral-frontal-alerta,propuesta
+propuesta:Corral perspectiva/Base,Corral perspectiva / Base,corral-perspectiva,propuesta
+propuesta:Corral perspectiva/Agregar,Corral perspectiva / Agregar,corral-perspectiva-mas,propuesta
+propuesta:Corral perspectiva/Quitar,Corral perspectiva / Quitar,corral-perspectiva-menos,propuesta
+propuesta:Corral perspectiva/Confirmar,Corral perspectiva / Confirmar,corral-perspectiva-check,propuesta
+propuesta:Corral perspectiva/Cerrar,Corral perspectiva / Cerrar,corral-perspectiva-x,propuesta
+propuesta:Corral perspectiva/Buscar,Corral perspectiva / Buscar,corral-perspectiva-lupa,propuesta
+propuesta:Corral perspectiva/Listado,Corral perspectiva / Listado,corral-perspectiva-lista,propuesta
+propuesta:Corral perspectiva/Trasladar,Corral perspectiva / Trasladar,corral-perspectiva-flecha,propuesta
+propuesta:Corral perspectiva/Historial,Corral perspectiva / Historial,corral-perspectiva-reloj,propuesta
+propuesta:Corral perspectiva/Intercambio,Corral perspectiva / Intercambio,corral-perspectiva-intercambio,propuesta
+propuesta:Corral perspectiva/Ubicación,Corral perspectiva / Ubicación,corral-perspectiva-pin,propuesta
+propuesta:Corral perspectiva/Destacado,Corral perspectiva / Destacado,corral-perspectiva-estrella,propuesta
+propuesta:Corral perspectiva/Sectores,Corral perspectiva / Sectores,corral-perspectiva-circulo,propuesta
+propuesta:Corral perspectiva/Alerta,Corral perspectiva / Alerta,corral-perspectiva-alerta,propuesta
+propuesta:Corral manga/Base,Corral manga / Base,corral-manga,propuesta
+propuesta:Corral manga/Agregar,Corral manga / Agregar,corral-manga-mas,propuesta
+propuesta:Corral manga/Quitar,Corral manga / Quitar,corral-manga-menos,propuesta
+propuesta:Corral manga/Confirmar,Corral manga / Confirmar,corral-manga-check,propuesta
+propuesta:Corral manga/Cerrar,Corral manga / Cerrar,corral-manga-x,propuesta
+propuesta:Corral manga/Buscar,Corral manga / Buscar,corral-manga-lupa,propuesta
+propuesta:Corral manga/Listado,Corral manga / Listado,corral-manga-lista,propuesta
+propuesta:Corral manga/Trasladar,Corral manga / Trasladar,corral-manga-flecha,propuesta
+propuesta:Corral manga/Historial,Corral manga / Historial,corral-manga-reloj,propuesta
+propuesta:Corral manga/Intercambio,Corral manga / Intercambio,corral-manga-intercambio,propuesta
+propuesta:Corral manga/Ubicación,Corral manga / Ubicación,corral-manga-pin,propuesta
+propuesta:Corral manga/Destacado,Corral manga / Destacado,corral-manga-estrella,propuesta
+propuesta:Corral manga/Sectores,Corral manga / Sectores,corral-manga-circulo,propuesta
+propuesta:Corral manga/Alerta,Corral manga / Alerta,corral-manga-alerta,propuesta
+propuesta:Cambiar dieta,Cambiar dieta,hoja-flecha,propuesta

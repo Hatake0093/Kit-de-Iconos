@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">Corral frontal: Intercambio</title>
+<g transform="translate(0 -1) scale(.82)">
+
+<g transform="translate(0 -11)">
+<!-- Tierra debajo del cercado. -->
+<path d="M5 54h54v5H5Z" fill="#F4E1CF"/>
+
+
+<!-- Tablones horizontales y puerta lateral con refuerzo diagonal. -->
+<rect x="7" y="39" width="33" height="5" rx="1" fill="#24AC88"/>
+<rect x="7" y="49" width="33" height="5" rx="1" fill="#24AC88"/>
+<path d="M41 34h16v20H41Z" fill="#E2F2F5"/>
+<path d="M42 35h14v18H42Zm1 17 12-16" fill="none" stroke="#24AC88" stroke-width="3" stroke-linejoin="round"/>
+<path d="M6 29v27m33-27v27m19-27v27" fill="none" stroke="#24465B" stroke-width="5" stroke-linecap="round"/>
+<path d="M41 42h3" stroke="#24465B" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M3 59h58" stroke="#C98A1B" stroke-width="3" stroke-linecap="round"/>
+
+</g>
+</g><g transform="scale(2)"><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF"/><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#378CE7"/><polyline points="23,24 28,24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="26.4,22.4 28,24 26.4,25.6" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="28,27 23,27" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="24.6,25.4 23,27 24.6,28.6" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

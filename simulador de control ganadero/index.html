@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Simulador de Control Ganadero</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#eef1f4; --panel:#fff; --line:#d5dbe1; --ink:#26323d; --muted:#6b7884;
+  --brand:#2f6f4f; --brand-d:#245a40; --accent:#e8f2ec; --ribbon:#f7f9fb; --sel:#cfe6d9;
+  --warn:#c0392b; --amb:#d98e04;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#1b2229;--panel:#242d36;--line:#37424d;--ink:#e3e8ec;--muted:#93a0ab;--accent:#22372c;--ribbon:#2a343e;--sel:#2f4d3d;}
+}
+:root[data-theme="dark"]{--bg:#1b2229;--panel:#242d36;--line:#37424d;--ink:#e3e8ec;--muted:#93a0ab;--accent:#22372c;--ribbon:#2a343e;--sel:#2f4d3d;}
+.theme{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:2px 12px;cursor:pointer;font:inherit}
+.theme:hover{background:rgba(255,255,255,.28)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.35 "Segoe UI",system-ui,sans-serif;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+img.i{display:block}
+/* barra de título */
+.title{background:var(--brand-d);color:#fff;display:flex;align-items:center;gap:10px;padding:5px 12px;font-weight:600}
+.title img{width:20px;height:20px;background:#fff;border-radius:4px;padding:1px}
+.title .sp{flex:1}
+.title small{font-weight:400;opacity:.85}
+/* ribbon */
+.tabs{display:flex;gap:2px;background:var(--brand);padding:4px 8px 0}
+.tab{padding:6px 16px;color:#e4f1ea;cursor:pointer;border-radius:4px 4px 0 0;user-select:none}
+.tab:hover{background:rgba(255,255,255,.12)}
+.tab.on{background:var(--ribbon);color:var(--ink);font-weight:600}
+.ribbon{background:var(--ribbon);border-bottom:1px solid var(--line);display:flex;min-height:96px;overflow-x:auto}
+.grp{display:flex;flex-direction:column;border-right:1px solid var(--line);padding:6px 8px 0}
+.grp .btns{display:flex;gap:2px;flex:1;align-items:flex-start}
+.grp .gn{text-align:center;color:var(--muted);font-size:11px;padding:3px 0 4px}
+.btn{width:68px;display:flex;flex-direction:column;align-items:center;gap:3px;padding:5px 3px;border:1px solid transparent;border-radius:4px;cursor:pointer;text-align:center;font-size:12px;line-height:1.15;background:none;color:inherit;font-family:inherit}
+.btn img{width:32px;height:32px}
+.btn:hover{background:var(--accent);border-color:var(--line)}
+.btn.on{background:var(--sel);border-color:var(--brand)}
+/* cuerpo */
+.main{flex:1;display:flex;min-height:0}
+.nav{width:210px;background:var(--panel);border-right:1px solid var(--line);overflow:auto;padding:6px 0}
+.nav h4{margin:10px 12px 4px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.nav a{display:flex;align-items:center;gap:8px;padding:5px 12px;cursor:pointer;color:inherit;text-decoration:none}
+.nav a img{width:20px;height:20px}
+.nav a:hover{background:var(--accent)}
+.nav a.on{background:var(--sel);font-weight:600}
+.work{flex:1;padding:12px;overflow:auto;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px}
+.card h3{margin:0;padding:8px 12px;border-bottom:1px solid var(--line);font-size:13px;display:flex;align-items:center;gap:8px}
+.card h3 img{width:20px;height:20px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{padding:10px 12px;display:flex;gap:10px;align-items:center}
+.kpi img{width:36px;height:36px}
+.kpi b{font-size:20px;display:block}
+.kpi span{color:var(--muted);font-size:12px}
+.bar{display:flex;gap:8px;padding:8px 12px;border-bottom:1px solid var(--line);align-items:center;flex-wrap:wrap}
+.bar input{padding:5px 8px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);min-width:200px}
+table{border-collapse:collapse;width:100%}
+th,td{padding:6px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:var(--ribbon);color:var(--muted);font-weight:600;font-size:12px;position:sticky;top:0}
+tbody tr{cursor:pointer}
+tbody tr:hover{background:var(--accent)}
+tbody tr.sel{background:var(--sel)}
+.tag{padding:1px 8px;border-radius:10px;font-size:11px;color:#fff}
+.t-ok{background:var(--brand)} .t-w{background:var(--amb)} .t-bad{background:var(--warn)} .t-g{background:#7b8791}
+.scroll{overflow:auto;max-height:330px}
+.pane{display:none} .pane.on{display:block}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;padding:12px}
+.tile{border:1px solid var(--line);border-radius:6px;padding:12px 8px;text-align:center;cursor:pointer;background:var(--ribbon)}
+.tile:hover{border-color:var(--brand);background:var(--accent)}
+.tile img{width:40px;height:40px;margin:0 auto 6px}
+.status{background:var(--brand-d);color:#e4f1ea;display:flex;gap:18px;padding:4px 12px;font-size:12px;align-items:center}
+.status img{width:14px;height:14px;display:inline-block;vertical-align:-2px;margin-right:4px;background:#fff;border-radius:3px}
+.toast{position:fixed;right:16px;bottom:44px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:6px;opacity:0;transition:.25s;pointer-events:none}
+.toast.show{opacity:1}
+@media(max-width:760px){.nav{display:none}}
+</style>
+</head>
+<body>
+<div class="title"><img src="Kit_semantico/svg/vaca.svg" alt=""><span>Control Ganadero</span><small>— Simulador de interfaz</small><span class="sp"></span><small>Usuario: Admin · Rol: Gerencia</small><button class="theme" id="theme" title="Cambiar tema">🌙 Oscuro</button></div>
+<div class="tabs" id="tabs"></div>
+<div class="ribbon" id="ribbon"></div>
+<div class="main">
+  <div class="nav" id="nav"></div>
+  <div class="work" id="work"></div>
+</div>
+<div class="status">
+  <span><img src="Kit_semantico/svg/nube-check.svg" alt="">Servidor conectado</span>
+  <span><img src="Kit_semantico/svg/BaseDatos.svg" alt="">BD: GanaderoProd</span>
+  <span id="st-sel">Sin selección</span>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const ic = n => `<img class="i" src="Kit_semantico/svg/${n}.svg" alt="">`;
+
+/* ---------- Ribbon: pestañas > grupos > botones (texto, icono) ---------- */
+const RIBBON = {
+  "Inicio": [
+    ["Acciones", [["Nuevo","Nuevo"],["Editar","Editar"],["Guardar","Guardar"],["Duplicar","Duplicar"],["Eliminar","Eliminar"],["Cancelar","Cancelar"]]],
+    ["Vista", [["Actualizar","Actualizar"],["Buscar","Buscar"],["Filtrar","Filtrar"],["Limpiar","LimpiarFiltros"],["Vista previa","VistaPrevia"],["Imprimir","Imprimir"]]],
+    ["Datos", [["Exportar","Exportar"],["Importar","Importar"],["Respaldar","RespaldarDatos"],["Restaurar","RestaurarDatos"]]]
+  ],
+  "Ganado": [
+    ["Reses", [["Existencia","vaca"],["Buscador","vaca-lupa"],["Inactivas","vaca-menos"],["Sin registro","vaca-alerta"],["Vendidas","vaca-flecha"]]],
+    ["Partos", [["Crianza","crianza"],["Historial de partos","huella-luna-cuna"],["Registro de nacimientos","ternero-reloj-registro"]]],
+    ["Terneros", [["Terneros","ternero"],["Registrar ternero","ternero-mas"],["Cuidado de terneros","ternero-corazon"]]],
+    ["Corrales", [["Lista","cerca"],["Formación","cerca-mas"],["Resumen","cerca-lupa"],["Cierres","cerca-check"],["Movimientos","flechas-intercambio"]]],
+    ["Aretes", [["Aretes","arete"],["Aretes RFID","arete-rfid"],["Asignar","arete-mas"],["Detecciones","arete-rfid-lupa"],["Sin arete","arete-alerta"]]],
+    ["Compra / Venta", [["Compras","carrito"],["Recepción","camion-mas"],["Remisiones","camion"],["Venta ordinarios","etiqueta-dinero"],["Compradores","usuario-dinero"]]],
+    ["Gestión de reses", [["Validar","vaca-check"],["Dar de baja","vaca-x"],["Listado","vaca-lista"],["Intercambio","vaca-intercambio"],["Separar","vaca-separar"],["Bajas peso","vaca-abajo"],["Muertes","vaca-calavera"],["Salidas","vaca-salida"],["Expediente","documento-vaca"]]],
+    ["Aretes (más)", [["Validar","arete-check"],["Buscar","arete-lupa"],["Listado","arete-lista"],["Reasignar","arete-flecha"],["Quitar","arete-menos"],["Anular","arete-x"],["RFID alta","arete-rfid-mas"],["RFID validar","arete-rfid-check"],["RFID lista","arete-rfid-lista"],["RFID alerta","arete-rfid-alerta"],["RFID baja","arete-rfid-menos"],["RFID mover","arete-rfid-flecha"],["RFID anular","arete-rfid-x"]]],
+    ["Corrales (más)", [["Listado","cerca-lista"],["Quitar","cerca-menos"],["Cerrar","cerca-x"],["Ubicación","cerca-pin"],["Historial","cerca-reloj"],["Rotación","cerca-intercambio"],["Destacado","cerca-estrella"],["Sectores","cerca-circulo"]]],
+    ["Comercial (más)", [["Vaca a venta","vaca-dinero"],["Carrito reses","vaca-carrito"],["Doc. compra","documento-carrito"],["Compra OK","carrito-check"],["Buscar compra","carrito-lupa"],["Lista envíos","camion-lista"],["Chofer","camion-usuario"]]]
+  ],
+  "Corrales": [
+    ["Corral frontal",[["Base","corral-frontal"],["Agregar","corral-frontal-mas"],["Quitar","corral-frontal-menos"],["Confirmar","corral-frontal-check"],["Cerrar","corral-frontal-x"],["Buscar","corral-frontal-lupa"],["Listado","corral-frontal-lista"],["Trasladar","corral-frontal-flecha"],["Historial","corral-frontal-reloj"],["Intercambio","corral-frontal-intercambio"],["Ubicación","corral-frontal-pin"],["Destacado","corral-frontal-estrella"],["Sectores","corral-frontal-circulo"],["Alerta","corral-frontal-alerta"]]],
+    ["Corral perspectiva",[["Base","corral-perspectiva"],["Agregar","corral-perspectiva-mas"],["Quitar","corral-perspectiva-menos"],["Confirmar","corral-perspectiva-check"],["Cerrar","corral-perspectiva-x"],["Buscar","corral-perspectiva-lupa"],["Listado","corral-perspectiva-lista"],["Trasladar","corral-perspectiva-flecha"],["Historial","corral-perspectiva-reloj"],["Intercambio","corral-perspectiva-intercambio"],["Ubicación","corral-perspectiva-pin"],["Destacado","corral-perspectiva-estrella"],["Sectores","corral-perspectiva-circulo"],["Alerta","corral-perspectiva-alerta"]]],
+    ["Corral manga",[["Base","corral-manga"],["Agregar","corral-manga-mas"],["Quitar","corral-manga-menos"],["Confirmar","corral-manga-check"],["Cerrar","corral-manga-x"],["Buscar","corral-manga-lupa"],["Listado","corral-manga-lista"],["Trasladar","corral-manga-flecha"],["Historial","corral-manga-reloj"],["Intercambio","corral-manga-intercambio"],["Ubicación","corral-manga-pin"],["Destacado","corral-manga-estrella"],["Sectores","corral-manga-circulo"],["Alerta","corral-manga-alerta"]]]
+  ],
+  "Sanidad": [
+    ["Enfermería", [["Enfermería","botiquin"],["Productos","frasco-medicina"],["Detección","cruz-lupa"],["Evaluación","cruz-check"]]],
+    ["Implantes", [["Implantes","jeringa"],["Histórico","jeringa-reloj"],["Evaluación","jeringa-check"],["Implantadores","implantador"],["Lista implantes","jeringa-lista"],["Reasignar","jeringa-flecha"]]],
+    ["Implantadores", [["Implantadores","implantador"],["Alta","implantador-mas"],["Baja","implantador-menos"],["Validar","implantador-check"],["Buscar","implantador-lupa"],["Listado","implantador-lista"],["Historial","implantador-reloj"],["Reasignar","implantador-flecha"],["Alertas","implantador-alerta"],["Rechazar","implantador-x"]]],
+    ["Productos", [["Producto +","frasco-medicina-mas"],["Botiquín verde","botiquin-verde"],["Cruz","cruz"],["Cruz alta","cruz-mas"],["Matraz lupa","matraz-lupa"],["Matraz agua","matraz-gota"]]],
+    ["Protocolos", [["Protocolos","documento-check-rojo"],["De inicio","documento-flecha-rojo"],["Mortalidad","lapida"],["Causas muerte","lapida-alerta"]]]
+  ],
+  "Alimentación": [
+    ["Dietas", [["Alimentación","comedero"],["Alimentos","saco-alimento"],["Lista dietas","saco-lista"],["Rutas","saco-flecha"],["Plan","calendario-reloj"]]],
+    ["Consumo", [["Consumo","comedero-bajada"],["Lecturas","comedero-lupa"],["Reparto","camion-flecha"],["Gráfica","grafico-lineas-ambar"]]],
+    ["Planta", [["Pesaje MP","bascula"],["Calibraciones","bascula-check"],["Control calidad","matraz-check"],["Paro equipos","engranaje-pausa"],["Pesaje alta","bascula-mas"],["Lista equipos","engranaje-lista"]]],
+    ["Granos", [["Granos","espiga"],["Alta","espiga-mas"],["Baja","espiga-menos"],["Validar","espiga-check"],["Buscar","espiga-lupa"]]],
+    ["Forrajes", [["Forrajes","hoja"],["Cambiar dieta","hoja-flecha"],["Alta","hoja-mas"],["Baja","hoja-menos"],["Validar","hoja-check"],["Buscar","hoja-lupa"],["Consumo ↑","comedero-subida"]]]
+  ],
+  "Programación": [
+    ["Calendario", [["Calendario","calendario"],["Nuevo evento","calendario-mas"],["Quitar","calendario-menos"],["Cancelar","calendario-x"],["Completar","calendario-check"],["Reprogramar","calendario-flecha"],["Copiar","calendario-copiar"],["Destacar","calendario-estrella"],["Alertas","calendario-alerta"],["Buscar","calendario-lupa"],["Agenda","calendario-lista"]]],
+    ["Planeación", [["Plan","calendario-reloj"],["Gantt","gantt"],["Tareas","ListaTareas"],["Historial","Historial"]]]
+  ],
+  "Finanzas": [
+    ["Efectivo", [["Billete","billete"],["Ingreso","billete-mas"],["Pago","billete-flecha"],["Liquidar","billete-check"],["Moneda OK","moneda-check"]]],
+    ["Cuentas", [["Tabla $","tabla-dinero"],["Barras $","barras-dinero"],["Doc. $","documento-dinero"],["Porcentaje","porcentaje"],["Calculadora","Calculadora"]]],
+    ["Etiquetas de precio", [["Etiqueta","etiqueta"],["Nueva","etiqueta-mas"],["Quitar","etiqueta-menos"],["Validar","etiqueta-check"],["Buscar","etiqueta-lupa"],["Alerta","etiqueta-alerta"],["Mover","etiqueta-flecha"],["Anular","etiqueta-x"],["Grupo","etiqueta-circulo"]]],
+    ["Indicadores", [["Indicador","indicador"],["Sube","indicador-arriba"],["Baja","indicador-abajo"],["Medidor ↓","medidor-abajo"],["Tendencia +","TendenciaPositiva"],["Tendencia −","TendenciaNegativa"]]]
+  ],
+  "Análisis": [
+    ["Gráficas", [["Barras","GraficaBarras"],["Líneas","GraficaLineas"],["Área","GraficaArea"],["Dona","GraficaDona"],["Radar","GraficaRadar"],["Mapa calor","MapaCalor"]]],
+    ["Diagramas", [["Genealogía","ArbolGenealogico"],["Mapa mental","MapaMental"],["Línea tiempo","LineaTiempo"]]],
+    ["Flujos", [["Flujo proceso","DiagramaFlujo"],["Flujo trabajo","FlujoTrabajo"],["Movimientos","flechas-intercambio"]]]
+  ],
+  "Reportes": [
+    ["Gerencial", [["Centro reportes","grafico-circular"],["Gerencial","barras-flecha"],["Indicadores","medidor"],["Gráficas","barras-azul"],["Consolidado","barras-mas"]]],
+    ["Operativos", [["Pesaje","bascula-lista"],["Implantes","documento-mas-rojo"],["Ordinarios","documento-bajada"],["Rechazos","prohibido"],["Crianza","documento-mas-azul"]]]
+  ],
+  "Sistema": [
+    ["Seguridad", [["Usuarios","usuario"],["Roles","escudo-check-verde"],["Dueños","usuarios"],["Operadores","usuario-check"]]],
+    ["Conexión", [["Servidor","nube-flecha"],["Offline","nube-x"],["Base datos","BaseDatos"],["Configurar","engranaje"]]],
+    ["Base de datos", [["Agregar","BaseDatos-mas"],["Quitar","BaseDatos-menos"],["Validar","BaseDatos-check"],["Buscar","BaseDatos-lupa"],["Listado","BaseDatos-lista"],["Migrar","BaseDatos-flecha"],["Alerta","BaseDatos-alerta"],["Error","BaseDatos-x"],["Cifrar","CifrarBaseDatos"],["Proteger","ProtegerBaseDatos"],["Configurar BD","ConfigurarBaseDatos"]]],
+    ["Seguridad (más)", [["Bloquear","Bloquear"],["Desbloquear","Desbloquear"],["Activar","Activar"],["Desactivar","Desactivar"],["Escudo","escudo-gris"],["Usuario →","usuario-flecha"]]],
+    ["Ayuda", [["Ayuda","ayuda"],["Informar","Informacion"],["Advertir","Advertencia"],["Salir","salida"]]]
+  ]
+};
+
+/* ---------- Navegación lateral (catálogos) ---------- */
+const NAV = [
+  ["Principal", [["Resumen","Inicio"],["Lista de Reses","vaca"],["Lista de Corrales","cerca"],["Calendario","calendario"],["Programación","gantt"]]],
+  ["Catálogos", [["Catálogos","carpeta"],["Catálogos Sanidad","carpeta-verde"],["Áreas de trabajo","mapa-pin"],["Zonas","mapa-pin"],["Distancias","regla"],["Calidad de agua","gota-agua"]]],
+  ["Reportes", [["Reporte Gerencial","barras-flecha"],["Formatos BA","documento"],["Archivos XML","documento-codigo"]]]
+];
+
+/* ---------- Datos simulados ---------- */
+const nombres = ["Lote A","Lote B","Lote C","Engorda 1","Engorda 2","Desarrollo 1","Crianza 1","Maquila 1"];
+const estados = [["Activa","t-ok"],["En tratamiento","t-w"],["Inactiva","t-g"],["Sin registro","t-bad"]];
+const reses = Array.from({length:28},(_,i)=>{
+  const e = estados[i%7===3?1:i%11===5?2:i%13===7?3:0];
+  return {arete:"MX-"+(48120+i*7), corral:"C-"+String(1+i%9).padStart(2,"0"), lote:nombres[i%8],
+    peso:Math.round(260+((i*37)%230)), raza:["Angus","Hereford","Brahman","Charolais"][i%4], est:e};
+});
+
+const state = {tab:"Inicio", nav:"Resumen", sel:null, btn:null};
+const $ = id => document.getElementById(id);
+
+function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),1800)}
+
+function renderTabs(){
+  $("tabs").innerHTML = Object.keys(RIBBON).map(t=>`<div class="tab ${t===state.tab?"on":""}" data-t="${t}">${t}</div>`).join("");
+  $("tabs").querySelectorAll(".tab").forEach(e=>e.onclick=()=>{state.tab=e.dataset.t;renderTabs();renderRibbon()});
+}
+function renderRibbon(){
+  $("ribbon").innerHTML = RIBBON[state.tab].map(([g,bs])=>
+    `<div class="grp"><div class="btns">${bs.map(([t,i])=>
+      `<button class="btn ${state.btn===t?"on":""}" data-t="${t}" data-i="${i}" title="${t}">${ic(i)}<span>${t}</span></button>`).join("")}
+    </div><div class="gn">${g}</div></div>`).join("");
+  $("ribbon").querySelectorAll(".btn").forEach(b=>b.onclick=()=>{
+    state.btn=b.dataset.t; renderRibbon(); toast(`Acción: ${b.dataset.t}  (icono: ${b.dataset.i})`);
+    if(b.dataset.t==="Remisiones"){location.href="remision.html";return}
+    if(state.tab==="Análisis") showAnalysis(b.dataset.t,b.dataset.i);
+    else if(state.tab!=="Inicio"&&state.tab!=="Sistema") showModule(b.dataset.t,b.dataset.i);
+  });
+}
+function renderNav(){
+  $("nav").innerHTML = NAV.map(([h,items])=>`<h4>${h}</h4>`+items.map(([t,i])=>
+    `<a class="${state.nav===t?"on":""}" data-t="${t}">${ic(i)}${t}</a>`).join("")).join("");
+  $("nav").querySelectorAll("a").forEach(a=>a.onclick=()=>{state.nav=a.dataset.t;renderNav();renderWork()});
+}
+
+function kpis(){
+  const k=[["vaca",reses.length*43,"Cabezas en existencia"],["cerca",9,"Corrales activos"],["botiquin",12,"En tratamiento"],["lapida",3,"Mortalidad mes"],["comedero","8.4 kg","Consumo prom./cab."],["bascula","412 kg","Peso prom. salida"]];
+  return `<div class="kpis">${k.map(([i,v,l])=>`<div class="card kpi">${ic(i)}<div><b>${v}</b><span>${l}</span></div></div>`).join("")}</div>`;
+}
+function tabla(filter=""){
+  const rows = reses.filter(r=>(r.arete+r.corral+r.lote+r.raza).toLowerCase().includes(filter.toLowerCase()));
+  return `<table><thead><tr><th>Arete</th><th>Corral</th><th>Lote</th><th>Raza</th><th>Peso (kg)</th><th>Estado</th></tr></thead><tbody>${
+    rows.map(r=>`<tr data-a="${r.arete}" class="${state.sel===r.arete?"sel":""}"><td>${r.arete}</td><td>${r.corral}</td><td>${r.lote}</td><td>${r.raza}</td><td>${r.peso}</td><td><span class="tag ${r.est[1]}">${r.est[0]}</span></td></tr>`).join("")}</tbody></table>`;
+}
+function bindTabla(){
+  document.querySelectorAll("tbody tr").forEach(tr=>tr.onclick=()=>{state.sel=tr.dataset.a;$("st-sel").textContent="Res seleccionada: "+state.sel;
+    document.querySelectorAll("tbody tr").forEach(x=>x.classList.toggle("sel",x===tr))});
+}
+function quick(){
+  const q=[["vaca-mas","Alta de res"],["jeringa-mas","Aplicar implante"],["cerca-flecha","Mover corral"],["bascula-check","Registrar pesaje"],["camion-descarga","Recibir lote"],["botiquin-mas","Nueva atención"],["calendario-mas","Programar"],["billete-check","Liquidar"]];
+  return `<div class="card"><h3>${ic("engranaje")}Accesos rápidos</h3><div class="grid2">${q.map(([i,t])=>`<div class="tile" onclick="toast('${t}')">${ic(i)}<div>${t}</div></div>`).join("")}</div></div>`;
+}
+function listaCard(title,icon){
+  return `<div class="card"><h3>${ic(icon)}${title}</h3>
+   <div class="bar"><input id="q" placeholder="Buscar arete, corral, lote…">
+     <button class="btn" style="width:auto;flex-direction:row" onclick="toast('Nuevo registro')">${ic("vaca-mas")}Alta</button>
+     <button class="btn" style="width:auto;flex-direction:row" onclick="toast('Exportado')">${ic("Exportar")}Exportar</button></div>
+   <div class="scroll" id="tbl">${tabla()}</div></div>`;
+}
+function renderWork(){
+  const n=state.nav, w=$("work");
+  if(n==="Resumen") w.innerHTML = kpis()+listaCard("Existencia de ganado","vaca")+quick();
+  else if(n==="Lista de Reses") w.innerHTML = listaCard("Lista de Reses","vaca");
+  else if(n==="Lista de Corrales") w.innerHTML = corrales();
+  else if(n==="Calendario") w.innerHTML = calendario();
+  else w.innerHTML = `<div class="card"><h3>${ic(NAV.flat(2).find(x=>x[0]===n)?.[1]||"carpeta")}${n}</h3><div style="padding:30px;color:var(--muted)">Pantalla de «${n}» (maqueta). Aquí iría el catálogo correspondiente.</div></div>`;
+  const q=$("q"); if(q) q.oninput=()=>{$("tbl").innerHTML=tabla(q.value);bindTabla()};
+  bindTabla();
+}
+function corrales(){
+  const t=Array.from({length:9},(_,i)=>{const c=20+i*4;return `<div class="tile" onclick="toast('Corral C-0${i+1}')">${ic(i%4===0?"cerca-check":"cerca")}<b>C-0${i+1}</b><div style="color:var(--muted)">${c*3} cab.</div></div>`}).join("");
+  return `<div class="card"><h3>${ic("cerca")}Lista de Corrales</h3><div class="grid2">${t}</div></div>`;
+}
+function calendario(){
+  const ev=[["jeringa-mas","Reimplante lote B","Mañana"],["botiquin","Revisión enfermería C-03","22 Oct"],["camion-mas","Recepción 120 cab.","24 Oct"],["bascula-check","Calibración báscula","28 Oct"],["billete-check","Liquidación compradores","30 Oct"]];
+  return `<div class="card"><h3>${ic("calendario")}Próximos eventos</h3><table><tbody>${ev.map(([i,t,d])=>`<tr><td style="width:40px">${ic(i).replace('class="i"','class="i" width="24"')}</td><td>${t}</td><td>${d}</td></tr>`).join("")}</tbody></table></div>`;
+}
+/* ---------- Análisis: gráficas + diagramas + flujos (SVG inline) ---------- */
+const C=["#2f6f4f","#d98e04","#3b7dd8","#c0392b","#8e5ab5","#7b8791"];
+const MES=["May","Jun","Jul","Ago","Sep","Oct"], VAL=[820,910,880,1010,1100,1204];
+const sv=(w,h,b)=>`<svg viewBox="0 0 ${w} ${h}" style="width:100%;max-width:${w}px;height:auto;font:12px 'Segoe UI',sans-serif;fill:var(--ink)">${b}</svg>`;
+const axis=(w,h)=>`<line x1="40" y1="${h-30}" x2="${w-10}" y2="${h-30}" stroke="var(--line)"/><line x1="40" y1="10" x2="40" y2="${h-30}" stroke="var(--line)"/>`;
+const box=(x,y,w,h,t,i,c=0)=>`<g><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="var(--panel)" stroke="${C[c]}" stroke-width="2"/><image href="Kit_semantico/svg/${i}.svg" x="${x+w/2-14}" y="${y+6}" width="28" height="28"/><text x="${x+w/2}" y="${y+h-8}" text-anchor="middle" font-size="11">${t}</text></g>`;
+const arrow=(x1,y1,x2,y2)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar)"/>`;
+const defs=`<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs>`;
+const pts=(W,H)=>VAL.map((v,i)=>[50+i*(W-70)/5,H-30-(v-700)/(1250-700)*(H-50)]);
+
+const VISTAS={
+ Barras:()=>{const W=520,H=260;return sv(W,H,axis(W,H)+VAL.map((v,i)=>{const h=(v-0)/1300*(H-50);const x=60+i*78;return `<rect x="${x}" y="${H-30-h}" width="46" height="${h}" rx="4" fill="${C[0]}"/><text x="${x+23}" y="${H-12}" text-anchor="middle">${MES[i]}</text><text x="${x+23}" y="${H-36-h}" text-anchor="middle" font-size="11">${v}</text>`}).join(""))},
+ Líneas:()=>{const W=520,H=260,p=pts(W,H);return sv(W,H,axis(W,H)+`<polyline fill="none" stroke="${C[2]}" stroke-width="3" points="${p.map(q=>q.join(",")).join(" ")}"/>`+p.map((q,i)=>`<circle cx="${q[0]}" cy="${q[1]}" r="4" fill="${C[2]}"/><text x="${q[0]}" y="${H-12}" text-anchor="middle">${MES[i]}</text>`).join(""))},
+ Área:()=>{const W=520,H=260,p=pts(W,H);return sv(W,H,axis(W,H)+`<polygon fill="${C[1]}" fill-opacity=".35" stroke="${C[1]}" stroke-width="2" points="${p[0][0]},${H-30} ${p.map(q=>q.join(",")).join(" ")} ${p[5][0]},${H-30}"/>`+p.map((q,i)=>`<text x="${q[0]}" y="${H-12}" text-anchor="middle">${MES[i]}</text>`).join(""))},
+ Dona:()=>{const d=[["Crianza",30],["Desarrollo",25],["Feedlot",35],["Maquila",10]];let a=-Math.PI/2,s="";d.forEach(([n,v],i)=>{const e=a+v/100*2*Math.PI,r=90,x1=150+r*Math.cos(a),y1=130+r*Math.sin(a),x2=150+r*Math.cos(e),y2=130+r*Math.sin(e);s+=`<path d="M${x1} ${y1}A${r} ${r} 0 ${v>50?1:0} 1 ${x2} ${y2}" fill="none" stroke="${C[i]}" stroke-width="34"/><rect x="290" y="${70+i*28}" width="14" height="14" fill="${C[i]}"/><text x="312" y="${82+i*28}">${n} ${v}%</text>`;a=e});return sv(460,260,s+`<text x="150" y="136" text-anchor="middle" font-size="22" font-weight="700">1204</text>`)},
+ Radar:()=>{const ax=["Peso","Sanidad","Consumo","Conversión","Mortalidad","Calidad"],v=[.8,.9,.7,.75,.85,.65],cx=170,cy=130,R=95,P=(i,k)=>[cx+R*k*Math.cos(i/6*2*Math.PI-Math.PI/2),cy+R*k*Math.sin(i/6*2*Math.PI-Math.PI/2)];let s=[.33,.66,1].map(k=>`<polygon fill="none" stroke="var(--line)" points="${ax.map((_,i)=>P(i,k).join(",")).join(" ")}"/>`).join("");s+=ax.map((n,i)=>{const q=P(i,1.18);return `<text x="${q[0]}" y="${q[1]}" text-anchor="middle">${n}</text>`}).join("");s+=`<polygon fill="${C[0]}" fill-opacity=".35" stroke="${C[0]}" stroke-width="2" points="${v.map((k,i)=>P(i,k).join(",")).join(" ")}"/>`;return sv(340,260,s)},
+ "Mapa calor":()=>{const cor=9,sem=6;let s="";for(let r=0;r<cor;r++){s+=`<text x="4" y="${24+r*26}" font-size="11">C-0${r+1}</text>`;for(let c=0;c<sem;c++){const v=((r*7+c*13)%10)/10;s+=`<rect x="${50+c*52}" y="${10+r*26}" width="48" height="22" rx="3" fill="${C[3]}" fill-opacity="${.12+v*.8}"/>`}}for(let c=0;c<sem;c++)s+=`<text x="${74+c*52}" y="${22+cor*26}" text-anchor="middle" font-size="11">S${c+1}</text>`;return sv(380,270,s)},
+ Genealogía:()=>{const n=(x,y,t,i,c)=>box(x,y,96,52,t,i,c);return sv(520,270,defs+arrow(260,70,130,100)+arrow(260,70,390,100)+arrow(130,152,70,190)+arrow(130,152,190,190)+arrow(390,152,330,190)+arrow(390,152,450,190)+n(212,18,"Semental","vaca-estrella",1)+n(82,100,"Madre","vaca",0)+n(342,100,"Padre","vaca-arriba",2)+n(22,190,"Abuela M.","vaca",0)+n(142,190,"Abuelo M.","vaca",2)+n(282,190,"Abuela P.","vaca",0)+n(402,190,"Abuelo P.","vaca",2))},
+ "Mapa mental":()=>{const o=[["Sanidad","botiquin",0],["Alimentación","comedero",1],["Corrales","cerca",2],["Compras","carrito",3],["Reportes","grafico-circular",4],["Pesaje","bascula",5]];let s=defs;o.forEach(([t,i,c],k)=>{const a=k/6*2*Math.PI,x=250+170*Math.cos(a)-48,y=130+95*Math.sin(a)-26;s+=arrow(250,130,x+48,y+26).replace('marker-end="url(#ar)"','')+box(x,y,96,52,t,i,c)});return sv(500,270,s+box(202,104,96,52,"Ganadería","vaca",0))},
+ "Línea tiempo":()=>{const e=[["Recepción","camion-mas"],["Corral","cerca"],["Implante","jeringa"],["Reimplante","jeringa-reloj"],["Pesaje","bascula"],["Venta","etiqueta-dinero"]];return sv(620,170,`<line x1="30" y1="85" x2="590" y2="85" stroke="${C[0]}" stroke-width="4"/>`+e.map(([t,i],k)=>{const x=50+k*100;return `<circle cx="${x}" cy="85" r="7" fill="${C[0]}"/><image href="Kit_semantico/svg/${i}.svg" x="${x-16}" y="${k%2?95:37}" width="32" height="32"/><text x="${x}" y="${k%2?145:30}" text-anchor="middle">${t}</text><text x="${x}" y="${k%2?160:30}" text-anchor="middle" font-size="10" fill="var(--muted)"></text>`}).join(""))},
+ "Flujo proceso":()=>{const f=[["Recepción","camion-mas",0],["Corral","cerca-mas",0],["Sanidad","botiquin",3],["Implante","jeringa",3],["Alimentación","comedero",1],["Pesaje","bascula",2],["Venta","etiqueta-dinero",4]];let s=defs;f.forEach(([t,i,c],k)=>{const x=10+k*88;s+=box(x,70,76,56,t,i,c);if(k)s+=arrow(x-12,98,x,98)});s+=`<path d="M470 126 v40 h-300 v-40" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar)"/><text x="320" y="182" text-anchor="middle" fill="var(--muted)">Reimplante / retorno a alimentación</text>`;return sv(630,200,s)},
+ "Flujo trabajo":()=>{const s2=defs+box(10,70,90,56,"Solicitud","documento-mas-azul",2)+arrow(100,98,130,98)+box(130,70,90,56,"Revisión","vaca-lupa",1)+`<polygon points="270,60 320,98 270,136 220,98" fill="var(--panel)" stroke="${C[1]}" stroke-width="2" transform="translate(30,0)"/><text x="300" y="102" text-anchor="middle">¿Aprueba?</text>`+arrow(220,98,250,98)+arrow(350,98,390,98)+box(390,70,90,56,"Aprobado","Aprobar",0)+arrow(480,98,510,98)+box(510,70,90,56,"Ejecutado","Confirmar",0)+`<path d="M300 136 v34 h-190 v-44" fill="none" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar)"/><text x="205" y="164" text-anchor="middle" fill="var(--warn)">No: devolver</text><text x="372" y="92" fill="var(--brand)">Sí</text>`;return sv(620,190,s2)},
+ Movimientos:()=>{const c=["C-01","C-02","C-03","C-04"];let s=defs;c.forEach((t,k)=>s+=box(20+k*140,30,100,56,t,"cerca",k%3)+box(20+k*140,170,100,56,"Destino "+(k+1),"cerca-check",(k+1)%3));[[0,1,3],[1,3,2],[2,0,1],[3,2,4]].forEach(([a,b,w])=>{s+=`<line x1="${70+a*140}" y1="86" x2="${70+b*140}" y2="170" stroke="${C[2]}" stroke-width="${w}" stroke-opacity=".6" marker-end="url(#ar)"/>`});return sv(600,250,s)}
+};
+function showAnalysis(t,i){
+  const k=["Barras","Líneas","Área","Dona","Radar","Mapa calor"].includes(t)?"Gráficas":["Genealogía","Mapa mental","Línea tiempo"].includes(t)?"Diagramas":"Flujos";
+  state.nav="__m"; renderNav();
+  $("work").innerHTML=`<div class="card"><h3>${ic(i)}${k} › ${t}</h3><div style="padding:16px;overflow:auto">${VISTAS[t]()}</div></div>
+  <div class="card"><h3>${ic("DiagramaFlujo")}Vista combinada: flujo con indicadores</h3><div style="padding:16px;overflow:auto">${VISTAS["Flujo proceso"]()}</div></div>`;
+}
+function showModule(t,i){
+  state.nav="__m"; renderNav();
+  $("work").innerHTML = `<div class="card"><h3>${ic(i)}${t}</h3>
+    <div class="bar"><span style="color:var(--muted)">Módulo «${t}» — datos simulados</span></div>
+    <div class="scroll">${tabla()}</div></div>`;
+  bindTabla();
+}
+
+function isDark(){const t=document.documentElement.dataset.theme;return t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches}
+function paintTheme(){$("theme").textContent=isDark()?"☀️ Claro":"🌙 Oscuro"}
+try{const s=localStorage.getItem("tema");if(s)document.documentElement.dataset.theme=s}catch(e){}
+$("theme").onclick=()=>{const n=isDark()?"light":"dark";document.documentElement.dataset.theme=n;try{localStorage.setItem("tema",n)}catch(e){}paintTheme()};
+paintTheme();
+
+renderTabs(); renderRibbon(); renderNav(); renderWork();
+</script>
+</body>
+</html>
