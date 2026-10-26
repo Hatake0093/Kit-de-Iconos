@@ -118,6 +118,7 @@ lápida, matraz, arete-rfid, BaseDatos…). Excepciones por icono: `arete-rfid-x
 | `etiqueta-*` | Ámbar `#F3AD43` | Por significado |
 | `cerca-*` | Azul marino y verde `#24AC88` | Verde |
 | `camion-*` | Ámbar `#F3AD43` | Ámbar |
+| `bascula-camion-*` | Camión ámbar y cabina marino sobre plataforma azul `#378CE7` | Por significado (`lista` azul) |
 | `jeringa-*` | Morado `#8870D4` | Morado |
 | `implantador-*` | Rosa `#E56876`, gatillo marino y aguja gris | Por significado |
 | `cruz-*` | Rosa `#E56876` | Rosa |
