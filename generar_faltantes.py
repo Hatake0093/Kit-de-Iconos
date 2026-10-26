@@ -37,10 +37,11 @@ COLORES_INSIGNIAS_VACA = {
 COLOR_POR_SIMBOLO = {"mas": VERDE, "check": VERDE, "menos": ROJO, "x": ROJO, "alerta": AMBAR,
                      "estrella": AMBAR, "lupa": AZUL, "lista": AZUL, "flecha": AZUL, "reloj": MORADO}
 COLOR_POR_SIMBOLO.update({"dolar": VERDE, "circulo": MORADO, "arriba": VERDE, "abajo": ROJO, "codigo": AZUL, "gota": AZUL})
+COLOR_POR_SIMBOLO.update({"documento": AZUL, "arribaYabajo": AZUL, "reporte": AZUL})
 # los nombres usan "bajada/subida" y la tabla por simbolo usa "abajo/arriba": se asignan a mano
 COLORES_INSIGNIAS_VACA.update({"documento-bajada": ROJO, "comedero-bajada": ROJO, "comedero-subida": VERDE})
 for _familia in ("calendario", "etiqueta", "documento", "usuario", "barras", "comedero", "saco", "carrito",
-                 "lapida", "matraz", "arete-rfid", "BaseDatos", "billete", "implantador"):
+                 "lapida", "matraz", "arete-rfid", "BaseDatos", "billete", "implantador", "indicador", "camion-mixer"):
     COLORES_INSIGNIAS_VACA.update({f"{_familia}-{s}": c for s, c in COLOR_POR_SIMBOLO.items()})
 
 
@@ -77,6 +78,17 @@ SIMBOLOS = {
     "lupa": ('<ellipse cx="25" cy="25" rx="2.3" ry="2.3" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>'
              + pl("26.7,26.7 28.7,28.7")),
     "x": pl("23,23 28,28") + pl("28,23 23,28"),
+    # ajuste en ambos sentidos: flecha que sube y flecha que baja, lado a lado
+    "arribaYabajo": (pl("23.6,28.5 23.6,22.5") + pl("22,24 23.6,22.5 25.2,24")
+                     + pl("27.4,22.5 27.4,28.5") + pl("25.8,27 27.4,28.5 29,27")),
+    # reporte: la misma hoja con una linea de tendencia marino en vez de renglones
+    "reporte": ('<polygon points="23.2,22 26.4,22 28,23.6 28,29 23.2,29" fill="#FFFFFF"/>'
+                '<polyline points="24.2,27.6 25.4,25.9 26.3,26.7 27.5,24.5" fill="none" stroke="#24465B" '
+                'stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>'),
+    # hoja con esquina cortada y dos renglones marino (como los ojos de "vaca")
+    "documento": ('<polygon points="23.2,22 26.4,22 28,23.6 28,29 23.2,29" fill="#FFFFFF"/>'
+                  '<polyline points="24.3,25.1 26.9,25.1" fill="none" stroke="#24465B" stroke-width="0.9" stroke-linecap="round"/>'
+                  '<polyline points="24.3,27.1 26.9,27.1" fill="none" stroke="#24465B" stroke-width="0.9" stroke-linecap="round"/>'),
     "circulo": '<ellipse cx="25.5" cy="25.5" rx="1.5" ry="1.5" fill="#FFFFFF"/>',
     "alerta": pl("25.5,22.4 25.5,26.4") + pl("25.5,28.2 25.5,28.3", 1.8),
     "reloj": pl("25.2,22.3 25.2,25.8 28,25.8"),
@@ -253,15 +265,8 @@ SELECCIONAR_TODOS = ('<rect x="10" y="3" width="19" height="19" rx="4" fill="#CF
                      '<polyline points="7.5,19.5 11.5,23.5 18,15.5" fill="none" stroke="#FFFFFF" stroke-width="2.4" '
                      'stroke-linecap="round" stroke-linejoin="round"/>')
 
-# visor de bascula programable: cuerpo azul marino, pantalla clara con digitos y tres teclas
-INDICADOR = ('<rect x="9" y="26" width="14" height="3" rx="1" fill="#24465B"/>'
-             '<rect x="3" y="5" width="26" height="21" rx="4" fill="#24465B"/>'
-             '<rect x="6" y="8" width="20" height="10" rx="2" fill="#E2F2F5"/>'
-             '<rect x="9" y="10.5" width="4.4" height="5" rx="1" fill="none" stroke="#24465B" stroke-width="1.5"/>'
-             '<rect x="15.4" y="10.5" width="4.4" height="5" rx="1" fill="none" stroke="#24465B" stroke-width="1.5"/>'
-             '<rect x="22" y="14.2" width="1.8" height="1.8" rx="0.4" fill="#24465B"/>'
-             f'<circle cx="9.5" cy="22" r="1.6" fill="{AZUL}"/><circle cx="14.5" cy="22" r="1.6" fill="{VERDE}"/>'
-             f'<circle cx="19.5" cy="22" r="1.6" fill="{AMBAR}"/>')
+# Indicador industrial frontal aprobado: sin soporte ni conectores. Coordenadas 64 × 64.
+INDICADOR = '<!-- Vista frontal limpia: carcasa, pantalla y teclado. -->\n<g transform="translate(-10.25 .15) scale(1.3)">\n<rect x="12" y="5" width="41" height="39" rx="2" fill="#8A949E"/>\n<rect x="13.5" y="6.5" width="38" height="36" rx="2" fill="#24465B"/>\n<rect x="17" y="11" width="31" height="16" rx="1" fill="#1F6FC4"/>\n<!-- Lectura digital 1280, trazada sin depender de una fuente. -->\n<path d="m20 18 2-2v7m4-7h4v3.5h-4V23h4m4-7h4v7h-4Zm0 3.5h4m4-3.5h4v7h-4Z" fill="none" stroke="#E2F2F5" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>\n<path d="M15 29h35" stroke="#8A949E" stroke-width="1.5"/>\n<!-- Teclas numéricas en tres columnas. -->\n<g fill="#E2F2F5">\n<circle cx="34" cy="32" r="1.3"/><circle cx="40" cy="32" r="1.3"/><circle cx="46" cy="32" r="1.3"/>\n<circle cx="34" cy="36" r="1.3"/><circle cx="40" cy="36" r="1.3"/><circle cx="46" cy="36" r="1.3"/>\n<circle cx="34" cy="40" r="1.3"/><circle cx="40" cy="40" r="1.3"/><circle cx="46" cy="40" r="1.3"/>\n<path d="m19 31-1.5 2h3Zm0 9-1.5-2h3Zm-5-4.5 2-1.5v3Zm10 0-2-1.5v3Z"/>\n</g>\n<circle cx="19" cy="35.5" r="1.8" fill="#E56876"/>\n<circle cx="28" cy="32" r="1.3" fill="#E56876"/>\n<circle cx="28" cy="36" r="1.3" fill="#378CE7"/>\n<circle cx="28" cy="40" r="1.3" fill="#F3AD43"/>\n<g fill="#E2F2F5"><circle cx="15.5" cy="8.5" r="1"/><circle cx="49.5" cy="8.5" r="1"/><circle cx="15.5" cy="40.5" r="1"/><circle cx="49.5" cy="40.5" r="1"/></g>\n</g>'
 
 # forraje: dos hojas redondeadas (una en tinte claro) sobre un tallo corto
 HOJA = (f'<path d="M16 24 C8 24 4 17 6 9 C14 9 18 16 16 24 Z" fill="#7AD3B8"/>'
@@ -292,7 +297,17 @@ IMPLANTADOR = (
     '<rect x="19.1" y="10.3" width="5.4" height="2.5" rx="0.5" fill="#E2F2F5"/>'
 )
 
+def interior_64(nombre):
+    """Cuerpo de un SVG de 64 x 64 sin <title>, <desc> ni comentarios (los reescribe generar_svg)."""
+    t = re.sub(r"<!--.*?-->|<title.*?</title>|<desc.*?</desc>", "", interior(nombre), flags=re.S)
+    return re.sub(r">\s+<", "><", t).strip()
+
+
+# camion mixer aprobado (viewBox 64): se reutiliza tal cual como cuerpo de la familia
+CAMION_MIXER = interior_64("camion-mixer")
+
 BASES = {
+    "camion-mixer": (CAMION_MIXER, ROJO),
     "implantador": (IMPLANTADOR, ROJO),
     "hoja": (HOJA, VERDE), "espiga": (ESPIGA, AMBAR),
     "indicador": (INDICADOR, AZUL),
@@ -404,6 +419,12 @@ NUEVOS = [
       for b in ("indicador", "medidor")
       for s in ("mas", "menos", "check", "x", "lista", "lupa", "alerta", "reloj")],
     ("medidor-arriba", "medidor", "arriba"),
+    ("indicador-flecha", "indicador", "flecha"),
+    # camion mixer (base aprobada en camion-mixer.svg; no se regenera) y su familia
+    *[(f"camion-mixer-{s}", "camion-mixer", s)
+      for s in ("mas", "menos", "check", "x", "lista", "lupa", "flecha", "reloj", "alerta", "documento")],
+    # comedero: ajuste en ambos sentidos
+    ("comedero-arribaYabajo", "comedero", "arribaYabajo"),
 ]
 # colores de insignia que no salen de la tabla por simbolo
 COLORES_INSIGNIAS_VACA.update({
@@ -420,15 +441,34 @@ COLORES_INSIGNIAS_VACA.update({
 })
 
 
+# bases dibujadas en 64 x 64: (titulo, escala y desplazamiento del cuerpo cuando lleva insignia)
+BASES_64 = {
+    "indicador": ("Indicador digital de pesaje", "translate(0 -1) scale(.78)"),
+    "camion-mixer": ("Camión mixer de alimento", "translate(0 1) scale(.78)"),
+}
+
+
+def generar_svg(nombre, base, simbolo):
+    cuerpo, color = BASES[base]
+    if base == "implantador" and simbolo:
+        cuerpo = '<g transform="translate(0 1) scale(0.86)">' + cuerpo + '</g>'
+    color_insignia = MORADO if simbolo == "reloj" else COLORES_INSIGNIAS_VACA.get(nombre, color)
+    extra = insignia(simbolo, color_insignia) if simbolo else ""
+    if base in BASES_64:
+        titulo, ajuste = BASES_64[base]
+        if simbolo:
+            cuerpo = f'<g transform="{ajuste}">' + cuerpo + '</g>'
+            extra = '<g transform="scale(2)">' + extra + '</g>'
+        titulo += (": " + simbolo if simbolo else "")
+        return ('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="title">'
+                + '<title id="title">' + titulo + '</title>' + cuerpo + extra + '</svg>')
+    return ('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">'
+            + cuerpo + extra + '</svg>')
+
+
 def main():
     for nombre, base, simbolo in NUEVOS:
-        cuerpo, color = BASES[base]
-        if base == "implantador" and simbolo:
-            cuerpo = '<g transform="translate(0 1) scale(0.86)">' + cuerpo + '</g>'
-        color_insignia = MORADO if simbolo == "reloj" else COLORES_INSIGNIAS_VACA.get(nombre, color)
-        extra = insignia(simbolo, color_insignia) if simbolo else ""
-        svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">'
-               + cuerpo + extra + "</svg>")
+        svg = generar_svg(nombre, base, simbolo)
         ruta = os.path.join(KIT, "svg", nombre + ".svg")
         open(ruta, "w", encoding="utf-8").write(svg)
 
@@ -438,6 +478,8 @@ def main():
     open(ruta, "w", encoding="utf-8").write(texto)
 
     print(len(NUEVOS), "iconos generados")
+    import generar_reportes  # -reporte de cada familia, a partir de sus variantes ya generadas
+    generar_reportes.main()
     import generar_vista_previa  # la vista previa vive en su propio script
     generar_vista_previa.main()
 

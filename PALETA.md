@@ -101,13 +101,17 @@ color de radio 5,5 y símbolo blanco de trazo 1,5, **concéntricos en `(25.5, 25
 | Verde `#24AC88` | Sumar, confirmar, valor | `mas`, `check`, `arriba`, `dolar` |
 | Rosa `#E56876` | Quitar, cancelar | `menos`, `x`, `abajo` |
 | Ámbar `#F3AD43` | Atención, destacado | `alerta`, `estrella` |
-| Azul `#378CE7` | Consultar, navegar | `lupa`, `lista`, `flecha`, `gota` |
+| Azul `#378CE7` | Consultar, navegar | `lupa`, `lista`, `flecha`, `gota`, `documento`, `reporte`, `arribaYabajo` |
 | Morado `#8870D4` | Tiempo, historial, marca e identificador | `reloj`, `circulo` |
 
 La regla está en `COLOR_POR_SIMBOLO` de `generar_faltantes.py` y se aplica a las familias listadas en
 `COLORES_INSIGNIAS_VACA` (calendario, etiqueta, documento, usuario, barras, comedero, saco, carrito,
 lápida, matraz, arete-rfid, BaseDatos…). Excepciones por icono: `arete-rfid-x` (`#B9472B`) y
 `GuardarCerrar` (azul, para distinguirla del cuerpo verde). La familia `vaca-*` la tiene en su propia tabla (`COLORES_INSIGNIAS_VACA`).
+
+Variante `-reporte`: hoja blanca con línea de tendencia marino, insignia azul. La generan
+`generar_reportes.py` (29 familias, sin `documento`, que ya es un reporte) a partir de otra variante de la
+misma familia, así que conserva su escala; `generar_faltantes.py` la llama al final.
 
 ## 5. Color base de cada familia
 
@@ -118,7 +122,9 @@ lápida, matraz, arete-rfid, BaseDatos…). Excepciones por icono: `arete-rfid-x
 | `etiqueta-*` | Ámbar `#F3AD43` | Por significado |
 | `cerca-*` | Azul marino y verde `#24AC88` | Verde |
 | `camion-*` | Ámbar `#F3AD43` | Ámbar |
+| `camion-mixer-*` | Cabina `#E2F2F5`, tolva `#E56876` / `#B94A58`, chasis `#24465B` | Por significado; `documento` azul |
 | `jeringa-*` | Morado `#8870D4` | Morado |
+| `indicador-*` | Carcasa `#8A949E`, panel `#24465B`, pantalla `#1F6FC4` | Por significado; descarga azul, carga verde y reloj morado |
 | `implantador-*` | Rosa `#E56876`, gatillo marino y aguja gris | Por significado |
 | `cruz-*` | Rosa `#E56876` | Rosa |
 | `engranaje-*` | Azul `#378CE7` | Azul |
