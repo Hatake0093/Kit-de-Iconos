@@ -94,12 +94,15 @@ SIMBOLOS = {
     "reloj": pl("25.2,22.3 25.2,25.8 28,25.8"),
     "copiar": ('<rect x="22.6" y="22.2" width="3.6" height="3.6" rx="0.6" fill="none" stroke="#FFFFFF" stroke-width="1.2"/>'
                '<rect x="24.8" y="24.4" width="3.6" height="3.6" rx="0.6" fill="#FFFFFF"/>'),
-    "vaca": (pl("23.7,23.4 23.2,22.5", 1.1) + pl("27.3,23.4 27.8,22.5", 1.1)
-             + '<ellipse cx="22.3" cy="24.9" rx="1.6" ry="0.85" fill="#FFFFFF" transform="rotate(20 22.3 24.9)"/>'
-             + '<ellipse cx="28.7" cy="24.9" rx="1.6" ry="0.85" fill="#FFFFFF" transform="rotate(-20 28.7 24.9)"/>'
-             + '<ellipse cx="25.5" cy="26" rx="2.7" ry="3" fill="#FFFFFF"/>'
-             + '<ellipse cx="24.5" cy="25.2" rx="0.5" ry="0.5" fill="#24465B"/><ellipse cx="26.5" cy="25.2" rx="0.5" ry="0.5" fill="#24465B"/>'
-             + '<ellipse cx="25.5" cy="27.4" rx="1.3" ry="0.9" fill="#24465B"/>'),
+    # vaca de la insignia: los colores de la vaca del kit (cuernos grises, orejas y hocico brahman, cara crema)
+    "vaca": ('<polyline points="23.4,23.3 22.4,21.9" fill="none" stroke="#8A949E" stroke-width="1.1" stroke-linecap="round"/>'
+             '<polyline points="27.6,23.3 28.6,21.9" fill="none" stroke="#8A949E" stroke-width="1.1" stroke-linecap="round"/>'
+             '<ellipse cx="22.2" cy="24.7" rx="1.5" ry="0.85" fill="#B9472B" transform="rotate(20 22.2 24.7)"/>'
+             '<ellipse cx="28.8" cy="24.7" rx="1.5" ry="0.85" fill="#B9472B" transform="rotate(-20 28.8 24.7)"/>'
+             '<ellipse cx="25.5" cy="25.4" rx="2.5" ry="2.9" fill="#F4E1CF"/>'
+             '<ellipse cx="25.5" cy="27.4" rx="1.8" ry="1.1" fill="#B9472B"/>'
+             '<ellipse cx="24.5" cy="24.8" rx="0.45" ry="0.45" fill="#24465B"/><ellipse cx="26.5" cy="24.8" rx="0.45" ry="0.45" fill="#24465B"/>'
+             '<ellipse cx="24.8" cy="27.4" rx="0.3" ry="0.3" fill="#F4E1CF"/><ellipse cx="26.2" cy="27.4" rx="0.3" ry="0.3" fill="#F4E1CF"/>'),
     "arete": ('<path d="M24.3 22.2 H26.7 Q27.6 22.2 27.6 23.1 V27.3 Q27.6 28.4 26.5 28.4 H24.5 Q23.4 28.4 23.4 27.3 V23.1 '
               'Q23.4 22.2 24.3 22.2 Z" fill="#FFFFFF"/><ellipse cx="25.5" cy="23.5" rx="0.6" ry="0.6" fill="#F3AD43"/>'),
     "carrito": (pl("22.6,23 23.9,23 24.9,26.4 28,26.4 28.6,24", 1.3)
