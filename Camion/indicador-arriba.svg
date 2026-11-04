@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">Indicador digital de pesaje: Cargar alimentación</title>
+<g transform="translate(0 -1) scale(.78)"><!-- Vista frontal limpia: carcasa, pantalla y teclado. -->
+<g transform="translate(-10.25 .15) scale(1.3)">
+<rect x="12" y="5" width="41" height="39" rx="2" fill="#8A949E"/>
+<rect x="13.5" y="6.5" width="38" height="36" rx="2" fill="#24465B"/>
+<rect x="17" y="11" width="31" height="16" rx="1" fill="#1F6FC4"/>
+<!-- Lectura digital 1280, trazada sin depender de una fuente. -->
+<path d="m20 18 2-2v7m4-7h4v3.5h-4V23h4m4-7h4v7h-4Zm0 3.5h4m4-3.5h4v7h-4Z" fill="none" stroke="#E2F2F5" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 29h35" stroke="#8A949E" stroke-width="1.5"/>
+<!-- Teclas numéricas en tres columnas. -->
+<g fill="#E2F2F5">
+<circle cx="34" cy="32" r="1.3"/><circle cx="40" cy="32" r="1.3"/><circle cx="46" cy="32" r="1.3"/>
+<circle cx="34" cy="36" r="1.3"/><circle cx="40" cy="36" r="1.3"/><circle cx="46" cy="36" r="1.3"/>
+<circle cx="34" cy="40" r="1.3"/><circle cx="40" cy="40" r="1.3"/><circle cx="46" cy="40" r="1.3"/>
+<path d="m19 31-1.5 2h3Zm0 9-1.5-2h3Zm-5-4.5 2-1.5v3Zm10 0-2-1.5v3Z"/>
+</g>
+<circle cx="19" cy="35.5" r="1.8" fill="#E56876"/>
+<circle cx="28" cy="32" r="1.3" fill="#E56876"/>
+<circle cx="28" cy="36" r="1.3" fill="#378CE7"/>
+<circle cx="28" cy="40" r="1.3" fill="#F3AD43"/>
+<g fill="#E2F2F5"><circle cx="15.5" cy="8.5" r="1"/><circle cx="49.5" cy="8.5" r="1"/><circle cx="15.5" cy="40.5" r="1"/><circle cx="49.5" cy="40.5" r="1"/></g>
+</g></g><g transform="scale(2)"><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF"/><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#24AC88"/><polyline points="25.5,28.5 25.5,22.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="23,25 25.5,22.5 28,25" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

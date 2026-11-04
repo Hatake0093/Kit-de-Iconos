@@ -171,6 +171,36 @@ def aplicar_registro(altas, bajas):
     escribir(VBPROJ, proj, bom)
 
 
+TIPO_BYTE = "System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+
+
+def svg_tipados_byte():
+    """Recursos svg registrados como Byte[]: el compilador los convierte a SvgImage, el disenador de VS no."""
+    resx, _, _ = leer(RESX)
+    patron = (r'<data name="([^"]+)"[^>]*>\s*<value>[.][.]' + re.escape(BS) + "Resources" + re.escape(BS)
+              + r"[^;<]+[.]svg;" + re.escape(TIPO_BYTE))
+    return re.findall(patron, resx)
+
+
+def normalizar_tipos(nombres):
+    """Pasa esos recursos de Byte[] a SvgImage, en el resx y en el Designer."""
+    resx, bom, nl = leer(RESX)
+    resx = re.sub(r"(<value>[.][.]" + re.escape(BS) + "Resources" + re.escape(BS) + r"[^;<]+[.]svg;)"
+                  + re.escape(TIPO_BYTE) + "(</value>)", r"\g<1>" + TIPO_SVG + r"\g<2>", resx)
+    escribir(RESX, resx, bom)
+
+    des, bom, nl = leer(DESIGNER)
+    for nombre in nombres:
+        des = re.sub(r"(        '''  Looks up a localized resource of type )System[.]Byte\[\][.](%s"
+                     r"        '''</summary>%s        Friend ReadOnly Property \w+[(][)] As )Byte[(][)](%s"
+                     r"            Get%s                Dim obj As Object = ResourceManager[.]GetObject\(\"%s\", "
+                     r"resourceCulture\)%s                Return CType[(]obj,)Byte[(][)]([)])"
+                     % (nl, nl, nl, nl, re.escape(nombre), nl),
+                     r"\g<1>DevExpress.Utils.Svg.SvgImage.\g<2>DevExpress.Utils.Svg.SvgImage\g<3>"
+                     r"DevExpress.Utils.Svg.SvgImage\g<4>", des)
+    escribir(DESIGNER, des, bom)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--aplicar", action="store_true", help="ejecutar (sin esto solo simula)")
@@ -224,10 +254,14 @@ def main():
         finales = set(existentes)
     else:
         finales = (set(existentes) - set(a_borrar)) | set(kit)
-    altas, bajas = [], []
+    altas, bajas, byte_t = [], [], []
     if not args.sin_registro:
         altas, bajas, omitidos = planear_registro(set(kit) | previos, finales)
+        byte_t = svg_tipados_byte()
         print(f"Registro:   {len(altas)} por registrar  |  {len(bajas)} por quitar del registro")
+        if byte_t:
+            print(f"Tipos:      {len(byte_t)} svg registrados como Byte[] (el disenador de VS falla con ellos); "
+                  f"se pasan a SvgImage")
         for base, falta in altas[:10]:
             print(f"  + {base}  (falta en: {', '.join(falta)})")
         if len(altas) > 10:
@@ -267,16 +301,21 @@ def main():
         MANIFIESTO.write_text("\n".join(sorted(kit)) + "\n", encoding="utf-8")
         print(f"Listo: {len(kit)} svg copiados a {RES}")
 
-    if not args.sin_registro and (altas or bajas):
+    if not args.sin_registro and (altas or bajas or byte_t):
         if not args.sin_respaldo:
             dest = RESPALDO_REGISTRO / datetime.now().strftime("%Y%m%d_%H%M%S")
             dest.mkdir(parents=True)
             for p in (RESX, DESIGNER, VBPROJ):
                 shutil.copy2(p, dest / p.name)
             print(f"Respaldo de resx / Designer / vbproj: {dest}")
-        aplicar_registro(altas, bajas)
-        print(f"Registro aplicado: +{len(altas)} / -{len(bajas)} en Resources.resx, "
-              f"Resources.Designer.vb y ControlGanaderoPro.vbproj")
+        if altas or bajas:
+            aplicar_registro(altas, bajas)
+            print(f"Registro aplicado: +{len(altas)} / -{len(bajas)} en Resources.resx, "
+                  f"Resources.Designer.vb y ControlGanaderoPro.vbproj")
+        pendientes = svg_tipados_byte()
+        if pendientes:
+            normalizar_tipos(pendientes)
+            print(f"Tipos normalizados: {len(pendientes)} svg de Byte[] a SvgImage")
         print("Si Visual Studio tiene el proyecto abierto, acepta 'Recargar' cuando lo pida.")
     elif not args.sin_registro:
         print("Registro: ya estaba todo al dia.")

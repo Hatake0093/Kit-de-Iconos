@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Camión mixer de alimento</title>
+  <desc id="desc">Camión de cabina clara orientado hacia la izquierda, con mezcladora de tolva roja montada sobre el chasis, escalera amarilla y dos ejes traseros.</desc>
+  <!-- Un chasis continuo sostiene la cabina y la mezcladora. -->
+  <path d="M3 42h58v6H3Z" fill="#24465B"/>
+  <rect x="22" y="45" width="11" height="5" rx="1.5" fill="#8A949E"/>
+  <path d="M25 46v3m5-3v3" stroke="#E2F2F5" stroke-width="1.5"/>
+  <!-- Tolva más baja: el borde superior queda al nivel del techo de la cabina. -->
+  <path d="M30 22.8h33l-4 14.2c-.4 2-2 4-5 4H39c-3 0-5-2-5.5-4Z" fill="#E56876"/>
+  <path d="M56 24h7l-4 13c-.4 2-2 4-5 4h-3c3-6 4-9 5-17Z" fill="#B94A58"/>
+  <ellipse cx="46.5" cy="22.8" rx="16.5" ry="3.6" fill="#24465B"/>
+  <ellipse cx="46.5" cy="22.3" rx="13.3" ry="1.5" fill="#B94A58"/>
+  <path d="M34 40h27v4H34Z" fill="#B94A58"/>
+  <path d="M38 43v-2c0-1 1-2 2-2h19c1 0 2 1 2 2v2Z" fill="#B94A58"/>
+  <!-- Cabina de capó largo y parabrisas oscuro. -->
+  <path d="M2 37c0-1 1-2 2-2l9-3 2-9c.3-2 1.5-3 3-3h5c1.5 0 2 1 2 3v22H2Z" fill="#E2F2F5" stroke="#24465B" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="m17 24-1.5 8H22v-8Z" fill="#24465B"/>
+  <path d="m4 35 9-3-.5 3-9 3Z" fill="#8A949E"/>
+  <path d="M15 35v7m5-6h2" fill="none" stroke="#8A949E" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="2" y="38" width="3" height="3" rx="1" fill="#F3AD43"/>
+  <path d="M1.5 45h4" stroke="#24465B" stroke-width="3" stroke-linecap="round"/>
+  <!-- Escalera y plataforma entre cabina y tolva. -->
+  <path d="M27 24v21m4-21v21m-4-18h4m-4 6h4m-4 6h4m-5 6h7" fill="none" stroke="#F3AD43" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M34 29h5v9h-5Z" fill="#B94A58"/>
+  <path d="M35.5 31v4" stroke="#F3AD43" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Eje delantero y tándem trasero. -->
+  <circle cx="11" cy="48" r="7" fill="#24465B"/>
+  <circle cx="11" cy="48" r="3" fill="#E2F2F5"/>
+  <circle cx="11" cy="48" r="1.2" fill="#8A949E"/>
+  <circle cx="43" cy="49" r="6" fill="#24465B"/>
+  <circle cx="43" cy="49" r="2.6" fill="#E2F2F5"/>
+  <circle cx="43" cy="49" r="1" fill="#8A949E"/>
+  <circle cx="57" cy="49" r="6" fill="#24465B"/>
+  <circle cx="57" cy="49" r="2.6" fill="#E2F2F5"/>
+  <circle cx="57" cy="49" r="1" fill="#8A949E"/>
+</svg>

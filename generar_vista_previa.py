@@ -18,11 +18,15 @@ KIT = os.path.join(AQUI, "simulador de control ganadero", "Kit_semantico")
 INKSCAPE = r"C:\Program Files\Inkscape\bin\inkscape.exe"
 # Secciones de la vista previa, en orden. Cada una lista las familias (primera palabra del nombre, sin
 # plural) y/o los iconos sueltos que le pertenecen. Lo que no aparezca aqui queda en "Otros".
+MIXER_ACCIONES = {"mas": "Agregar", "menos": "Quitar", "check": "Confirmar", "x": "Cancelar", "lista": "Listado",
+                  "lupa": "Buscar", "flecha": "Enviar", "reloj": "Historial", "alerta": "Alerta",
+                  "documento": "Documento remisión receta ración", "reporte": "Reporte informe resumen"}
+CAMION_MIXER = ["camion-mixer"] + [f"camion-mixer-{s}" for s in MIXER_ACCIONES]
 SECCIONES = {
     "Ganado": {"familias": "vaca arete etiqueta", "iconos": "lapida lapida-alerta AsignarArete carnic"},
     "Partos y reproducción": {"familias": "ternero huella crianza"},
     "Corrales y finca": {"familias": "corral cerca mapa"},
-    "Alimentación": {"familias": "comedero saco hoja espiga"},
+    "Alimentación": {"familias": "comedero saco hoja espiga", "iconos": " ".join(CAMION_MIXER)},
     "Medición y pesaje": {"familias": "bascula indicador medidor regla porcentaje"},
     "Sanidad": {"familias": "jeringa implantador botiquin cruz frasco"},
     "Laboratorio": {"familias": "laboratorio matraz"},
@@ -57,6 +61,7 @@ FAMILIA_FORZADA.update({n: "laboratorio" for n in "Calculadora gota-agua".split(
 SECCION_DE_ICONO = {n: s for s, d in SECCIONES.items() for n in d.get("iconos", "").split()}
 SECCION_DE_FAMILIA = {f: s for s, d in SECCIONES.items() for f in d.get("familias", "").split()}
 PALABRAS_CLAVE = {
+    "camion-mixer": "camión mixer mezcladora alimento ración tolva reparto alimentación",
     "carnic": "carnic bovino silueta roja ganado vaca tierra verde",
     "hoja-flecha": "cambiar dieta alimentación forraje hoja flecha",
     "crianza": "crianza madre cría vaca ternero familia nacimiento parto",
@@ -66,6 +71,11 @@ PALABRAS_CLAVE = {
     "huella-luna-cuna": "historial partos nacimiento cría pezuña luna cuna pesebre nocturno",
     "ternero-reloj-registro": "registro nacimiento parto ternero gestación reloj arena confirmar",
 }
+PALABRAS_CLAVE.update({f"camion-mixer-{s}": f"camión mixer mezcladora alimento ración tolva reparto alimentación {a}"
+                       for s, a in MIXER_ACCIONES.items()})
+PALABRAS_CLAVE["comedero-arribaYabajo"] = "comedero ajustar subir bajar aumentar reducir ración cantidad alimentación"
+PALABRAS_CLAVE.update({nombre: "indicador pesaje báscula balanza terminal industrial pantalla teclado " + accion
+                       for nombre, accion in {'indicador': 'Indicador', 'indicador-arriba': 'Cargar alimentación', 'indicador-abajo': 'Descargar datos', 'indicador-mas': 'Agregar', 'indicador-menos': 'Quitar', 'indicador-check': 'Confirmar', 'indicador-x': 'Cancelar', 'indicador-lista': 'Listado', 'indicador-lupa': 'Buscar', 'indicador-flecha': 'Enviar', 'indicador-reloj': 'Historial', 'indicador-alerta': 'Alerta'}.items()})
 PALABRAS_CLAVE.update({nombre: "cerca corral postes tablones cerramiento " + nombre.replace("-", " ")
                        for nombre in ['cerca-check', 'cerca-circulo', 'cerca-estrella', 'cerca-flecha', 'cerca-intercambio', 'cerca-lista', 'cerca-lupa', 'cerca-mas', 'cerca-menos', 'cerca-pin', 'cerca-reloj', 'cerca-x', 'cerca']})
 PALABRAS_CLAVE.update({nombre: f"{titulo} {accion} corral cerca postes tablones puerta reja tierra sin ganado"
@@ -112,7 +122,7 @@ def main():
         por_seccion.setdefault(s, []).append(n)
     grupos = [(s, por_seccion[s]) for s in list(SECCIONES) + ["Otros"] if s in por_seccion]
 
-    datos = [{"t": t, "i": [[n, ", ".join(uso.get(n, [])), PALABRAS_CLAVE.get(n, "")] for n in v]} for t, v in grupos]
+    datos = [{"t": t, "i": [[n, ", ".join(uso.get(n, [])), (PALABRAS_CLAVE.get(n, "") + (" reporte informe resumen" if n.endswith("-reporte") else "")).strip()] for n in v]} for t, v in grupos]
     pagina = PLANTILLA.replace("__DATA__", json.dumps(datos, ensure_ascii=False, separators=(",", ":")))
     pagina = pagina.replace("__TOTAL__", str(len(nombres)))
     with open(os.path.join(KIT, "vista_previa.html"), "w", encoding="utf-8") as f:
