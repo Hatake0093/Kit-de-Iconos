@@ -159,6 +159,8 @@ USUARIOS = ('<circle cx="22" cy="9.5" r="4" fill="#378CE7"/>'
 COMEDERO = ('<path d="M7 14 C9 8 13 9 16 11 C19 9 23 8 25 14 Z" fill="#F3AD43"/>'
             '<polygon points="5,17 27,17 24.5,27.5 7.5,27.5" fill="#378CE7"/>'
             '<rect x="3" y="14" width="26" height="3.4" rx="1.7" fill="#24465B"/>')
+# comedero de concreto aprobado (viewBox 64, sin la barra de lectura): cuerpo de la familia comedero-*
+COMEDERO_64 = ('<path d="M4 35L29 18L59 28V42L34 60L4 49Z" fill="#8A949E"/><path d="M4 35L29 18L59 28L34 46Z" fill="#E2F2F5"/><path d="M10 34L30 22L52 29L32 42Z" fill="#24465B"/><path d="M10 34L30 22L32 27L17 36Z" fill="#B0BEC5"/><path d="M18 35L35 26L46 30L31 39Z" fill="#F3AD43"/><path d="M4 35L34 46V60L4 49Z" fill="#B0BEC5"/><path d="M34 46L59 28V32L34 50Z" fill="#CFD8DC"/><path d="M45 42L47 40.5V51L45 52.5Z" fill="#B0BEC5"/>')
 # saco de alimento: ambar con cuello atado y etiqueta clara con una espiga
 SACO = ('<path d="M10 5 H22 L20.5 9.5 C26 12 27 20 25.5 25 C24.5 28 22 29 20 29 H12 C10 29 7.5 28 6.5 25 '
         'C5 20 6 12 11.5 9.5 Z" fill="#F3AD43"/>'
@@ -323,7 +325,7 @@ BASES = {
     "documento": (DOCUMENTO, AZUL), "usuario": (USUARIO, VERDE), "usuarios": (USUARIOS, VERDE),
     "barras": (f'<g transform="scale(0.6667)">{interior("GraficaBarras")}</g>', VERDE),
     "bascula": (interior("bascula"), AZUL),
-    "comedero": (COMEDERO, AMBAR), "saco": (SACO, AMBAR), "carrito": (CARRITO, VERDE),
+    "comedero": (COMEDERO_64, AMBAR), "saco": (SACO, AMBAR), "carrito": (CARRITO, VERDE),
     "lapida": (LAPIDA, ROJO), "matraz": (MATRAZ, MORADO),
     "BaseDatos": (f'<g transform="scale(0.6667)">{interior("BaseDatos")}</g>', MORADO),
     "arete-rfid": (ARETE_RFID, AMBAR), "medidor": (MEDIDOR, AZUL),
@@ -446,6 +448,7 @@ COLORES_INSIGNIAS_VACA.update({
 
 # bases dibujadas en 64 x 64: (titulo, escala y desplazamiento del cuerpo cuando lleva insignia)
 BASES_64 = {
+    "comedero": ("Comedero de concreto", "translate(1 -6) scale(.78)"),
     "indicador": ("Indicador digital de pesaje", "translate(0 -1) scale(.78)"),
     "camion-mixer": ("Camión mixer de alimento", "translate(0 1) scale(.78)"),
 }

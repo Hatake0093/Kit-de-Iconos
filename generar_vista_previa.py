@@ -23,10 +23,10 @@ MIXER_ACCIONES = {"mas": "Agregar", "menos": "Quitar", "check": "Confirmar", "x"
                   "documento": "Documento remisión receta ración", "reporte": "Reporte informe resumen"}
 CAMION_MIXER = ["camion-mixer"] + [f"camion-mixer-{s}" for s in MIXER_ACCIONES]
 SECCIONES = {
-    "Ganado": {"familias": "vaca arete etiqueta", "iconos": "lapida lapida-alerta AsignarArete carnic"},
+    "Ganado": {"familias": "vaca arete etiqueta", "iconos": "lapida lapida-alerta AsignarArete carnic identificaciones-cedula-vaca identificaciones-hierro"},
     "Partos y reproducción": {"familias": "ternero huella crianza"},
     "Corrales y finca": {"familias": "corral cerca mapa"},
-    "Alimentación": {"familias": "comedero saco hoja espiga", "iconos": " ".join(CAMION_MIXER)},
+    "Alimentación": {"familias": "comedero saco hoja espiga", "iconos": " ".join(CAMION_MIXER) + " cargador-frontal-hexagono-integrado comedero-concreto-perspectiva"},
     "Medición y pesaje": {"familias": "bascula indicador medidor regla porcentaje"},
     "Sanidad": {"familias": "jeringa implantador botiquin cruz frasco"},
     "Laboratorio": {"familias": "laboratorio matraz"},

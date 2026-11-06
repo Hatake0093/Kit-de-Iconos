@@ -27,6 +27,7 @@ Uso:
 """
 import argparse
 import re
+import os
 import shutil
 import sys
 from datetime import datetime
@@ -34,7 +35,7 @@ from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
 KIT = AQUI / "simulador de control ganadero" / "Kit_semantico" / "svg"
-PROYECTO = AQUI.parent / "ControlGanadero"
+PROYECTO = Path(os.environ.get("CONTROLGANADERO", AQUI.parent / "ControlGanadero"))
 RES = PROYECTO / "Resources"
 MANIFIESTO = RES / ".kit_manifest.txt"
 RESX = PROYECTO / "My Project" / "Resources.resx"
