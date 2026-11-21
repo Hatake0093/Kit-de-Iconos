@@ -44,6 +44,8 @@ COLORES_INSIGNIAS_VACA.update({"documento-bajada": ROJO, "comedero-bajada": ROJO
 for _familia in ("calendario", "etiqueta", "documento", "usuario", "barras", "comedero", "saco", "carrito",
                  "lapida", "matraz", "arete-rfid", "BaseDatos", "billete", "implantador", "indicador", "camion-mixer"):
     COLORES_INSIGNIAS_VACA.update({f"{_familia}-{s}": c for s, c in COLOR_POR_SIMBOLO.items()})
+    # los nombres usan "dinero" y la tabla por simbolo usa "dolar"
+    COLORES_INSIGNIAS_VACA[f"{_familia}-dinero"] = COLOR_POR_SIMBOLO["dolar"]
 
 
 # glifo del dolar tomado de flat-color-icons/svg/currency_exchange.svg (caja 11.2x21.4, centro 30.1,30.0)
