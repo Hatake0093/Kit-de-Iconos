@@ -24,9 +24,9 @@ SISTEMA = {
     # paleta base y derivadas
     "24465B", "378CE7", "24AC88", "F3AD43", "E56876", "8870D4", "E2F2F5", "1B7F65", "C98A1B", "B94A58",
     # vaca brahman
-    "B9472B", "F4E1CF", "8A949E", "EDE6D6",
+    "907B6C", "B9472B", "F4E1CF", "8A949E", "EDE6D6",
     # cria de la vaca brahman (tonos aclarados)
-    "DE9477", "FBF1E6", "F19EA8",
+    "B19D8D", "FBF1E6", "D3BFAE",
     # calendario
     "F44336", "B71C1C", "CFD8DC", "B0BEC5", "90A4AE",
 }

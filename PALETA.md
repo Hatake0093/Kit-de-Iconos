@@ -31,11 +31,10 @@ revisan a ojo en la vista previa.
 | Azul marino | `#24465B` | Contornos, ruedas, cuencas, detalles oscuros. Es el hilo que une al kit |
 | Azul | `#378CE7` | Acciones de consulta y navegación, flechas, gráficas, engranaje, nube |
 | Verde | `#24AC88` | Sumar, confirmar, corral, mapa, gráficas |
-| Ámbar | `#F3AD43` | Avisos, camión, etiqueta, carpetas |
+| Ámbar | `#F3AD43` | Avisos, camión, etiqueta, carpetas y placas de aretes convencionales y RFID |
 | Rosa | `#E56876` | Quitar, cancelar, errores, sanidad (cruz) |
 | Morado | `#8870D4` | Jeringa y el punto de "círculo" |
 | Claro | `#E2F2F5` | Relleno claro (cara de la jeringa, cuerpos de papel) |
-| Amarillo arete | `#F7CF3D` | Solo la familia `arete-*` y `arete-rfid-*` (placa amarilla, como la real). Distinto del ámbar a propósito |
 
 ### Variantes derivadas
 
@@ -50,11 +49,16 @@ Solo para trazos o detalles que necesitan más contraste sobre fondo blanco.
 
 ## 2. Vaca brahman (firma propia)
 
-Toda la familia `vaca-*` usa esta paleta y **no se normaliza**.
+La cabeza de referencia es [vaca.svg](simulador%20de%20control%20ganadero/Kit_semantico/svg/vaca.svg),
+variante B aprobada en la prueba de reconocimiento a 32 px. Las orejas se abren hacia los lados y
+caen en las puntas. Los cuernos tienen una base ancha junto a la frente y se curvan hacia fuera
+y hacia arriba hasta terminar en punta, con espacio visible entre el cuerno y la oreja. La mancha de la frente termina por encima de los ojos para que ambos se lean
+sobre la cara crema. Las variantes con insignia reutilizan esta cabeza. La familia `vaca-*` está
+excluida de la normalización automática.
 
 | Parte | Hex |
 |---|---|
-| Cuerpo, orejas, hocico, insignia por defecto | `#B9472B` |
+| Pelaje castaño grisáceo (mancha, orejas y hocico) | `#907B6C` |
 | Cara | `#F4E1CF` |
 | Cuernos | `#8A949E` |
 | Hueso (`vaca-calavera`) | `#EDE6D6` |
@@ -63,17 +67,18 @@ Los ojos y la nariz son azul marino `#24465B`.
 
 ### Cría (ternero)
 
-El ternero se dibuja con los mismos tonos de la vaca pero **aclarados**, para que se distinga de la
-madre en `crianza`. Solo se usan en la cría; la madre conserva la tabla de arriba.
+En `crianza`, la madre usa el castaño grisáceo y el crema de la cabeza brahman.
+El pelaje de la cría se aclara mezclando esos dos colores. Ambos animales llevan
+ojos y nariz en azul marino `#24465B`.
 
-| Parte | Hex | Equivale a |
+| Parte | Madre | Cría |
 |---|---|---|
-| Manchas, orejas y hocico | `#DE9477` | `#B9472B` aclarado |
-| Cara | `#FBF1E6` | `#F4E1CF` aclarado |
-| Interior de las orejas | `#F19EA8` | `#E56876` aclarado |
+| Manchas, orejas y hocico | `#907B6C` | `#B19D8D` |
+| Cara | `#F4E1CF` | `#FBF1E6` |
+| Interior de las orejas | `#B19D8D` | `#D3BFAE` |
 
-`#DE9477` es de la familia del brahman (naranja-terracota), no del rosa `#E56876`, aunque en RGB quede
-cerca de él. Los ojos y la nariz siguen en `#24465B`.
+Los tintes `#B19D8D` y `#D3BFAE` mezclan el castaño con un tercio y dos tercios
+de crema, respectivamente, en los canales RGB.
 
 ## 3. Calendario (excepción)
 
@@ -106,7 +111,7 @@ color de radio 5,5 y símbolo blanco de trazo 1,5, **concéntricos en `(25.5, 25
 
 La regla está en `COLOR_POR_SIMBOLO` de `generar_faltantes.py` y se aplica a las familias listadas en
 `COLORES_INSIGNIAS_VACA` (calendario, etiqueta, documento, usuario, barras, comedero, saco, carrito,
-lápida, matraz, arete-rfid, BaseDatos…). Excepciones por icono: `arete-rfid-x` (`#B9472B`) y
+lápida, matraz, arete-rfid, BaseDatos…). Excepciones por icono: `arete-rfid-x` y `vaca-x` (insignia terracota `#B9472B`) y
 `GuardarCerrar` (azul, para distinguirla del cuerpo verde). La familia `vaca-*` la tiene en su propia tabla (`COLORES_INSIGNIAS_VACA`).
 
 Variante `-reporte`: hoja blanca con línea de tendencia marino, insignia azul. La generan
@@ -117,7 +122,7 @@ misma familia, así que conserva su escala; `generar_faltantes.py` la llama al f
 
 | Familia | Color del cuerpo | Insignia |
 |---|---|---|
-| `vaca-*` | Brahman `#B9472B` | Por significado |
+| `vaca-*` | Pelaje brahman `#907B6C` y cara crema `#F4E1CF` | Por significado, con la excepción de `vaca-x` |
 | `calendario-*` | Cabecera `#F44336` | Por significado |
 | `etiqueta-*` | Ámbar `#F3AD43` | Por significado |
 | `cerca-*` | Azul marino y verde `#24AC88` | Verde |
@@ -130,7 +135,7 @@ misma familia, así que conserva su escala; `generar_faltantes.py` la llama al f
 | `engranaje-*` | Azul `#378CE7` | Azul |
 | `nube-*` | Azul claro `#9CC6F2` | Azul |
 | `mapa`, `mapa-pin` | Verde `#24AC88` | Verde |
-| `arete-*`, `arete-rfid-*` | Amarillo `#F7CF3D` + contorno marino, ondas azules | Por significado |
+| `arete-*`, `arete-rfid-*` | Placa ámbar `#F3AD43`, contorno marino y ondas azules en RFID | Por significado |
 | `documento-*` | Papel `#E2F2F5` con pliegue `#9CC6F2` | Por significado; `-rojo` / `-azul` según el reporte |
 | `BaseDatos-*` | Lila `#D1C4E9` (tinte) | Por significado |
 | `matraz-*` | Vidrio `#CFE3FA`, líquido morado `#8870D4` | Por significado (`gota` azul) |

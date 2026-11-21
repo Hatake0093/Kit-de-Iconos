@@ -16,8 +16,8 @@ KIT = os.path.join(AQUI, "simulador de control ganadero", "Kit_semantico")
 INKSCAPE = r"C:\Program Files\Inkscape\bin\inkscape.exe"
 
 VERDE, AMBAR, MORADO, ROJO, AZUL = "#24AC88", "#F3AD43", "#8870D4", "#E56876", "#378CE7"
-# vaca: rojo brahman, cara crema, cuernos grises
-BRAHMAN, CREMA, GRIS_CUERNO = "#B9472B", "#F4E1CF", "#8A949E"
+# Cabeza brahman de vaca.svg: pelaje castaño grisáceo, cara crema y cuernos grises.
+BRAHMAN, CREMA, GRIS_CUERNO = "#907B6C", "#F4E1CF", "#8A949E"
 
 COLORES_INSIGNIAS_VACA = {
     "vaca-dinero": VERDE,
@@ -25,6 +25,7 @@ COLORES_INSIGNIAS_VACA = {
     "vaca-check": VERDE,
     "vaca-arriba": VERDE,
     "vaca-menos": ROJO,
+    "vaca-x": "#B9472B",  # Terracota de la insignia de cancelación.
     "vaca-abajo": ROJO,
     "vaca-alerta": AMBAR,
     "vaca-estrella": AMBAR,
@@ -94,7 +95,7 @@ SIMBOLOS = {
     "reloj": pl("25.2,22.3 25.2,25.8 28,25.8"),
     "copiar": ('<rect x="22.6" y="22.2" width="3.6" height="3.6" rx="0.6" fill="none" stroke="#FFFFFF" stroke-width="1.2"/>'
                '<rect x="24.8" y="24.4" width="3.6" height="3.6" rx="0.6" fill="#FFFFFF"/>'),
-    # vaca de la insignia: los colores de la vaca del kit (cuernos grises, orejas y hocico brahman, cara crema)
+    # Miniatura de documento-vaca: dibujo propio con orejas y hocico terracota.
     "vaca": ('<polyline points="23.4,23.3 22.4,21.9" fill="none" stroke="#8A949E" stroke-width="1.1" stroke-linecap="round"/>'
              '<polyline points="27.6,23.3 28.6,21.9" fill="none" stroke="#8A949E" stroke-width="1.1" stroke-linecap="round"/>'
              '<ellipse cx="22.2" cy="24.7" rx="1.5" ry="0.85" fill="#B9472B" transform="rotate(20 22.2 24.7)"/>'
@@ -195,9 +196,9 @@ CRANEO = (f'<polyline points="9,10 5,8 3,3" fill="none" stroke="{GRIS_CUERNO}" s
           f'<path d="M13.7 24.8 V28 M16 24.8 V28 M18.3 24.8 V28" stroke="{MARINO}" stroke-width="1" fill="none"/>')
 MAPA = re.sub(r'<ellipse cx="17.0" cy="12.0" rx="7.0".*$', "", interior("mapa-pin"), flags=re.S)
 
-# arete RFID: placa amarilla con ojal y simbolo de ondas azul centrado en el cuerpo
+# arete RFID: placa ámbar con ojal y simbolo de ondas azul centrado en el cuerpo
 ARETE_RFID = ('<path d="M12 6 A4 4 0 0 1 20 6 V8 Q20 9.5 21.5 10 L26 11.5 Q27 12 27 13.5 V27 Q27 29.5 24.5 29.5 H7.5 '
-              'Q5 29.5 5 27 V13.5 Q5 12 6 11.5 L10.5 10 Q12 9.5 12 8 Z" fill="#F7CF3D" stroke="#24465B" '
+              f'Q5 29.5 5 27 V13.5 Q5 12 6 11.5 L10.5 10 Q12 9.5 12 8 Z" fill="{AMBAR}" stroke="#24465B" '
               'stroke-width="1.5" stroke-linejoin="round"/>'
               '<g transform="translate(16 19.7) scale(0.9) translate(-16 -21)">'
               f'<ellipse cx="11.9" cy="21" rx="1.8" ry="1.8" fill="{AZUL}"/>'
@@ -341,6 +342,7 @@ NUEVOS = [
     *[(f"implantador-{s}", "implantador", s)
       for s in ("mas", "menos", "check", "x", "lista", "lupa", "flecha", "reloj", "alerta")],
     ("vaca-calavera", "craneo", None),
+    *[(f"vaca-{s}", "vaca", s) for s in ("mas", "menos", "flecha", "circulo")],
     ("documento", "documento", None), ("documento-mas", "documento", "mas"), ("documento-flecha", "documento", "flecha"),
     ("documento-alerta", "documento", "alerta"), ("documento-bajada", "documento", "abajo"),
     ("documento-check", "documento", "check"), ("documento-codigo", "documento", "codigo"),

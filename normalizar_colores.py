@@ -26,9 +26,9 @@ AZUL_OSCURO, AZUL, VERDE, VERDE_OSCURO = "24465B", "378CE7", "24AC88", "1B7F65"
 AMBAR, AMBAR_OSCURO, ROSA, ROSA_OSCURO, MORADO = "F3AD43", "C98A1B", "E56876", "B94A58", "8870D4"
 # colores que ya forman parte del sistema: nunca se tocan
 INTOCABLES = {AZUL_OSCURO, AZUL, VERDE, AMBAR, ROSA, MORADO, "E2F2F5", "FFFFFF", "000000",
-              "B9472B", "8A949E", "F4E1CF", "EDE6D6",
-              # amarillo de la placa de arete y variantes oscuras declaradas en PALETA.md
-              "F7CF3D", "1F6FC4", "B94A58", "1B7F65", "C98A1B"}
+              "907B6C", "B9472B", "8A949E", "F4E1CF", "EDE6D6",
+              # variantes oscuras declaradas en PALETA.md
+              "1F6FC4", "B94A58", "1B7F65", "C98A1B"}
 
 
 def destino(hex6):
