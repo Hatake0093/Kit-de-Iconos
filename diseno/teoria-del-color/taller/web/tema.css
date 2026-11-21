@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light dark;
+  --fondo: light-dark(#eef3f5, #14232c);
+  --superficie: light-dark(#ffffff, #203440);
+  --texto: light-dark(#24465b, #edf4f7);
+  --borde: light-dark(#667e89, #9ab0bb);
+  --accion: light-dark(#24465b, #a8d4ef);
+  --sobre-accion: light-dark(#ffffff, #14232c);
+  --aviso: light-dark(#f7e3be, #543c1b);
+  --sobre-aviso: light-dark(#503713, #ffe6bd);
+  --foco: light-dark(#984211, #ffd383);
+
+  --familia: "Segoe UI", system-ui, sans-serif;
+  --cuerpo: 1rem;
+  --titulo: 2rem;
+  --paso: .5rem;
+  --radio: .5rem;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0 auto;
+  width: min(38rem, 94%);
+  padding-block: calc(3 * var(--paso));
+  font: var(--cuerpo)/1.5 var(--familia);
+  color: var(--texto);
+  background: var(--fondo);
+}
+header, header label { display: flex; align-items: center; flex-wrap: wrap; gap: var(--paso); }
+header { justify-content: space-between; margin-bottom: calc(2 * var(--paso)); }
+a { color: inherit; }
+.tarjeta {
+  padding: calc(3 * var(--paso));
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--superficie);
+}
+h1 { font-size: var(--titulo); line-height: 1.15; margin: 0 0 var(--paso); }
+.ocupacion { font-weight: 600; }
+.aviso { background: var(--aviso); color: var(--sobre-aviso); padding: var(--paso); }
+form { display: grid; justify-items: start; gap: var(--paso); margin: calc(3 * var(--paso)) 0; }
+input, select, button {
+  font: inherit;
+  color: var(--texto);
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: var(--paso) calc(2 * var(--paso));
+}
+input { width: 100%; }
+button { cursor: pointer; }
+.primario { background: var(--accion); color: var(--sobre-accion); font-weight: 600; }
+button:enabled:hover { text-decoration: underline; }
+button:enabled:active { box-shadow: inset 0 0 0 2px currentColor; }
+button:disabled { color: var(--texto); background: var(--fondo); border-style: dashed; cursor: default; }
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
+table { border-collapse: collapse; width: 100%; margin-block: calc(2 * var(--paso)); }
+caption, th, td { text-align: start; }
+th, td { padding: var(--paso) .25rem; border-bottom: 1px solid var(--borde); overflow-wrap: anywhere; }

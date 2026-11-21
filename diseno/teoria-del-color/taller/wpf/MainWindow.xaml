@@ -1,0 +1,44 @@
+<Window x:Class="CorralNorte.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Corral norte · Taller de temas" Width="620" Height="540" ThemeMode="Light"
+    FontFamily="{StaticResource Familia}" FontSize="{StaticResource Cuerpo}"
+    Foreground="{DynamicResource Texto}" Background="{DynamicResource Fondo}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="{StaticResource Interior}">
+            <CheckBox x:Name="ModoOscuro" Content="Tema oscuro" Click="CambiarTema"
+                      Margin="{StaticResource Separacion}" FocusVisualStyle="{StaticResource FocoTeclado}"/>
+            <Border Style="{StaticResource Tarjeta}">
+                <Grid>
+                    <StackPanel x:Name="Ficha">
+                        <TextBlock Text="Corral norte" Style="{StaticResource Titulo}"/>
+                        <TextBlock x:Name="Ocupacion" Text="50 de 50 animales" Margin="{StaticResource Separacion}"/>
+                        <TextBlock x:Name="Estado" Text="Capacidad alcanzada" Padding="8"
+                                   Background="{DynamicResource Aviso}" Foreground="{DynamicResource SobreAviso}"
+                                   Margin="{StaticResource Separacion}"/>
+                        <Label Target="{Binding ElementName=Referencia}" Content="_Referencia de la salida de un animal"/>
+                        <TextBox x:Name="Referencia" MaxLength="40" Margin="{StaticResource Separacion}"
+                                 TextChanged="RevisarReferencia" FocusVisualStyle="{StaticResource FocoTeclado}"/>
+                        <Button x:Name="Registrar" Content="Registrar movimiento" Style="{StaticResource AccionPrincipal}"
+                                IsEnabled="False" Margin="{StaticResource Separacion}" Click="RegistrarSalida"/>
+                        <Button x:Name="VerHistorial" Content="Ver historial" HorizontalAlignment="Left" Click="AbrirHistorial"/>
+                    </StackPanel>
+                    <StackPanel x:Name="Historial" Visibility="Collapsed">
+                        <TextBlock Text="Historial del corral norte" Style="{StaticResource Titulo}"/>
+                        <DataGrid x:Name="Tabla" AutomationProperties.Name="Movimientos de esta sesión"
+                                  AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False"
+                                  CanUserSortColumns="False" HeadersVisibility="Column" MaxHeight="280"
+                                  Margin="{StaticResource Separacion}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Referencia" Binding="{Binding Referencia}" Width="*"/>
+                                <DataGridTextColumn Header="Movimiento" Binding="{Binding Tipo}" Width="Auto"/>
+                                <DataGridTextColumn Header="Ocupación" Binding="{Binding Ocupacion}" Width="Auto"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button x:Name="Volver" Content="Volver a la ficha" HorizontalAlignment="Left" Click="AbrirFicha"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

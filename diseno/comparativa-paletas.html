@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comparativa de paletas · Control Ganadero</title><style>
+:root{color-scheme:light;--ink:#233833;--muted:#53645e;--line:#c9cdc2;--paper:#f6f6ef;--green:#31584b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 "Work Sans",system-ui,sans-serif}
+main,.bar{width:min(1110px,calc(100% - 3rem));margin:auto}.bar{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);font-size:.85rem}.brand{display:flex;gap:.65rem;align-items:center;font-weight:700}.mark{background:var(--green);width:20px;height:20px;display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:3px}.mark i{background:var(--paper)}nav{display:flex;gap:1.3rem}a{color:var(--green);text-underline-offset:4px}
+.intro{padding:34px 0 26px}.intro h1,h2,h3,p,figure{margin:0}.intro h1,.section-title,.plate h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.045em;line-height:1.06}.intro h1{font-size:clamp(2.8rem,6.3vw,5.1rem)}.intro p,.desc{color:var(--muted);max-width:74ch}.intro p{margin-top:12px;font-size:1.03rem}
+.plates{display:grid;grid-template-columns:1fr 1fr;gap:16px}.plate{background:#fff;border:1px solid var(--line);border-radius:9px;overflow:hidden}.plate header{padding:20px 24px 0}.plate header span{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}.plate h2{font-size:clamp(1.55rem,3.3vw,2.65rem);margin-top:4px}.specimens{display:grid;grid-template-columns:repeat(3,1fr);padding:26px 12px 20px}.specimens svg{width:clamp(43px,6.5vw,80px);height:clamp(43px,6.5vw,80px)}figure{text-align:center}figure svg{display:block;margin:auto}figcaption{font-size:.8rem;margin-top:8px;color:var(--muted)}.strip{display:flex;height:12px}.strip i{flex:1}
+section.block{margin-top:45px;border-top:1px solid var(--line);padding-top:24px}.section-title{font-size:clamp(2rem,4vw,3rem)}.desc{margin-top:8px}.head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.scale{margin:0;border:0;padding:0;display:flex;align-items:center;gap:4px}.scale legend{float:left;margin-right:8px;font-size:.83rem;line-height:34px}.scale label{position:relative;cursor:pointer}.scale input{position:absolute;opacity:0}.scale span{padding:5px 10px;border:1px solid var(--line);border-radius:4px;display:block;font-size:.83rem}.scale input:checked+span{background:var(--green);color:white;border-color:var(--green)}.scale input:focus-visible+span{outline:3px solid #667ba3;outline-offset:2px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}.card{border:1px solid var(--line);border-radius:6px;background:white;padding:13px 16px}.card h3{font-size:.94rem}.pair{display:grid;grid-template-columns:1fr 1fr;margin:12px 0 2px}.pair figure+figure{border-left:1px solid #e5e8e1}.pair svg{width:32px;height:32px}#iconos:has(#zoom:checked) .pair svg{width:64px;height:64px}
+table{width:100%;border-collapse:collapse;margin:14px 0 0;text-align:left}th,td{border-bottom:1px solid #d9dcd3;padding:9px 6px}thead th{font-size:.76rem;color:var(--muted)}tbody th{font-size:.9rem;font-weight:550}.chip{display:inline-flex;gap:10px;align-items:center}.chip i{width:clamp(40px,7vw,96px);height:28px;background:var(--color);border:1px solid #0002;border-radius:3px}code{font: .82rem "IBM Plex Mono",monospace}.name{font-size:.85rem;color:var(--muted)}details{margin:18px 0}summary{cursor:pointer;font-weight:620;color:var(--green)}main{padding-bottom:48px}
+@media(max-width:680px){main,.bar{width:calc(100% - 26px)}.plates{gap:7px}.plate header{padding:12px 10px 0}.specimens{padding:17px 3px 12px}.specimens svg{width:32px;height:32px}.specimens figcaption{font-size:.65rem}.plate h2{font-size:1.4rem}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:10px 7px}.name{display:none}.chip{gap:4px}code{font-size:.73rem}.bar{gap:8px}nav{gap:9px}.intro{padding:25px 0 18px}.intro p{font-size:.95rem}section.block{margin-top:28px}}
+@media(max-width:360px){.bar{flex-wrap:wrap}.chip{flex-wrap:wrap}.card h3{font-size:.82rem}.specimens svg{width:27px;height:27px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.plate header p {font-size:.91rem;color:var(--muted);margin:.45rem 0 0}
+.plates {grid-template-columns:repeat(3,minmax(0,1fr))}
+.plate {display:flex;flex-direction:column}
+.plate header {flex:1;padding:17px 15px 0}
+.specimens {padding:22px 7px 15px}
+.specimens svg {width:clamp(48px,5vw,72px);height:clamp(48px,5vw,72px)}
+.gallery {grid-template-columns:repeat(2,minmax(0,1fr))}
+.pair {grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:680px) {.plates {grid-template-columns:1fr}}
+@media (max-width:680px) {
+  .gallery {grid-template-columns:1fr}
+  .plate header {padding:12px 10px 0}
+  .plate header p {font-size:.8rem}
+  .specimens svg {width:48px;height:48px}
+  #colores th,#colores td {padding:8px 2px;font-size:.72rem}
+  #colores .chip {display:grid;gap:3px}
+  #colores .chip i {width:100%;height:20px}
+  #colores code {font-size:clamp(.6rem,2.4vw,.75rem)}
+}
+
+.installations {margin:18px 0 28px;padding:18px clamp(8px,2vw,26px);background:white;border:1px solid var(--line);border-radius:7px}
+.installations h3 {font:400 clamp(1.65rem,3vw,2.2rem)/1.15 "Instrument Serif",Georgia,serif;letter-spacing:-.035em}
+.installations table {table-layout:fixed}
+.installations thead th:first-child {width:24%}
+.installations thead th:not(:first-child),.installations td {text-align:center}
+.installations tbody tr:last-child>* {border:0}
+.installations svg {display:block;margin:auto;width:32px;height:32px;max-width:100%}
+#iconos:has(#zoom:checked) .installations svg {width:64px;height:64px}
+@media (max-width:680px) {
+  .installations :is(th,td) {font-size:.71rem;padding:8px 1px}
+}
+
+:is(.installations, .pair) .lino {
+  --tinta: #342F2B;
+  --borde: #EAE6DC;
+  --hormigon: #A69E90;
+  --frente: #C9BFB0;
+  --canto: #DFD8CA;
+  --arena: #B7A074;
+  --sombra: #897557;
+  --piso: #E9DBCA;
+  --puerta: #5D7484;
+  --alimento: #B7A074;
+  --hueso: #E5D8C1;
+  --pantalla: #566C79;
+  --azul: #5D7484;
+  --verde: #66764E;
+  --ambar: #937542;
+  --rosa: #9B6255;
+  --morado: #847087;
+}
+
+:is(.installations, .pair) .azul-ejecutivo {
+  --tinta: #18344D;
+  --borde: #E7EFF6;
+  --hormigon: #879BAA;
+  --frente: #B3C7D5;
+  --canto: #CEDDE7;
+  --arena: #7198B9;
+  --alimento: #BA995E;
+  --sombra: #4C7090;
+  --piso: #E0E7EA;
+  --puerta: #3E6C99;
+  --hueso: #D8E3EC;
+  --pantalla: #315F88;
+  --azul: #3E6C99;
+  --verde: #477969;
+  --ambar: #947339;
+  --rosa: #A05F6B;
+  --morado: #736B92;
+}
+
+@media(max-width:680px){.bar{flex-wrap:wrap}nav{flex-wrap:wrap}}
+.sample-heading {margin:24px 0 8px;font-size:1.18rem}.card h4 {margin:0;font-size:1rem}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol xmlns="http://www.w3.org/2000/svg" id="vaca-a" viewBox="0 0 32 32"><path fill="#907B6C" d="M10.6 11.8 Q6.7 8.9 1.2 11.2 Q1.7 14.8 5.6 17.5 Q7.7 18.8 9.3 16.1 Z"/><path fill="#907B6C" d="M21.4 11.8 Q25.3 8.9 30.8 11.2 Q30.3 14.8 26.4 17.5 Q24.3 18.8 22.7 16.1 Z"/><path d="M12.4 8.1 C8.8 7.8 5.6 6.1 3.3 2.6 C3.6 6.5 6.2 9.5 10.2 10.9 Q11.5 9.3 12.4 8.1 Z" fill="#8A949E"/><path d="M19.6 8.1 C23.2 7.8 26.4 6.1 28.7 2.6 C28.4 6.5 25.8 9.5 21.8 10.9 Q20.5 9.3 19.6 8.1 Z" fill="#8A949E"/><rect x="9" y="7" width="14" height="20" rx="6" fill="#F4E1CF"/><path d="M9 13 A6 6 0 0 1 15 7 H17 C17.1 9.1 15.4 9.6 14.6 11 C13.3 12.9 11.2 12.4 9 13.3 Z" fill="#907B6C"/><ellipse cx="16.0" cy="23.5" rx="9.0" ry="4.5" fill="#907B6C"/><ellipse cx="12.0" cy="15.0" rx="1.0" ry="1.0" fill="#24465B"/><ellipse cx="20.0" cy="15.0" rx="1.0" ry="1.0" fill="#24465B"/><ellipse cx="12.0" cy="23.0" rx="1.0" ry="1.0" fill="#24465B"/><ellipse cx="20.0" cy="23.0" rx="1.0" ry="1.0" fill="#24465B"/></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="arete-a" viewBox="0 0 32 32"><path d="M12 6 A4 4 0 0 1 20 6 V8 Q20 9.5 21.5 10 L26 11.5 Q27 12 27 13.5 V27 Q27 29.5 24.5 29.5 H7.5 Q5 29.5 5 27 V13.5 Q5 12 6 11.5 L10.5 10 Q12 9.5 12 8 Z" fill="#F3AD43" stroke="#24465B" stroke-width="1.5" stroke-linejoin="round" /><polyline points="9,16 23,16" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round" /><polyline points="9,21 23,21" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round" /><polyline points="9,26 23,26" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="camion-a" viewBox="0 0 32 32"><rect x="2" y="7" width="18" height="16" rx="2" fill="#F3AD43" /><polygon points="21,12 26,12 30,18 30,24 21,24" fill="#24465B" /><polygon points="23,14 25,14 28,18 23,18" fill="#E2F2F5" /><ellipse cx="8.0" cy="25.0" rx="4.0" ry="4.0" fill="#24465B" /><ellipse cx="8.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /><ellipse cx="25.0" cy="25.0" rx="4.0" ry="4.0" fill="#24465B" /><ellipse cx="25.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="crianza-a" viewBox="0 0 64 64">
+  <g transform="translate(5 8)">
+    <path fill="#907B6C" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
+    <path fill="#B19D8D" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
+    <path fill="#F4E1CF" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z" />
+    <path fill="#907B6C" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z" />
+    <circle cx="16" cy="30" r="1.7" fill="#24465B" />
+    <circle cx="27" cy="30" r="1.7" fill="#24465B" />
+    <rect x="10" y="35" width="23" height="12" rx="6" fill="#907B6C" />
+    <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#24465B" />
+    <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#24465B" />
+  </g>
+  
+  <g transform="translate(31 -1.5) scale(.72)">
+    <path fill="#B19D8D" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
+    <path fill="#D3BFAE" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
+    <path fill="#FBF1E6" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z" />
+    <path fill="#B19D8D" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z" />
+    <circle cx="16" cy="30" r="1.7" fill="#24465B" />
+    <circle cx="27" cy="30" r="1.7" fill="#24465B" />
+    <rect x="10" y="35" width="23" height="12" rx="6" fill="#B19D8D" />
+    <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#24465B" />
+    <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#24465B" />
+  </g>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-check-a" viewBox="0 0 32 32"><use href="#vaca-a"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#24AC88" /><polyline points="22.5,25 25,27.5 28.5,23" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-lupa-a" viewBox="0 0 32 32"><use href="#vaca-a"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#378CE7" /><ellipse cx="25" cy="25" rx="2.3" ry="2.3" fill="none" stroke="#FFFFFF" stroke-width="1.5" /><polyline points="26.7,26.7 28.7,28.7" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="etiqueta-x-a" viewBox="0 0 32 32"><polygon points="3,5 17,5 29,17 17,29 3,15" fill="#F3AD43" /><ellipse cx="9.5" cy="11.5" rx="2.5" ry="2.5" fill="#FFFFFF" /><polyline points="17,14 23,20" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#E56876" /><polyline points="23,23 28,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="28,23 23,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="documento-reloj-a" viewBox="0 0 32 32"><path d="M8 3 H20 L26 9 V27 A2 2 0 0 1 24 29 H8 A2 2 0 0 1 6 27 V5 A2 2 0 0 1 8 3 Z" fill="#E2F2F5" stroke="#9CC6F2" stroke-width="1" /><polygon points="20,3 26,9 20,9" fill="#9CC6F2" /><rect x="10" y="14" width="12" height="2" rx="1" fill="#24465B" /><rect x="10" y="19" width="12" height="2" rx="1" fill="#24465B" /><rect x="10" y="24" width="7" height="2" rx="1" fill="#24465B" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#8870D4" /><polyline points="25.2,22.3 25.2,25.8 28,25.8" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-alerta-a" viewBox="0 0 32 32"><use href="#vaca-a"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#F3AD43" /><polyline points="25.5,22.4 25.5,26.4" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="25.5,28.2 25.5,28.3" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-l" viewBox="0 0 32 32"><path fill="#94765F" d="M10.6 11.8 Q6.7 8.9 1.2 11.2 Q1.7 14.8 5.6 17.5 Q7.7 18.8 9.3 16.1 Z"/><path fill="#94765F" d="M21.4 11.8 Q25.3 8.9 30.8 11.2 Q30.3 14.8 26.4 17.5 Q24.3 18.8 22.7 16.1 Z"/><path d="M12.4 8.1 C8.8 7.8 5.6 6.1 3.3 2.6 C3.6 6.5 6.2 9.5 10.2 10.9 Q11.5 9.3 12.4 8.1 Z" fill="#A69E90"/><path d="M19.6 8.1 C23.2 7.8 26.4 6.1 28.7 2.6 C28.4 6.5 25.8 9.5 21.8 10.9 Q20.5 9.3 19.6 8.1 Z" fill="#A69E90"/><rect x="9" y="7" width="14" height="20" rx="6" fill="#E9DBCA"/><path d="M9 13 A6 6 0 0 1 15 7 H17 C17.1 9.1 15.4 9.6 14.6 11 C13.3 12.9 11.2 12.4 9 13.3 Z" fill="#94765F"/><ellipse cx="16.0" cy="23.5" rx="9.0" ry="4.5" fill="#94765F"/><ellipse cx="12.0" cy="15.0" rx="1.0" ry="1.0" fill="#342F2B"/><ellipse cx="20.0" cy="15.0" rx="1.0" ry="1.0" fill="#342F2B"/><ellipse cx="12.0" cy="23.0" rx="1.0" ry="1.0" fill="#342F2B"/><ellipse cx="20.0" cy="23.0" rx="1.0" ry="1.0" fill="#342F2B"/></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-t" viewBox="0 0 32 32"><path fill="#778B9B" d="M10.6 11.8 Q6.7 8.9 1.2 11.2 Q1.7 14.8 5.6 17.5 Q7.7 18.8 9.3 16.1 Z"/><path fill="#778B9B" d="M21.4 11.8 Q25.3 8.9 30.8 11.2 Q30.3 14.8 26.4 17.5 Q24.3 18.8 22.7 16.1 Z"/><path d="M12.4 8.1 C8.8 7.8 5.6 6.1 3.3 2.6 C3.6 6.5 6.2 9.5 10.2 10.9 Q11.5 9.3 12.4 8.1 Z" fill="#879BAA"/><path d="M19.6 8.1 C23.2 7.8 26.4 6.1 28.7 2.6 C28.4 6.5 25.8 9.5 21.8 10.9 Q20.5 9.3 19.6 8.1 Z" fill="#879BAA"/><rect x="9" y="7" width="14" height="20" rx="6" fill="#E0E7EA"/><path d="M9 13 A6 6 0 0 1 15 7 H17 C17.1 9.1 15.4 9.6 14.6 11 C13.3 12.9 11.2 12.4 9 13.3 Z" fill="#778B9B"/><ellipse cx="16.0" cy="23.5" rx="9.0" ry="4.5" fill="#778B9B"/><ellipse cx="12.0" cy="15.0" rx="1.0" ry="1.0" fill="#18344D"/><ellipse cx="20.0" cy="15.0" rx="1.0" ry="1.0" fill="#18344D"/><ellipse cx="12.0" cy="23.0" rx="1.0" ry="1.0" fill="#18344D"/><ellipse cx="20.0" cy="23.0" rx="1.0" ry="1.0" fill="#18344D"/></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="arete-l" viewBox="0 0 32 32"><path d="M12 6 A4 4 0 0 1 20 6 V8 Q20 9.5 21.5 10 L26 11.5 Q27 12 27 13.5 V27 Q27 29.5 24.5 29.5 H7.5 Q5 29.5 5 27 V13.5 Q5 12 6 11.5 L10.5 10 Q12 9.5 12 8 Z" fill="#B7A074" stroke="#342F2B" stroke-width="1.5" stroke-linejoin="round" /><polyline points="9,16 23,16" fill="none" stroke="#342F2B" stroke-width="2" stroke-linecap="round" /><polyline points="9,21 23,21" fill="none" stroke="#342F2B" stroke-width="2" stroke-linecap="round" /><polyline points="9,26 23,26" fill="none" stroke="#342F2B" stroke-width="2" stroke-linecap="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="arete-t" viewBox="0 0 32 32"><path d="M12 6 A4 4 0 0 1 20 6 V8 Q20 9.5 21.5 10 L26 11.5 Q27 12 27 13.5 V27 Q27 29.5 24.5 29.5 H7.5 Q5 29.5 5 27 V13.5 Q5 12 6 11.5 L10.5 10 Q12 9.5 12 8 Z" fill="#7198B9" stroke="#18344D" stroke-width="1.5" stroke-linejoin="round" /><polyline points="9,16 23,16" fill="none" stroke="#18344D" stroke-width="2" stroke-linecap="round" /><polyline points="9,21 23,21" fill="none" stroke="#18344D" stroke-width="2" stroke-linecap="round" /><polyline points="9,26 23,26" fill="none" stroke="#18344D" stroke-width="2" stroke-linecap="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="camion-l" viewBox="0 0 32 32"><rect x="2" y="7" width="18" height="16" rx="2" fill="#B7A074" /><polygon points="21,12 26,12 30,18 30,24 21,24" fill="#342F2B" /><polygon points="23,14 25,14 28,18 23,18" fill="#EAE6DC" /><ellipse cx="8.0" cy="25.0" rx="4.0" ry="4.0" fill="#342F2B" /><ellipse cx="8.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /><ellipse cx="25.0" cy="25.0" rx="4.0" ry="4.0" fill="#342F2B" /><ellipse cx="25.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="camion-t" viewBox="0 0 32 32"><rect x="2" y="7" width="18" height="16" rx="2" fill="#7198B9" /><polygon points="21,12 26,12 30,18 30,24 21,24" fill="#18344D" /><polygon points="23,14 25,14 28,18 23,18" fill="#E7EFF6" /><ellipse cx="8.0" cy="25.0" rx="4.0" ry="4.0" fill="#18344D" /><ellipse cx="8.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /><ellipse cx="25.0" cy="25.0" rx="4.0" ry="4.0" fill="#18344D" /><ellipse cx="25.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="crianza-l" viewBox="0 0 64 64">
+  <g transform="translate(5 8)">
+    <path fill="#94765F" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
+    <path fill="#BA9C8B" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
+    <path fill="#E9DBCA" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z" />
+    <path fill="#94765F" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z" />
+    <circle cx="16" cy="30" r="1.7" fill="#342F2B" />
+    <circle cx="27" cy="30" r="1.7" fill="#342F2B" />
+    <rect x="10" y="35" width="23" height="12" rx="6" fill="#94765F" />
+    <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#342F2B" />
+    <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#342F2B" />
+  </g>
+  
+  <g transform="translate(31 -1.5) scale(.72)">
+    <path fill="#BAA18A" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
+    <path fill="#D1BCAC" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
+    <path fill="#F4ECE0" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z" />
+    <path fill="#BAA18A" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z" />
+    <circle cx="16" cy="30" r="1.7" fill="#342F2B" />
+    <circle cx="27" cy="30" r="1.7" fill="#342F2B" />
+    <rect x="10" y="35" width="23" height="12" rx="6" fill="#BAA18A" />
+    <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#342F2B" />
+    <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#342F2B" />
+  </g>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="crianza-t" viewBox="0 0 64 64">
+  <g transform="translate(5 8)">
+    <path fill="#778B9B" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
+    <path fill="#AABBC4" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
+    <path fill="#E0E7EA" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z" />
+    <path fill="#778B9B" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z" />
+    <circle cx="16" cy="30" r="1.7" fill="#18344D" />
+    <circle cx="27" cy="30" r="1.7" fill="#18344D" />
+    <rect x="10" y="35" width="23" height="12" rx="6" fill="#778B9B" />
+    <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#18344D" />
+    <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#18344D" />
+  </g>
+  
+  <g transform="translate(31 -1.5) scale(.72)">
+    <path fill="#A3B3BD" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
+    <path fill="#C7D1D6" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
+    <path fill="#F0F3F4" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z" />
+    <path fill="#A3B3BD" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z" />
+    <circle cx="16" cy="30" r="1.7" fill="#18344D" />
+    <circle cx="27" cy="30" r="1.7" fill="#18344D" />
+    <rect x="10" y="35" width="23" height="12" rx="6" fill="#A3B3BD" />
+    <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#18344D" />
+    <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#18344D" />
+  </g>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-check-l" viewBox="0 0 32 32"><use href="#vaca-l"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#66764E" /><polyline points="22.5,25 25,27.5 28.5,23" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-check-t" viewBox="0 0 32 32"><use href="#vaca-t"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#477969" /><polyline points="22.5,25 25,27.5 28.5,23" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-lupa-l" viewBox="0 0 32 32"><use href="#vaca-l"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#5D7484" /><ellipse cx="25" cy="25" rx="2.3" ry="2.3" fill="none" stroke="#FFFFFF" stroke-width="1.5" /><polyline points="26.7,26.7 28.7,28.7" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-lupa-t" viewBox="0 0 32 32"><use href="#vaca-t"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#3E6C99" /><ellipse cx="25" cy="25" rx="2.3" ry="2.3" fill="none" stroke="#FFFFFF" stroke-width="1.5" /><polyline points="26.7,26.7 28.7,28.7" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="etiqueta-x-l" viewBox="0 0 32 32"><polygon points="3,5 17,5 29,17 17,29 3,15" fill="#B7A074" /><ellipse cx="9.5" cy="11.5" rx="2.5" ry="2.5" fill="#FFFFFF" /><polyline points="17,14 23,20" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#9B6255" /><polyline points="23,23 28,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="28,23 23,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="etiqueta-x-t" viewBox="0 0 32 32"><polygon points="3,5 17,5 29,17 17,29 3,15" fill="#7198B9" /><ellipse cx="9.5" cy="11.5" rx="2.5" ry="2.5" fill="#FFFFFF" /><polyline points="17,14 23,20" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#A05F6B" /><polyline points="23,23 28,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="28,23 23,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="documento-reloj-l" viewBox="0 0 32 32"><path d="M8 3 H20 L26 9 V27 A2 2 0 0 1 24 29 H8 A2 2 0 0 1 6 27 V5 A2 2 0 0 1 8 3 Z" fill="#EAE6DC" stroke="#BDB1A0" stroke-width="1" /><polygon points="20,3 26,9 20,9" fill="#BDB1A0" /><rect x="10" y="14" width="12" height="2" rx="1" fill="#342F2B" /><rect x="10" y="19" width="12" height="2" rx="1" fill="#342F2B" /><rect x="10" y="24" width="7" height="2" rx="1" fill="#342F2B" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#847087" /><polyline points="25.2,22.3 25.2,25.8 28,25.8" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="documento-reloj-t" viewBox="0 0 32 32"><path d="M8 3 H20 L26 9 V27 A2 2 0 0 1 24 29 H8 A2 2 0 0 1 6 27 V5 A2 2 0 0 1 8 3 Z" fill="#E7EFF6" stroke="#A3BDD2" stroke-width="1" /><polygon points="20,3 26,9 20,9" fill="#A3BDD2" /><rect x="10" y="14" width="12" height="2" rx="1" fill="#18344D" /><rect x="10" y="19" width="12" height="2" rx="1" fill="#18344D" /><rect x="10" y="24" width="7" height="2" rx="1" fill="#18344D" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#736B92" /><polyline points="25.2,22.3 25.2,25.8 28,25.8" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-alerta-l" viewBox="0 0 32 32"><use href="#vaca-l"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#937542" /><polyline points="25.5,22.4 25.5,26.4" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="25.5,28.2 25.5,28.3" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-alerta-t" viewBox="0 0 32 32"><use href="#vaca-t"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#947339" /><polyline points="25.5,22.4 25.5,26.4" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="25.5,28.2 25.5,28.3" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></symbol><symbol xmlns="http://www.w3.org/2000/svg" id="inst-comedero" viewBox="0 0 64 64"><path d="M4 35L29 18L59 28V42L34 60L4 49Z" fill="var(--hormigon, #8A949E)" /><path d="M4 35L29 18L59 28L34 46Z" fill="var(--borde, #E2F2F5)" /><path d="M10 34L30 22L52 29L32 42Z" fill="var(--tinta, #24465B)" /><path d="M10 34L30 22L32 27L17 36Z" fill="var(--frente, #B0BEC5)" /><path d="M18 35L35 26L46 30L31 39Z" fill="var(--alimento, var(--arena, #F3AD43))" /><path d="M4 35L34 46V60L4 49Z" fill="var(--frente, #B0BEC5)" /><path d="M34 46L59 28V32L34 50Z" fill="var(--canto, #CFD8DC)" /><path d="M45 42L47 40.5V51L45 52.5Z" fill="var(--frente, #B0BEC5)" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="inst-comedero-concreto-perspectiva" viewBox="0 0 64 64"><rect x="8" y="3" width="48" height="10" rx="3" fill="var(--tinta, #24465B)" />
+<g fill="var(--alimento, var(--arena, #F3AD43))"><rect x="12" y="6" width="6" height="4" rx="1" /><rect x="20.5" y="6" width="6" height="4" rx="1" /><rect x="29" y="6" width="6" height="4" rx="1" /></g>
+<g fill="var(--borde, #E2F2F5)"><rect x="37.5" y="6" width="6" height="4" rx="1" /><rect x="46" y="6" width="6" height="4" rx="1" /></g>
+
+
+<path d="M4 35L29 18L59 28V42L34 60L4 49Z" fill="var(--hormigon, #8A949E)" />
+<path d="M4 35L29 18L59 28L34 46Z" fill="var(--borde, #E2F2F5)" />
+
+<path d="M10 34L30 22L52 29L32 42Z" fill="var(--tinta, #24465B)" />
+<path d="M10 34L30 22L32 27L17 36Z" fill="var(--frente, #B0BEC5)" />
+<path d="M18 35L35 26L46 30L31 39Z" fill="var(--alimento, var(--arena, #F3AD43))" />
+
+<path d="M4 35L34 46V60L4 49Z" fill="var(--frente, #B0BEC5)" />
+<path d="M34 46L59 28V32L34 50Z" fill="var(--canto, #CFD8DC)" />
+<path d="M45 42L47 40.5V51L45 52.5Z" fill="var(--frente, #B0BEC5)" />
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="inst-corral-perspectiva" viewBox="0 0 64 64"><g transform="translate(0 -6)">
+
+<path d="m16 30 32 0 11 26H5Z" fill="var(--piso, #F4E1CF)" />
+<path d="M16 23h32m-32 9h32M16 24 5 41m43-17 11 17M16 33 5 50m43-17 11 17" fill="none" stroke="var(--arena, #F3AD43)" stroke-width="4" stroke-linejoin="round" />
+<path d="M16 17v24m32-24v24" stroke="var(--sombra, #C98A1B)" stroke-width="4" stroke-linecap="round" />
+
+
+
+<path d="M6 42h32M6 51h32" stroke="var(--arena, #F3AD43)" stroke-width="5" stroke-linecap="round" />
+<path d="m41 39 10-7v18l-10 7Z" fill="var(--borde, #E2F2F5)" stroke="var(--tinta, #24465B)" stroke-width="2.5" stroke-linejoin="round" />
+<path d="m42 45 8-6m-8 12 8-6" stroke="var(--puerta, #378CE7)" stroke-width="3" />
+<path d="M5 33v24m34-24v24m20-24v24" stroke="var(--tinta, #24465B)" stroke-width="5" stroke-linecap="round" />
+<path d="M3 59h58" stroke="var(--sombra, #C98A1B)" stroke-width="3" stroke-linecap="round" />
+
+</g>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-vaca-calavera" viewBox="0 0 32 32"><polyline points="9,10 5,8 3,3" fill="none" stroke="var(--hormigon, #8A949E)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,10 27,8 29,3" fill="none" stroke="var(--hormigon, #8A949E)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><path d="M8 9 Q16 3.5 24 9 V17 Q24 20.5 21 22 V28 H11 V22 Q8 20.5 8 17 Z" fill="var(--hueso, #EDE6D6)" /><ellipse cx="12.5" cy="15" rx="2.4" ry="3" fill="var(--tinta, #24465B)" /><ellipse cx="19.5" cy="15" rx="2.4" ry="3" fill="var(--tinta, #24465B)" /><path d="M16 19 L14.7 22.5 H17.3 Z" fill="var(--tinta, #24465B)" /><path d="M13.7 24.8 V28 M16 24.8 V28 M18.3 24.8 V28" stroke="var(--tinta, #24465B)" stroke-width="1" fill="none" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-adn-frontal" viewBox="0 0 64 64"><path d="M18 7C18 17 46 17 46 24S18 32 18 40s28 8 28 17" fill="none" stroke="var(--azul, #378CE7)" stroke-width="6" stroke-linecap="round" />
+  <path d="M46 7C46 17 18 17 18 24s28 8 28 16-28 8-28 17" fill="none" stroke="var(--verde, #24AC88)" stroke-width="6" stroke-linecap="round" />
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-comedero-bajada" viewBox="0 0 64 64"><g transform="translate(1 -6) scale(.78)"><path d="M4 35L29 18L59 28V42L34 60L4 49Z" fill="var(--hormigon, #8A949E)" /><path d="M4 35L29 18L59 28L34 46Z" fill="var(--borde, #E2F2F5)" /><path d="M10 34L30 22L52 29L32 42Z" fill="var(--tinta, #24465B)" /><path d="M10 34L30 22L32 27L17 36Z" fill="var(--frente, #B0BEC5)" /><path d="M18 35L35 26L46 30L31 39Z" fill="var(--alimento, #F3AD43)" /><path d="M4 35L34 46V60L4 49Z" fill="var(--frente, #B0BEC5)" /><path d="M34 46L59 28V32L34 50Z" fill="var(--canto, #CFD8DC)" /><path d="M45 42L47 40.5V51L45 52.5Z" fill="var(--frente, #B0BEC5)" /></g><g transform="scale(2)"><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--rosa, #E56876)" /><polyline points="25.5,22.5 25.5,28.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,26 25.5,28.5 28,26" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></g></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-indicador" viewBox="0 0 64 64"><g transform="translate(-10.25 .15) scale(1.3)">
+<rect x="12" y="5" width="41" height="39" rx="2" fill="var(--hormigon, #8A949E)" />
+<rect x="13.5" y="6.5" width="38" height="36" rx="2" fill="var(--tinta, #24465B)" />
+<rect x="17" y="11" width="31" height="16" rx="1" fill="var(--pantalla, #1F6FC4)" />
+
+<path d="m20 18 2-2v7m4-7h4v3.5h-4V23h4m4-7h4v7h-4Zm0 3.5h4m4-3.5h4v7h-4Z" fill="none" stroke="var(--borde, #E2F2F5)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M15 29h35" stroke="var(--hormigon, #8A949E)" stroke-width="1.5" />
+
+<g fill="var(--borde, #E2F2F5)">
+<circle cx="34" cy="32" r="1.3" /><circle cx="40" cy="32" r="1.3" /><circle cx="46" cy="32" r="1.3" />
+<circle cx="34" cy="36" r="1.3" /><circle cx="40" cy="36" r="1.3" /><circle cx="46" cy="36" r="1.3" />
+<circle cx="34" cy="40" r="1.3" /><circle cx="40" cy="40" r="1.3" /><circle cx="46" cy="40" r="1.3" />
+<path d="m19 31-1.5 2h3Zm0 9-1.5-2h3Zm-5-4.5 2-1.5v3Zm10 0-2-1.5v3Z" />
+</g>
+<circle cx="19" cy="35.5" r="1.8" fill="var(--rosa, #E56876)" />
+<circle cx="28" cy="32" r="1.3" fill="var(--rosa, #E56876)" />
+<circle cx="28" cy="36" r="1.3" fill="var(--azul, #378CE7)" />
+<circle cx="28" cy="40" r="1.3" fill="var(--ambar, #F3AD43)" />
+<g fill="var(--borde, #E2F2F5)"><circle cx="15.5" cy="8.5" r="1" /><circle cx="49.5" cy="8.5" r="1" /><circle cx="15.5" cy="40.5" r="1" /><circle cx="49.5" cy="40.5" r="1" /></g>
+</g></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-jeringa" viewBox="0 0 32 32"><polyline points="5,27 10,22" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polygon points="8,20 19,9 25,15 14,26" fill="var(--borde, #E2F2F5)" /><polygon points="8,20 14,14 20,20 14,26" fill="var(--morado, #8870D4)" /><polyline points="18,8 26,16" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="22,10 26,6" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,3 29,9" fill="none" stroke="var(--morado, #8870D4)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-implantador" viewBox="0 0 32 32"><path fill="var(--hormigon, #8A949E)" d="M1 10.5 2.3 9.8H7.7V11.2H2.3Z" /><rect x="6.3" y="9" width="2" height="3" rx="0.7" fill="var(--tinta, #24465B)" /><path fill="var(--tinta, #24465B)" d="M14 15H18.2L21 27.4Q18.5 29 14.4 28.7Q13.2 28.5 14.5 27.6Q15.4 27 15.3 25V23.1Q15.3 22.5 14.8 22Q14.1 21.4 14.8 20.7Q15.4 20 14.8 19.3Q14 18.6 14.7 17.8Q15.4 16.4 14 15Z" /><path fill="var(--rosa, #E56876)" d="M8.9 4Q9.1 3 10.2 3H13.6Q14.5 3 14.5 4V6Q14.5 8 16.5 8H28.5Q29.5 8 30 9.2L30.6 10.7Q31 12 29.6 12.7L23 15.6Q20.5 16.6 21.3 19L24 26.4Q24.6 28.2 23.3 28.5L20.4 29Q19.5 29.2 19.2 28.1L16 18Q15.4 16 13.4 15.8L8.5 15.1Q7.5 14.9 7.5 13.6V9Z" /><rect x="10.3" y="7.7" width="2" height="2.9" rx="0.6" fill="var(--tinta, #24465B)" /><rect x="19.1" y="10.3" width="5.4" height="2.5" rx="0.5" fill="var(--borde, #E2F2F5)" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-camion-flecha" viewBox="0 0 32 32"><rect x="2" y="7" width="18" height="16" rx="2" fill="var(--arena, #F3AD43)" /><polygon points="21,12 26,12 30,18 30,24 21,24" fill="var(--tinta, #24465B)" /><polygon points="23,14 25,14 28,18 23,18" fill="var(--borde, #E2F2F5)" /><ellipse cx="8.0" cy="25.0" rx="4.0" ry="4.0" fill="var(--tinta, #24465B)" /><ellipse cx="8.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /><ellipse cx="25.0" cy="25.0" rx="4.0" ry="4.0" fill="var(--tinta, #24465B)" /><ellipse cx="25.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--ambar, #F3AD43)" /><polyline points="22.5,25.5 28.5,25.5 26,23" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="28.5,25.5 26,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-indicador-arriba" viewBox="0 0 64 64"><g transform="translate(0 -1) scale(.78)">
+<g transform="translate(-10.25 .15) scale(1.3)">
+<rect x="12" y="5" width="41" height="39" rx="2" fill="var(--hormigon, #8A949E)" />
+<rect x="13.5" y="6.5" width="38" height="36" rx="2" fill="var(--tinta, #24465B)" />
+<rect x="17" y="11" width="31" height="16" rx="1" fill="var(--pantalla, #1F6FC4)" />
+
+<path d="m20 18 2-2v7m4-7h4v3.5h-4V23h4m4-7h4v7h-4Zm0 3.5h4m4-3.5h4v7h-4Z" fill="none" stroke="var(--borde, #E2F2F5)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M15 29h35" stroke="var(--hormigon, #8A949E)" stroke-width="1.5" />
+
+<g fill="var(--borde, #E2F2F5)">
+<circle cx="34" cy="32" r="1.3" /><circle cx="40" cy="32" r="1.3" /><circle cx="46" cy="32" r="1.3" />
+<circle cx="34" cy="36" r="1.3" /><circle cx="40" cy="36" r="1.3" /><circle cx="46" cy="36" r="1.3" />
+<circle cx="34" cy="40" r="1.3" /><circle cx="40" cy="40" r="1.3" /><circle cx="46" cy="40" r="1.3" />
+<path d="m19 31-1.5 2h3Zm0 9-1.5-2h3Zm-5-4.5 2-1.5v3Zm10 0-2-1.5v3Z" />
+</g>
+<circle cx="19" cy="35.5" r="1.8" fill="var(--rosa, #E56876)" />
+<circle cx="28" cy="32" r="1.3" fill="var(--rosa, #E56876)" />
+<circle cx="28" cy="36" r="1.3" fill="var(--azul, #378CE7)" />
+<circle cx="28" cy="40" r="1.3" fill="var(--ambar, #F3AD43)" />
+<g fill="var(--borde, #E2F2F5)"><circle cx="15.5" cy="8.5" r="1" /><circle cx="49.5" cy="8.5" r="1" /><circle cx="15.5" cy="40.5" r="1" /><circle cx="49.5" cy="40.5" r="1" /></g>
+</g></g><g transform="scale(2)"><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--verde, #24AC88)" /><polyline points="25.5,28.5 25.5,22.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,25 25.5,22.5 28,25" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></g></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-indicador-abajo" viewBox="0 0 64 64"><g transform="translate(0 -1) scale(.78)">
+<g transform="translate(-10.25 .15) scale(1.3)">
+<rect x="12" y="5" width="41" height="39" rx="2" fill="var(--hormigon, #8A949E)" />
+<rect x="13.5" y="6.5" width="38" height="36" rx="2" fill="var(--tinta, #24465B)" />
+<rect x="17" y="11" width="31" height="16" rx="1" fill="var(--pantalla, #1F6FC4)" />
+
+<path d="m20 18 2-2v7m4-7h4v3.5h-4V23h4m4-7h4v7h-4Zm0 3.5h4m4-3.5h4v7h-4Z" fill="none" stroke="var(--borde, #E2F2F5)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M15 29h35" stroke="var(--hormigon, #8A949E)" stroke-width="1.5" />
+
+<g fill="var(--borde, #E2F2F5)">
+<circle cx="34" cy="32" r="1.3" /><circle cx="40" cy="32" r="1.3" /><circle cx="46" cy="32" r="1.3" />
+<circle cx="34" cy="36" r="1.3" /><circle cx="40" cy="36" r="1.3" /><circle cx="46" cy="36" r="1.3" />
+<circle cx="34" cy="40" r="1.3" /><circle cx="40" cy="40" r="1.3" /><circle cx="46" cy="40" r="1.3" />
+<path d="m19 31-1.5 2h3Zm0 9-1.5-2h3Zm-5-4.5 2-1.5v3Zm10 0-2-1.5v3Z" />
+</g>
+<circle cx="19" cy="35.5" r="1.8" fill="var(--rosa, #E56876)" />
+<circle cx="28" cy="32" r="1.3" fill="var(--rosa, #E56876)" />
+<circle cx="28" cy="36" r="1.3" fill="var(--azul, #378CE7)" />
+<circle cx="28" cy="40" r="1.3" fill="var(--ambar, #F3AD43)" />
+<g fill="var(--borde, #E2F2F5)"><circle cx="15.5" cy="8.5" r="1" /><circle cx="49.5" cy="8.5" r="1" /><circle cx="15.5" cy="40.5" r="1" /><circle cx="49.5" cy="40.5" r="1" /></g>
+</g></g><g transform="scale(2)"><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--azul, #378CE7)" /><polyline points="25.5,22.5 25.5,28.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,26 25.5,28.5 28,26" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></g></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-jeringa-check" viewBox="0 0 32 32"><polyline points="5,27 10,22" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polygon points="8,20 19,9 25,15 14,26" fill="var(--borde, #E2F2F5)" /><polygon points="8,20 14,14 20,20 14,26" fill="var(--morado, #8870D4)" /><polyline points="18,8 26,16" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="22,10 26,6" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,3 29,9" fill="none" stroke="var(--morado, #8870D4)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--morado, #8870D4)" /><polyline points="22.5,25 25,27.5 28.5,23" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-jeringa-reloj" viewBox="0 0 32 32"><polyline points="5,27 10,22" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polygon points="8,20 19,9 25,15 14,26" fill="var(--borde, #E2F2F5)" /><polygon points="8,20 14,14 20,20 14,26" fill="var(--morado, #8870D4)" /><polyline points="18,8 26,16" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="22,10 26,6" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,3 29,9" fill="none" stroke="var(--morado, #8870D4)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--morado, #8870D4)" /><polyline points="25,22.5 25,26 28,26" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-implantador-mas" viewBox="0 0 32 32"><g transform="translate(0 1) scale(0.86)"><path fill="var(--hormigon, #8A949E)" d="M1 10.5 2.3 9.8H7.7V11.2H2.3Z" /><rect x="6.3" y="9" width="2" height="3" rx="0.7" fill="var(--tinta, #24465B)" /><path fill="var(--tinta, #24465B)" d="M14 15H18.2L21 27.4Q18.5 29 14.4 28.7Q13.2 28.5 14.5 27.6Q15.4 27 15.3 25V23.1Q15.3 22.5 14.8 22Q14.1 21.4 14.8 20.7Q15.4 20 14.8 19.3Q14 18.6 14.7 17.8Q15.4 16.4 14 15Z" /><path fill="var(--rosa, #E56876)" d="M8.9 4Q9.1 3 10.2 3H13.6Q14.5 3 14.5 4V6Q14.5 8 16.5 8H28.5Q29.5 8 30 9.2L30.6 10.7Q31 12 29.6 12.7L23 15.6Q20.5 16.6 21.3 19L24 26.4Q24.6 28.2 23.3 28.5L20.4 29Q19.5 29.2 19.2 28.1L16 18Q15.4 16 13.4 15.8L8.5 15.1Q7.5 14.9 7.5 13.6V9Z" /><rect x="10.3" y="7.7" width="2" height="2.9" rx="0.6" fill="var(--tinta, #24465B)" /><rect x="19.1" y="10.3" width="5.4" height="2.5" rx="0.5" fill="var(--borde, #E2F2F5)" /></g><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--verde, #24AC88)" /><polyline points="23,25.5 28,25.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="25.5,23 25.5,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-implantador-check" viewBox="0 0 32 32"><g transform="translate(0 1) scale(0.86)"><path fill="var(--hormigon, #8A949E)" d="M1 10.5 2.3 9.8H7.7V11.2H2.3Z" /><rect x="6.3" y="9" width="2" height="3" rx="0.7" fill="var(--tinta, #24465B)" /><path fill="var(--tinta, #24465B)" d="M14 15H18.2L21 27.4Q18.5 29 14.4 28.7Q13.2 28.5 14.5 27.6Q15.4 27 15.3 25V23.1Q15.3 22.5 14.8 22Q14.1 21.4 14.8 20.7Q15.4 20 14.8 19.3Q14 18.6 14.7 17.8Q15.4 16.4 14 15Z" /><path fill="var(--rosa, #E56876)" d="M8.9 4Q9.1 3 10.2 3H13.6Q14.5 3 14.5 4V6Q14.5 8 16.5 8H28.5Q29.5 8 30 9.2L30.6 10.7Q31 12 29.6 12.7L23 15.6Q20.5 16.6 21.3 19L24 26.4Q24.6 28.2 23.3 28.5L20.4 29Q19.5 29.2 19.2 28.1L16 18Q15.4 16 13.4 15.8L8.5 15.1Q7.5 14.9 7.5 13.6V9Z" /><rect x="10.3" y="7.7" width="2" height="2.9" rx="0.6" fill="var(--tinta, #24465B)" /><rect x="19.1" y="10.3" width="5.4" height="2.5" rx="0.5" fill="var(--borde, #E2F2F5)" /></g><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--verde, #24AC88)" /><polyline points="22.5,25 25,27.5 28.5,23" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="equipo-implantador-reloj" viewBox="0 0 32 32"><g transform="translate(0 1) scale(0.86)"><path fill="var(--hormigon, #8A949E)" d="M1 10.5 2.3 9.8H7.7V11.2H2.3Z" /><rect x="6.3" y="9" width="2" height="3" rx="0.7" fill="var(--tinta, #24465B)" /><path fill="var(--tinta, #24465B)" d="M14 15H18.2L21 27.4Q18.5 29 14.4 28.7Q13.2 28.5 14.5 27.6Q15.4 27 15.3 25V23.1Q15.3 22.5 14.8 22Q14.1 21.4 14.8 20.7Q15.4 20 14.8 19.3Q14 18.6 14.7 17.8Q15.4 16.4 14 15Z" /><path fill="var(--rosa, #E56876)" d="M8.9 4Q9.1 3 10.2 3H13.6Q14.5 3 14.5 4V6Q14.5 8 16.5 8H28.5Q29.5 8 30 9.2L30.6 10.7Q31 12 29.6 12.7L23 15.6Q20.5 16.6 21.3 19L24 26.4Q24.6 28.2 23.3 28.5L20.4 29Q19.5 29.2 19.2 28.1L16 18Q15.4 16 13.4 15.8L8.5 15.1Q7.5 14.9 7.5 13.6V9Z" /><rect x="10.3" y="7.7" width="2" height="2.9" rx="0.6" fill="var(--tinta, #24465B)" /><rect x="19.1" y="10.3" width="5.4" height="2.5" rx="0.5" fill="var(--borde, #E2F2F5)" /></g><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--morado, #8870D4)" /><polyline points="25.2,22.3 25.2,25.8 28,25.8" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+</defs></svg>
+<header class="bar"><span class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Control Ganadero</span><nav aria-label="En esta página"><a href="#instalaciones">Instalaciones</a><a href="#iconos">Iconos</a><a href="#colores">Colores</a></nav></header>
+<main><div class="intro"><h1>Tres paletas para el kit</h1><p>Compara Lino y Azul ejecutivo con la paleta Original del kit.</p></div>
+<div class="plates"><section class="plate"><header><span>Kit actual</span><h2>Original</h2><p>El arete adopta el ámbar del camión. El Brahman conserva su castaño grisáceo.</p></header><div class="specimens"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-a"/></svg><figcaption>Bovino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-a"/></svg><figcaption>Arete</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-a"/></svg><figcaption>Camión</figcaption></figure></div><div class="strip" aria-hidden="true"><i style="background:#378CE7"></i><i style="background:#24AC88"></i><i style="background:#F3AD43"></i><i style="background:#E56876"></i><i style="background:#8870D4"></i></div></section>
+<section class="plate"><header><span>Propuesta cálida</span><h2>Lino</h2><p>Pelaje castaño, cara crema y arena para el arete y el camión.</p></header><div class="specimens"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-l"/></svg><figcaption>Bovino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-l"/></svg><figcaption>Arete</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-l"/></svg><figcaption>Camión</figcaption></figure></div><div class="strip" aria-hidden="true"><i style="background:#5D7484"></i><i style="background:#66764E"></i><i style="background:#937542"></i><i style="background:#9B6255"></i><i style="background:#847087"></i><i style="background:#B7A074"></i></div></section>
+<section class="plate"><header><span>Propuesta azul</span><h2>Azul ejecutivo</h2><p>Contornos marinos, objetos en azul acero y alimento en ocre.</p></header><div class="specimens"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-t"/></svg><figcaption>Bovino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-t"/></svg><figcaption>Arete</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-t"/></svg><figcaption>Camión</figcaption></figure></div><div class="strip" aria-hidden="true"><i style="background:#3E6C99"></i><i style="background:#477969"></i><i style="background:#947339"></i><i style="background:#A05F6B"></i><i style="background:#736B92"></i><i style="background:#7198B9"></i></div></section></div>
+<section id="iconos" class="block"><div class="head"><h2 class="section-title">Muestras del kit</h2><fieldset class="scale"><legend>Tamaño</legend><label><input type="radio" name="escala"><span>32 px</span></label><label><input type="radio" name="escala" id="zoom" checked><span>64 px</span></label></fieldset></div>
+
+<h3 class="sample-heading">Ganado, alimentación y sanidad</h3>
+<div class="gallery" id="muestras-equipo">
+<article class="card"><h4>Calavera bovina</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-vaca-calavera"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-vaca-calavera"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-vaca-calavera"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Doble hélice de ADN</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-adn-frontal"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-adn-frontal"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-adn-frontal"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Consumo</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-comedero-bajada"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-comedero-bajada"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-comedero-bajada"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Indicador de reparto · pesaje</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-indicador"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-indicador"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-indicador"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Jeringa</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-jeringa"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-jeringa"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-jeringa"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Implantador</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-implantador"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-implantador"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-implantador"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article></div>
+<h3 class="sample-heading">Operaciones</h3>
+<div class="gallery" id="muestras-operaciones">
+<article class="card"><h4>Reparto</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-camion-flecha"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-camion-flecha"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-camion-flecha"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Indicador · cargar alimentación</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-indicador-arriba"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-indicador-arriba"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-indicador-arriba"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Indicador · descargar datos</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-indicador-abajo"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-indicador-abajo"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-indicador-abajo"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Jeringa · evaluación</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-jeringa-check"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-jeringa-check"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-jeringa-check"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Jeringa · historial</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-jeringa-reloj"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-jeringa-reloj"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-jeringa-reloj"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Implantador · agregar</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-implantador-mas"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-implantador-mas"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-implantador-mas"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Implantador · confirmar</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-implantador-check"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-implantador-check"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-implantador-check"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h4>Implantador · historial</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-implantador-reloj"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-implantador-reloj"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-implantador-reloj"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article></div>
+<section class="installations" id="instalaciones" aria-labelledby="titulo-instalaciones">
+<h3 id="titulo-instalaciones">Comederos y corral</h3>
+<table aria-labelledby="titulo-instalaciones"><thead><tr><th scope="col">Instalación</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead>
+<tbody><tr><th scope="row">Comedero de concreto</th><td><svg class="original" role="img" aria-label="Comedero de concreto, Original"><use href="#inst-comedero"/></svg></td><td><svg class="lino" role="img" aria-label="Comedero de concreto, Lino"><use href="#inst-comedero"/></svg></td><td><svg class="azul-ejecutivo" role="img" aria-label="Comedero de concreto, Azul ejecutivo"><use href="#inst-comedero"/></svg></td></tr>
+<tr><th scope="row">Lectura de comedero</th><td><svg class="original" role="img" aria-label="Lectura de comedero, Original"><use href="#inst-comedero-concreto-perspectiva"/></svg></td><td><svg class="lino" role="img" aria-label="Lectura de comedero, Lino"><use href="#inst-comedero-concreto-perspectiva"/></svg></td><td><svg class="azul-ejecutivo" role="img" aria-label="Lectura de comedero, Azul ejecutivo"><use href="#inst-comedero-concreto-perspectiva"/></svg></td></tr>
+<tr><th scope="row">Corral en perspectiva</th><td><svg class="original" role="img" aria-label="Corral en perspectiva, Original"><use href="#inst-corral-perspectiva"/></svg></td><td><svg class="lino" role="img" aria-label="Corral en perspectiva, Lino"><use href="#inst-corral-perspectiva"/></svg></td><td><svg class="azul-ejecutivo" role="img" aria-label="Corral en perspectiva, Azul ejecutivo"><use href="#inst-corral-perspectiva"/></svg></td></tr></tbody></table></section>
+<h3 class="sample-heading">Identificación y acciones</h3>
+<div class="gallery"><article class="card"><h3>Bovino</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h3>Arete</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#arete-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h3>Camión</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#camion-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h3>Madre y cría</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#crianza-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#crianza-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#crianza-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h3>Confirmación</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-check-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-check-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-check-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h3>Consulta</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-lupa-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-lupa-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-lupa-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h3>Cancelación</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#etiqueta-x-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#etiqueta-x-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#etiqueta-x-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h3>Historial</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#documento-reloj-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#documento-reloj-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#documento-reloj-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
+<article class="card"><h3>Atención</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-alerta-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-alerta-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-alerta-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article></div></section>
+<section id="colores" class="block"><h2 class="section-title">Correspondencia de colores</h2><p class="desc">En Original, el arete, el camión y los avisos comparten el ámbar #F3AD43. En Lino, el arete y el camión comparten un arena más claro que la alerta. En Azul ejecutivo, el arete y el camión comparten azul acero. El ocre permite distinguir el alimento y los segmentos activos del comedero.</p>
+<h3 class="sample-heading">Colores por pieza</h3><table><thead><tr><th scope="col">Pieza</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead><tbody>
+<tr><th scope="row">Hueso de la calavera</th><td><span class="chip" style="--color:#EDE6D6"><i></i><code>#EDE6D6</code></span></td><td><span class="chip" style="--color:#E5D8C1"><i></i><code>#E5D8C1</code></span></td><td><span class="chip" style="--color:#D8E3EC"><i></i><code>#D8E3EC</code></span></td></tr>
+<tr><th scope="row">Cuencas y nariz de la calavera</th><td><span class="chip" style="--color:#24465B"><i></i><code>#24465B</code></span></td><td><span class="chip" style="--color:#342F2B"><i></i><code>#342F2B</code></span></td><td><span class="chip" style="--color:#18344D"><i></i><code>#18344D</code></span></td></tr>
+<tr><th scope="row">Hebra azul de ADN</th><td><span class="chip" style="--color:#378CE7"><i></i><code>#378CE7</code></span></td><td><span class="chip" style="--color:#5D7484"><i></i><code>#5D7484</code></span></td><td><span class="chip" style="--color:#3E6C99"><i></i><code>#3E6C99</code></span></td></tr>
+<tr><th scope="row">Hebra verde de ADN</th><td><span class="chip" style="--color:#24AC88"><i></i><code>#24AC88</code></span></td><td><span class="chip" style="--color:#66764E"><i></i><code>#66764E</code></span></td><td><span class="chip" style="--color:#477969"><i></i><code>#477969</code></span></td></tr>
+<tr><th scope="row">Interior del comedero · alimento</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#B7A074"><i></i><code>#B7A074</code></span></td><td><span class="chip" style="--color:#BA995E"><i></i><code>#BA995E</code></span></td></tr>
+<tr><th scope="row">Flecha de consumo · fondo</th><td><span class="chip" style="--color:#E56876"><i></i><code>#E56876</code></span></td><td><span class="chip" style="--color:#9B6255"><i></i><code>#9B6255</code></span></td><td><span class="chip" style="--color:#A05F6B"><i></i><code>#A05F6B</code></span></td></tr>
+<tr><th scope="row">Carcasa del indicador y aguja del implantador</th><td><span class="chip" style="--color:#8A949E"><i></i><code>#8A949E</code></span></td><td><span class="chip" style="--color:#A69E90"><i></i><code>#A69E90</code></span></td><td><span class="chip" style="--color:#879BAA"><i></i><code>#879BAA</code></span></td></tr>
+<tr><th scope="row">Pantalla del indicador</th><td><span class="chip" style="--color:#1F6FC4"><i></i><code>#1F6FC4</code></span></td><td><span class="chip" style="--color:#566C79"><i></i><code>#566C79</code></span></td><td><span class="chip" style="--color:#315F88"><i></i><code>#315F88</code></span></td></tr>
+<tr><th scope="row">Dígitos de la pantalla</th><td><span class="chip" style="--color:#E2F2F5"><i></i><code>#E2F2F5</code></span></td><td><span class="chip" style="--color:#EAE6DC"><i></i><code>#EAE6DC</code></span></td><td><span class="chip" style="--color:#E7EFF6"><i></i><code>#E7EFF6</code></span></td></tr>
+<tr><th scope="row">Líquido y émbolo de la jeringa</th><td><span class="chip" style="--color:#8870D4"><i></i><code>#8870D4</code></span></td><td><span class="chip" style="--color:#847087"><i></i><code>#847087</code></span></td><td><span class="chip" style="--color:#736B92"><i></i><code>#736B92</code></span></td></tr>
+<tr><th scope="row">Aguja de la jeringa y gatillo del implantador</th><td><span class="chip" style="--color:#24465B"><i></i><code>#24465B</code></span></td><td><span class="chip" style="--color:#342F2B"><i></i><code>#342F2B</code></span></td><td><span class="chip" style="--color:#18344D"><i></i><code>#18344D</code></span></td></tr>
+<tr><th scope="row">Cuerpo del implantador</th><td><span class="chip" style="--color:#E56876"><i></i><code>#E56876</code></span></td><td><span class="chip" style="--color:#9B6255"><i></i><code>#9B6255</code></span></td><td><span class="chip" style="--color:#A05F6B"><i></i><code>#A05F6B</code></span></td></tr></tbody></table>
+<h3 class="sample-heading">Paleta general</h3>
+<table><thead><tr><th scope="col">Uso</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead><tbody><tr><th scope="row">Consulta</th><td><span class="chip" style="--color:#378CE7"><i></i><code>#378CE7</code></span></td><td><span class="chip" style="--color:#5D7484"><i></i><code>#5D7484</code></span></td><td><span class="chip" style="--color:#3E6C99"><i></i><code>#3E6C99</code></span></td></tr>
+<tr><th scope="row">Confirmación</th><td><span class="chip" style="--color:#24AC88"><i></i><code>#24AC88</code></span></td><td><span class="chip" style="--color:#66764E"><i></i><code>#66764E</code></span></td><td><span class="chip" style="--color:#477969"><i></i><code>#477969</code></span></td></tr>
+<tr><th scope="row">Atención</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#937542"><i></i><code>#937542</code></span></td><td><span class="chip" style="--color:#947339"><i></i><code>#947339</code></span></td></tr>
+<tr><th scope="row">Cancelación</th><td><span class="chip" style="--color:#E56876"><i></i><code>#E56876</code></span></td><td><span class="chip" style="--color:#9B6255"><i></i><code>#9B6255</code></span></td><td><span class="chip" style="--color:#A05F6B"><i></i><code>#A05F6B</code></span></td></tr>
+<tr><th scope="row">Historial</th><td><span class="chip" style="--color:#8870D4"><i></i><code>#8870D4</code></span></td><td><span class="chip" style="--color:#847087"><i></i><code>#847087</code></span></td><td><span class="chip" style="--color:#736B92"><i></i><code>#736B92</code></span></td></tr>
+<tr><th scope="row">Arete</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#B7A074"><i></i><code>#B7A074</code></span></td><td><span class="chip" style="--color:#7198B9"><i></i><code>#7198B9</code></span></td></tr>
+<tr><th scope="row">Caja del camión y etiqueta</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#B7A074"><i></i><code>#B7A074</code></span></td><td><span class="chip" style="--color:#7198B9"><i></i><code>#7198B9</code></span></td></tr>
+<tr><th scope="row">Alimento y lectura del comedero</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#B7A074"><i></i><code>#B7A074</code></span></td><td><span class="chip" style="--color:#BA995E"><i></i><code>#BA995E</code></span></td></tr>
+<tr><th scope="row">Contornos</th><td><span class="chip" style="--color:#24465B"><i></i><code>#24465B</code></span></td><td><span class="chip" style="--color:#342F2B"><i></i><code>#342F2B</code></span></td><td><span class="chip" style="--color:#18344D"><i></i><code>#18344D</code></span></td></tr>
+<tr><th scope="row">Relleno claro</th><td><span class="chip" style="--color:#E2F2F5"><i></i><code>#E2F2F5</code></span></td><td><span class="chip" style="--color:#EAE6DC"><i></i><code>#EAE6DC</code></span></td><td><span class="chip" style="--color:#E7EFF6"><i></i><code>#E7EFF6</code></span></td></tr></tbody></table><details><summary>Ver los tonos del ganado y del papel</summary><table><thead><tr><th scope="col">Uso</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead><tbody><tr><th scope="row">Manchas y hocico del Brahman</th><td><span class="chip" style="--color:#907B6C"><i></i><code>#907B6C</code></span></td><td><span class="chip" style="--color:#94765F"><i></i><code>#94765F</code></span></td><td><span class="chip" style="--color:#778B9B"><i></i><code>#778B9B</code></span></td></tr>
+<tr><th scope="row">Pelaje de la madre en crianza</th><td><span class="chip" style="--color:#907B6C"><i></i><code>#907B6C</code></span></td><td><span class="chip" style="--color:#94765F"><i></i><code>#94765F</code></span></td><td><span class="chip" style="--color:#778B9B"><i></i><code>#778B9B</code></span></td></tr>
+<tr><th scope="row">Cara</th><td><span class="chip" style="--color:#F4E1CF"><i></i><code>#F4E1CF</code></span></td><td><span class="chip" style="--color:#E9DBCA"><i></i><code>#E9DBCA</code></span></td><td><span class="chip" style="--color:#E0E7EA"><i></i><code>#E0E7EA</code></span></td></tr>
+<tr><th scope="row">Cuernos</th><td><span class="chip" style="--color:#8A949E"><i></i><code>#8A949E</code></span></td><td><span class="chip" style="--color:#A69E90"><i></i><code>#A69E90</code></span></td><td><span class="chip" style="--color:#879BAA"><i></i><code>#879BAA</code></span></td></tr>
+<tr><th scope="row">Manchas de la cría</th><td><span class="chip" style="--color:#B19D8D"><i></i><code>#B19D8D</code></span></td><td><span class="chip" style="--color:#BAA18A"><i></i><code>#BAA18A</code></span></td><td><span class="chip" style="--color:#A3B3BD"><i></i><code>#A3B3BD</code></span></td></tr>
+<tr><th scope="row">Cara de la cría</th><td><span class="chip" style="--color:#FBF1E6"><i></i><code>#FBF1E6</code></span></td><td><span class="chip" style="--color:#F4ECE0"><i></i><code>#F4ECE0</code></span></td><td><span class="chip" style="--color:#F0F3F4"><i></i><code>#F0F3F4</code></span></td></tr>
+<tr><th scope="row">Oreja de la cría</th><td><span class="chip" style="--color:#D3BFAE"><i></i><code>#D3BFAE</code></span></td><td><span class="chip" style="--color:#D1BCAC"><i></i><code>#D1BCAC</code></span></td><td><span class="chip" style="--color:#C7D1D6"><i></i><code>#C7D1D6</code></span></td></tr>
+<tr><th scope="row">Pliegue de papel</th><td><span class="chip" style="--color:#9CC6F2"><i></i><code>#9CC6F2</code></span></td><td><span class="chip" style="--color:#BDB1A0"><i></i><code>#BDB1A0</code></span></td><td><span class="chip" style="--color:#A3BDD2"><i></i><code>#A3BDD2</code></span></td></tr>
+<tr><th scope="row">Oreja de la madre</th><td><span class="chip" style="--color:#B19D8D"><i></i><code>#B19D8D</code></span></td><td><span class="chip" style="--color:#BA9C8B"><i></i><code>#BA9C8B</code></span></td><td><span class="chip" style="--color:#AABBC4"><i></i><code>#AABBC4</code></span></td></tr></tbody></table></details></section></main></body></html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Corral norte · Taller de temas</title>
+  <link rel="stylesheet" href="tema.css">
+  <script defer src="ficha.js"></script>
+</head>
+<body>
+  <header>
+    <a href="../../index.html#tema-aplicado">← Volver al taller</a>
+    <label>Tema <select id="modo">
+      <option value="light dark">Sistema</option><option value="light">Claro</option><option value="dark">Oscuro</option>
+    </select></label>
+  </header>
+  <main>
+    <section class="tarjeta" id="ficha" aria-labelledby="titulo-ficha">
+      <h1 id="titulo-ficha" tabindex="-1">Corral norte</h1>
+      <p class="ocupacion" id="ocupacion">50 de 50 animales</p>
+      <p class="aviso" id="estado">Capacidad alcanzada</p>
+      <form id="salida">
+        <label for="referencia">Referencia de la salida de un animal</label>
+        <input id="referencia" maxlength="40" autocomplete="off" required>
+        <button class="primario" id="registrar" disabled>Registrar movimiento</button>
+      </form>
+      <button id="ver-historial">Ver historial</button>
+    </section>
+    <section class="tarjeta" id="historial" aria-labelledby="titulo-historial" hidden>
+      <h1 id="titulo-historial" tabindex="-1">Historial del corral norte</h1>
+      <table>
+        <caption>Movimientos de esta sesión</caption>
+        <thead><tr><th scope="col">Referencia</th><th scope="col">Movimiento</th><th scope="col">Ocupación</th></tr></thead>
+        <tbody id="filas"><tr><td>Conteo inicial</td><td>Apertura</td><td>50 de 50</td></tr></tbody>
+      </table>
+      <button id="volver">Volver a la ficha</button>
+    </section>
+    <p role="status" id="confirmacion"></p>
+  </main>
+</body>
+</html>
