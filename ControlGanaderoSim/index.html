@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ControlGanaderoSim</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  /* colores medidos en la captura del sistema (skin DevExpress) */
+  --titulo:#D9DADE; --fila-tabs:#E8E9ED; --tab-sel:#FBFBFB; --ribbon:#F9F9FA; --sep:#C8C8CC;
+  --linea:#C4C5C7; --area:#EBECF0; --tinta:#1D232B; --tinta-tab:#3F434E; --tinta-grupo:#8E9293;
+  --presionado:#F3D9A8; --hover:#E3EEF9; --menu-borde:#A9A9AB;
+  /* origen del icono */
+  --o-kit:#24AC88; --o-pendiente:#F3AD43; --o-ajeno:#8A949E; --o-embebido:#E56876; --o-propuesta:#8870D4;
+  --pagina:#F2F3F5; --panel:#FFFFFF; --borde:#D5DBE1; --suave:#6B7884;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--pagina);color:var(--tinta);font:13px/1.4 "Segoe UI",Tahoma,system-ui,sans-serif}
+button,select{font:inherit}
+
+/* ---------- barra del simulador (fuera de la ventana) ---------- */
+.barra{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;
+  padding:8px 16px;background:#24465B;color:#fff}
+.barra h1{font-size:15px;margin:0;font-weight:600}
+.barra .version{opacity:.75;font-size:12px}
+.barra .esp{flex:1}
+.seg{display:inline-flex;border:1px solid rgba(255,255,255,.4);border-radius:6px;overflow:hidden}
+.seg button{background:transparent;color:#fff;border:0;padding:4px 10px;cursor:pointer}
+.seg button+button{border-left:1px solid rgba(255,255,255,.4)}
+.seg button[aria-pressed="true"]{background:#fff;color:#24465B;font-weight:600}
+.barra label{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.barra select{background:#fff;color:#24465B;border:0;border-radius:4px;padding:3px 4px}
+
+.contenido{padding:16px;max-width:100%}
+.marco{overflow-x:auto;padding-bottom:4px}
+
+/* ---------- ventana simulada ---------- */
+.ventana{display:inline-block;min-width:100%;background:var(--area);border:1px solid #9A9CA0;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);transform-origin:0 0}
+.titulo{display:flex;align-items:center;gap:6px;height:20px;padding:0 6px;background:var(--titulo);
+  font:bold 11px Tahoma,"Segoe UI",sans-serif;color:#30343A}
+.titulo img{width:14px;height:14px}
+.titulo .esp{flex:1}
+.titulo .ctl{width:22px;height:12px;border:1px solid #9A9CA0;border-radius:2px;background:#ECEDEF}
+
+.tabs{display:flex;align-items:stretch;background:var(--fila-tabs);border-bottom:1px solid var(--linea);padding:0 2px;white-space:nowrap}
+.tab{display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid transparent;border-bottom:0;
+  margin-bottom:-1px;background:none;cursor:pointer;color:var(--tinta-tab);
+  font:bold 18px "Microsoft Sans Serif",Arial,sans-serif;letter-spacing:.2px}
+.tab:hover{background:#F1F2F5}
+.tab[aria-selected="true"]{background:var(--tab-sel);border-color:var(--linea);color:var(--tinta)}
+.tab .ic{width:24px;height:24px}
+
+.ribbon{display:flex;align-items:stretch;background:var(--ribbon);border-bottom:1px solid var(--linea);min-height:68px;white-space:nowrap}
+.grupo{display:flex;flex-direction:column;border-right:1px solid var(--sep);padding:2px 4px 3px}
+.grupo .cap{text-align:center;font:11px Tahoma,"Segoe UI",sans-serif;color:var(--tinta-grupo);padding:1px 4px 3px;
+  border-bottom:1px solid #E6E6E9;margin-bottom:3px}
+.grupo .items{display:flex;align-items:flex-start;gap:2px;flex:1}
+.grupo .div{width:1px;align-self:stretch;background:var(--sep);margin:0 3px}
+.btn{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:48px;padding:3px 5px 2px;
+  border:1px solid transparent;border-radius:2px;background:none;cursor:pointer;color:var(--tinta);
+  font:11px Tahoma,"Segoe UI",sans-serif}
+.btn:hover{background:var(--hover);border-color:#B9D3EE}
+.btn[aria-expanded="true"]{background:var(--presionado);border-color:#C9A566}
+.btn .ic{width:32px;height:32px}
+.btn .flecha{position:absolute;top:15px;right:3px;font-size:8px;color:#333}
+.btn.sub .ic{margin-right:8px}
+
+.menu{position:fixed;z-index:30;min-width:150px;background:#fff;border:1px solid var(--menu-borde);
+  box-shadow:2px 3px 6px rgba(0,0,0,.2);padding:2px 0}
+.menu button{display:flex;align-items:center;gap:8px;width:100%;padding:3px 22px 3px 4px;border:0;background:none;
+  cursor:pointer;font:12px Tahoma,"Segoe UI",sans-serif;color:var(--tinta);text-align:left}
+.menu button:hover{background:var(--hover)}
+.menu .ic{width:16px;height:16px}
+
+.area{min-height:90px;display:flex;align-items:center;justify-content:center;color:#9097A0;font-size:12px}
+
+.ic.vacio{display:inline-block;border:1px dashed #B0B4BA;border-radius:3px}
+
+/* marcar origen: punto de color en cada icono */
+.marcar .tab,.marcar .btn,.marcar .menu button{position:relative}
+.marcar [data-origen]::after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;border:1.5px solid #fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+.marcar .tab[data-origen]::after{top:3px;left:4px}
+.marcar .btn[data-origen]::after{top:1px;left:5px}
+.marcar .menu button[data-origen]::after{top:2px;left:1px}
+[data-origen="kit"]::after{background:var(--o-kit)}
+[data-origen="pendiente"]::after{background:var(--o-pendiente)}
+[data-origen="ajeno"]::after{background:var(--o-ajeno)}
+[data-origen="embebido"]::after,[data-origen="raster"]::after,[data-origen="sin"]::after{background:var(--o-embebido)}
+[data-origen="propuesta"]::after{background:var(--o-propuesta)}
+
+/* ---------- inspector ---------- */
+.leyenda{display:flex;flex-wrap:wrap;gap:6px 16px;margin:16px 0 8px;color:var(--suave);font-size:12px}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.punto{width:10px;height:10px;border-radius:50%;display:inline-block}
+.panel{background:var(--panel);border:1px solid var(--borde);border-radius:6px;overflow-x:auto}
+.panel h2{font-size:14px;margin:0;padding:10px 12px;border-bottom:1px solid var(--borde)}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th,td{padding:6px 10px;border-bottom:1px solid #EEF1F4;text-align:left;vertical-align:middle}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--suave);font-weight:600;background:#FAFBFC}
+td.grupo-fila{background:#F5F7F9;font-weight:600;color:#24465B}
+td .tam{display:flex;align-items:flex-end;gap:6px}
+td .tam img,td .tam .vacio{background:#fff}
+td code{font-size:12px;color:#24465B}
+.etq{display:inline-flex;align-items:center;gap:5px;font-size:12px;white-space:nowrap}
+.motivo{color:var(--suave);font-size:12px;max-width:340px;white-space:normal}
+.flecha-cambio{color:var(--suave)}
+</style>
+</head>
+<body>
+<div class="barra">
+  <h1>ControlGanaderoSim</h1>
+  <span class="version" id="version"></span>
+  <span class="esp"></span>
+  <span>Iconos:</span>
+  <div class="seg" role="group" aria-label="Fuente de iconos">
+    <button data-modo="proyecto" title="Los SVG que hoy tiene el proyecto en la rama: lo que se ve al compilar">Proyecto</button>
+    <button data-modo="kit" title="Los SVG actuales del kit: lo que se verá después de sincronizar">Kit actual</button>
+    <button data-modo="propuesta" title="Kit actual más los cambios de propuestas.js">Kit + propuestas</button>
+  </div>
+  <label><input type="checkbox" id="marcar"> Marcar origen</label>
+  <label>Zoom <select id="zoom"><option value="1">100 %</option><option value="1.5">150 %</option><option value="2">200 %</option></select></label>
+</div>
+
+<div class="contenido">
+  <div class="marco"><div class="ventana" id="ventana">
+    <div class="titulo"><img src="../simulador de control ganadero/Kit_semantico/svg/vaca.svg" alt=""> Control Ganadero PRO<span class="esp"></span><span class="ctl"></span></div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div class="ribbon" id="ribbon"></div>
+    <div class="area">Área de trabajo (no se simula)</div>
+  </div></div>
+
+  <div class="leyenda">
+    <span><i class="punto" style="background:var(--o-kit)"></i>Del kit, al día</span>
+    <span><i class="punto" style="background:var(--o-pendiente)"></i>Del kit, con cambios sin sincronizar</span>
+    <span><i class="punto" style="background:var(--o-ajeno)"></i>Recurso del proyecto fuera del kit</span>
+    <span><i class="punto" style="background:var(--o-embebido)"></i>Guardado en FrmMain.resx (el kit no lo actualiza)</span>
+    <span><i class="punto" style="background:var(--o-propuesta)"></i>Propuesta</span>
+  </div>
+  <div class="panel">
+    <h2 id="titulo-inspector">Iconos de la pestaña</h2>
+    <table>
+      <thead><tr><th>Control</th><th>Proyecto (16 · 24 · 32)</th><th>Kit actual</th><th>Propuesta</th><th>Origen</th><th>Nota</th></tr></thead>
+      <tbody id="inspector"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="datos.js"></script>
+<script src="propuestas.js"></script>
+<script>
+const SIM = window.SIM, PROP = window.PROPUESTAS || {};
+const KIT = "../simulador de control ganadero/Kit_semantico/svg/";
+const guardado = (k, v) => { try { if (v === undefined) return localStorage.getItem("cgsim." + k); localStorage.setItem("cgsim." + k, v); } catch (e) { return null; } };
+const estado = { modo: guardado("modo") || "proyecto", pagina: decodeURIComponent(location.hash.slice(1)) || guardado("pagina") || SIM.paginas[0].id };
+if (!SIM.paginas.some(p => p.id === estado.pagina || p.texto === estado.pagina)) estado.pagina = SIM.paginas[0].id;
+
+const ruta = r => encodeURI(r);
+const kitSvg = n => ruta(KIT + n + ".svg");
+
+/* origen del icono que se ve con el modo dado */
+function resolver(control, modo) {
+  const ic = control.icono;
+  if (modo === "propuesta" && PROP[control.id]) return { src: kitSvg(PROP[control.id].icono), origen: "propuesta", nombre: PROP[control.id].icono };
+  if (!ic) return { src: null, origen: "sin", nombre: "(sin icono)" };
+  if (ic.tipo === "recurso") {
+    const src = modo === "proyecto" ? (ic.proyecto || ic.kit) : (ic.kit || ic.proyecto);
+    const origen = !ic.kit ? "ajeno" : (ic.cambia && modo === "proyecto") ? "pendiente" : "kit";
+    return { src: src && ruta(src), origen, nombre: ic.nombre };
+  }
+  return { src: ruta(ic.embebido), origen: ic.tipo, nombre: ic.copiaDeKit ? "copia de " + ic.copiaDeKit : "embebido" };
+}
+const TEXTO_ORIGEN = { kit: "Kit", pendiente: "Kit (falta sincronizar)", ajeno: "Fuera del kit", embebido: "Embebido SVG", raster: "Embebido PNG", sin: "Sin icono", propuesta: "Propuesta" };
+
+function img(r, tam) {
+  if (!r.src) return `<span class="ic vacio" style="width:${tam}px;height:${tam}px"></span>`;
+  return `<img class="ic" src="${r.src}" width="${tam}" height="${tam}" alt="">`;
+}
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const ayuda = (c, r) => esc(`${c.texto} · ${c.id} · ${r.nombre} · ${TEXTO_ORIGEN[r.origen]}`);
+
+function pintarTabs() {
+  document.getElementById("tabs").innerHTML = SIM.paginas.map(p => {
+    const r = resolver(p, estado.modo);
+    return `<button class="tab" role="tab" data-id="${p.id}" data-origen="${r.origen}" aria-selected="${p.id === estado.pagina}" title="${ayuda(p, r)}">${img(r, 24)}${esc(p.texto)}</button>`;
+  }).join("");
+}
+
+function pintarRibbon(pag) {
+  document.getElementById("ribbon").innerHTML = pag.grupos.filter(g => g.visible).map(g => `
+    <div class="grupo"><div class="cap">${esc(g.texto)}</div><div class="items">${g.items.map(c => {
+      const r = resolver(c, estado.modo), sub = c.menu.length > 0;
+      return `${c.separador ? '<span class="div"></span>' : ""}<button class="btn${sub ? " sub" : ""}" data-id="${c.id}" data-origen="${r.origen}" title="${ayuda(c, r)}"${sub ? ' aria-haspopup="true" aria-expanded="false"' : ""}>${img(r, 32)}${sub ? '<span class="flecha">▼</span>' : ""}<span>${esc(c.texto)}</span></button>`;
+    }).join("")}</div></div>`).join("");
+}
+
+function filaInspector(c, sangria) {
+  const p = resolver(c, "proyecto"), k = resolver(c, "kit"), pr = PROP[c.id];
+  const tam = r => `<div class="tam">${img(r, 16)}${img(r, 24)}${img(r, 32)}</div>`;
+  const notas = [];
+  if (pr) notas.push(esc(pr.motivo));
+  if (p.origen === "embebido" || p.origen === "raster") notas.push("El kit no lo puede actualizar: hay que asignarle un recurso en el designer.");
+  if (p.origen === "pendiente") notas.push("El kit tiene una versión más nueva.");
+  return `<tr>
+    <td style="padding-left:${10 + sangria}px">${esc(c.texto)}<br><code>${esc(c.id)}</code></td>
+    <td>${tam(p)}<code>${esc(p.nombre)}</code></td>
+    <td>${k.src === p.src || (c.icono && c.icono.tipo === "recurso" && c.icono.kit && !c.icono.cambia) ? '<span class="flecha-cambio">igual</span>' : tam(k)}</td>
+    <td>${pr ? tam(resolver(c, "propuesta")) + `<code>${esc(pr.icono)}</code>` : ""}</td>
+    <td><span class="etq"><i class="punto" style="background:var(--o-${p.origen === "raster" || p.origen === "sin" ? "embebido" : p.origen})"></i>${TEXTO_ORIGEN[p.origen]}</span></td>
+    <td class="motivo">${notas.join("<br>")}</td></tr>`;
+}
+
+function pintarInspector(pag) {
+  document.getElementById("titulo-inspector").textContent = `Iconos de la pestaña ${pag.texto}`;
+  let html = filaInspector(pag, 0);
+  for (const g of pag.grupos.filter(g => g.visible)) {
+    html += `<tr><td class="grupo-fila" colspan="6">${esc(g.texto)}</td></tr>`;
+    for (const c of g.items) {
+      html += filaInspector(c, 0);
+      for (const s of c.menu) html += filaInspector(s, 18);
+    }
+  }
+  document.getElementById("inspector").innerHTML = html;
+}
+
+function pintar() {
+  const pag = SIM.paginas.find(p => p.id === estado.pagina || p.texto === estado.pagina);
+  estado.pagina = pag.id;
+  cerrarMenu();
+  pintarTabs(); pintarRibbon(pag); pintarInspector(pag);
+  document.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.modo === estado.modo));
+  guardado("modo", estado.modo); guardado("pagina", pag.id);
+  history.replaceState(null, "", "#" + encodeURIComponent(pag.texto));
+}
+
+/* menú desplegable de los BarSubItem */
+let menuAbierto = null;
+function cerrarMenu() {
+  if (!menuAbierto) return;
+  menuAbierto.boton.setAttribute("aria-expanded", "false");
+  menuAbierto.el.remove(); menuAbierto = null;
+}
+function abrirMenu(boton, control) {
+  cerrarMenu();
+  const el = document.createElement("div");
+  el.className = "menu"; el.setAttribute("role", "menu");
+  el.innerHTML = control.menu.map(s => { const r = resolver(s, estado.modo);
+    return `<button role="menuitem" data-origen="${r.origen}" title="${ayuda(s, r)}">${img(r, 16)}${esc(s.texto)}</button>`; }).join("");
+  document.getElementById("ventana").appendChild(el);
+  const caja = boton.getBoundingClientRect();
+  el.style.left = caja.left + "px"; el.style.top = caja.bottom + "px";
+  el.style.zoom = document.getElementById("zoom").value;
+  el.style.left = caja.left / el.style.zoom + "px"; el.style.top = caja.bottom / el.style.zoom + "px";
+  boton.setAttribute("aria-expanded", "true");
+  menuAbierto = { el, boton };
+}
+
+document.getElementById("tabs").addEventListener("click", e => {
+  const t = e.target.closest(".tab"); if (t) { estado.pagina = t.dataset.id; pintar(); }
+});
+document.getElementById("ribbon").addEventListener("click", e => {
+  const b = e.target.closest(".btn"); if (!b) return;
+  const pag = SIM.paginas.find(p => p.id === estado.pagina);
+  const c = pag.grupos.flatMap(g => g.items).find(i => i.id === b.dataset.id);
+  if (c && c.menu.length) { e.stopPropagation(); menuAbierto && menuAbierto.boton === b ? cerrarMenu() : abrirMenu(b, c); }
+});
+document.addEventListener("click", e => { if (menuAbierto && !menuAbierto.el.contains(e.target)) cerrarMenu(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") cerrarMenu(); });
+window.addEventListener("scroll", cerrarMenu, true);
+document.querySelector(".seg").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (b) { estado.modo = b.dataset.modo; pintar(); }
+});
+const marcar = document.getElementById("marcar");
+marcar.checked = guardado("marcar") === "1";
+const aplicarMarcar = () => { document.body.classList.toggle("marcar", marcar.checked); guardado("marcar", marcar.checked ? "1" : "0"); };
+marcar.addEventListener("change", aplicarMarcar);
+const zoom = document.getElementById("zoom");
+zoom.value = guardado("zoom") || "1";
+const aplicarZoom = () => { document.getElementById("ventana").style.zoom = zoom.value; cerrarMenu(); guardado("zoom", zoom.value); };
+zoom.addEventListener("change", aplicarZoom);
+window.addEventListener("hashchange", () => { estado.pagina = decodeURIComponent(location.hash.slice(1)); pintar(); });
+
+document.getElementById("version").textContent = `FrmMain de ${SIM.rama} · ${SIM.version}`;
+aplicarMarcar(); aplicarZoom(); pintar();
+</script>
+</body>
+</html>

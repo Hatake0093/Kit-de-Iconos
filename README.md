@@ -16,6 +16,26 @@ Es lo único que se entrega/prueba; todo lo demás de este directorio es herrami
 
 Para ver el mockup basta abrir `simulador de control ganadero/index.html` en el navegador.
 
+## Mockup del sistema real: `ControlGanaderoSim/`
+
+Réplica en HTML del ribbon de ControlGanadero para ver las correcciones del kit sin compilar para Windows.
+`generar_sim.py` lee `FrmMain.designer.vb`, `FrmMain.resx` y `Resources/` de una rama del proyecto
+(con `git show`, sin cambiar el checkout) y genera `datos.js` más las carpetas `iconos_proyecto/` e `iconos_embebidos/`.
+
+```
+python ControlGanaderoSim/generar_sim.py              # rama main (por defecto)
+python ControlGanaderoSim/generar_sim.py --rama feature/508-Analisis-Datos-Noviembre
+python ControlGanaderoSim/generar_sim.py --trabajo    # checkout actual
+```
+
+Después se abre `ControlGanaderoSim/index.html` en el navegador. El selector **Iconos** cambia entre:
+
+- **Proyecto:** los SVG que hoy tiene la rama, o sea, lo que se ve al compilar.
+- **Kit actual:** lo que se verá después de `sincronizar_resources.py --aplicar`.
+- **Kit + propuestas:** el kit más los cambios de `propuestas.js`, que se edita a mano para probar otros iconos.
+
+**Marcar origen** pone un punto en cada icono según su origen: del kit, con cambios sin sincronizar, fuera del kit o embebido en `FrmMain.resx`. Los embebidos el kit no puede actualizarlos.
+
 ## Documentación y referencias
 
 - [`PALETA.md`](PALETA.md) / [`paleta.svg`](paleta.svg): paleta de color, criterio de coherencia visual y variantes derivadas.
