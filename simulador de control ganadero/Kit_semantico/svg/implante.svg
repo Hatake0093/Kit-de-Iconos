@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Cartucho de implantes">
+  <title>Cartucho de implantes</title>
+  <g transform="rotate(-12 16 16)">
+    <path d="M3 8h21l5 5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" fill="#24465B"/>
+    <path d="M5 10h18l4 4v8H5Z" fill="#8870D4"/>
+    <g fill="#E2F2F5">
+      <rect x="7" y="12" width="4" height="8" rx="2"/>
+      <rect x="14" y="12" width="4" height="8" rx="2"/>
+      <rect x="21" y="12" width="4" height="8" rx="2"/>
+    </g>
+  </g>
+</svg>

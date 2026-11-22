@@ -19,7 +19,11 @@ Además del color cuentan el **estilo** (relleno plano, sin degradados ni trazos
 tenue), el **peso visual** y el **vocabulario de formas** (bordes redondeados, insignia con aro blanco).
 
 `python auditar_coherencia.py` revisa los dos primeros automáticamente: estilo de línea, degradados
-y colores a más de 55 unidades RGB de cualquier color del sistema. El peso visual y las formas se
+y colores a más de 55 unidades RGB de la paleta aplicable. También marca el terracota como error
+y enumera los demás tonos cromáticos sin documentar, incluidos los pasteles. Para detectar variantes
+del terracota, usa como aproximación un matiz HSL de 8° a 26°, saturación desde 28 % y luminosidad
+del 15 % al 80 %. El castaño y los tintes aprobados del Brahman se reconocen por su valor exacto.
+El peso visual y las formas se
 revisan a ojo en la vista previa.
 
 ## 1. Paleta base
@@ -46,6 +50,13 @@ Solo para trazos o detalles que necesitan más contraste sobre fondo blanco.
 | Ámbar | ámbar oscuro | `#C98A1B` |
 | Rosa | rosa oscuro | `#B94A58` |
 | Azul | azul oscuro | `#1F6FC4` (pliegue de `Enviar`) |
+
+Tinte claro, solo para la cara trasera de `carpeta-abierta` (ámbar al 75 % sobre blanco, como
+el original de DevExpress, pero en color sólido para que no se transparente sobre botones pulsados):
+
+| Base | Claro | Hex |
+|---|---|---|
+| Ámbar | ámbar claro | `#F6C272` |
 
 ## 2. Vaca brahman (firma propia)
 
@@ -76,6 +87,9 @@ ojos y nariz en azul marino `#24465B`.
 | Manchas, orejas y hocico | `#907B6C` | `#B19D8D` |
 | Cara | `#F4E1CF` | `#FBF1E6` |
 | Interior de las orejas | `#B19D8D` | `#D3BFAE` |
+
+Los iconos `ternero-*` y `ternero` usan los colores de la cría. La pezuña de `huella-luna-cuna`
+y el bovino de `documento-vaca` usan el castaño de la madre.
 
 Los tintes `#B19D8D` y `#D3BFAE` mezclan el castaño con un tercio y dos tercios
 de crema, respectivamente, en los canales RGB.
@@ -110,9 +124,9 @@ color de radio 5,5 y símbolo blanco de trazo 1,5, **concéntricos en `(25.5, 25
 | Morado `#8870D4` | Tiempo, historial, marca e identificador | `reloj`, `circulo` |
 
 La regla está en `COLOR_POR_SIMBOLO` de `generar_faltantes.py` y se aplica a las familias listadas en
-`COLORES_INSIGNIAS_VACA` (calendario, etiqueta, documento, usuario, barras, comedero, saco, carrito,
-lápida, matraz, arete-rfid, BaseDatos…). Excepciones por icono: `arete-rfid-x` y `vaca-x` (insignia terracota `#B9472B`) y
-`GuardarCerrar` (azul, para distinguirla del cuerpo verde). La familia `vaca-*` la tiene en su propia tabla (`COLORES_INSIGNIAS_VACA`).
+`COLORES_INSIGNIAS_VACA` (calendario, etiqueta, documento, usuario, barras, comedero, saco,
+lápida, matraz, arete-rfid, BaseDatos…). Las insignias de cancelación de vacas y aretes usan rosa.
+`GuardarCerrar` lleva una insignia azul para distinguirla del cuerpo verde. La familia `vaca-*` la tiene en su propia tabla (`COLORES_INSIGNIAS_VACA`).
 
 Variante `-reporte`: hoja blanca con línea de tendencia marino, insignia azul. La generan
 `generar_reportes.py` (29 familias, sin `documento`, que ya es un reporte) a partir de otra variante de la
@@ -122,11 +136,11 @@ misma familia, así que conserva su escala; `generar_faltantes.py` la llama al f
 
 | Familia | Color del cuerpo | Insignia |
 |---|---|---|
-| `vaca-*` | Pelaje brahman `#907B6C` y cara crema `#F4E1CF` | Por significado, con la excepción de `vaca-x` |
+| `vaca-*` | Pelaje brahman `#907B6C` y cara crema `#F4E1CF` | Por significado |
 | `calendario-*` | Cabecera `#F44336` | Por significado |
 | `etiqueta-*` | Ámbar `#F3AD43` | Por significado |
 | `cerca-*` | Azul marino y verde `#24AC88` | Verde |
-| `camion-*` | Ámbar `#F3AD43` | Ámbar |
+| `camion-*` | Ámbar `#F3AD43` | Por significado; `camion-descarga` verde (remisión de entrada) |
 | `camion-mixer-*` | Cabina `#E2F2F5`, tolva `#E56876` / `#B94A58`, chasis `#24465B` | Por significado; `documento` azul |
 | `jeringa-*` | Morado `#8870D4` | Morado |
 | `indicador-*` | Carcasa `#8A949E`, panel `#24465B`, pantalla `#1F6FC4` | Por significado; descarga azul, carga verde y reloj morado |
@@ -174,12 +188,14 @@ de origen va a qué color de la paleta.
 
 Rellenos suaves de los iconos de línea. Son aceptados, pero **no forman parte de la paleta**.
 
-`#CFE3FA` azul (vidrio del matraz) · `#D3E2F4` azul · `#F6D9D6` rosa · `#F7E3BE` ámbar · `#D6EBDD` verde · `#D1C4E9` lila · `#9CC6F2` azul de la nube
+`#CFE3FA` azul (vidrio del matraz) · `#D3E2F4` azul · `#F6D9D6` rosa · `#F7E3BE` ámbar · `#D6EBDD` verde · `#D1C4E9` lila · `#9CC6F2` azul de la nube · `#7AD3B8` verde claro de la hoja
 
 ## 8. Excepciones y pendientes
 
 | Tema | Estado |
 |---|---|
+| Hexágono del cargador frontal | Pendiente de decisión visual. El rojo anaranjado `#EE240E` supera la tolerancia de la paleta aplicable al cargador. |
+| Fondo de papel de `Importar` | Pendiente de revisión. El rosa claro `#F8BBD0` tiene un matiz más magenta que el tinte documentado `#F6D9D6`. |
 | Iconos con **degradado** de Fluent | Resuelto: redibujados planos y sin «Fluent» en el nombre |
 | Iconos de **estilo de línea** (`escudo-gris`, `medidor`, `moneda-check`, `prohibido`, `regla`) | Resuelto: redibujados planos |
 | Magenta y rosa fuerte `#E91E63` de `Importar` | Resuelto: `Importar` usa `#E56876`; los magentas desaparecieron con los degradados |

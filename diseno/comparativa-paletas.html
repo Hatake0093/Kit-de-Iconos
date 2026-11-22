@@ -1,51 +1,163 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Comparativa de paletas · Control Ganadero</title><style>
-:root{color-scheme:light;--ink:#233833;--muted:#53645e;--line:#c9cdc2;--paper:#f6f6ef;--green:#31584b}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 "Work Sans",system-ui,sans-serif}
-main,.bar{width:min(1110px,calc(100% - 3rem));margin:auto}.bar{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);font-size:.85rem}.brand{display:flex;gap:.65rem;align-items:center;font-weight:700}.mark{background:var(--green);width:20px;height:20px;display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:3px}.mark i{background:var(--paper)}nav{display:flex;gap:1.3rem}a{color:var(--green);text-underline-offset:4px}
-.intro{padding:34px 0 26px}.intro h1,h2,h3,p,figure{margin:0}.intro h1,.section-title,.plate h2{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.045em;line-height:1.06}.intro h1{font-size:clamp(2.8rem,6.3vw,5.1rem)}.intro p,.desc{color:var(--muted);max-width:74ch}.intro p{margin-top:12px;font-size:1.03rem}
-.plates{display:grid;grid-template-columns:1fr 1fr;gap:16px}.plate{background:#fff;border:1px solid var(--line);border-radius:9px;overflow:hidden}.plate header{padding:20px 24px 0}.plate header span{font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}.plate h2{font-size:clamp(1.55rem,3.3vw,2.65rem);margin-top:4px}.specimens{display:grid;grid-template-columns:repeat(3,1fr);padding:26px 12px 20px}.specimens svg{width:clamp(43px,6.5vw,80px);height:clamp(43px,6.5vw,80px)}figure{text-align:center}figure svg{display:block;margin:auto}figcaption{font-size:.8rem;margin-top:8px;color:var(--muted)}.strip{display:flex;height:12px}.strip i{flex:1}
-section.block{margin-top:45px;border-top:1px solid var(--line);padding-top:24px}.section-title{font-size:clamp(2rem,4vw,3rem)}.desc{margin-top:8px}.head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.scale{margin:0;border:0;padding:0;display:flex;align-items:center;gap:4px}.scale legend{float:left;margin-right:8px;font-size:.83rem;line-height:34px}.scale label{position:relative;cursor:pointer}.scale input{position:absolute;opacity:0}.scale span{padding:5px 10px;border:1px solid var(--line);border-radius:4px;display:block;font-size:.83rem}.scale input:checked+span{background:var(--green);color:white;border-color:var(--green)}.scale input:focus-visible+span{outline:3px solid #667ba3;outline-offset:2px}
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}.card{border:1px solid var(--line);border-radius:6px;background:white;padding:13px 16px}.card h3{font-size:.94rem}.pair{display:grid;grid-template-columns:1fr 1fr;margin:12px 0 2px}.pair figure+figure{border-left:1px solid #e5e8e1}.pair svg{width:32px;height:32px}#iconos:has(#zoom:checked) .pair svg{width:64px;height:64px}
-table{width:100%;border-collapse:collapse;margin:14px 0 0;text-align:left}th,td{border-bottom:1px solid #d9dcd3;padding:9px 6px}thead th{font-size:.76rem;color:var(--muted)}tbody th{font-size:.9rem;font-weight:550}.chip{display:inline-flex;gap:10px;align-items:center}.chip i{width:clamp(40px,7vw,96px);height:28px;background:var(--color);border:1px solid #0002;border-radius:3px}code{font: .82rem "IBM Plex Mono",monospace}.name{font-size:.85rem;color:var(--muted)}details{margin:18px 0}summary{cursor:pointer;font-weight:620;color:var(--green)}main{padding-bottom:48px}
-@media(max-width:680px){main,.bar{width:calc(100% - 26px)}.plates{gap:7px}.plate header{padding:12px 10px 0}.specimens{padding:17px 3px 12px}.specimens svg{width:32px;height:32px}.specimens figcaption{font-size:.65rem}.plate h2{font-size:1.4rem}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:10px 7px}.name{display:none}.chip{gap:4px}code{font-size:.73rem}.bar{gap:8px}nav{gap:9px}.intro{padding:25px 0 18px}.intro p{font-size:.95rem}section.block{margin-top:28px}}
-@media(max-width:360px){.bar{flex-wrap:wrap}.chip{flex-wrap:wrap}.card h3{font-size:.82rem}.specimens svg{width:27px;height:27px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-.plate header p {font-size:.91rem;color:var(--muted);margin:.45rem 0 0}
-.plates {grid-template-columns:repeat(3,minmax(0,1fr))}
-.plate {display:flex;flex-direction:column}
-.plate header {flex:1;padding:17px 15px 0}
-.specimens {padding:22px 7px 15px}
-.specimens svg {width:clamp(48px,5vw,72px);height:clamp(48px,5vw,72px)}
-.gallery {grid-template-columns:repeat(2,minmax(0,1fr))}
-.pair {grid-template-columns:repeat(3,minmax(0,1fr))}
-@media (max-width:680px) {.plates {grid-template-columns:1fr}}
-@media (max-width:680px) {
-  .gallery {grid-template-columns:1fr}
-  .plate header {padding:12px 10px 0}
-  .plate header p {font-size:.8rem}
-  .specimens svg {width:48px;height:48px}
-  #colores th,#colores td {padding:8px 2px;font-size:.72rem}
-  #colores .chip {display:grid;gap:3px}
-  #colores .chip i {width:100%;height:20px}
-  #colores code {font-size:clamp(.6rem,2.4vw,.75rem)}
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparativa de paletas · Control Ganadero</title>
+<style>
+:root {
+  color-scheme: light;
+  --ink: #203831;
+  --muted: #52655e;
+  --line: #cbd3c9;
+  --edge: #a3b2a8;
+  --paper: #f5f5ef;
+  --forest: #244b3c;
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans: "Work Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+* {box-sizing: border-box}
+body {margin: 0; color: var(--ink); background: var(--paper); font: 1rem/1.5 var(--sans)}
+h1, h2, h3, h4, p, figure {margin: 0}
+a {color: var(--forest); text-underline-offset: .22em}
+button, input, select {font: inherit}
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {outline: 3px solid #477b9d; outline-offset: 3px}
+[hidden] {display: none !important}
+.shell {width: min(1480px, calc(100% - clamp(28px, 8vw, 128px))); margin: 0 auto}
+.definitions {position: absolute; overflow: hidden}
+.skip {position: absolute; z-index: 5; top: -5em; padding: .7em; color: white; background: var(--forest)}
+.skip:focus {top: 0}
+html {scroll-padding-top: 70px}
+.family-colors {margin-left: auto; font-size: .86rem}
+.masthead {position: sticky; top: 0; z-index: 3; background: #193c31; color: #fffcf5}
+.topbar, .brand, .topbar nav {display: flex; align-items: center}
+.topbar {min-height: 58px; justify-content: space-between; gap: 1rem}
+.topbar a {color: inherit; text-decoration: none}
+.brand {gap: .75rem; font-weight: 650}
+.mark {display: flex; gap: 3px; align-items: center; padding: 3px 0}
+.mark i {display: block; width: 5px; height: 17px; background: #d2dda8; transform: skewY(-24deg)}
+.mark i:nth-child(2) {background: #a7c3a1; height: 23px}
+.mark i:last-child {background: #f0dfbb}
+.topbar nav {gap: clamp(14px, 3vw, 40px); font-size: .9rem}
+.topbar a:hover, footer a:hover {text-decoration: underline}
+.intro {padding: clamp(30px, 4vw, 62px) 0 24px}
+h1, .chapter-title h2, .plate h2 {font: 400 clamp(2.7rem, 5.4vw, 5.4rem)/1.03 var(--serif); letter-spacing: -.052em}
+.intro p {margin-top: 12px; color: var(--muted); max-width: 68ch; font-size: clamp(1rem, 1.4vw, 1.17rem)}
+.plates {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.8vw, 24px)}
+.plate {display: flex; flex-direction: column; background: white; border: 1px solid var(--line); border-radius: 9px; overflow: hidden}
+.plate header {padding: 18px 22px 13px; background: #e6ede4}
+.plate.lino header {background: #eee7da}
+.plate.azul-ejecutivo header {background: #e1eaf1}
+.plate header p {font-size: .75rem; font-weight: 700; color: #475950; letter-spacing: .075em; text-transform: uppercase}
+.plate h2 {font-size: clamp(1.9rem, 3.2vw, 3.45rem); margin: 4px 0 0}
+.plate-samples, .samples {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center}
+.plate-samples {padding: clamp(18px, 2.4vw, 35px) 6px 8px}
+.plate-samples svg {width: min(100%, clamp(48px, 6.7vw, 104px)); aspect-ratio: 1; height: auto}
+figure svg {display: block; margin: auto}
+figcaption {margin-top: 7px; color: var(--muted); font-size: .86rem}
+.plate-desc {padding: 10px 20px 16px; color: var(--muted); font-size: .94rem; flex: 1}
+.strip {height: 14px; display: flex}
+.strip i {flex: 1}
+.chapter {border-top: 1px solid var(--edge); padding-top: 25px; margin-top: clamp(35px, 4.4vw, 72px)}
+.chapter-title {display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap}
+.chapter-title h2 {font-size: clamp(2.2rem, 4vw, 4.1rem)}
+.total, .count {color: var(--muted); font-family: var(--mono); font-size: .82rem}
+.tools {display: grid; grid-template-columns: minmax(160px, 1.2fr) minmax(180px, 1fr) auto; align-items: end; gap: 18px; margin: 17px 0 0; padding: 15px 18px; border: 1px solid var(--line); border-radius: 7px; background: #ecefe7}
+.field {display: grid; gap: 5px}
+.field > span, .scale legend {font-size: .85rem; font-weight: 630}
+input[type="search"], select {width: 100%; min-width: 0; min-height: 44px; color: var(--ink); border: 1px solid var(--edge); background: white; border-radius: 4px; padding: 8px 12px}
+input::placeholder {color: #5c6863}
+.scale {min-width: 0; padding: 0; border: 0; margin: 0}
+.scale legend {padding: 0; margin-bottom: 5px}
+.scale div {display: flex; border: 1px solid var(--edge); border-radius: 4px; overflow: hidden}
+.scale label {position: relative; cursor: pointer; flex: 1; text-align: center}
+.scale input {position: absolute; opacity: 0}
+.scale span {display: block; min-width: 48px; padding: 9px 12px; background: white; font-family: var(--mono); line-height: 24px}
+.scale input:checked + span {background: var(--forest); color: white}
+.scale input:focus-visible + span {outline: 3px solid #82accc; outline-offset: -4px}
+#iconos {--size: 96px}
+#iconos:has(#px32:checked) {--size: 32px}
+#iconos:has(#px64:checked) {--size: 64px}
+#iconos:has(#px128:checked) {--size: 128px}
+.family, .color-group {margin-top: 28px}
+.family-title {display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 12px}
+.family-title h3, .color-group h3 {font: 500 clamp(1.42rem, 2.1vw, 2.1rem)/1.2 var(--serif); letter-spacing: -.026em}
+.gallery {display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px}
+.sample {min-width: 0; padding: 16px 16px 18px; background: white; border: 1px solid var(--line); border-radius: 6px}
+.sample h4 {font-size: 1rem; font-weight: 630}
+.samples {margin-top: 14px}
+.samples figure + figure {border-left: 1px solid #e0e5dd}
+.samples svg {height: var(--size); width: var(--size)}
+.color-tools {border-bottom: 1px solid var(--line); padding: 16px 0}
+.color-tools label {max-width: 34rem}
+.color-group h3 {margin-bottom: 12px}
+table {width: 100%; border-collapse: collapse; table-layout: fixed; background: white}
+thead th {background: #e5ebe3; font-size: .89rem; font-weight: 650}
+td, th {padding: 11px clamp(6px, 1.6vw, 22px); text-align: left; border-bottom: 1px solid var(--line)}
+th:first-child {width: 32%}
+tbody th {font-size: .98rem; font-weight: 560}
+.swatch {display: block; width: 100%; height: clamp(34px, 3.3vw, 50px); border: 1px solid #0002; border-radius: 3px; background: var(--swatch)}
+code {font: .86rem var(--mono); display: block; margin-top: 4px}
+.empty {padding: 24px 0; color: var(--muted)}
+.empty button {color: var(--forest); background: transparent; cursor: pointer; border: 0; text-decoration: underline}
+footer {padding: 28px 0 44px; text-align: right}
+@media (max-width: 990px) {.gallery {grid-template-columns: 1fr}}
+@media (max-width: 760px) {
+  .plates {grid-template-columns: 1fr}
+  .plate {display: grid; grid-template-columns: minmax(94px, .85fr) 1.2fr}
+  .plate header {grid-row: span 2; padding: 17px 12px}
+  .plate h2 {font-size: clamp(1.6rem, 6vw, 2.4rem)}
+  .plate-samples {padding: 14px 5px 4px}
+  .plate-samples svg {width: min(100%, 68px)}
+  .plate-desc {padding: 5px 10px 10px; font-size: .82rem}
+  .strip {grid-column: span 2; height: 8px}
+  .tools {grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px}
+  .scale {grid-column: span 2}
+  .scale div {width: fit-content}
+}
+@media (max-width: 580px) {
+  html {scroll-padding-top: 86px}
+  .topbar {align-items: start; flex-direction: column; gap: 8px; padding: 10px 0}
+  .topbar nav {flex-wrap: wrap; gap: 18px}
+  figcaption {font-size: .76rem}
+  .sample {padding: 13px 7px}
+  .chapter-title h2 {font-size: 2.15rem}
+  th:first-child {width: 29%}
+  td, th {padding: 7px 3px}
+  thead th, tbody th {font-size: .77rem; overflow-wrap: anywhere}
+  code {font-size: .72rem}
+  .swatch {height: 30px}
+}
+@media (max-width: 460px) {
+  .tools {grid-template-columns: 1fr}
+  .scale {grid-column: auto}
+  .scale div {width: 100%}
+  #iconos:has(#px128:checked) .samples {grid-template-columns: 1fr}
+  #iconos:has(#px128:checked) .samples figure {display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; padding: 5px; border-left: 0}
+  #iconos:has(#px128:checked) .samples figcaption {grid-column: 1; grid-row: 1; text-align: left; font-size: .9rem}
+  #iconos:has(#px128:checked) .samples svg {grid-column: 2}
+}
+@media (max-width: 360px) {
+  .shell {width: calc(100% - 12px)}
+  #iconos:has(#px96:checked) .sample {padding-inline: 0}
+  #iconos:has(#px96:checked) .sample h4 {padding-inline: 8px}
+  .plate-desc {font-size: .75rem}
+  .plate header p {font-size: .65rem}
 }
 
-.installations {margin:18px 0 28px;padding:18px clamp(8px,2vw,26px);background:white;border:1px solid var(--line);border-radius:7px}
-.installations h3 {font:400 clamp(1.65rem,3vw,2.2rem)/1.15 "Instrument Serif",Georgia,serif;letter-spacing:-.035em}
-.installations table {table-layout:fixed}
-.installations thead th:first-child {width:24%}
-.installations thead th:not(:first-child),.installations td {text-align:center}
-.installations tbody tr:last-child>* {border:0}
-.installations svg {display:block;margin:auto;width:32px;height:32px;max-width:100%}
-#iconos:has(#zoom:checked) .installations svg {width:64px;height:64px}
-@media (max-width:680px) {
-  .installations :is(th,td) {font-size:.71rem;padding:8px 1px}
-}
+.lino {
+  --oscuro-verde: #4B5B3D;
+  --tinte-verde: #A7B797;
+  --tolva-oscura: #764D57;
+  --lila: #CFC2D0;
+  --pelaje: #94765F;
+  --crema: #E9DBCA;
+  --cria: #BAA18A;
+  --cara-cria: #F4ECE0;
+  --oreja-cria: #CCBDB1;
+  --pliegue: #BDB1A0;
 
-:is(.installations, .pair) .lino {
   --tinta: #342F2B;
   --borde: #EAE6DC;
   --hormigon: #A69E90;
@@ -61,11 +173,22 @@ table{width:100%;border-collapse:collapse;margin:14px 0 0;text-align:left}th,td{
   --azul: #5D7484;
   --verde: #66764E;
   --ambar: #937542;
-  --rosa: #9B6255;
+  --rosa: #966872;
   --morado: #847087;
 }
 
-:is(.installations, .pair) .azul-ejecutivo {
+.azul-ejecutivo {
+  --oscuro-verde: #315B4B;
+  --tinte-verde: #97B7AC;
+  --tolva-oscura: #763D4B;
+  --lila: #C4C5D9;
+  --pelaje: #778B9B;
+  --crema: #E0E7EA;
+  --cria: #A3B3BD;
+  --cara-cria: #F0F3F4;
+  --oreja-cria: #C7D1D6;
+  --pliegue: #A3BDD2;
+
   --tinta: #18344D;
   --borde: #E7EFF6;
   --hormigon: #879BAA;
@@ -84,11 +207,12 @@ table{width:100%;border-collapse:collapse;margin:14px 0 0;text-align:left}th,td{
   --rosa: #A05F6B;
   --morado: #736B92;
 }
-
-@media(max-width:680px){.bar{flex-wrap:wrap}nav{flex-wrap:wrap}}
-.sample-heading {margin:24px 0 8px;font-size:1.18rem}.card h4 {margin:0;font-size:1rem}
-</style></head><body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol xmlns="http://www.w3.org/2000/svg" id="vaca-a" viewBox="0 0 32 32"><path fill="#907B6C" d="M10.6 11.8 Q6.7 8.9 1.2 11.2 Q1.7 14.8 5.6 17.5 Q7.7 18.8 9.3 16.1 Z"/><path fill="#907B6C" d="M21.4 11.8 Q25.3 8.9 30.8 11.2 Q30.3 14.8 26.4 17.5 Q24.3 18.8 22.7 16.1 Z"/><path d="M12.4 8.1 C8.8 7.8 5.6 6.1 3.3 2.6 C3.6 6.5 6.2 9.5 10.2 10.9 Q11.5 9.3 12.4 8.1 Z" fill="#8A949E"/><path d="M19.6 8.1 C23.2 7.8 26.4 6.1 28.7 2.6 C28.4 6.5 25.8 9.5 21.8 10.9 Q20.5 9.3 19.6 8.1 Z" fill="#8A949E"/><rect x="9" y="7" width="14" height="20" rx="6" fill="#F4E1CF"/><path d="M9 13 A6 6 0 0 1 15 7 H17 C17.1 9.1 15.4 9.6 14.6 11 C13.3 12.9 11.2 12.4 9 13.3 Z" fill="#907B6C"/><ellipse cx="16.0" cy="23.5" rx="9.0" ry="4.5" fill="#907B6C"/><ellipse cx="12.0" cy="15.0" rx="1.0" ry="1.0" fill="#24465B"/><ellipse cx="20.0" cy="15.0" rx="1.0" ry="1.0" fill="#24465B"/><ellipse cx="12.0" cy="23.0" rx="1.0" ry="1.0" fill="#24465B"/><ellipse cx="20.0" cy="23.0" rx="1.0" ry="1.0" fill="#24465B"/></symbol>
+</style>
+</head>
+<body>
+<a class="skip" href="#iconos">Saltar a las muestras</a>
+<svg width="0" height="0" aria-hidden="true" class="definitions"><defs>
+<symbol xmlns="http://www.w3.org/2000/svg" id="vaca-a" viewBox="0 0 32 32"><path fill="#907B6C" d="M10.6 11.8 Q6.7 8.9 1.2 11.2 Q1.7 14.8 5.6 17.5 Q7.7 18.8 9.3 16.1 Z"/><path fill="#907B6C" d="M21.4 11.8 Q25.3 8.9 30.8 11.2 Q30.3 14.8 26.4 17.5 Q24.3 18.8 22.7 16.1 Z"/><path d="M12.4 8.1 C8.8 7.8 5.6 6.1 3.3 2.6 C3.6 6.5 6.2 9.5 10.2 10.9 Q11.5 9.3 12.4 8.1 Z" fill="#8A949E"/><path d="M19.6 8.1 C23.2 7.8 26.4 6.1 28.7 2.6 C28.4 6.5 25.8 9.5 21.8 10.9 Q20.5 9.3 19.6 8.1 Z" fill="#8A949E"/><rect x="9" y="7" width="14" height="20" rx="6" fill="#F4E1CF"/><path d="M9 13 A6 6 0 0 1 15 7 H17 C17.1 9.1 15.4 9.6 14.6 11 C13.3 12.9 11.2 12.4 9 13.3 Z" fill="#907B6C"/><ellipse cx="16.0" cy="23.5" rx="9.0" ry="4.5" fill="#907B6C"/><ellipse cx="12.0" cy="15.0" rx="1.0" ry="1.0" fill="#24465B"/><ellipse cx="20.0" cy="15.0" rx="1.0" ry="1.0" fill="#24465B"/><ellipse cx="12.0" cy="23.0" rx="1.0" ry="1.0" fill="#24465B"/><ellipse cx="20.0" cy="23.0" rx="1.0" ry="1.0" fill="#24465B"/></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="arete-a" viewBox="0 0 32 32"><path d="M12 6 A4 4 0 0 1 20 6 V8 Q20 9.5 21.5 10 L26 11.5 Q27 12 27 13.5 V27 Q27 29.5 24.5 29.5 H7.5 Q5 29.5 5 27 V13.5 Q5 12 6 11.5 L10.5 10 Q12 9.5 12 8 Z" fill="#F3AD43" stroke="#24465B" stroke-width="1.5" stroke-linejoin="round" /><polyline points="9,16 23,16" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round" /><polyline points="9,21 23,21" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round" /><polyline points="9,26 23,26" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round" /></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="camion-a" viewBox="0 0 32 32"><rect x="2" y="7" width="18" height="16" rx="2" fill="#F3AD43" /><polygon points="21,12 26,12 30,18 30,24 21,24" fill="#24465B" /><polygon points="23,14 25,14 28,18 23,18" fill="#E2F2F5" /><ellipse cx="8.0" cy="25.0" rx="4.0" ry="4.0" fill="#24465B" /><ellipse cx="8.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /><ellipse cx="25.0" cy="25.0" rx="4.0" ry="4.0" fill="#24465B" /><ellipse cx="25.0" cy="25.0" rx="1.5" ry="1.5" fill="#FFFFFF" /></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="crianza-a" viewBox="0 0 64 64">
@@ -103,7 +227,7 @@ table{width:100%;border-collapse:collapse;margin:14px 0 0;text-align:left}th,td{
     <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#24465B" />
     <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#24465B" />
   </g>
-  
+
   <g transform="translate(31 -1.5) scale(.72)">
     <path fill="#B19D8D" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
     <path fill="#D3BFAE" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
@@ -139,10 +263,10 @@ table{width:100%;border-collapse:collapse;margin:14px 0 0;text-align:left}th,td{
     <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#342F2B" />
     <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#342F2B" />
   </g>
-  
+
   <g transform="translate(31 -1.5) scale(.72)">
     <path fill="#BAA18A" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
-    <path fill="#D1BCAC" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
+    <path fill="#CCBDB1" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
     <path fill="#F4ECE0" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z" />
     <path fill="#BAA18A" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z" />
     <circle cx="16" cy="30" r="1.7" fill="#342F2B" />
@@ -164,7 +288,7 @@ table{width:100%;border-collapse:collapse;margin:14px 0 0;text-align:left}th,td{
     <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="#18344D" />
     <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="#18344D" />
   </g>
-  
+
   <g transform="translate(31 -1.5) scale(.72)">
     <path fill="#A3B3BD" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
     <path fill="#C7D1D6" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
@@ -181,7 +305,7 @@ table{width:100%;border-collapse:collapse;margin:14px 0 0;text-align:left}th,td{
 <symbol xmlns="http://www.w3.org/2000/svg" id="vaca-check-t" viewBox="0 0 32 32"><use href="#vaca-t"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#477969" /><polyline points="22.5,25 25,27.5 28.5,23" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="vaca-lupa-l" viewBox="0 0 32 32"><use href="#vaca-l"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#5D7484" /><ellipse cx="25" cy="25" rx="2.3" ry="2.3" fill="none" stroke="#FFFFFF" stroke-width="1.5" /><polyline points="26.7,26.7 28.7,28.7" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="vaca-lupa-t" viewBox="0 0 32 32"><use href="#vaca-t"/><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#3E6C99" /><ellipse cx="25" cy="25" rx="2.3" ry="2.3" fill="none" stroke="#FFFFFF" stroke-width="1.5" /><polyline points="26.7,26.7 28.7,28.7" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
-<symbol xmlns="http://www.w3.org/2000/svg" id="etiqueta-x-l" viewBox="0 0 32 32"><polygon points="3,5 17,5 29,17 17,29 3,15" fill="#B7A074" /><ellipse cx="9.5" cy="11.5" rx="2.5" ry="2.5" fill="#FFFFFF" /><polyline points="17,14 23,20" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#9B6255" /><polyline points="23,23 28,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="28,23 23,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="etiqueta-x-l" viewBox="0 0 32 32"><polygon points="3,5 17,5 29,17 17,29 3,15" fill="#B7A074" /><ellipse cx="9.5" cy="11.5" rx="2.5" ry="2.5" fill="#FFFFFF" /><polyline points="17,14 23,20" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#966872" /><polyline points="23,23 28,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="28,23 23,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="etiqueta-x-t" viewBox="0 0 32 32"><polygon points="3,5 17,5 29,17 17,29 3,15" fill="#7198B9" /><ellipse cx="9.5" cy="11.5" rx="2.5" ry="2.5" fill="#FFFFFF" /><polyline points="17,14 23,20" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#A05F6B" /><polyline points="23,23 28,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="28,23 23,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="documento-reloj-l" viewBox="0 0 32 32"><path d="M8 3 H20 L26 9 V27 A2 2 0 0 1 24 29 H8 A2 2 0 0 1 6 27 V5 A2 2 0 0 1 8 3 Z" fill="#EAE6DC" stroke="#BDB1A0" stroke-width="1" /><polygon points="20,3 26,9 20,9" fill="#BDB1A0" /><rect x="10" y="14" width="12" height="2" rx="1" fill="#342F2B" /><rect x="10" y="19" width="12" height="2" rx="1" fill="#342F2B" /><rect x="10" y="24" width="7" height="2" rx="1" fill="#342F2B" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#847087" /><polyline points="25.2,22.3 25.2,25.8 28,25.8" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="documento-reloj-t" viewBox="0 0 32 32"><path d="M8 3 H20 L26 9 V27 A2 2 0 0 1 24 29 H8 A2 2 0 0 1 6 27 V5 A2 2 0 0 1 8 3 Z" fill="#E7EFF6" stroke="#A3BDD2" stroke-width="1" /><polygon points="20,3 26,9 20,9" fill="#A3BDD2" /><rect x="10" y="14" width="12" height="2" rx="1" fill="#18344D" /><rect x="10" y="19" width="12" height="2" rx="1" fill="#18344D" /><rect x="10" y="24" width="7" height="2" rx="1" fill="#18344D" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="#736B92" /><polyline points="25.2,22.3 25.2,25.8 28,25.8" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
@@ -294,78 +418,834 @@ table{width:100%;border-collapse:collapse;margin:14px 0 0;text-align:left}th,td{
 <symbol xmlns="http://www.w3.org/2000/svg" id="equipo-implantador-mas" viewBox="0 0 32 32"><g transform="translate(0 1) scale(0.86)"><path fill="var(--hormigon, #8A949E)" d="M1 10.5 2.3 9.8H7.7V11.2H2.3Z" /><rect x="6.3" y="9" width="2" height="3" rx="0.7" fill="var(--tinta, #24465B)" /><path fill="var(--tinta, #24465B)" d="M14 15H18.2L21 27.4Q18.5 29 14.4 28.7Q13.2 28.5 14.5 27.6Q15.4 27 15.3 25V23.1Q15.3 22.5 14.8 22Q14.1 21.4 14.8 20.7Q15.4 20 14.8 19.3Q14 18.6 14.7 17.8Q15.4 16.4 14 15Z" /><path fill="var(--rosa, #E56876)" d="M8.9 4Q9.1 3 10.2 3H13.6Q14.5 3 14.5 4V6Q14.5 8 16.5 8H28.5Q29.5 8 30 9.2L30.6 10.7Q31 12 29.6 12.7L23 15.6Q20.5 16.6 21.3 19L24 26.4Q24.6 28.2 23.3 28.5L20.4 29Q19.5 29.2 19.2 28.1L16 18Q15.4 16 13.4 15.8L8.5 15.1Q7.5 14.9 7.5 13.6V9Z" /><rect x="10.3" y="7.7" width="2" height="2.9" rx="0.6" fill="var(--tinta, #24465B)" /><rect x="19.1" y="10.3" width="5.4" height="2.5" rx="0.5" fill="var(--borde, #E2F2F5)" /></g><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--verde, #24AC88)" /><polyline points="23,25.5 28,25.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="25.5,23 25.5,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="equipo-implantador-check" viewBox="0 0 32 32"><g transform="translate(0 1) scale(0.86)"><path fill="var(--hormigon, #8A949E)" d="M1 10.5 2.3 9.8H7.7V11.2H2.3Z" /><rect x="6.3" y="9" width="2" height="3" rx="0.7" fill="var(--tinta, #24465B)" /><path fill="var(--tinta, #24465B)" d="M14 15H18.2L21 27.4Q18.5 29 14.4 28.7Q13.2 28.5 14.5 27.6Q15.4 27 15.3 25V23.1Q15.3 22.5 14.8 22Q14.1 21.4 14.8 20.7Q15.4 20 14.8 19.3Q14 18.6 14.7 17.8Q15.4 16.4 14 15Z" /><path fill="var(--rosa, #E56876)" d="M8.9 4Q9.1 3 10.2 3H13.6Q14.5 3 14.5 4V6Q14.5 8 16.5 8H28.5Q29.5 8 30 9.2L30.6 10.7Q31 12 29.6 12.7L23 15.6Q20.5 16.6 21.3 19L24 26.4Q24.6 28.2 23.3 28.5L20.4 29Q19.5 29.2 19.2 28.1L16 18Q15.4 16 13.4 15.8L8.5 15.1Q7.5 14.9 7.5 13.6V9Z" /><rect x="10.3" y="7.7" width="2" height="2.9" rx="0.6" fill="var(--tinta, #24465B)" /><rect x="19.1" y="10.3" width="5.4" height="2.5" rx="0.5" fill="var(--borde, #E2F2F5)" /></g><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--verde, #24AC88)" /><polyline points="22.5,25 25,27.5 28.5,23" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
 <symbol xmlns="http://www.w3.org/2000/svg" id="equipo-implantador-reloj" viewBox="0 0 32 32"><g transform="translate(0 1) scale(0.86)"><path fill="var(--hormigon, #8A949E)" d="M1 10.5 2.3 9.8H7.7V11.2H2.3Z" /><rect x="6.3" y="9" width="2" height="3" rx="0.7" fill="var(--tinta, #24465B)" /><path fill="var(--tinta, #24465B)" d="M14 15H18.2L21 27.4Q18.5 29 14.4 28.7Q13.2 28.5 14.5 27.6Q15.4 27 15.3 25V23.1Q15.3 22.5 14.8 22Q14.1 21.4 14.8 20.7Q15.4 20 14.8 19.3Q14 18.6 14.7 17.8Q15.4 16.4 14 15Z" /><path fill="var(--rosa, #E56876)" d="M8.9 4Q9.1 3 10.2 3H13.6Q14.5 3 14.5 4V6Q14.5 8 16.5 8H28.5Q29.5 8 30 9.2L30.6 10.7Q31 12 29.6 12.7L23 15.6Q20.5 16.6 21.3 19L24 26.4Q24.6 28.2 23.3 28.5L20.4 29Q19.5 29.2 19.2 28.1L16 18Q15.4 16 13.4 15.8L8.5 15.1Q7.5 14.9 7.5 13.6V9Z" /><rect x="10.3" y="7.7" width="2" height="2.9" rx="0.6" fill="var(--tinta, #24465B)" /><rect x="19.1" y="10.3" width="5.4" height="2.5" rx="0.5" fill="var(--borde, #E2F2F5)" /></g><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--morado, #8870D4)" /><polyline points="25.2,22.3 25.2,25.8 28,25.8" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
-</defs></svg>
-<header class="bar"><span class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Control Ganadero</span><nav aria-label="En esta página"><a href="#instalaciones">Instalaciones</a><a href="#iconos">Iconos</a><a href="#colores">Colores</a></nav></header>
-<main><div class="intro"><h1>Tres paletas para el kit</h1><p>Compara Lino y Azul ejecutivo con la paleta Original del kit.</p></div>
-<div class="plates"><section class="plate"><header><span>Kit actual</span><h2>Original</h2><p>El arete adopta el ámbar del camión. El Brahman conserva su castaño grisáceo.</p></header><div class="specimens"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-a"/></svg><figcaption>Bovino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-a"/></svg><figcaption>Arete</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-a"/></svg><figcaption>Camión</figcaption></figure></div><div class="strip" aria-hidden="true"><i style="background:#378CE7"></i><i style="background:#24AC88"></i><i style="background:#F3AD43"></i><i style="background:#E56876"></i><i style="background:#8870D4"></i></div></section>
-<section class="plate"><header><span>Propuesta cálida</span><h2>Lino</h2><p>Pelaje castaño, cara crema y arena para el arete y el camión.</p></header><div class="specimens"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-l"/></svg><figcaption>Bovino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-l"/></svg><figcaption>Arete</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-l"/></svg><figcaption>Camión</figcaption></figure></div><div class="strip" aria-hidden="true"><i style="background:#5D7484"></i><i style="background:#66764E"></i><i style="background:#937542"></i><i style="background:#9B6255"></i><i style="background:#847087"></i><i style="background:#B7A074"></i></div></section>
-<section class="plate"><header><span>Propuesta azul</span><h2>Azul ejecutivo</h2><p>Contornos marinos, objetos en azul acero y alimento en ocre.</p></header><div class="specimens"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-t"/></svg><figcaption>Bovino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-t"/></svg><figcaption>Arete</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-t"/></svg><figcaption>Camión</figcaption></figure></div><div class="strip" aria-hidden="true"><i style="background:#3E6C99"></i><i style="background:#477969"></i><i style="background:#947339"></i><i style="background:#A05F6B"></i><i style="background:#736B92"></i><i style="background:#7198B9"></i></div></section></div>
-<section id="iconos" class="block"><div class="head"><h2 class="section-title">Muestras del kit</h2><fieldset class="scale"><legend>Tamaño</legend><label><input type="radio" name="escala"><span>32 px</span></label><label><input type="radio" name="escala" id="zoom" checked><span>64 px</span></label></fieldset></div>
 
-<h3 class="sample-heading">Ganado, alimentación y sanidad</h3>
-<div class="gallery" id="muestras-equipo">
-<article class="card"><h4>Calavera bovina</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-vaca-calavera"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-vaca-calavera"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-vaca-calavera"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Doble hélice de ADN</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-adn-frontal"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-adn-frontal"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-adn-frontal"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Consumo</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-comedero-bajada"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-comedero-bajada"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-comedero-bajada"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Indicador de reparto · pesaje</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-indicador"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-indicador"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-indicador"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Jeringa</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-jeringa"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-jeringa"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-jeringa"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Implantador</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-implantador"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-implantador"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-implantador"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article></div>
-<h3 class="sample-heading">Operaciones</h3>
-<div class="gallery" id="muestras-operaciones">
-<article class="card"><h4>Reparto</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-camion-flecha"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-camion-flecha"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-camion-flecha"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Indicador · cargar alimentación</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-indicador-arriba"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-indicador-arriba"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-indicador-arriba"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Indicador · descargar datos</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-indicador-abajo"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-indicador-abajo"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-indicador-abajo"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Jeringa · evaluación</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-jeringa-check"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-jeringa-check"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-jeringa-check"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Jeringa · historial</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-jeringa-reloj"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-jeringa-reloj"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-jeringa-reloj"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Implantador · agregar</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-implantador-mas"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-implantador-mas"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-implantador-mas"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Implantador · confirmar</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-implantador-check"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-implantador-check"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-implantador-check"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h4>Implantador · historial</h4><div class="pair"><figure><svg class="original" aria-hidden="true"><use href="#equipo-implantador-reloj"/></svg><figcaption>Original</figcaption></figure><figure><svg class="lino" aria-hidden="true"><use href="#equipo-implantador-reloj"/></svg><figcaption>Lino</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true"><use href="#equipo-implantador-reloj"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article></div>
-<section class="installations" id="instalaciones" aria-labelledby="titulo-instalaciones">
-<h3 id="titulo-instalaciones">Comederos y corral</h3>
-<table aria-labelledby="titulo-instalaciones"><thead><tr><th scope="col">Instalación</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead>
-<tbody><tr><th scope="row">Comedero de concreto</th><td><svg class="original" role="img" aria-label="Comedero de concreto, Original"><use href="#inst-comedero"/></svg></td><td><svg class="lino" role="img" aria-label="Comedero de concreto, Lino"><use href="#inst-comedero"/></svg></td><td><svg class="azul-ejecutivo" role="img" aria-label="Comedero de concreto, Azul ejecutivo"><use href="#inst-comedero"/></svg></td></tr>
-<tr><th scope="row">Lectura de comedero</th><td><svg class="original" role="img" aria-label="Lectura de comedero, Original"><use href="#inst-comedero-concreto-perspectiva"/></svg></td><td><svg class="lino" role="img" aria-label="Lectura de comedero, Lino"><use href="#inst-comedero-concreto-perspectiva"/></svg></td><td><svg class="azul-ejecutivo" role="img" aria-label="Lectura de comedero, Azul ejecutivo"><use href="#inst-comedero-concreto-perspectiva"/></svg></td></tr>
-<tr><th scope="row">Corral en perspectiva</th><td><svg class="original" role="img" aria-label="Corral en perspectiva, Original"><use href="#inst-corral-perspectiva"/></svg></td><td><svg class="lino" role="img" aria-label="Corral en perspectiva, Lino"><use href="#inst-corral-perspectiva"/></svg></td><td><svg class="azul-ejecutivo" role="img" aria-label="Corral en perspectiva, Azul ejecutivo"><use href="#inst-corral-perspectiva"/></svg></td></tr></tbody></table></section>
-<h3 class="sample-heading">Identificación y acciones</h3>
-<div class="gallery"><article class="card"><h3>Bovino</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h3>Arete</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#arete-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#arete-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h3>Camión</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#camion-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#camion-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h3>Madre y cría</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#crianza-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#crianza-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#crianza-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h3>Confirmación</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-check-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-check-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-check-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h3>Consulta</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-lupa-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-lupa-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-lupa-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h3>Cancelación</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#etiqueta-x-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#etiqueta-x-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#etiqueta-x-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h3>Historial</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#documento-reloj-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#documento-reloj-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#documento-reloj-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article>
-<article class="card"><h3>Atención</h3><div class="pair"><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-alerta-a"/></svg><figcaption>Original</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-alerta-l"/></svg><figcaption>Lino</figcaption></figure><figure><svg aria-hidden="true" focusable="false"><use href="#vaca-alerta-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure></div></article></div></section>
-<section id="colores" class="block"><h2 class="section-title">Correspondencia de colores</h2><p class="desc">En Original, el arete, el camión y los avisos comparten el ámbar #F3AD43. En Lino, el arete y el camión comparten un arena más claro que la alerta. En Azul ejecutivo, el arete y el camión comparten azul acero. El ocre permite distinguir el alimento y los segmentos activos del comedero.</p>
-<h3 class="sample-heading">Colores por pieza</h3><table><thead><tr><th scope="col">Pieza</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead><tbody>
-<tr><th scope="row">Hueso de la calavera</th><td><span class="chip" style="--color:#EDE6D6"><i></i><code>#EDE6D6</code></span></td><td><span class="chip" style="--color:#E5D8C1"><i></i><code>#E5D8C1</code></span></td><td><span class="chip" style="--color:#D8E3EC"><i></i><code>#D8E3EC</code></span></td></tr>
-<tr><th scope="row">Cuencas y nariz de la calavera</th><td><span class="chip" style="--color:#24465B"><i></i><code>#24465B</code></span></td><td><span class="chip" style="--color:#342F2B"><i></i><code>#342F2B</code></span></td><td><span class="chip" style="--color:#18344D"><i></i><code>#18344D</code></span></td></tr>
-<tr><th scope="row">Hebra azul de ADN</th><td><span class="chip" style="--color:#378CE7"><i></i><code>#378CE7</code></span></td><td><span class="chip" style="--color:#5D7484"><i></i><code>#5D7484</code></span></td><td><span class="chip" style="--color:#3E6C99"><i></i><code>#3E6C99</code></span></td></tr>
-<tr><th scope="row">Hebra verde de ADN</th><td><span class="chip" style="--color:#24AC88"><i></i><code>#24AC88</code></span></td><td><span class="chip" style="--color:#66764E"><i></i><code>#66764E</code></span></td><td><span class="chip" style="--color:#477969"><i></i><code>#477969</code></span></td></tr>
-<tr><th scope="row">Interior del comedero · alimento</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#B7A074"><i></i><code>#B7A074</code></span></td><td><span class="chip" style="--color:#BA995E"><i></i><code>#BA995E</code></span></td></tr>
-<tr><th scope="row">Flecha de consumo · fondo</th><td><span class="chip" style="--color:#E56876"><i></i><code>#E56876</code></span></td><td><span class="chip" style="--color:#9B6255"><i></i><code>#9B6255</code></span></td><td><span class="chip" style="--color:#A05F6B"><i></i><code>#A05F6B</code></span></td></tr>
-<tr><th scope="row">Carcasa del indicador y aguja del implantador</th><td><span class="chip" style="--color:#8A949E"><i></i><code>#8A949E</code></span></td><td><span class="chip" style="--color:#A69E90"><i></i><code>#A69E90</code></span></td><td><span class="chip" style="--color:#879BAA"><i></i><code>#879BAA</code></span></td></tr>
-<tr><th scope="row">Pantalla del indicador</th><td><span class="chip" style="--color:#1F6FC4"><i></i><code>#1F6FC4</code></span></td><td><span class="chip" style="--color:#566C79"><i></i><code>#566C79</code></span></td><td><span class="chip" style="--color:#315F88"><i></i><code>#315F88</code></span></td></tr>
-<tr><th scope="row">Dígitos de la pantalla</th><td><span class="chip" style="--color:#E2F2F5"><i></i><code>#E2F2F5</code></span></td><td><span class="chip" style="--color:#EAE6DC"><i></i><code>#EAE6DC</code></span></td><td><span class="chip" style="--color:#E7EFF6"><i></i><code>#E7EFF6</code></span></td></tr>
-<tr><th scope="row">Líquido y émbolo de la jeringa</th><td><span class="chip" style="--color:#8870D4"><i></i><code>#8870D4</code></span></td><td><span class="chip" style="--color:#847087"><i></i><code>#847087</code></span></td><td><span class="chip" style="--color:#736B92"><i></i><code>#736B92</code></span></td></tr>
-<tr><th scope="row">Aguja de la jeringa y gatillo del implantador</th><td><span class="chip" style="--color:#24465B"><i></i><code>#24465B</code></span></td><td><span class="chip" style="--color:#342F2B"><i></i><code>#342F2B</code></span></td><td><span class="chip" style="--color:#18344D"><i></i><code>#18344D</code></span></td></tr>
-<tr><th scope="row">Cuerpo del implantador</th><td><span class="chip" style="--color:#E56876"><i></i><code>#E56876</code></span></td><td><span class="chip" style="--color:#9B6255"><i></i><code>#9B6255</code></span></td><td><span class="chip" style="--color:#A05F6B"><i></i><code>#A05F6B</code></span></td></tr></tbody></table>
-<h3 class="sample-heading">Paleta general</h3>
-<table><thead><tr><th scope="col">Uso</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead><tbody><tr><th scope="row">Consulta</th><td><span class="chip" style="--color:#378CE7"><i></i><code>#378CE7</code></span></td><td><span class="chip" style="--color:#5D7484"><i></i><code>#5D7484</code></span></td><td><span class="chip" style="--color:#3E6C99"><i></i><code>#3E6C99</code></span></td></tr>
-<tr><th scope="row">Confirmación</th><td><span class="chip" style="--color:#24AC88"><i></i><code>#24AC88</code></span></td><td><span class="chip" style="--color:#66764E"><i></i><code>#66764E</code></span></td><td><span class="chip" style="--color:#477969"><i></i><code>#477969</code></span></td></tr>
-<tr><th scope="row">Atención</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#937542"><i></i><code>#937542</code></span></td><td><span class="chip" style="--color:#947339"><i></i><code>#947339</code></span></td></tr>
-<tr><th scope="row">Cancelación</th><td><span class="chip" style="--color:#E56876"><i></i><code>#E56876</code></span></td><td><span class="chip" style="--color:#9B6255"><i></i><code>#9B6255</code></span></td><td><span class="chip" style="--color:#A05F6B"><i></i><code>#A05F6B</code></span></td></tr>
-<tr><th scope="row">Historial</th><td><span class="chip" style="--color:#8870D4"><i></i><code>#8870D4</code></span></td><td><span class="chip" style="--color:#847087"><i></i><code>#847087</code></span></td><td><span class="chip" style="--color:#736B92"><i></i><code>#736B92</code></span></td></tr>
-<tr><th scope="row">Arete</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#B7A074"><i></i><code>#B7A074</code></span></td><td><span class="chip" style="--color:#7198B9"><i></i><code>#7198B9</code></span></td></tr>
-<tr><th scope="row">Caja del camión y etiqueta</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#B7A074"><i></i><code>#B7A074</code></span></td><td><span class="chip" style="--color:#7198B9"><i></i><code>#7198B9</code></span></td></tr>
-<tr><th scope="row">Alimento y lectura del comedero</th><td><span class="chip" style="--color:#F3AD43"><i></i><code>#F3AD43</code></span></td><td><span class="chip" style="--color:#B7A074"><i></i><code>#B7A074</code></span></td><td><span class="chip" style="--color:#BA995E"><i></i><code>#BA995E</code></span></td></tr>
-<tr><th scope="row">Contornos</th><td><span class="chip" style="--color:#24465B"><i></i><code>#24465B</code></span></td><td><span class="chip" style="--color:#342F2B"><i></i><code>#342F2B</code></span></td><td><span class="chip" style="--color:#18344D"><i></i><code>#18344D</code></span></td></tr>
-<tr><th scope="row">Relleno claro</th><td><span class="chip" style="--color:#E2F2F5"><i></i><code>#E2F2F5</code></span></td><td><span class="chip" style="--color:#EAE6DC"><i></i><code>#EAE6DC</code></span></td><td><span class="chip" style="--color:#E7EFF6"><i></i><code>#E7EFF6</code></span></td></tr></tbody></table><details><summary>Ver los tonos del ganado y del papel</summary><table><thead><tr><th scope="col">Uso</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead><tbody><tr><th scope="row">Manchas y hocico del Brahman</th><td><span class="chip" style="--color:#907B6C"><i></i><code>#907B6C</code></span></td><td><span class="chip" style="--color:#94765F"><i></i><code>#94765F</code></span></td><td><span class="chip" style="--color:#778B9B"><i></i><code>#778B9B</code></span></td></tr>
-<tr><th scope="row">Pelaje de la madre en crianza</th><td><span class="chip" style="--color:#907B6C"><i></i><code>#907B6C</code></span></td><td><span class="chip" style="--color:#94765F"><i></i><code>#94765F</code></span></td><td><span class="chip" style="--color:#778B9B"><i></i><code>#778B9B</code></span></td></tr>
-<tr><th scope="row">Cara</th><td><span class="chip" style="--color:#F4E1CF"><i></i><code>#F4E1CF</code></span></td><td><span class="chip" style="--color:#E9DBCA"><i></i><code>#E9DBCA</code></span></td><td><span class="chip" style="--color:#E0E7EA"><i></i><code>#E0E7EA</code></span></td></tr>
-<tr><th scope="row">Cuernos</th><td><span class="chip" style="--color:#8A949E"><i></i><code>#8A949E</code></span></td><td><span class="chip" style="--color:#A69E90"><i></i><code>#A69E90</code></span></td><td><span class="chip" style="--color:#879BAA"><i></i><code>#879BAA</code></span></td></tr>
-<tr><th scope="row">Manchas de la cría</th><td><span class="chip" style="--color:#B19D8D"><i></i><code>#B19D8D</code></span></td><td><span class="chip" style="--color:#BAA18A"><i></i><code>#BAA18A</code></span></td><td><span class="chip" style="--color:#A3B3BD"><i></i><code>#A3B3BD</code></span></td></tr>
-<tr><th scope="row">Cara de la cría</th><td><span class="chip" style="--color:#FBF1E6"><i></i><code>#FBF1E6</code></span></td><td><span class="chip" style="--color:#F4ECE0"><i></i><code>#F4ECE0</code></span></td><td><span class="chip" style="--color:#F0F3F4"><i></i><code>#F0F3F4</code></span></td></tr>
-<tr><th scope="row">Oreja de la cría</th><td><span class="chip" style="--color:#D3BFAE"><i></i><code>#D3BFAE</code></span></td><td><span class="chip" style="--color:#D1BCAC"><i></i><code>#D1BCAC</code></span></td><td><span class="chip" style="--color:#C7D1D6"><i></i><code>#C7D1D6</code></span></td></tr>
-<tr><th scope="row">Pliegue de papel</th><td><span class="chip" style="--color:#9CC6F2"><i></i><code>#9CC6F2</code></span></td><td><span class="chip" style="--color:#BDB1A0"><i></i><code>#BDB1A0</code></span></td><td><span class="chip" style="--color:#A3BDD2"><i></i><code>#A3BDD2</code></span></td></tr>
-<tr><th scope="row">Oreja de la madre</th><td><span class="chip" style="--color:#B19D8D"><i></i><code>#B19D8D</code></span></td><td><span class="chip" style="--color:#BA9C8B"><i></i><code>#BA9C8B</code></span></td><td><span class="chip" style="--color:#AABBC4"><i></i><code>#AABBC4</code></span></td></tr></tbody></table></details></section></main></body></html>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-ternero" viewBox="0 0 64 64"><g transform="translate(2 -3)">
+
+  <path fill="var(--cara-cria, #FBF1E6)" d="M27 32h14c10 0 16 6 16 14 0 7-6 11-15 11H22c-8 0-12-4-12-10 0-7 7-15 17-15Z" />
+  <path fill="var(--cria, #B19D8D)" d="M38 32h3c8 0 13 4 15 10-7 3-13 0-13-4 0-3-2-4-5-6Z" />
+  <path d="M17 48v6h10m5-5v5h7" fill="none" stroke="var(--cria, #B19D8D)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M25 54h3m9 0h3" fill="none" stroke="var(--tinta, #24465B)" stroke-width="4" stroke-linecap="round" />
+
+  <path fill="var(--cria, #B19D8D)" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
+  <path fill="var(--oreja-cria, #D3BFAE)" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
+  <path fill="var(--cara-cria, #FBF1E6)" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z" />
+  <path fill="var(--cria, #B19D8D)" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z" />
+  <circle cx="16" cy="30" r="1.7" fill="var(--tinta, #24465B)" />
+  <circle cx="27" cy="30" r="1.7" fill="var(--tinta, #24465B)" />
+  <rect x="10" y="35" width="23" height="12" rx="6" fill="var(--cria, #B19D8D)" />
+  <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="var(--tinta, #24465B)" />
+  <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="var(--tinta, #24465B)" />
+  </g>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-ternero-corazon" viewBox="0 0 64 64"><g transform="translate(2 -3)">
+
+  <path fill="var(--cara-cria, #FBF1E6)" d="M27 32h14c10 0 16 6 16 14 0 7-6 11-15 11H22c-8 0-12-4-12-10 0-7 7-15 17-15Z" />
+  <path fill="var(--cria, #B19D8D)" d="M38 32h3c8 0 13 4 15 10-7 3-13 0-13-4 0-3-2-4-5-6Z" />
+  <path d="M17 48v6h10m5-5v5h7" fill="none" stroke="var(--cria, #B19D8D)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M25 54h3m9 0h3" fill="none" stroke="var(--tinta, #24465B)" stroke-width="4" stroke-linecap="round" />
+
+  <path fill="var(--cria, #B19D8D)" d="M13 23C8 19 3 19 2 21c0 7 4 12 11 11Zm16 0c5-4 10-4 12-2-1 7-5 12-12 11Z" />
+  <path fill="var(--oreja-cria, #D3BFAE)" d="m6 23 6 3-1 3c-3-1-4-3-5-6Zm30 0-6 3 1 3c3-1 4-3 5-6Z" />
+  <path fill="var(--cara-cria, #FBF1E6)" d="M10 27c0-9 4-13 11-13s12 4 12 13v8c0 8-5 12-12 12S10 43 10 35Z" />
+  <path fill="var(--cria, #B19D8D)" d="M10 28v-1c0-8 4-13 11-13 4 0 7 1 9 4-4-1-7 1-8 5-4-2-7 0-7 4Z" />
+  <circle cx="16" cy="30" r="1.7" fill="var(--tinta, #24465B)" />
+  <circle cx="27" cy="30" r="1.7" fill="var(--tinta, #24465B)" />
+  <rect x="10" y="35" width="23" height="12" rx="6" fill="var(--cria, #B19D8D)" />
+  <ellipse cx="17" cy="40" rx="1.5" ry="1.8" fill="var(--tinta, #24465B)" />
+  <ellipse cx="26" cy="40" rx="1.5" ry="1.8" fill="var(--tinta, #24465B)" />
+  </g>
+  <circle cx="51" cy="51" r="13" fill="#FFFFFF" />
+  <circle cx="51" cy="51" r="11" fill="var(--rosa, #E56876)" />
+  <path transform="translate(0 1)" fill="#FFFFFF" d="M51 56c-4.2-3-7-5.5-7-8.1 0-2.1 1.5-3.6 3.5-3.6 1.6 0 2.8.8 3.5 2 .7-1.2 1.9-2 3.5-2 2 0 3.5 1.5 3.5 3.6 0 2.6-2.8 5.1-7 8.1Z" />
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-ternero-reloj-registro" viewBox="0 0 64 64"><path fill="var(--cria, #B19D8D)" d="M13 28C8 24 3 24 2 26c0 7 4 12 11 11Zm18 0c5-4 10-4 11-2 0 7-4 12-11 11Z" />
+  <path fill="var(--oreja-cria, #D3BFAE)" d="m6 28 6 3-1 3c-3-1-4-3-5-6Zm32 0-6 3 1 3c3-1 4-3 5-6Z" />
+  <path fill="var(--cara-cria, #FBF1E6)" d="M10 32c0-9 4-14 12-14s12 5 12 14v10c0 9-5 14-12 14S10 51 10 42Z" />
+  <path fill="var(--cria, #B19D8D)" d="M10 33v-1c0-9 4-14 12-14 4 0 7 1 10 5-5-1-8 1-9 5-4-2-7 0-8 4Z" />
+  <circle cx="16.5" cy="36" r="1.8" fill="var(--tinta, #24465B)" />
+  <circle cx="27.5" cy="36" r="1.8" fill="var(--tinta, #24465B)" />
+  <rect x="10" y="42" width="24" height="13" rx="6.5" fill="var(--cria, #B19D8D)" />
+  <ellipse cx="17" cy="47" rx="1.6" ry="1.9" fill="var(--tinta, #24465B)" />
+  <ellipse cx="27" cy="47" rx="1.6" ry="1.9" fill="var(--tinta, #24465B)" />
+
+  <g transform="translate(50.5 32) scale(1.3) translate(-50 -18)">
+    <path fill="var(--borde, #E2F2F5)" d="M43 6h14v4c0 4-5 6-5 8s5 4 5 8v4H43v-4c0-4 5-6 5-8s-5-4-5-8Z" />
+    <path d="M43 7v3c0 4 5 6 5 8s-5 4-5 8v3m14-22v3c0 4-5 6-5 8s5 4 5 8v3" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2.5" />
+    <path fill="var(--ambar, #F3AD43)" d="M46 10h8l-4 5Zm-1 17 5-6 5 6Z" />
+    <path d="M42 5h16M42 31h16" fill="none" stroke="var(--tinta, #24465B)" stroke-width="4" stroke-linecap="round" />
+  </g>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-huella-luna-cuna" viewBox="0 0 64 64"><path fill="var(--ambar, #F3AD43)" d="M52 3a13 13 0 1 0 8 23A14 14 0 0 1 52 3Z" />
+
+  <path fill="var(--pelaje, #907B6C)" d="M21.5 7C14 9 9 18 9 24c0 3 1.5 4.5 4.5 4.5H19.5Zm3 0C32 9 37 18 37 24c0 3-1.5 4.5-4.5 4.5H26.5Z" />
+
+  <rect x="8" y="39" width="48" height="14" rx="2" fill="var(--azul, #378CE7)" />
+  <path d="M16 42v8m8-8v8m8-8v8m8-8v8m8-8v8" fill="none" stroke="var(--borde, #E2F2F5)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M6 38h52M6 54h52" fill="none" stroke="var(--tinta, #24465B)" stroke-width="4" stroke-linecap="round" />
+  <path d="M7 32v28M57 32v28" fill="none" stroke="var(--tinta, #24465B)" stroke-width="4" stroke-linecap="round" />
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-arete-rfid" viewBox="0 0 32 32"><path d="M12 6 A4 4 0 0 1 20 6 V8 Q20 9.5 21.5 10 L26 11.5 Q27 12 27 13.5 V27 Q27 29.5 24.5 29.5 H7.5 Q5 29.5 5 27 V13.5 Q5 12 6 11.5 L10.5 10 Q12 9.5 12 8 Z" fill="var(--arena, #F3AD43)" stroke="var(--tinta, #24465B)" stroke-width="1.5" stroke-linejoin="round" /><g transform="translate(16 19.7) scale(0.9) translate(-16 -21)"><ellipse cx="11.9" cy="21" rx="1.8" ry="1.8" fill="var(--azul, #378CE7)" /><path d="M15.44 17.46 A5 5 0 0 1 15.44 24.54" fill="none" stroke="var(--azul, #378CE7)" stroke-width="2.2" stroke-linecap="round" /><path d="M18.26 14.64 A9 9 0 0 1 18.26 27.36" fill="none" stroke="var(--azul, #378CE7)" stroke-width="2.2" stroke-linecap="round" /></g></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-arete-rfid-x" viewBox="0 0 32 32"><path d="M12 6 A4 4 0 0 1 20 6 V8 Q20 9.5 21.5 10 L26 11.5 Q27 12 27 13.5 V27 Q27 29.5 24.5 29.5 H7.5 Q5 29.5 5 27 V13.5 Q5 12 6 11.5 L10.5 10 Q12 9.5 12 8 Z" fill="var(--arena, #F3AD43)" stroke="var(--tinta, #24465B)" stroke-width="1.5" stroke-linejoin="round" /><g transform="translate(16 19.7) scale(0.9) translate(-16 -21)"><ellipse cx="11.9" cy="21" rx="1.8" ry="1.8" fill="var(--azul, #378CE7)" /><path d="M15.44 17.46 A5 5 0 0 1 15.44 24.54" fill="none" stroke="var(--azul, #378CE7)" stroke-width="2.2" stroke-linecap="round" /><path d="M18.26 14.64 A9 9 0 0 1 18.26 27.36" fill="none" stroke="var(--azul, #378CE7)" stroke-width="2.2" stroke-linecap="round" /></g><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--rosa, #E56876)" /><polyline points="23,23 28,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="28,23 23,28" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-identificaciones-cedula-vaca" viewBox="0 0 64 64"><rect x="3" y="10" width="58" height="45" rx="5" fill="var(--tinta, #24465B)" />
+<rect x="6" y="13" width="52" height="39" rx="2" fill="var(--borde, #E2F2F5)" />
+<path d="M8 13H56Q58 13 58 15V23H6V15Q6 13 8 13Z" fill="var(--azul, #378CE7)" />
+<rect x="10" y="17" width="17" height="3" rx="1" fill="#FFFFFF" />
+<rect x="48" y="16" width="6" height="4" rx="1" fill="#FFFFFF" />
+<rect x="9" y="26" width="23" height="23" rx="3" fill="#FFFFFF" />
+<g transform="translate(8 25) scale(0.8)"><path fill="var(--pelaje, #907B6C)" d="M10.6 11.8 Q6.7 8.9 1.2 11.2 Q1.7 14.8 5.6 17.5 Q7.7 18.8 9.3 16.1 Z" /><path fill="var(--pelaje, #907B6C)" d="M21.4 11.8 Q25.3 8.9 30.8 11.2 Q30.3 14.8 26.4 17.5 Q24.3 18.8 22.7 16.1 Z" /><path d="M12.4 8.1 C8.8 7.8 5.6 6.1 3.3 2.6 C3.6 6.5 6.2 9.5 10.2 10.9 Q11.5 9.3 12.4 8.1 Z" fill="var(--hormigon, #8A949E)" /><path d="M19.6 8.1 C23.2 7.8 26.4 6.1 28.7 2.6 C28.4 6.5 25.8 9.5 21.8 10.9 Q20.5 9.3 19.6 8.1 Z" fill="var(--hormigon, #8A949E)" /><rect x="9" y="7" width="14" height="20" rx="6" fill="var(--crema, #F4E1CF)" /><path d="M9 13 A6 6 0 0 1 15 7 H17 C17.1 9.1 15.4 9.6 14.6 11 C13.3 12.9 11.2 12.4 9 13.3 Z" fill="var(--pelaje, #907B6C)" /><ellipse cx="16.0" cy="23.5" rx="9.0" ry="4.5" fill="var(--pelaje, #907B6C)" /><ellipse cx="12.0" cy="15.0" rx="1.0" ry="1.0" fill="var(--tinta, #24465B)" /><ellipse cx="20.0" cy="15.0" rx="1.0" ry="1.0" fill="var(--tinta, #24465B)" /><ellipse cx="12.0" cy="23.0" rx="1.0" ry="1.0" fill="var(--tinta, #24465B)" /><ellipse cx="20.0" cy="23.0" rx="1.0" ry="1.0" fill="var(--tinta, #24465B)" /></g>
+<rect x="36" y="27" width="18" height="3" rx="1" fill="var(--tinta, #24465B)" />
+<rect x="36" y="33" width="13" height="3" rx="1" fill="var(--hormigon, #8A949E)" />
+<path d="M36 40H38V48H36ZM40 40H43V48H40ZM45 40H47V48H45ZM49 40H50V48H49ZM52 40H55V48H52Z" fill="var(--tinta, #24465B)" />
+
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-documento-vaca" viewBox="0 0 32 32"><path d="M8 3 H20 L26 9 V27 A2 2 0 0 1 24 29 H8 A2 2 0 0 1 6 27 V5 A2 2 0 0 1 8 3 Z" fill="var(--borde, #E2F2F5)" stroke="var(--pliegue, #9CC6F2)" stroke-width="1"/><polygon points="20,3 26,9 20,9" fill="var(--pliegue, #9CC6F2)"/><g transform="translate(7.2 7.5) scale(.55)"><path fill="var(--pelaje, #907B6C)" d="M10.6 11.8 Q6.7 8.9 1.2 11.2 Q1.7 14.8 5.6 17.5 Q7.7 18.8 9.3 16.1 Z"/><path fill="var(--pelaje, #907B6C)" d="M21.4 11.8 Q25.3 8.9 30.8 11.2 Q30.3 14.8 26.4 17.5 Q24.3 18.8 22.7 16.1 Z"/><path d="M12.4 8.1 C8.8 7.8 5.6 6.1 3.3 2.6 C3.6 6.5 6.2 9.5 10.2 10.9 Q11.5 9.3 12.4 8.1 Z" fill="var(--hormigon, #8A949E)"/><path d="M19.6 8.1 C23.2 7.8 26.4 6.1 28.7 2.6 C28.4 6.5 25.8 9.5 21.8 10.9 Q20.5 9.3 19.6 8.1 Z" fill="var(--hormigon, #8A949E)"/><rect x="9" y="7" width="14" height="20" rx="6" fill="var(--crema, #F4E1CF)"/><path d="M9 13 A6 6 0 0 1 15 7 H17 C17.1 9.1 15.4 9.6 14.6 11 C13.3 12.9 11.2 12.4 9 13.3 Z" fill="var(--pelaje, #907B6C)"/><ellipse cx="16.0" cy="23.5" rx="9.0" ry="4.5" fill="var(--pelaje, #907B6C)"/><ellipse cx="12.0" cy="15.0" rx="1.0" ry="1.0" fill="var(--tinta, #24465B)"/><ellipse cx="20.0" cy="15.0" rx="1.0" ry="1.0" fill="var(--tinta, #24465B)"/><ellipse cx="12.0" cy="23.0" rx="1.0" ry="1.0" fill="var(--tinta, #24465B)"/><ellipse cx="20.0" cy="23.0" rx="1.0" ry="1.0" fill="var(--tinta, #24465B)"/></g><rect x="11" y="24.5" width="10" height="1.5" rx=".75" fill="var(--tinta, #24465B)"/></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-corral-frontal" viewBox="0 0 64 64"><g transform="translate(0 -11)">
+
+<path d="M5 54h54v5H5Z" fill="var(--piso, #F4E1CF)" />
+
+
+
+<rect x="7" y="39" width="33" height="5" rx="1" fill="var(--verde, #24AC88)" />
+<rect x="7" y="49" width="33" height="5" rx="1" fill="var(--verde, #24AC88)" />
+<path d="M41 34h16v20H41Z" fill="var(--borde, #E2F2F5)" />
+<path d="M42 35h14v18H42Zm1 17 12-16" fill="none" stroke="var(--verde, #24AC88)" stroke-width="3" stroke-linejoin="round" />
+<path d="M6 29v27m33-27v27m19-27v27" fill="none" stroke="var(--tinta, #24465B)" stroke-width="5" stroke-linecap="round" />
+<path d="M41 42h3" stroke="var(--tinta, #24465B)" stroke-width="2.5" stroke-linecap="round" />
+<path d="M3 59h58" stroke="var(--sombra, #C98A1B)" stroke-width="3" stroke-linecap="round" />
+
+</g>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-corral-manga" viewBox="0 0 64 64"><g transform="translate(0 -8)">
+
+<path d="M4 53h56v6H4Z" fill="var(--piso, #F4E1CF)" />
+<path d="M8 29h47m-47 9h47" stroke="var(--verde, #24AC88)" stroke-width="4" />
+<path d="M7 21v32m48-32v32" stroke="var(--oscuro-verde, #1B7F65)" stroke-width="4" stroke-linecap="round" />
+
+
+
+<path d="M6 43h31M6 53h31" stroke="var(--verde, #24AC88)" stroke-width="5" stroke-linecap="round" />
+<path d="M38 31h21v24H38Z" fill="var(--borde, #E2F2F5)" />
+<path d="M38 31h21v24H38Z" fill="none" stroke="var(--tinta, #24465B)" stroke-width="3" stroke-linejoin="round" />
+<path d="M44 33v20m8-20v20m-12-10h17" stroke="var(--azul, #378CE7)" stroke-width="3" stroke-linecap="round" />
+<path d="M5 33v24m31-28v28m24-28v28" stroke="var(--tinta, #24465B)" stroke-width="4" stroke-linecap="round" />
+<path d="M3 59h58" stroke="var(--sombra, #C98A1B)" stroke-width="3" stroke-linecap="round" />
+
+</g>
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-cerca" viewBox="0 0 32 32"><rect x="3" y="11" width="26" height="4" rx="1" fill="var(--verde, #24AC88)" /><rect x="3" y="21" width="26" height="4" rx="1" fill="var(--verde, #24AC88)" /><polygon points="5,6 7,3 9,6 9,29 5,29" fill="var(--tinta, #24465B)" /><polygon points="14,6 16,3 18,6 18,29 14,29" fill="var(--tinta, #24465B)" /><polygon points="23,6 25,3 27,6 27,29 23,29" fill="var(--tinta, #24465B)" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-saco-alimento" viewBox="0 0 32 32"><path d="M10 5 H22 L20.5 9.5 C26 12 27 20 25.5 25 C24.5 28 22 29 20 29 H12 C10 29 7.5 28 6.5 25 C5 20 6 12 11.5 9.5 Z" fill="var(--alimento, #F3AD43)" /><path d="M11.5 9.5 H20.5" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" /><rect x="10" y="15" width="12" height="9.5" rx="2" fill="var(--borde, #E2F2F5)" /><path d="M16 23 V17.5 M16 19.5 L14 18 M16 19.5 L18 18 M16 22 L14 20.5 M16 22 L18 20.5" fill="none" stroke="var(--tinta, #24465B)" stroke-width="1.2" stroke-linecap="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-hoja" viewBox="0 0 32 32"><path d="M16 24 C8 24 4 17 6 9 C14 9 18 16 16 24 Z" fill="var(--tinte-verde, #7AD3B8)" /><path d="M16 22 C15 12 19 6 27 5 C28 13 24 21 16 22 Z" fill="var(--verde, #24AC88)" /><line x1="16" y1="29" x2="16" y2="21" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" /><line x1="16" y1="21" x2="24" y2="9" stroke="var(--tinta, #24465B)" stroke-width="1.2" stroke-linecap="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-camion-mixer" viewBox="0 0 64 64"><path d="M3 42h58v6H3Z" fill="var(--tinta, #24465B)" />
+  <rect x="22" y="45" width="11" height="5" rx="1.5" fill="var(--hormigon, #8A949E)" />
+  <path d="M25 46v3m5-3v3" stroke="var(--borde, #E2F2F5)" stroke-width="1.5" />
+
+  <path d="M30 22.8h33l-4 14.2c-.4 2-2 4-5 4H39c-3 0-5-2-5.5-4Z" fill="var(--rosa, #E56876)" />
+  <path d="M56 24h7l-4 13c-.4 2-2 4-5 4h-3c3-6 4-9 5-17Z" fill="var(--tolva-oscura, #B94A58)" />
+  <ellipse cx="46.5" cy="22.8" rx="16.5" ry="3.6" fill="var(--tinta, #24465B)" />
+  <ellipse cx="46.5" cy="22.3" rx="13.3" ry="1.5" fill="var(--tolva-oscura, #B94A58)" />
+  <path d="M34 40h27v4H34Z" fill="var(--tolva-oscura, #B94A58)" />
+  <path d="M38 43v-2c0-1 1-2 2-2h19c1 0 2 1 2 2v2Z" fill="var(--tolva-oscura, #B94A58)" />
+
+  <path d="M2 37c0-1 1-2 2-2l9-3 2-9c.3-2 1.5-3 3-3h5c1.5 0 2 1 2 3v22H2Z" fill="var(--borde, #E2F2F5)" stroke="var(--tinta, #24465B)" stroke-width="1.6" stroke-linejoin="round" />
+  <path d="m17 24-1.5 8H22v-8Z" fill="var(--tinta, #24465B)" />
+  <path d="m4 35 9-3-.5 3-9 3Z" fill="var(--hormigon, #8A949E)" />
+  <path d="M15 35v7m5-6h2" fill="none" stroke="var(--hormigon, #8A949E)" stroke-width="1.5" stroke-linecap="round" />
+  <rect x="2" y="38" width="3" height="3" rx="1" fill="var(--ambar, #F3AD43)" />
+  <path d="M1.5 45h4" stroke="var(--tinta, #24465B)" stroke-width="3" stroke-linecap="round" />
+
+  <path d="M27 24v21m4-21v21m-4-18h4m-4 6h4m-4 6h4m-5 6h7" fill="none" stroke="var(--ambar, #F3AD43)" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M34 29h5v9h-5Z" fill="var(--tolva-oscura, #B94A58)" />
+  <path d="M35.5 31v4" stroke="var(--ambar, #F3AD43)" stroke-width="1.5" stroke-linecap="round" />
+
+  <circle cx="11" cy="48" r="7" fill="var(--tinta, #24465B)" />
+  <circle cx="11" cy="48" r="3" fill="var(--borde, #E2F2F5)" />
+  <circle cx="11" cy="48" r="1.2" fill="var(--hormigon, #8A949E)" />
+  <circle cx="43" cy="49" r="6" fill="var(--tinta, #24465B)" />
+  <circle cx="43" cy="49" r="2.6" fill="var(--borde, #E2F2F5)" />
+  <circle cx="43" cy="49" r="1" fill="var(--hormigon, #8A949E)" />
+  <circle cx="57" cy="49" r="6" fill="var(--tinta, #24465B)" />
+  <circle cx="57" cy="49" r="2.6" fill="var(--borde, #E2F2F5)" />
+  <circle cx="57" cy="49" r="1" fill="var(--hormigon, #8A949E)" />
+</symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-indicador-reloj" viewBox="0 0 64 64"><g transform="translate(0 -1) scale(.78)">
+<g transform="translate(-10.25 .15) scale(1.3)">
+<rect x="12" y="5" width="41" height="39" rx="2" fill="var(--hormigon, #8A949E)" />
+<rect x="13.5" y="6.5" width="38" height="36" rx="2" fill="var(--tinta, #24465B)" />
+<rect x="17" y="11" width="31" height="16" rx="1" fill="var(--pantalla, #1F6FC4)" />
+
+<path d="m20 18 2-2v7m4-7h4v3.5h-4V23h4m4-7h4v7h-4Zm0 3.5h4m4-3.5h4v7h-4Z" fill="none" stroke="var(--borde, #E2F2F5)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M15 29h35" stroke="var(--hormigon, #8A949E)" stroke-width="1.5" />
+
+<g fill="var(--borde, #E2F2F5)">
+<circle cx="34" cy="32" r="1.3" /><circle cx="40" cy="32" r="1.3" /><circle cx="46" cy="32" r="1.3" />
+<circle cx="34" cy="36" r="1.3" /><circle cx="40" cy="36" r="1.3" /><circle cx="46" cy="36" r="1.3" />
+<circle cx="34" cy="40" r="1.3" /><circle cx="40" cy="40" r="1.3" /><circle cx="46" cy="40" r="1.3" />
+<path d="m19 31-1.5 2h3Zm0 9-1.5-2h3Zm-5-4.5 2-1.5v3Zm10 0-2-1.5v3Z" />
+</g>
+<circle cx="19" cy="35.5" r="1.8" fill="var(--rosa, #E56876)" />
+<circle cx="28" cy="32" r="1.3" fill="var(--rosa, #E56876)" />
+<circle cx="28" cy="36" r="1.3" fill="var(--azul, #378CE7)" />
+<circle cx="28" cy="40" r="1.3" fill="var(--ambar, #F3AD43)" />
+<g fill="var(--borde, #E2F2F5)"><circle cx="15.5" cy="8.5" r="1" /><circle cx="49.5" cy="8.5" r="1" /><circle cx="15.5" cy="40.5" r="1" /><circle cx="49.5" cy="40.5" r="1" /></g>
+</g></g><g transform="scale(2)"><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--morado, #8870D4)" /><polyline points="25.2,22.3 25.2,25.8 28,25.8" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></g></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-bascula" viewBox="0 0 32 32"><rect x="5" y="11" width="22" height="17" rx="3" fill="var(--azul, #378CE7)" /><ellipse cx="16.0" cy="10.0" rx="7.0" ry="7.0" fill="var(--borde, #E2F2F5)" stroke="var(--tinta, #24465B)" stroke-width="1.5" /><polyline points="16,10 20,6" fill="none" stroke="var(--rosa, #E56876)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="10,23 22,23" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-medidor" viewBox="0 0 32 32"><path d="M3 25 A13 13 0 0 1 9.5 13.74 L11.75 17.64 A8.5 8.5 0 0 0 7.5 25 Z" fill="var(--verde, #24AC88)" /><path d="M9.5 13.74 A13 13 0 0 1 22.5 13.74 L20.25 17.64 A8.5 8.5 0 0 0 11.75 17.64 Z" fill="var(--ambar, #F3AD43)" /><path d="M22.5 13.74 A13 13 0 0 1 29 25 L24.5 25 A8.5 8.5 0 0 0 20.25 17.64 Z" fill="var(--rosa, #E56876)" /><path d="M7.5 25 A8.5 8.5 0 0 1 24.5 25 Z" fill="var(--borde, #E2F2F5)" /><line x1="16" y1="25" x2="20.6" y2="16.6" stroke="var(--tinta, #24465B)" stroke-width="1.3" stroke-linecap="round" /><circle cx="16" cy="25" r="2.2" fill="var(--tinta, #24465B)" /><rect x="3" y="25" width="26" height="3" rx="1.5" fill="var(--tinta, #24465B)" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-jeringa-lista" viewBox="0 0 32 32"><polyline points="5,27 10,22" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polygon points="8,20 19,9 25,15 14,26" fill="var(--borde, #E2F2F5)" /><polygon points="8,20 14,14 20,20 14,26" fill="var(--morado, #8870D4)" /><polyline points="18,8 26,16" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="22,10 26,6" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,3 29,9" fill="none" stroke="var(--morado, #8870D4)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--azul, #378CE7)" /><polyline points="23,23.5 28,23.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,25.5 28,25.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><polyline points="23,27.5 28,27.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-implantador-reporte" viewBox="0 0 32 32"><g transform="translate(0 1) scale(0.86)"><path fill="var(--hormigon, #8A949E)" d="M1 10.5 2.3 9.8H7.7V11.2H2.3Z" /><rect x="6.3" y="9" width="2" height="3" rx="0.7" fill="var(--tinta, #24465B)" /><path fill="var(--tinta, #24465B)" d="M14 15H18.2L21 27.4Q18.5 29 14.4 28.7Q13.2 28.5 14.5 27.6Q15.4 27 15.3 25V23.1Q15.3 22.5 14.8 22Q14.1 21.4 14.8 20.7Q15.4 20 14.8 19.3Q14 18.6 14.7 17.8Q15.4 16.4 14 15Z" /><path fill="var(--rosa, #E56876)" d="M8.9 4Q9.1 3 10.2 3H13.6Q14.5 3 14.5 4V6Q14.5 8 16.5 8H28.5Q29.5 8 30 9.2L30.6 10.7Q31 12 29.6 12.7L23 15.6Q20.5 16.6 21.3 19L24 26.4Q24.6 28.2 23.3 28.5L20.4 29Q19.5 29.2 19.2 28.1L16 18Q15.4 16 13.4 15.8L8.5 15.1Q7.5 14.9 7.5 13.6V9Z" /><rect x="10.3" y="7.7" width="2" height="2.9" rx="0.6" fill="var(--tinta, #24465B)" /><rect x="19.1" y="10.3" width="5.4" height="2.5" rx="0.5" fill="var(--borde, #E2F2F5)" /></g><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--azul, #378CE7)" /><polygon points="23.2,22 26.4,22 28,23.6 28,29 23.2,29" fill="#FFFFFF" /><polyline points="24.2,27.6 25.4,25.9 26.3,26.7 27.5,24.5" fill="none" stroke="var(--tinta, #24465B)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-botiquin" viewBox="0 0 32 32"><rect x="3" y="8" width="26" height="20" rx="4" fill="var(--rosa, #E56876)" /><polyline points="11,8 11,4 21,4 21,8" fill="none" stroke="var(--tinta, #24465B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><rect x="14" y="12" width="4" height="12" rx="1" fill="#FFFFFF" /><rect x="10" y="16" width="12" height="4" rx="1" fill="#FFFFFF" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-frasco-medicina" viewBox="0 0 32 32"><rect x="11" y="3" width="10" height="4" rx="1" fill="var(--tinta, #24465B)" /><rect x="12" y="7" width="8" height="3" rx="1" fill="var(--borde, #E2F2F5)" /><rect x="7" y="10" width="18" height="19" rx="4" fill="var(--rosa, #E56876)" /><rect x="8" y="16" width="16" height="8" rx="1" fill="var(--borde, #E2F2F5)" /><polyline points="13,20 19,20" fill="none" stroke="var(--rosa, #E56876)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><polyline points="16,17 16,23" fill="none" stroke="var(--rosa, #E56876)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-documento" viewBox="0 0 32 32"><path d="M8 3 H20 L26 9 V27 A2 2 0 0 1 24 29 H8 A2 2 0 0 1 6 27 V5 A2 2 0 0 1 8 3 Z" fill="var(--borde, #E2F2F5)" stroke="var(--pliegue, #9CC6F2)" stroke-width="1" /><polygon points="20,3 26,9 20,9" fill="var(--pliegue, #9CC6F2)" /><rect x="10" y="14" width="12" height="2" rx="1" fill="var(--tinta, #24465B)" /><rect x="10" y="19" width="12" height="2" rx="1" fill="var(--tinta, #24465B)" /><rect x="10" y="24" width="7" height="2" rx="1" fill="var(--tinta, #24465B)" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-BaseDatos-check" viewBox="0 0 32 32"><g transform="scale(0.6667)">
+    <g fill="var(--lila, #D1C4E9)">
+        <path d="M38,7H10C8.9,7,8,7.9,8,9v6c0,1.1,0.9,2,2,2h28c1.1,0,2-0.9,2-2V9C40,7.9,39.1,7,38,7z" />
+        <path d="M38,19H10c-1.1,0-2,0.9-2,2v6c0,1.1,0.9,2,2,2h28c1.1,0,2-0.9,2-2v-6C40,19.9,39.1,19,38,19z" />
+        <path d="M38,31H10c-1.1,0-2,0.9-2,2v6c0,1.1,0.9,2,2,2h28c1.1,0,2-0.9,2-2v-6C40,31.9,39.1,31,38,31z" />
+    </g>
+</g><ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF" /><ellipse cx="25.5" cy="25.5" rx="5.5" ry="5.5" fill="var(--verde, #24AC88)" /><polyline points="22.5,25 25,27.5 28.5,23" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-Guardar" viewBox="0 0 32 32"><polygon points="4,3 24,3 29,8 29,29 3,29 3,4" fill="var(--verde, #24AC88)" /><rect x="8" y="3" width="15" height="9" rx="1" fill="var(--borde, #E2F2F5)" /><rect x="19" y="5" width="2" height="5" rx="0" fill="var(--tinta, #24465B)" /><rect x="8" y="18" width="16" height="11" rx="1" fill="var(--borde, #E2F2F5)" /><polyline points="12,22 20,22" fill="none" stroke="var(--tinta, #24465B)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+<symbol xmlns="http://www.w3.org/2000/svg" id="kit-Enviar" viewBox="0 0 32 32"><polygon points="3,15 29,4 22,28 15.5,19.5" fill="var(--azul, #378CE7)" /><polygon points="15.5,19.5 29,4 12.5,22" fill="var(--pantalla, #1F6FC4)" /><polyline points="15.5,19.5 12.5,26 12.5,22" fill="var(--tinta, #24465B)" stroke="var(--tinta, #24465B)" stroke-width="1.2" stroke-linejoin="round" /></symbol>
+</defs></svg>
+<header class="masthead"><div class="shell topbar"><a class="brand" href="#paletas"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Control Ganadero</a><nav aria-label="Secciones"><a href="#paletas">Paletas</a><a href="#iconos">Muestras</a><a href="#colores">Correspondencias</a></nav></div></header>
+<main class="shell">
+<section id="paletas" aria-labelledby="titulo">
+  <div class="intro"><h1 id="titulo">Comparativa de paletas</h1><p>La paleta Original del kit y las propuestas Lino y Azul ejecutivo.</p></div>
+  <div class="plates">
+    <article class="plate original"><header><p>Kit actual</p><h2>Original</h2></header><div class="plate-samples"><figure><svg class="original" aria-hidden="true" focusable="false"><use href="#vaca-a"/></svg><figcaption>Brahman</figcaption></figure><figure><svg class="original" aria-hidden="true" focusable="false"><use href="#arete-a"/></svg><figcaption>Arete</figcaption></figure><figure><svg class="original" aria-hidden="true" focusable="false"><use href="#camion-a"/></svg><figcaption>Camión</figcaption></figure></div><p class="plate-desc">Brahman castaño grisáceo y un ámbar común para aretes, camiones y avisos.</p><div class="strip" aria-hidden="true"><i style="background:#378CE7"></i><i style="background:#24AC88"></i><i style="background:#F3AD43"></i><i style="background:#E56876"></i><i style="background:#8870D4"></i></div></article>
+    <article class="plate lino"><header><p>Propuesta cálida</p><h2>Lino</h2></header><div class="plate-samples"><figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#vaca-l"/></svg><figcaption>Brahman</figcaption></figure><figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#arete-l"/></svg><figcaption>Arete</figcaption></figure><figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#camion-l"/></svg><figcaption>Camión</figcaption></figure></div><p class="plate-desc">Ganado en castaño y crema. Los objetos usan arena y las alertas, un ocre más oscuro.</p><div class="strip" aria-hidden="true"><i style="background:#5D7484"></i><i style="background:#66764E"></i><i style="background:#937542"></i><i style="background:#966872"></i><i style="background:#847087"></i><i style="background:#B7A074"></i></div></article>
+    <article class="plate azul-ejecutivo"><header><p>Propuesta azul</p><h2>Azul ejecutivo</h2></header><div class="plate-samples"><figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#vaca-t"/></svg><figcaption>Brahman</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#arete-t"/></svg><figcaption>Arete</figcaption></figure><figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#camion-t"/></svg><figcaption>Camión</figcaption></figure></div><p class="plate-desc">Contornos marinos y equipo en azul acero. El ocre distingue el alimento.</p><div class="strip" aria-hidden="true"><i style="background:#3E6C99"></i><i style="background:#477969"></i><i style="background:#947339"></i><i style="background:#A05F6B"></i><i style="background:#736B92"></i><i style="background:#7198B9"></i></div></article>
+  </div>
+</section>
+<section id="iconos" class="chapter" aria-labelledby="titulo-muestras">
+  <div class="chapter-title"><h2 id="titulo-muestras">Muestras del kit</h2><span class="total" id="icon-count" role="status">51 iconos</span></div>
+  <div class="tools">
+    <label class="field"><span>Buscar icono</span><input type="search" id="busca" placeholder="Nombre o acción" autocomplete="off"></label>
+    <label class="field"><span>Familia</span><select id="familia"><option value="">Todas las familias</option><option value="ganado">Ganado y crianza</option><option value="identificacion">Identificación y movimientos</option><option value="instalaciones">Corrales y alimentación</option><option value="reparto">Reparto y pesaje</option><option value="sanidad">Sanidad e implantes</option><option value="documentos">Documentos y acciones</option></select></label>
+    <fieldset class="scale"><legend>Tamaño en píxeles</legend><div><label><input type="radio" name="escala" value="32" id="px32"><span>32</span></label><label><input type="radio" name="escala" value="64" id="px64"><span>64</span></label><label><input type="radio" name="escala" value="96" id="px96" checked><span>96</span></label><label><input type="radio" name="escala" value="128" id="px128"><span>128</span></label></div></fieldset>
+  </div>
+  <div id="coleccion">
+  <section class="family" id="ganado" data-family="ganado">
+    <div class="family-title"><h3>Ganado y crianza</h3><span class="count">8 muestras</span><a class="family-colors" href="#tonos-ganado" aria-label="Ver colores de ganado y crianza">Ver colores ↓</a></div>
+    <div class="gallery">
+      <article class="sample" data-icon="vaca">
+        <h4>Bovino Brahman</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#vaca-a"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#vaca-l"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#vaca-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="crianza">
+        <h4>Madre y cría</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#crianza-a"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#crianza-l"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#crianza-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="ternero">
+        <h4>Ternero en reposo</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-ternero"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-ternero"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-ternero"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="ternero-corazon">
+        <h4>Cuidado del ternero</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-ternero-corazon"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-ternero-corazon"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-ternero-corazon"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="ternero-reloj-registro">
+        <h4>Registro de nacimiento</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-ternero-reloj-registro"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-ternero-reloj-registro"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-ternero-reloj-registro"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="huella-luna-cuna">
+        <h4>Cuidado nocturno</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-huella-luna-cuna"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-huella-luna-cuna"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-huella-luna-cuna"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="vaca-calavera">
+        <h4>Calavera bovina</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-vaca-calavera"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-vaca-calavera"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-vaca-calavera"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="adn-frontal">
+        <h4>Doble hélice de ADN</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-adn-frontal"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-adn-frontal"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-adn-frontal"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="family" id="identificacion" data-family="identificacion">
+    <div class="family-title"><h3>Identificación y movimientos</h3><span class="count">8 muestras</span><a class="family-colors" href="#tonos-identificacion" aria-label="Ver colores de identificación y movimientos">Ver colores ↓</a></div>
+    <div class="gallery">
+      <article class="sample" data-icon="arete">
+        <h4>Arete</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#arete-a"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#arete-l"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#arete-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="arete-rfid">
+        <h4>Arete electrónico RFID</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-arete-rfid"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-arete-rfid"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-arete-rfid"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="arete-rfid-x">
+        <h4>Cancelar arete RFID</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-arete-rfid-x"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-arete-rfid-x"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-arete-rfid-x"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="identificaciones-cedula-vaca">
+        <h4>Cédula de identificación</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-identificaciones-cedula-vaca"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-identificaciones-cedula-vaca"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-identificaciones-cedula-vaca"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" id="documento-de-ganado" data-icon="documento-vaca">
+        <h4>Documento de ganado</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-documento-vaca"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-documento-vaca"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-documento-vaca"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="vaca-check">
+        <h4>Confirmación de ganado</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#vaca-check-a"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#vaca-check-l"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#vaca-check-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="vaca-lupa">
+        <h4>Consulta de ganado</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#vaca-lupa-a"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#vaca-lupa-l"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#vaca-lupa-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="vaca-alerta">
+        <h4>Atención al ganado</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#vaca-alerta-a"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#vaca-alerta-l"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#vaca-alerta-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="family" id="instalaciones" data-family="instalaciones">
+    <div class="family-title"><h3>Corrales y alimentación</h3><span class="count">9 muestras</span><a class="family-colors" href="#tonos-instalaciones" aria-label="Ver colores de corrales y alimentación">Ver colores ↓</a></div>
+    <div class="gallery">
+      <article class="sample" data-icon="corral-frontal">
+        <h4>Corral de frente</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-corral-frontal"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-corral-frontal"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-corral-frontal"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="corral-perspectiva">
+        <h4>Corral en perspectiva</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#inst-corral-perspectiva"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#inst-corral-perspectiva"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#inst-corral-perspectiva"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="corral-manga">
+        <h4>Corral con manga</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-corral-manga"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-corral-manga"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-corral-manga"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="cerca">
+        <h4>Cerca</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-cerca"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-cerca"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-cerca"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="comedero">
+        <h4>Comedero de concreto</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#inst-comedero"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#inst-comedero"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#inst-comedero"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="comedero-concreto-perspectiva">
+        <h4>Lectura de comedero</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#inst-comedero-concreto-perspectiva"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#inst-comedero-concreto-perspectiva"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#inst-comedero-concreto-perspectiva"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="comedero-bajada">
+        <h4>Consumo</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-comedero-bajada"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-comedero-bajada"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-comedero-bajada"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="saco-alimento">
+        <h4>Saco de alimento</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-saco-alimento"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-saco-alimento"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-saco-alimento"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="hoja">
+        <h4>Forraje</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-hoja"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-hoja"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-hoja"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="family" id="reparto" data-family="reparto">
+    <div class="family-title"><h3>Reparto y pesaje</h3><span class="count">9 muestras</span><a class="family-colors" href="#tonos-reparto" aria-label="Ver colores de reparto y pesaje">Ver colores ↓</a></div>
+    <div class="gallery">
+      <article class="sample" data-icon="camion">
+        <h4>Camión</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#camion-a"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#camion-l"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#camion-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="camion-flecha">
+        <h4>Reparto</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-camion-flecha"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-camion-flecha"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-camion-flecha"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="camion-mixer">
+        <h4>Camión mezclador</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-camion-mixer"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-camion-mixer"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-camion-mixer"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="indicador">
+        <h4>Indicador de reparto · pesaje</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-indicador"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-indicador"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-indicador"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="indicador-arriba">
+        <h4>Indicador · cargar alimentación</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-indicador-arriba"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-indicador-arriba"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-indicador-arriba"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="indicador-abajo">
+        <h4>Indicador · descargar datos</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-indicador-abajo"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-indicador-abajo"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-indicador-abajo"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="indicador-reloj">
+        <h4>Indicador · historial</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-indicador-reloj"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-indicador-reloj"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-indicador-reloj"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="bascula">
+        <h4>Báscula</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-bascula"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-bascula"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-bascula"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="medidor">
+        <h4>Medidor</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-medidor"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-medidor"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-medidor"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="family" id="sanidad" data-family="sanidad">
+    <div class="family-title"><h3>Sanidad e implantes</h3><span class="count">11 muestras</span><a class="family-colors" href="#tonos-sanidad" aria-label="Ver colores de sanidad e implantes">Ver colores ↓</a></div>
+    <div class="gallery">
+      <article class="sample" data-icon="jeringa">
+        <h4>Jeringa</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-jeringa"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-jeringa"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-jeringa"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="jeringa-check">
+        <h4>Jeringa · evaluación</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-jeringa-check"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-jeringa-check"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-jeringa-check"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="jeringa-reloj">
+        <h4>Jeringa · historial</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-jeringa-reloj"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-jeringa-reloj"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-jeringa-reloj"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="jeringa-lista">
+        <h4>Jeringa · listado</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-jeringa-lista"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-jeringa-lista"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-jeringa-lista"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="implantador">
+        <h4>Implantador</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-implantador"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-implantador"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-implantador"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="implantador-mas">
+        <h4>Implantador · agregar</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-implantador-mas"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-implantador-mas"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-implantador-mas"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="implantador-check">
+        <h4>Implantador · confirmar</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-implantador-check"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-implantador-check"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-implantador-check"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="implantador-reloj">
+        <h4>Implantador · historial</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#equipo-implantador-reloj"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#equipo-implantador-reloj"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#equipo-implantador-reloj"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="implantador-reporte">
+        <h4>Implantador · reporte</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-implantador-reporte"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-implantador-reporte"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-implantador-reporte"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="botiquin">
+        <h4>Botiquín</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-botiquin"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-botiquin"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-botiquin"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="frasco-medicina">
+        <h4>Frasco de medicina</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-frasco-medicina"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-frasco-medicina"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-frasco-medicina"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="family" id="documentos" data-family="documentos">
+    <div class="family-title"><h3>Documentos y acciones</h3><span class="count">6 muestras</span><a class="family-colors" href="#tonos-documentos" aria-label="Ver colores de documentos y acciones">Ver colores ↓</a></div>
+    <div class="gallery">
+      <article class="sample" data-icon="documento">
+        <h4>Documento</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-documento"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-documento"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-documento"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="documento-reloj">
+        <h4>Historial de documentos</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#documento-reloj-a"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#documento-reloj-l"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#documento-reloj-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="etiqueta-x">
+        <h4>Cancelación de etiqueta</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#etiqueta-x-a"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#etiqueta-x-l"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#etiqueta-x-t"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="BaseDatos-check">
+        <h4>Verificación de base de datos</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-BaseDatos-check"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-BaseDatos-check"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-BaseDatos-check"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="Guardar">
+        <h4>Guardar</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-Guardar"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-Guardar"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-Guardar"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+      <article class="sample" data-icon="Enviar">
+        <h4>Enviar</h4>
+        <div class="samples">
+          <figure><svg class="original" aria-hidden="true" focusable="false"><use href="#kit-Enviar"/></svg><figcaption>Original</figcaption></figure>
+          <figure><svg class="lino" aria-hidden="true" focusable="false"><use href="#kit-Enviar"/></svg><figcaption>Lino</figcaption></figure>
+          <figure><svg class="azul-ejecutivo" aria-hidden="true" focusable="false"><use href="#kit-Enviar"/></svg><figcaption>Azul ejecutivo</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+  </div>
+  <p class="empty" id="vacio" hidden>No hay iconos que coincidan. <button type="button" id="reiniciar">Restablecer filtros</button></p>
+</section>
+<section id="colores" class="chapter" aria-labelledby="titulo-colores">
+  <div class="chapter-title"><h2 id="titulo-colores">Correspondencia de colores</h2><span class="total" id="color-count" role="status">44 correspondencias</span></div>
+  <div class="color-tools"><label class="field"><span>Buscar por pieza, familia o código de color</span><input id="busca-color" type="search" placeholder="Ej. cuernos, sanidad o #907B6C" autocomplete="off"></label></div>
+    <section class="color-group" id="tonos-general">
+      <h3>Paleta general</h3>
+      <table aria-label="Correspondencias de paleta general">
+        <thead><tr><th scope="col">Uso o pieza</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Contornos</th><td><span class="swatch" style="--swatch:#24465B"></span><code>#24465B</code></td><td><span class="swatch" style="--swatch:#342F2B"></span><code>#342F2B</code></td><td><span class="swatch" style="--swatch:#18344D"></span><code>#18344D</code></td></tr>
+          <tr><th scope="row">Relleno claro</th><td><span class="swatch" style="--swatch:#E2F2F5"></span><code>#E2F2F5</code></td><td><span class="swatch" style="--swatch:#EAE6DC"></span><code>#EAE6DC</code></td><td><span class="swatch" style="--swatch:#E7EFF6"></span><code>#E7EFF6</code></td></tr>
+          <tr><th scope="row">Consulta</th><td><span class="swatch" style="--swatch:#378CE7"></span><code>#378CE7</code></td><td><span class="swatch" style="--swatch:#5D7484"></span><code>#5D7484</code></td><td><span class="swatch" style="--swatch:#3E6C99"></span><code>#3E6C99</code></td></tr>
+          <tr><th scope="row">Confirmación</th><td><span class="swatch" style="--swatch:#24AC88"></span><code>#24AC88</code></td><td><span class="swatch" style="--swatch:#66764E"></span><code>#66764E</code></td><td><span class="swatch" style="--swatch:#477969"></span><code>#477969</code></td></tr>
+          <tr><th scope="row">Atención</th><td><span class="swatch" style="--swatch:#F3AD43"></span><code>#F3AD43</code></td><td><span class="swatch" style="--swatch:#937542"></span><code>#937542</code></td><td><span class="swatch" style="--swatch:#947339"></span><code>#947339</code></td></tr>
+          <tr><th scope="row">Cancelación</th><td><span class="swatch" style="--swatch:#E56876"></span><code>#E56876</code></td><td><span class="swatch" style="--swatch:#966872"></span><code>#966872</code></td><td><span class="swatch" style="--swatch:#A05F6B"></span><code>#A05F6B</code></td></tr>
+          <tr><th scope="row">Historial</th><td><span class="swatch" style="--swatch:#8870D4"></span><code>#8870D4</code></td><td><span class="swatch" style="--swatch:#847087"></span><code>#847087</code></td><td><span class="swatch" style="--swatch:#736B92"></span><code>#736B92</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="color-group" id="tonos-ganado">
+      <h3>Ganado y crianza</h3>
+      <table aria-label="Correspondencias de ganado y crianza">
+        <thead><tr><th scope="col">Uso o pieza</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Manchas y hocico del Brahman</th><td><span class="swatch" style="--swatch:#907B6C"></span><code>#907B6C</code></td><td><span class="swatch" style="--swatch:#94765F"></span><code>#94765F</code></td><td><span class="swatch" style="--swatch:#778B9B"></span><code>#778B9B</code></td></tr>
+          <tr><th scope="row">Pelaje de la madre en crianza</th><td><span class="swatch" style="--swatch:#907B6C"></span><code>#907B6C</code></td><td><span class="swatch" style="--swatch:#94765F"></span><code>#94765F</code></td><td><span class="swatch" style="--swatch:#778B9B"></span><code>#778B9B</code></td></tr>
+          <tr><th scope="row">Cara</th><td><span class="swatch" style="--swatch:#F4E1CF"></span><code>#F4E1CF</code></td><td><span class="swatch" style="--swatch:#E9DBCA"></span><code>#E9DBCA</code></td><td><span class="swatch" style="--swatch:#E0E7EA"></span><code>#E0E7EA</code></td></tr>
+          <tr><th scope="row">Oreja de la madre</th><td><span class="swatch" style="--swatch:#B19D8D"></span><code>#B19D8D</code></td><td><span class="swatch" style="--swatch:#BA9C8B"></span><code>#BA9C8B</code></td><td><span class="swatch" style="--swatch:#AABBC4"></span><code>#AABBC4</code></td></tr>
+          <tr><th scope="row">Cuernos</th><td><span class="swatch" style="--swatch:#8A949E"></span><code>#8A949E</code></td><td><span class="swatch" style="--swatch:#A69E90"></span><code>#A69E90</code></td><td><span class="swatch" style="--swatch:#879BAA"></span><code>#879BAA</code></td></tr>
+          <tr><th scope="row">Manchas de la cría</th><td><span class="swatch" style="--swatch:#B19D8D"></span><code>#B19D8D</code></td><td><span class="swatch" style="--swatch:#BAA18A"></span><code>#BAA18A</code></td><td><span class="swatch" style="--swatch:#A3B3BD"></span><code>#A3B3BD</code></td></tr>
+          <tr><th scope="row">Cara de la cría</th><td><span class="swatch" style="--swatch:#FBF1E6"></span><code>#FBF1E6</code></td><td><span class="swatch" style="--swatch:#F4ECE0"></span><code>#F4ECE0</code></td><td><span class="swatch" style="--swatch:#F0F3F4"></span><code>#F0F3F4</code></td></tr>
+          <tr><th scope="row">Oreja de la cría</th><td><span class="swatch" style="--swatch:#D3BFAE"></span><code>#D3BFAE</code></td><td><span class="swatch" style="--swatch:#CCBDB1"></span><code>#CCBDB1</code></td><td><span class="swatch" style="--swatch:#C7D1D6"></span><code>#C7D1D6</code></td></tr>
+          <tr><th scope="row">Hueso de la calavera</th><td><span class="swatch" style="--swatch:#EDE6D6"></span><code>#EDE6D6</code></td><td><span class="swatch" style="--swatch:#E5D8C1"></span><code>#E5D8C1</code></td><td><span class="swatch" style="--swatch:#D8E3EC"></span><code>#D8E3EC</code></td></tr>
+          <tr><th scope="row">Cuencas y nariz de la calavera</th><td><span class="swatch" style="--swatch:#24465B"></span><code>#24465B</code></td><td><span class="swatch" style="--swatch:#342F2B"></span><code>#342F2B</code></td><td><span class="swatch" style="--swatch:#18344D"></span><code>#18344D</code></td></tr>
+          <tr><th scope="row">Hebra azul de ADN</th><td><span class="swatch" style="--swatch:#378CE7"></span><code>#378CE7</code></td><td><span class="swatch" style="--swatch:#5D7484"></span><code>#5D7484</code></td><td><span class="swatch" style="--swatch:#3E6C99"></span><code>#3E6C99</code></td></tr>
+          <tr><th scope="row">Hebra verde de ADN</th><td><span class="swatch" style="--swatch:#24AC88"></span><code>#24AC88</code></td><td><span class="swatch" style="--swatch:#66764E"></span><code>#66764E</code></td><td><span class="swatch" style="--swatch:#477969"></span><code>#477969</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="color-group" id="tonos-identificacion">
+      <h3>Identificación y movimientos</h3>
+      <table aria-label="Correspondencias de identificación y movimientos">
+        <thead><tr><th scope="col">Uso o pieza</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Arete</th><td><span class="swatch" style="--swatch:#F3AD43"></span><code>#F3AD43</code></td><td><span class="swatch" style="--swatch:#B7A074"></span><code>#B7A074</code></td><td><span class="swatch" style="--swatch:#7198B9"></span><code>#7198B9</code></td></tr>
+          <tr><th scope="row">Ondas del arete RFID</th><td><span class="swatch" style="--swatch:#378CE7"></span><code>#378CE7</code></td><td><span class="swatch" style="--swatch:#5D7484"></span><code>#5D7484</code></td><td><span class="swatch" style="--swatch:#3E6C99"></span><code>#3E6C99</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="color-group" id="tonos-instalaciones">
+      <h3>Corrales y alimentación</h3>
+      <table aria-label="Correspondencias de corrales y alimentación">
+        <thead><tr><th scope="col">Uso o pieza</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Suelo del corral</th><td><span class="swatch" style="--swatch:#F4E1CF"></span><code>#F4E1CF</code></td><td><span class="swatch" style="--swatch:#E9DBCA"></span><code>#E9DBCA</code></td><td><span class="swatch" style="--swatch:#E0E7EA"></span><code>#E0E7EA</code></td></tr>
+          <tr><th scope="row">Postes verdes del corral</th><td><span class="swatch" style="--swatch:#1B7F65"></span><code>#1B7F65</code></td><td><span class="swatch" style="--swatch:#4B5B3D"></span><code>#4B5B3D</code></td><td><span class="swatch" style="--swatch:#315B4B"></span><code>#315B4B</code></td></tr>
+          <tr><th scope="row">Reja de la manga</th><td><span class="swatch" style="--swatch:#378CE7"></span><code>#378CE7</code></td><td><span class="swatch" style="--swatch:#5D7484"></span><code>#5D7484</code></td><td><span class="swatch" style="--swatch:#3E6C99"></span><code>#3E6C99</code></td></tr>
+          <tr><th scope="row">Frente del comedero</th><td><span class="swatch" style="--swatch:#B0BEC5"></span><code>#B0BEC5</code></td><td><span class="swatch" style="--swatch:#C9BFB0"></span><code>#C9BFB0</code></td><td><span class="swatch" style="--swatch:#B3C7D5"></span><code>#B3C7D5</code></td></tr>
+          <tr><th scope="row">Canto del concreto</th><td><span class="swatch" style="--swatch:#CFD8DC"></span><code>#CFD8DC</code></td><td><span class="swatch" style="--swatch:#DFD8CA"></span><code>#DFD8CA</code></td><td><span class="swatch" style="--swatch:#CEDDE7"></span><code>#CEDDE7</code></td></tr>
+          <tr><th scope="row">Interior del comedero · alimento</th><td><span class="swatch" style="--swatch:#F3AD43"></span><code>#F3AD43</code></td><td><span class="swatch" style="--swatch:#B7A074"></span><code>#B7A074</code></td><td><span class="swatch" style="--swatch:#BA995E"></span><code>#BA995E</code></td></tr>
+          <tr><th scope="row">Alimento y lectura del comedero</th><td><span class="swatch" style="--swatch:#F3AD43"></span><code>#F3AD43</code></td><td><span class="swatch" style="--swatch:#B7A074"></span><code>#B7A074</code></td><td><span class="swatch" style="--swatch:#BA995E"></span><code>#BA995E</code></td></tr>
+          <tr><th scope="row">Flecha de consumo · fondo</th><td><span class="swatch" style="--swatch:#E56876"></span><code>#E56876</code></td><td><span class="swatch" style="--swatch:#966872"></span><code>#966872</code></td><td><span class="swatch" style="--swatch:#A05F6B"></span><code>#A05F6B</code></td></tr>
+          <tr><th scope="row">Hoja de forraje · cara clara</th><td><span class="swatch" style="--swatch:#7AD3B8"></span><code>#7AD3B8</code></td><td><span class="swatch" style="--swatch:#A7B797"></span><code>#A7B797</code></td><td><span class="swatch" style="--swatch:#97B7AC"></span><code>#97B7AC</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="color-group" id="tonos-reparto">
+      <h3>Reparto y pesaje</h3>
+      <table aria-label="Correspondencias de reparto y pesaje">
+        <thead><tr><th scope="col">Uso o pieza</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Caja del camión y etiqueta</th><td><span class="swatch" style="--swatch:#F3AD43"></span><code>#F3AD43</code></td><td><span class="swatch" style="--swatch:#B7A074"></span><code>#B7A074</code></td><td><span class="swatch" style="--swatch:#7198B9"></span><code>#7198B9</code></td></tr>
+          <tr><th scope="row">Cabina del mezclador</th><td><span class="swatch" style="--swatch:#E2F2F5"></span><code>#E2F2F5</code></td><td><span class="swatch" style="--swatch:#EAE6DC"></span><code>#EAE6DC</code></td><td><span class="swatch" style="--swatch:#E7EFF6"></span><code>#E7EFF6</code></td></tr>
+          <tr><th scope="row">Tolva del mezclador</th><td><span class="swatch" style="--swatch:#E56876"></span><code>#E56876</code></td><td><span class="swatch" style="--swatch:#966872"></span><code>#966872</code></td><td><span class="swatch" style="--swatch:#A05F6B"></span><code>#A05F6B</code></td></tr>
+          <tr><th scope="row">Sombra de la tolva</th><td><span class="swatch" style="--swatch:#B94A58"></span><code>#B94A58</code></td><td><span class="swatch" style="--swatch:#764D57"></span><code>#764D57</code></td><td><span class="swatch" style="--swatch:#763D4B"></span><code>#763D4B</code></td></tr>
+          <tr><th scope="row">Carcasa del indicador y aguja del implantador</th><td><span class="swatch" style="--swatch:#8A949E"></span><code>#8A949E</code></td><td><span class="swatch" style="--swatch:#A69E90"></span><code>#A69E90</code></td><td><span class="swatch" style="--swatch:#879BAA"></span><code>#879BAA</code></td></tr>
+          <tr><th scope="row">Pantalla del indicador</th><td><span class="swatch" style="--swatch:#1F6FC4"></span><code>#1F6FC4</code></td><td><span class="swatch" style="--swatch:#566C79"></span><code>#566C79</code></td><td><span class="swatch" style="--swatch:#315F88"></span><code>#315F88</code></td></tr>
+          <tr><th scope="row">Dígitos de la pantalla</th><td><span class="swatch" style="--swatch:#E2F2F5"></span><code>#E2F2F5</code></td><td><span class="swatch" style="--swatch:#EAE6DC"></span><code>#EAE6DC</code></td><td><span class="swatch" style="--swatch:#E7EFF6"></span><code>#E7EFF6</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="color-group" id="tonos-sanidad">
+      <h3>Sanidad e implantes</h3>
+      <table aria-label="Correspondencias de sanidad e implantes">
+        <thead><tr><th scope="col">Uso o pieza</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Líquido y émbolo de la jeringa</th><td><span class="swatch" style="--swatch:#8870D4"></span><code>#8870D4</code></td><td><span class="swatch" style="--swatch:#847087"></span><code>#847087</code></td><td><span class="swatch" style="--swatch:#736B92"></span><code>#736B92</code></td></tr>
+          <tr><th scope="row">Aguja de la jeringa y gatillo del implantador</th><td><span class="swatch" style="--swatch:#24465B"></span><code>#24465B</code></td><td><span class="swatch" style="--swatch:#342F2B"></span><code>#342F2B</code></td><td><span class="swatch" style="--swatch:#18344D"></span><code>#18344D</code></td></tr>
+          <tr><th scope="row">Cuerpo del implantador</th><td><span class="swatch" style="--swatch:#E56876"></span><code>#E56876</code></td><td><span class="swatch" style="--swatch:#966872"></span><code>#966872</code></td><td><span class="swatch" style="--swatch:#A05F6B"></span><code>#A05F6B</code></td></tr>
+          <tr><th scope="row">Cruz del botiquín</th><td><span class="swatch" style="--swatch:#FFFFFF"></span><code>#FFFFFF</code></td><td><span class="swatch" style="--swatch:#FFFFFF"></span><code>#FFFFFF</code></td><td><span class="swatch" style="--swatch:#FFFFFF"></span><code>#FFFFFF</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="color-group" id="tonos-documentos">
+      <h3>Documentos y acciones</h3>
+      <table aria-label="Correspondencias de documentos y acciones">
+        <thead><tr><th scope="col">Uso o pieza</th><th scope="col">Original</th><th scope="col">Lino</th><th scope="col">Azul ejecutivo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Pliegue de papel</th><td><span class="swatch" style="--swatch:#9CC6F2"></span><code>#9CC6F2</code></td><td><span class="swatch" style="--swatch:#BDB1A0"></span><code>#BDB1A0</code></td><td><span class="swatch" style="--swatch:#A3BDD2"></span><code>#A3BDD2</code></td></tr>
+          <tr><th scope="row">Cuerpo de la base de datos</th><td><span class="swatch" style="--swatch:#D1C4E9"></span><code>#D1C4E9</code></td><td><span class="swatch" style="--swatch:#CFC2D0"></span><code>#CFC2D0</code></td><td><span class="swatch" style="--swatch:#C4C5D9"></span><code>#C4C5D9</code></td></tr>
+          <tr><th scope="row">Guardar · cuerpo</th><td><span class="swatch" style="--swatch:#24AC88"></span><code>#24AC88</code></td><td><span class="swatch" style="--swatch:#66764E"></span><code>#66764E</code></td><td><span class="swatch" style="--swatch:#477969"></span><code>#477969</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+  <p class="empty" id="sin-colores" hidden>No hay colores que coincidan. <button type="button" id="borrar-color">Borrar búsqueda</button></p>
+</section>
+<footer><a href="#paletas">Volver a las paletas ↑</a></footer>
+</main>
+<script>
+const search = document.querySelector('#busca');
+const familyFilter = document.querySelector('#familia');
+const colorSearch = document.querySelector('#busca-color');
+const families = document.querySelectorAll('.family');
+const colorGroups = document.querySelectorAll('.color-group');
+
+function normalize(text) {
+  return text.toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function filterIcons() {
+  const words = normalize(search.value.trim()).split(/\s+/);
+  let total = 0;
+  for (const family of families) {
+    const selected = !familyFilter.value || familyFilter.value === family.id;
+    const title = family.querySelector('h3').textContent;
+    let count = 0;
+    for (const card of family.querySelectorAll('[data-icon]')) {
+      const text = normalize([title, card.dataset.icon, card.querySelector('h4').textContent].join(' '));
+      card.hidden = !(selected && words.every(word => text.includes(word)));
+      if (!card.hidden) count++;
+    }
+    family.hidden = count === 0;
+    family.querySelector('.count').textContent = count === 1 ? '1 muestra' : count + ' muestras';
+    total += count;
+  }
+  document.querySelector('#icon-count').textContent = total === 1 ? '1 icono' : total + ' iconos';
+  document.querySelector('#vacio').hidden = total !== 0;
+}
+
+function filterColors() {
+  const words = normalize(colorSearch.value.trim()).split(/\s+/);
+  let total = 0;
+  for (const group of colorGroups) {
+    const title = group.querySelector('h3').textContent;
+    let count = 0;
+    for (const row of group.querySelectorAll('tbody tr')) {
+      const values = Array.from(row.cells, cell => cell.textContent);
+      const text = normalize([title, ...values].join(' '));
+      row.hidden = !words.every(word => text.includes(word));
+      if (!row.hidden) count++;
+    }
+    group.hidden = count === 0;
+    total += count;
+  }
+  document.querySelector('#color-count').textContent = total === 1 ? '1 correspondencia' : total + ' correspondencias';
+  document.querySelector('#sin-colores').hidden = total !== 0;
+}
+
+search.addEventListener('input', filterIcons);
+familyFilter.addEventListener('change', filterIcons);
+colorSearch.addEventListener('input', filterColors);
+document.querySelector('#reiniciar').addEventListener('click', () => {
+  search.value = '';
+  familyFilter.value = '';
+  filterIcons();
+  search.focus();
+});
+document.querySelector('#borrar-color').addEventListener('click', () => {
+  colorSearch.value = '';
+  filterColors();
+  colorSearch.focus();
+});
+document.querySelector('#coleccion').addEventListener('click', event => {
+  const link = event.target.closest('.family-colors');
+  if (link && colorSearch.value) {
+    colorSearch.value = '';
+    filterColors();
+  }
+});
+window.addEventListener('pageshow', () => {
+  filterIcons();
+  filterColors();
+});
+
+</script>
+</body></html>

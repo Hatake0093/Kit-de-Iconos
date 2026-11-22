@@ -30,7 +30,7 @@ SECCIONES = {
     "Medición y pesaje": {"familias": "bascula indicador medidor regla porcentaje"},
     "Sanidad": {"familias": "jeringa implantador botiquin cruz frasco"},
     "Laboratorio": {"familias": "laboratorio matraz"},
-    "Compras, pagos y transporte": {"familias": "carrito billete moneda camion"},
+    "Compras, pagos y transporte": {"familias": "billete moneda camion"},
     "Documentos": {"familias": "documento"},
     "Calendario y tiempo": {"familias": "calendario", "iconos": "LineaTiempo"},
     "Gráficas": {"familias": "grafica barra",
@@ -45,7 +45,7 @@ SECCIONES = {
     "Búsqueda, filtros y orden": {"familias": "ordenar", "iconos": "Buscar Filtrar FiltroVacio LimpiarFiltros"},
     "Estado y avisos": {"iconos": "Activar Aprobar Bloquear Cancelar Confirmar Desactivar Desbloquear Rechazar "
                                   "Advertencia Informacion Ayuda2 ayuda prohibido"},
-    "Archivos y carpetas": {"iconos": "AbrirCarpeta Archivero Carpeta2 carpeta carpeta-verde Adjuntar Descargar Subir "
+    "Archivos y carpetas": {"iconos": "AbrirCarpeta Archivero Carpeta2 carpeta carpeta-abierta carpeta-verde Adjuntar Descargar Subir "
                                       "Exportar Importar Guardar GuardarCerrar Imprimir VistaPrevia Plantilla"},
     "Navegación y vistas": {"iconos": "Anterior Siguiente Contraer Expandir Inicio Historial VerDetalle Cuadricula "
                                       "Lista ListaTareas salida"},

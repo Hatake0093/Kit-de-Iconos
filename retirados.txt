@@ -6,3 +6,9 @@
 # el script avisa y no toca nada hasta que lo cambies.
 
 corral        # ahora es cerca
+carrito              # familia carrito eliminada (2026-11-21)
+carrito-check
+carrito-lupa
+carrito-reporte
+vaca-carrito         # Lista de Recepcion en main: pasar a camion-descarga antes de sincronizar
+documento-carrito

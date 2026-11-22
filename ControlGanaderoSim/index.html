@@ -63,6 +63,10 @@ button,select{font:inherit}
 .btn:hover{background:var(--hover);border-color:#B9D3EE}
 .btn[aria-expanded="true"]{background:var(--presionado);border-color:#C9A566}
 .btn .ic{width:32px;height:32px}
+.galeria{display:grid;grid-template-columns:repeat(4,30px) 12px;grid-auto-rows:20px;gap:3px;align-self:center;padding:3px;
+  border:1px solid #D0D2D6;background:#fff;cursor:default}
+.galeria i{display:block;border:1px solid #C8CACE}
+.galeria .mas{grid-column:5;grid-row:1 / span 2;font-size:8px;color:#555;display:flex;align-items:flex-end;justify-content:center}
 .btn .flecha{position:absolute;top:15px;right:3px;font-size:8px;color:#333}
 .btn.sub .ic{margin-right:8px}
 
@@ -89,6 +93,7 @@ button,select{font:inherit}
 [data-origen="ajeno"]::after{background:var(--o-ajeno)}
 [data-origen="embebido"]::after,[data-origen="raster"]::after,[data-origen="sin"]::after{background:var(--o-embebido)}
 [data-origen="propuesta"]::after{background:var(--o-propuesta)}
+[data-origen="falta"]::after{background:#fff;border-color:var(--o-propuesta)}
 
 /* ---------- inspector ---------- */
 .leyenda{display:flex;flex-wrap:wrap;gap:6px 16px;margin:16px 0 8px;color:var(--suave);font-size:12px}
@@ -137,6 +142,7 @@ td code{font-size:12px;color:#24465B}
     <span><i class="punto" style="background:var(--o-ajeno)"></i>Recurso del proyecto fuera del kit</span>
     <span><i class="punto" style="background:var(--o-embebido)"></i>Guardado en FrmMain.resx (el kit no lo actualiza)</span>
     <span><i class="punto" style="background:var(--o-propuesta)"></i>Propuesta</span>
+    <span><i class="punto" style="border:2px solid var(--o-propuesta)"></i>Por diseñar</span>
   </div>
   <div class="panel">
     <h2 id="titulo-inspector">Iconos de la pestaña</h2>
@@ -162,7 +168,12 @@ const kitSvg = n => ruta(KIT + n + ".svg");
 /* origen del icono que se ve con el modo dado */
 function resolver(control, modo) {
   const ic = control.icono;
-  if (modo === "propuesta" && PROP[control.id]) return { src: kitSvg(PROP[control.id].icono), origen: "propuesta", nombre: PROP[control.id].icono };
+  const pr = PROP[control.id];
+  if (modo === "propuesta" && pr && pr.icono) return { src: kitSvg(pr.icono), origen: "propuesta", nombre: pr.icono };
+  // { falta: "..." } = icono que todavía hay que diseñar: se ve como hueco punteado
+  if (modo === "propuesta" && pr && pr.falta) return { src: null, origen: "falta", nombre: "por diseñar" };
+  // una propuesta solo de { texto } no cambia el icono: sigue el kit actual
+  if (modo === "propuesta") modo = "kit";
   if (!ic) return { src: null, origen: "sin", nombre: "(sin icono)" };
   if (ic.tipo === "recurso") {
     const src = modo === "proyecto" ? (ic.proyecto || ic.kit) : (ic.kit || ic.proyecto);
@@ -171,7 +182,9 @@ function resolver(control, modo) {
   }
   return { src: ruta(ic.embebido), origen: ic.tipo, nombre: ic.copiaDeKit ? "copia de " + ic.copiaDeKit : "embebido" };
 }
-const TEXTO_ORIGEN = { kit: "Kit", pendiente: "Kit (falta sincronizar)", ajeno: "Fuera del kit", embebido: "Embebido SVG", raster: "Embebido PNG", sin: "Sin icono", propuesta: "Propuesta" };
+/* texto del control: con "Kit + propuestas" usa el texto propuesto si lo hay */
+const texto = c => (estado.modo === "propuesta" && PROP[c.id] && PROP[c.id].texto) || c.texto;
+const TEXTO_ORIGEN = { kit: "Kit", pendiente: "Kit (falta sincronizar)", ajeno: "Fuera del kit", embebido: "Embebido SVG", raster: "Embebido PNG", sin: "Sin icono", propuesta: "Propuesta", falta: "Por diseñar" };
 
 function img(r, tam) {
   if (!r.src) return `<span class="ic vacio" style="width:${tam}px;height:${tam}px"></span>`;
@@ -191,7 +204,11 @@ function pintarRibbon(pag) {
   document.getElementById("ribbon").innerHTML = pag.grupos.filter(g => g.visible).map(g => `
     <div class="grupo"><div class="cap">${esc(g.texto)}</div><div class="items">${g.items.map(c => {
       const r = resolver(c, estado.modo), sub = c.menu.length > 0;
-      return `${c.separador ? '<span class="div"></span>' : ""}<button class="btn${sub ? " sub" : ""}" data-id="${c.id}" data-origen="${r.origen}" title="${ayuda(c, r)}"${sub ? ' aria-haspopup="true" aria-expanded="false"' : ""}>${img(r, 32)}${sub ? '<span class="flecha">▼</span>' : ""}<span>${esc(c.texto)}</span></button>`;
+      // galería de skins (RibbonGalleryBarItem): DevExpress muestra miniaturas; el icono solo sale con el grupo colapsado
+      if (c.tipo === "RibbonGalleryBarItem") return `<div class="galeria" title="${esc(texto(c))} · galería de skins: el icono ${esc(r.nombre)} solo aparece si el grupo se colapsa">${
+        ["#2B579A,#F3F3F3", "#1E1E1E,#3C3C3C", "#5B7FA6,#E9EEF4", "#7A5B9A,#F1ECF6", "#3A7D44,#EDF5EE", "#B0503A,#F7EDE9", "#404040,#D9D9D9", "#1F6FC4,#FFFFFF"]
+          .map(par => { const [a, b] = par.split(","); return `<i style="background:linear-gradient(${a} 0 40%,${b} 40%)"></i>`; }).join("")}<span class="mas">▾</span></div>`;
+      return `${c.separador ? '<span class="div"></span>' : ""}<button class="btn${sub ? " sub" : ""}" data-id="${c.id}" data-origen="${r.origen}" title="${ayuda(c, r)}"${sub ? ' aria-haspopup="true" aria-expanded="false"' : ""}>${img(r, 32)}${sub ? '<span class="flecha">▼</span>' : ""}<span>${esc(texto(c))}</span></button>`;
     }).join("")}</div></div>`).join("");
 }
 
@@ -199,14 +216,15 @@ function filaInspector(c, sangria) {
   const p = resolver(c, "proyecto"), k = resolver(c, "kit"), pr = PROP[c.id];
   const tam = r => `<div class="tam">${img(r, 16)}${img(r, 24)}${img(r, 32)}</div>`;
   const notas = [];
-  if (pr) notas.push(esc(pr.motivo));
+  if (pr && pr.falta) notas.push("<b>Por diseñar:</b> " + esc(pr.falta));
+  if (pr && pr.motivo) notas.push(esc(pr.motivo));
   if (p.origen === "embebido" || p.origen === "raster") notas.push("El kit no lo puede actualizar: hay que asignarle un recurso en el designer.");
   if (p.origen === "pendiente") notas.push("El kit tiene una versión más nueva.");
   return `<tr>
-    <td style="padding-left:${10 + sangria}px">${esc(c.texto)}<br><code>${esc(c.id)}</code></td>
+    <td style="padding-left:${10 + sangria}px">${esc(c.texto)}${pr && pr.texto ? `<br><span class="motivo">→ ${esc(pr.texto)}</span>` : ""}<br><code>${esc(c.id)}</code></td>
     <td>${tam(p)}<code>${esc(p.nombre)}</code></td>
     <td>${k.src === p.src || (c.icono && c.icono.tipo === "recurso" && c.icono.kit && !c.icono.cambia) ? '<span class="flecha-cambio">igual</span>' : tam(k)}</td>
-    <td>${pr ? tam(resolver(c, "propuesta")) + `<code>${esc(pr.icono)}</code>` : ""}</td>
+    <td>${pr && (pr.icono || pr.falta) ? tam(resolver(c, "propuesta")) + `<code>${esc(pr.icono || "por diseñar")}</code>` : ""}</td>
     <td><span class="etq"><i class="punto" style="background:var(--o-${p.origen === "raster" || p.origen === "sin" ? "embebido" : p.origen})"></i>${TEXTO_ORIGEN[p.origen]}</span></td>
     <td class="motivo">${notas.join("<br>")}</td></tr>`;
 }
@@ -246,12 +264,13 @@ function abrirMenu(boton, control) {
   const el = document.createElement("div");
   el.className = "menu"; el.setAttribute("role", "menu");
   el.innerHTML = control.menu.map(s => { const r = resolver(s, estado.modo);
-    return `<button role="menuitem" data-origen="${r.origen}" title="${ayuda(s, r)}">${img(r, 16)}${esc(s.texto)}</button>`; }).join("");
-  document.getElementById("ventana").appendChild(el);
+    return `<button role="menuitem" data-origen="${r.origen}" title="${ayuda(s, r)}">${img(r, 16)}${esc(texto(s))}</button>`; }).join("");
+  // fuera de la ventana y escalado con transform, que no altera left/top
+  document.body.appendChild(el);
   const caja = boton.getBoundingClientRect();
+  el.style.transformOrigin = "0 0";
+  el.style.transform = `scale(${document.getElementById("zoom").value})`;
   el.style.left = caja.left + "px"; el.style.top = caja.bottom + "px";
-  el.style.zoom = document.getElementById("zoom").value;
-  el.style.left = caja.left / el.style.zoom + "px"; el.style.top = caja.bottom / el.style.zoom + "px";
   boton.setAttribute("aria-expanded", "true");
   menuAbierto = { el, boton };
 }

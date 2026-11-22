@@ -2,7 +2,7 @@
   <title id="title">Cuidado nocturno: pezuña, luna y cuna</title>
   <path fill="#F3AD43" d="M52 3a13 13 0 1 0 8 23A14 14 0 0 1 52 3Z"/>
   <!-- Pezuña bovina: dos lóbulos con punta hacia arriba, borde interior recto y base plana. -->
-  <path fill="#B9472B" d="M21.5 7C14 9 9 18 9 24c0 3 1.5 4.5 4.5 4.5H19.5Zm3 0C32 9 37 18 37 24c0 3-1.5 4.5-4.5 4.5H26.5Z"/>
+  <path fill="#907B6C" d="M21.5 7C14 9 9 18 9 24c0 3 1.5 4.5 4.5 4.5H19.5Zm3 0C32 9 37 18 37 24c0 3-1.5 4.5-4.5 4.5H26.5Z"/>
   <!-- Cuna de frente: cabecera y piecera altas, barrotes y patas cortas. -->
   <rect x="8" y="39" width="48" height="14" rx="2" fill="#378CE7"/>
   <path d="M16 42v8m8-8v8m8-8v8m8-8v8m8-8v8" fill="none" stroke="#E2F2F5" stroke-width="2.5" stroke-linecap="round"/>

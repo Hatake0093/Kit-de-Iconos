@@ -4,16 +4,36 @@ Trabajo por hacer en `Kit_semantico`. Al terminar un punto, muévalo a la secci�
 
 ## Por hacer
 
+### Iconos que faltan para sustituir los embebidos de FrmMain
+
+Meta: ningún control de `FrmMain` con icono embebido en `FrmMain.resx`. Los 43 que hay en `main`
+ya tienen propuesta en `ControlGanaderoSim/propuestas.js`. Queda un control con hueco punteado en el modo «Kit + propuestas».
+
+Diseño nuevo:
+
+- [ ] `temas` — **Temas** (`rgbiSkins`, Ajustes). Paleta de pintor plana con manchas azul, verde, ámbar y rosa del kit y contorno marino.
+
+Al terminar cada uno: cambiar su entrada en `propuestas.js` de `falta` a `icono` y revisarlo en el mockup.
+
 ### Revisar el rediseño de la familia `camion-*`
 
 Revisar el rediseño del camión y sus variantes. Hoy son seis archivos: `camion`, `camion-mas`, `camion-flecha`, `camion-lista`, `camion-usuario` y `camion-descarga`.
 
 - [ ] Definir qué se revisa: forma del camión, colores o la insignia de cada variante.
-- [ ] Aplicar el color por significado a las insignias (`PALETA.md`, sección 4). Hoy el camión usa insignia ámbar fija y la sección 5 ya lo deja como pendiente.
-- [ ] Revisar los controles que lo usan en `mapa_controles.csv`: `Remisiones` (`camion`), `Reparto` y `Salida a Matadero` (`camion-flecha`), `Lista de Recepcion` (`camion-mas`), `Transportistas` (`camion-usuario`), `Programacion de Salidas` e `Indicadores/Ver Servicios` (`camion-lista`). `camion-descarga` no lo usa ningún control.
+- [x] Aplicar el color por significado a las insignias (`PALETA.md`, sección 4). Hecho el 2026-11-21: `camion-mas` y `camion-descarga` verdes, `camion-flecha` y `camion-lista` azules; `camion-mas` y `camion-flecha` pasan a `generar_faltantes.py`.
+- [ ] Revisar los controles que lo usan en `mapa_controles.csv`: `Remisiones` (`camion`), `Reparto` y `Salida a Matadero` (`camion-flecha`), `Lista de Recepcion` (`camion-mas`), `Transportistas` (`camion-usuario`), `Programacion de Salidas` e `Indicadores/Ver Servicios` (`camion-lista`). `camion-descarga` no lo usa ningún control. En el mockup se proponen `camion-descarga` para Remisiones de Entrada (hoy «Lista de Recepcion») y `camion-flecha` para Remisiones de Salida (hoy «Remisiones»).
 - [ ] Pasar `python auditar_coherencia.py` y regenerar la vista previa con `python generar_vista_previa.py`.
 
 ## Hecho
+
+### 2026-11-21 — Propuestas para Implantes y Lista de Equipos
+
+- Asignados `implante` (cartucho con tres cavidades) y `equipo` (cargador frontal) en «Kit + propuestas». Pendiente de validar con los operadores si reconocen las siluetas en sus catálogos.
+
+### 2026-11-21 — Variantes de usuario para Programadores y Dueños
+
+- Generados con `generar_faltantes.py` `usuario-reloj` (insignia morada) para **Programadores** y `usuario-estrella` (insignia ámbar) para **Dueños**.
+- Asignados en `ControlGanaderoSim/propuestas.js`. Falta reasignarlos en `FrmMain` del proyecto.
 
 ### 2026-10-25 — Propuestas visuales preparadas
 

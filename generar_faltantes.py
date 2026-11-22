@@ -25,7 +25,7 @@ COLORES_INSIGNIAS_VACA = {
     "vaca-check": VERDE,
     "vaca-arriba": VERDE,
     "vaca-menos": ROJO,
-    "vaca-x": "#B9472B",  # Terracota de la insignia de cancelación.
+    "vaca-x": ROJO,
     "vaca-abajo": ROJO,
     "vaca-alerta": AMBAR,
     "vaca-estrella": AMBAR,
@@ -41,8 +41,10 @@ COLOR_POR_SIMBOLO.update({"dolar": VERDE, "circulo": MORADO, "arriba": VERDE, "a
 COLOR_POR_SIMBOLO.update({"documento": AZUL, "arribaYabajo": AZUL, "reporte": AZUL})
 # los nombres usan "bajada/subida" y la tabla por simbolo usa "abajo/arriba": se asignan a mano
 COLORES_INSIGNIAS_VACA.update({"documento-bajada": ROJO, "comedero-bajada": ROJO, "comedero-subida": VERDE})
-for _familia in ("calendario", "etiqueta", "documento", "usuario", "barras", "comedero", "saco", "carrito",
-                 "lapida", "matraz", "arete-rfid", "BaseDatos", "billete", "implantador", "indicador", "camion-mixer"):
+# camion: la descarga es la remision de entrada (suma ganado), no un "quitar"
+COLORES_INSIGNIAS_VACA.update({"camion-descarga": VERDE})
+for _familia in ("calendario", "etiqueta", "documento", "usuario", "barras", "comedero", "saco",
+                 "lapida", "matraz", "arete-rfid", "BaseDatos", "billete", "implantador", "indicador", "camion-mixer", "camion"):
     COLORES_INSIGNIAS_VACA.update({f"{_familia}-{s}": c for s, c in COLOR_POR_SIMBOLO.items()})
     # los nombres usan "dinero" y la tabla por simbolo usa "dolar"
     COLORES_INSIGNIAS_VACA[f"{_familia}-dinero"] = COLOR_POR_SIMBOLO["dolar"]
@@ -97,20 +99,8 @@ SIMBOLOS = {
     "reloj": pl("25.2,22.3 25.2,25.8 28,25.8"),
     "copiar": ('<rect x="22.6" y="22.2" width="3.6" height="3.6" rx="0.6" fill="none" stroke="#FFFFFF" stroke-width="1.2"/>'
                '<rect x="24.8" y="24.4" width="3.6" height="3.6" rx="0.6" fill="#FFFFFF"/>'),
-    # Miniatura de documento-vaca: dibujo propio con orejas y hocico terracota.
-    "vaca": ('<polyline points="23.4,23.3 22.4,21.9" fill="none" stroke="#8A949E" stroke-width="1.1" stroke-linecap="round"/>'
-             '<polyline points="27.6,23.3 28.6,21.9" fill="none" stroke="#8A949E" stroke-width="1.1" stroke-linecap="round"/>'
-             '<ellipse cx="22.2" cy="24.7" rx="1.5" ry="0.85" fill="#B9472B" transform="rotate(20 22.2 24.7)"/>'
-             '<ellipse cx="28.8" cy="24.7" rx="1.5" ry="0.85" fill="#B9472B" transform="rotate(-20 28.8 24.7)"/>'
-             '<ellipse cx="25.5" cy="25.4" rx="2.5" ry="2.9" fill="#F4E1CF"/>'
-             '<ellipse cx="25.5" cy="27.4" rx="1.8" ry="1.1" fill="#B9472B"/>'
-             '<ellipse cx="24.5" cy="24.8" rx="0.45" ry="0.45" fill="#24465B"/><ellipse cx="26.5" cy="24.8" rx="0.45" ry="0.45" fill="#24465B"/>'
-             '<ellipse cx="24.8" cy="27.4" rx="0.3" ry="0.3" fill="#F4E1CF"/><ellipse cx="26.2" cy="27.4" rx="0.3" ry="0.3" fill="#F4E1CF"/>'),
     "arete": ('<path d="M24.3 22.2 H26.7 Q27.6 22.2 27.6 23.1 V27.3 Q27.6 28.4 26.5 28.4 H24.5 Q23.4 28.4 23.4 27.3 V23.1 '
               'Q23.4 22.2 24.3 22.2 Z" fill="#FFFFFF"/><ellipse cx="25.5" cy="23.5" rx="0.6" ry="0.6" fill="#F3AD43"/>'),
-    "carrito": (pl("22.6,23 23.9,23 24.9,26.4 28,26.4 28.6,24", 1.3)
-                + '<ellipse cx="25.3" cy="28.1" rx="0.8" ry="0.8" fill="#FFFFFF"/>'
-                + '<ellipse cx="27.6" cy="28.1" rx="0.8" ry="0.8" fill="#FFFFFF"/>'),
     "separar": pl("22.8,25.5 25,25.5") + pl("25,25.5 26.5,23.2 28.5,23.2") + pl("25,25.5 26.5,27.8 28.5,27.8"),
     "intercambio": (pl("23,24 28,24") + pl("26.4,22.4 28,24 26.4,25.6")
                     + pl("28,27 23,27") + pl("24.6,25.4 23,27 24.6,28.6")),
@@ -145,12 +135,16 @@ ETIQUETA = ('<polygon points="3,5 17,5 29,17 17,29 3,15" fill="#F3AD43"/>'
             '<polyline points="17,14 23,20" fill="none" stroke="#FFFFFF" stroke-width="2" '
             'stroke-linecap="round" stroke-linejoin="round"/>')
 # documento: hoja clara con esquina doblada azul y lineas de texto en azul marino
-DOCUMENTO = ('<path d="M8 3 H20 L26 9 V27 A2 2 0 0 1 24 29 H8 A2 2 0 0 1 6 27 V5 A2 2 0 0 1 8 3 Z" '
-             'fill="#E2F2F5" stroke="#9CC6F2" stroke-width="1"/>'
-             '<polygon points="20,3 26,9 20,9" fill="#9CC6F2"/>'
+HOJA_DOCUMENTO = ('<path d="M8 3 H20 L26 9 V27 A2 2 0 0 1 24 29 H8 A2 2 0 0 1 6 27 V5 A2 2 0 0 1 8 3 Z" '
+                  'fill="#E2F2F5" stroke="#9CC6F2" stroke-width="1"/>'
+                  '<polygon points="20,3 26,9 20,9" fill="#9CC6F2"/>')
+DOCUMENTO = (HOJA_DOCUMENTO +
              '<rect x="10" y="14" width="12" height="2" rx="1" fill="#24465B"/>'
              '<rect x="10" y="19" width="12" height="2" rx="1" fill="#24465B"/>'
              '<rect x="10" y="24" width="7" height="2" rx="1" fill="#24465B"/>')
+DOCUMENTO_VACA = (HOJA_DOCUMENTO
+                  + f'<g transform="translate(7.2 7.5) scale(.55)">{interior("vaca")}</g>'
+                  + '<rect x="11" y="24.5" width="10" height="1.5" rx=".75" fill="#24465B"/>')
 # usuario: cabeza azul marino, hombros azules; usuarios suma una segunda persona mas clara detras
 USUARIO = ('<circle cx="16" cy="10.5" r="5.5" fill="#24465B"/>'
            '<path d="M5.5 28.5 C5.5 21 10.5 18 16 18 C21.5 18 26.5 21 26.5 28.5 Z" fill="#378CE7"/>')
@@ -171,11 +165,6 @@ SACO = ('<path d="M10 5 H22 L20.5 9.5 C26 12 27 20 25.5 25 C24.5 28 22 29 20 29 
         '<rect x="10" y="15" width="12" height="9.5" rx="2" fill="#E2F2F5"/>'
         '<path d="M16 23 V17.5 M16 19.5 L14 18 M16 19.5 L18 18 M16 22 L14 20.5 M16 22 L18 20.5" fill="none" '
         'stroke="#24465B" stroke-width="1.2" stroke-linecap="round"/>')
-# carrito: asa y ruedas marino, cesta verde
-CARRITO = ('<polyline points="2.5,5 7,5 10.5,20 25,20" fill="none" stroke="#24465B" stroke-width="2.4" '
-           'stroke-linecap="round" stroke-linejoin="round"/>'
-           '<polygon points="9,9 29,9 25.5,19 11,19" fill="#24AC88"/>'
-           '<circle cx="13" cy="25.5" r="2.6" fill="#24465B"/><circle cx="23" cy="25.5" r="2.6" fill="#24465B"/>')
 # lapida: piedra gris con cruz marino sobre suelo marino
 LAPIDA = ('<path d="M7 28 V14 A9 9 0 0 1 25 14 V28 Z" fill="#CFD8DC"/>'
           '<path d="M16 10 V20 M12 14 H20" fill="none" stroke="#24465B" stroke-width="2.4" stroke-linecap="round"/>'
@@ -325,10 +314,11 @@ BASES = {
     "jeringa": (interior("jeringa"), MORADO), "engranaje": (f'<g transform="scale(0.6667)">{interior("engranaje")}</g>', AZUL),
     "cruz": (CRUZ, ROJO), "nube": (NUBE, AZUL), "mapa": (MAPA, VERDE), "craneo": (CRANEO, BRAHMAN),
     "etiqueta": (ETIQUETA, AMBAR),
+    "documento-vaca": (DOCUMENTO_VACA, AZUL),
     "documento": (DOCUMENTO, AZUL), "usuario": (USUARIO, VERDE), "usuarios": (USUARIOS, VERDE),
     "barras": (f'<g transform="scale(0.6667)">{interior("GraficaBarras")}</g>', VERDE),
     "bascula": (interior("bascula"), AZUL),
-    "comedero": (COMEDERO_64, AMBAR), "saco": (SACO, AMBAR), "carrito": (CARRITO, VERDE),
+    "comedero": (COMEDERO_64, AMBAR), "saco": (SACO, AMBAR),
     "lapida": (LAPIDA, ROJO), "matraz": (MATRAZ, MORADO),
     "BaseDatos": (f'<g transform="scale(0.6667)">{interior("BaseDatos")}</g>', MORADO),
     "arete-rfid": (ARETE_RFID, AMBAR), "medidor": (MEDIDOR, AZUL),
@@ -351,13 +341,14 @@ NUEVOS = [
     ("documento-dinero", "documento", "dolar"),
     ("usuario", "usuario", None), ("usuarios", "usuarios", None), ("usuario-mas", "usuario", "mas"),
     ("usuario-check", "usuario", "check"), ("usuario-dinero", "usuario", "dolar"),
+    ("usuario-reloj", "usuario", "reloj"),        # Programadores
+    ("usuario-estrella", "usuario", "estrella"),  # Dueños
     ("barras-mas", "barras", "mas"), ("barras-dinero", "barras", "dolar"), ("barras-flecha", "barras", "flecha"),
     ("cerca-lupa", "cerca", "lupa"), ("cruz-check", "cruz", "check"), ("cruz-lupa", "cruz", "lupa"),
     ("bascula-lista", "bascula", "lista"),
     ("comedero", "comedero", None), ("comedero-bajada", "comedero", "abajo"),
     ("comedero-subida", "comedero", "arriba"), ("comedero-lupa", "comedero", "lupa"),
     ("saco-alimento", "saco", None), ("saco-flecha", "saco", "flecha"), ("saco-lista", "saco", "lista"),
-    ("carrito", "carrito", None), ("carrito-check", "carrito", "check"),
     ("lapida", "lapida", None), ("lapida-alerta", "lapida", "alerta"),
     ("matraz-check", "matraz", "check"), ("matraz-lupa", "matraz", "lupa"), ("matraz-gota", "matraz", "gota"),
     ("matraz-hoja", "matraz", "hoja"), ("matraz-espiga", "matraz", "espiga"),
@@ -370,8 +361,8 @@ NUEVOS = [
     ("cerca-intercambio", "cerca", "intercambio"), ("vaca-salida", "vaca", "salida"),
     ("cruz", "cruz", None), ("cruz-mas", "cruz", "mas"),
     ("jeringa-flecha", "jeringa", "flecha"), ("jeringa-lista", "jeringa", "lista"),
-    ("seleccionar-todos", "seleccionar-todos", None), ("carrito-lupa", "carrito", "lupa"), ("vaca-separar", "vaca", "separar"), ("vaca-carrito", "vaca", "carrito"),
-    ("documento-carrito", "documento", "carrito"), ("documento-vaca", "documento", "vaca"), ("documento-arete", "documento", "arete"),
+    ("seleccionar-todos", "seleccionar-todos", None), ("vaca-separar", "vaca", "separar"),
+    ("documento-vaca", "documento-vaca", None), ("documento-arete", "documento", "arete"),
     ("hoja", "hoja", None), ("hoja-mas", "hoja", "mas"), ("hoja-menos", "hoja", "menos"),
     ("hoja-check", "hoja", "check"), ("hoja-lupa", "hoja", "lupa"), ("hoja-flecha", "hoja", "flecha"),
     ("espiga", "espiga", None), ("espiga-mas", "espiga", "mas"), ("espiga-menos", "espiga", "menos"),
@@ -383,6 +374,7 @@ NUEVOS = [
     ("medidor-abajo", "medidor", "abajo"), ("usuario-flecha", "usuario", "flecha"),
     ("documento-reloj", "documento", "reloj"), ("calendario-copiar", "calendario", "copiar"),
     ("camion-lista", "camion", "lista"), ("camion-descarga", "camion", "abajo"),
+    ("camion-mas", "camion", "mas"), ("camion-flecha", "camion", "flecha"),  # remision de salida
     ("etiqueta", "etiqueta", None), ("etiqueta-mas", "etiqueta", "mas"), ("etiqueta-menos", "etiqueta", "menos"),
     ("etiqueta-check", "etiqueta", "check"), ("etiqueta-x", "etiqueta", "x"),
     ("etiqueta-flecha", "etiqueta", "flecha"), ("etiqueta-lupa", "etiqueta", "lupa"),
@@ -437,13 +429,12 @@ NUEVOS = [
 ]
 # colores de insignia que no salen de la tabla por simbolo
 COLORES_INSIGNIAS_VACA.update({
-    "tabla-dinero": AMBAR, "jeringa-lista": AZUL, "carrito-lupa": AZUL, "vaca-separar": AZUL, "vaca-carrito": VERDE, "documento-carrito": VERDE, "documento-vaca": VERDE, "documento-arete": AMBAR, "hoja-mas": VERDE, "hoja-check": VERDE, "hoja-menos": ROJO, "hoja-lupa": AZUL,
+    "tabla-dinero": AMBAR, "jeringa-lista": AZUL, "vaca-separar": AZUL, "documento-arete": AMBAR, "hoja-mas": VERDE, "hoja-check": VERDE, "hoja-menos": ROJO, "hoja-lupa": AZUL,
     "espiga-mas": VERDE, "espiga-check": VERDE, "espiga-menos": ROJO, "espiga-lupa": AZUL, "vaca-intercambio": AZUL, "mapa-flecha": AZUL,
     "documento-intercambio": AZUL, "documento-estrella": AMBAR, "cerca-circulo": MORADO, "indicador-abajo": AZUL, "indicador-arriba": VERDE,
     "medidor-abajo": AZUL, "usuario-flecha": AZUL, "documento-reloj": MORADO, "calendario-copiar": AZUL, "cerca-reloj": MORADO, "cerca-x": ROJO, "cerca-intercambio": AZUL, "vaca-salida": AZUL,
     "documento-mas-rojo": ROJO, "documento-check-rojo": ROJO,
     "documento-flecha-rojo": ROJO, "documento-mas-azul": AZUL,
-    "arete-rfid-x": "#B9472B",
     "matraz-hoja": VERDE, "matraz-espiga": AMBAR,  # insignia con el color del forraje / grano
     "cerca-pin": ROJO,  # pin blanco sobre circulo rojo (pedido de diseno)
     "GuardarCerrar": AZUL,  # insignia azul para distinguirla del cuerpo verde  # asi estaba en el kit; unificar con ROJO si se decide

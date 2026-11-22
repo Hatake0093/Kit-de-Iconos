@@ -112,7 +112,7 @@ window.SIM = {
         "nombre": "documento-vaca",
         "kit": "../simulador de control ganadero/Kit_semantico/svg/documento-vaca.svg",
         "proyecto": "iconos_proyecto/documento-vaca.svg",
-        "cambia": false
+        "cambia": true
        },
        "menu": [],
        "separador": false
@@ -159,9 +159,9 @@ window.SIM = {
        "icono": {
         "tipo": "recurso",
         "nombre": "vaca-carrito",
-        "kit": "../simulador de control ganadero/Kit_semantico/svg/vaca-carrito.svg",
+        "kit": null,
         "proyecto": "iconos_proyecto/vaca-carrito.svg",
-        "cambia": true
+        "cambia": false
        },
        "menu": [],
        "separador": false
@@ -1243,7 +1243,7 @@ window.SIM = {
         "nombre": "crianza",
         "kit": "../simulador de control ganadero/Kit_semantico/svg/crianza.svg",
         "proyecto": "iconos_proyecto/crianza.svg",
-        "cambia": false
+        "cambia": true
        },
        "menu": [],
        "separador": false
@@ -1257,7 +1257,7 @@ window.SIM = {
         "nombre": "documento-vaca",
         "kit": "../simulador de control ganadero/Kit_semantico/svg/documento-vaca.svg",
         "proyecto": "iconos_proyecto/documento-vaca.svg",
-        "cambia": false
+        "cambia": true
        },
        "menu": [],
        "separador": false

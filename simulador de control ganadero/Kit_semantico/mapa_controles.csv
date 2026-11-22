@@ -22,8 +22,8 @@ bbiCausasMuerte,Causas de Muerte,lapida-alerta,A
 bbiCausasSanidad,Causas de Deteccion,documento-alerta,B
 bbiCentroReportes,Centro de Reportes,GraficaPastel,B
 bbiCompradores,Compradores,usuario-dinero,A
-bbiCompras,Compras de Ganado,carrito,A
-bbiComprasProgramadores,Compras de Programadores,carrito-check,A
+bbiCompras,Compras de Ganado,documento-vaca,A
+bbiComprasProgramadores,Compras de Programadores,barras-dinero,A
 bbiConfigurarOffline,Configurar Offline,engranaje,B
 bbiConsolidado,Consolidado,barras-mas,A
 bbiConsumo,Consumo,comedero-bajada,A
@@ -145,7 +145,6 @@ propuesta:Detalle de Corral,Detalle de Corral,cerca-lista,propuesta
 propuesta:Programacion de Implantes,Programacion de Implantes,jeringa-lista,propuesta
 propuesta:Seleccionar Todos,Seleccionar Todos,seleccionar-todos,propuesta
 propuesta:Mover de Corral,Mover de Corral,cerca-flecha,propuesta
-propuesta:Ver Compra,Ver Compra,carrito-lupa,propuesta
 propuesta:Cambiar Arete IPSA,Cambiar Arete IPSA,arete-rfid-flecha,propuesta
 propuesta:Cambiar Arete Interno,Cambiar Arete Interno,arete-flecha,propuesta
 propuesta:Separar Lotes,Separar Lotes,vaca-separar,propuesta
