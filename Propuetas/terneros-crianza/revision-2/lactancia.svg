@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="titulo">
+  <title id="titulo">Ternero mamando</title>
+  <path d="M4 7q17-4 32 1l3 8c-1 6-6 10-12 12l-9 1-3 3-3 22H5l2-25C5 21 2 14 4 7Z" fill="#B96C4F" stroke="#574039" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6 10q7-2 13 3c5 4 10 1 16 4q-2 6-12 8l-7-1q0-5-6-8Z" fill="#FBF1E6"/>
+  <path d="M17 25q8 3 15-1c2 5-1 9-5 10l-1 5-4-1v-4l-2-1-2 4-3-2 2-5Z" fill="#E6A5A0" stroke="#574039" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31 43q4-5 10-4l9 1q5 1 9-1l3 4-2 9 1 7h-4l-3-9-12-1-3 11h-4l1-13Z" fill="#DE9477" stroke="#574039" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22 36q1-4 5-3l7 5 7 3-3 8-6-1-5-6q-5-1-5-6Z" fill="#FBF1E6" stroke="#574039" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 40q5-5 11-2-2 7-10 7Z" fill="#DE9477" stroke="#574039" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="28.7" cy="38.5" r="1.3" fill="#24465B"/>
+  <path d="M22 36q0-3 3-3l2 2-2 3Z" fill="#24465B" stroke="#574039" stroke-width="0.65" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M47 41q4 2 7 0l2 4q-4 3-8 0Z" fill="#FBF1E6"/>
+</svg>
