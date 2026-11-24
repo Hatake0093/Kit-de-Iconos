@@ -1,19 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="titulo descripcion">
 <title id="titulo">Lectura de comederos de concreto: Perspectiva</title>
-<desc id="descripcion">Comedero de concreto completo con extremos cerrados. Sin patas, con alimento y barra de lectura de cinco segmentos.</desc>
+<desc id="descripcion">Comedero de concreto rectangular alargado con extremos cerrados. Sin patas, con alimento y barra de lectura de cinco segmentos.</desc>
 <rect x="8" y="3" width="48" height="10" rx="3" fill="#24465B"/>
 <g fill="#F3AD43"><rect x="12" y="6" width="6" height="4" rx="1"/><rect x="20.5" y="6" width="6" height="4" rx="1"/><rect x="29" y="6" width="6" height="4" rx="1"/></g>
 <g fill="#E2F2F5"><rect x="37.5" y="6" width="6" height="4" rx="1"/><rect x="46" y="6" width="6" height="4" rx="1"/></g>
 
-<!-- Comedero completo de concreto, cerrado en ambos extremos. -->
-<path d="M4 35L29 18L59 28V42L34 60L4 49Z" fill="#8A949E"/>
-<path d="M4 35L29 18L59 28L34 46Z" fill="#E2F2F5"/>
-<!-- Abertura superior, pared interior y alimento contenido. -->
-<path d="M10 34L30 22L52 29L32 42Z" fill="#24465B"/>
-<path d="M10 34L30 22L32 27L17 36Z" fill="#B0BEC5"/>
-<path d="M18 35L35 26L46 30L31 39Z" fill="#F3AD43"/>
-<!-- Frente macizo: el borde superior cierra la artesa. -->
-<path d="M4 35L34 46V60L4 49Z" fill="#B0BEC5"/>
-<path d="M34 46L59 28V32L34 50Z" fill="#CFD8DC"/>
-<path d="M45 42L47 40.5V51L45 52.5Z" fill="#B0BEC5"/>
+<!-- Artesa rectangular ascendente de izquierda a derecha. -->
+<g transform="translate(64 0) scale(-1 1)"><path d="M3 30L17 20.5L61 36.5V50.5L47 60L3 44Z" fill="#8A949E"/><path d="M3 30L17 20.5L61 36.5L47 46Z" fill="#E2F2F5"/><path d="M9 30.6L17.5 24.8L55 38.4L46.5 44.2Z" fill="#24465B"/><path d="M9 30.6L17.5 24.8L18.5 28.8L12 33.5Z" fill="#B0BEC5"/><path d="M15 32L24 29L50 38.5L46 41.2Z" fill="#F3AD43"/><path d="M3 30L47 46V60L3 44Z" fill="#B0BEC5"/><path d="M47 46L61 36.5V40.5L47 50Z" fill="#CFD8DC"/><path d="M34 44L36 44.7V54.2L34 53.5Z" fill="#8A949E"/></g>
 </svg>

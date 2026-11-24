@@ -157,7 +157,19 @@ COMEDERO = ('<path d="M7 14 C9 8 13 9 16 11 C19 9 23 8 25 14 Z" fill="#F3AD43"/>
             '<polygon points="5,17 27,17 24.5,27.5 7.5,27.5" fill="#378CE7"/>'
             '<rect x="3" y="14" width="26" height="3.4" rx="1.7" fill="#24465B"/>')
 # comedero de concreto aprobado (viewBox 64, sin la barra de lectura): cuerpo de la familia comedero-*
-COMEDERO_64 = ('<path d="M4 35L29 18L59 28V42L34 60L4 49Z" fill="#8A949E"/><path d="M4 35L29 18L59 28L34 46Z" fill="#E2F2F5"/><path d="M10 34L30 22L52 29L32 42Z" fill="#24465B"/><path d="M10 34L30 22L32 27L17 36Z" fill="#B0BEC5"/><path d="M18 35L35 26L46 30L31 39Z" fill="#F3AD43"/><path d="M4 35L34 46V60L4 49Z" fill="#B0BEC5"/><path d="M34 46L59 28V32L34 50Z" fill="#CFD8DC"/><path d="M45 42L47 40.5V51L45 52.5Z" fill="#B0BEC5"/>')
+COMEDERO_64 = (
+    # Frente largo ascendente de izquierda a derecha; insignias fuera del reflejo.
+    '<g transform="translate(64 0) scale(-1 1)">'
+    '<path d="M3 30L17 20.5L61 36.5V50.5L47 60L3 44Z" fill="#8A949E"/>'
+    '<path d="M3 30L17 20.5L61 36.5L47 46Z" fill="#E2F2F5"/>'
+    '<path d="M9 30.6L17.5 24.8L55 38.4L46.5 44.2Z" fill="#24465B"/>'
+    '<path d="M9 30.6L17.5 24.8L18.5 28.8L12 33.5Z" fill="#B0BEC5"/>'
+    '<path d="M15 32L24 29L50 38.5L46 41.2Z" fill="#F3AD43"/>'
+    '<path d="M3 30L47 46V60L3 44Z" fill="#B0BEC5"/>'
+    '<path d="M47 46L61 36.5V40.5L47 50Z" fill="#CFD8DC"/>'
+    '<path d="M34 44L36 44.7V54.2L34 53.5Z" fill="#8A949E"/>'
+    '</g>'
+)
 # saco de alimento: ambar con cuello atado y etiqueta clara con una espiga
 SACO = ('<path d="M10 5 H22 L20.5 9.5 C26 12 27 20 25.5 25 C24.5 28 22 29 20 29 H12 C10 29 7.5 28 6.5 25 '
         'C5 20 6 12 11.5 9.5 Z" fill="#F3AD43"/>'
@@ -303,7 +315,16 @@ def interior_64(nombre):
 # camion mixer aprobado (viewBox 64): se reutiliza tal cual como cuerpo de la familia
 CAMION_MIXER = interior_64("camion-mixer")
 
+# Composiciones nocturnas aprobadas: conservar su dibujo completo, sin insignia.
+LECTURAS_NOCTURNAS = {
+    "comedero-luna": "Comedero con luna",
+    "comedero-linterna": "Comedero azul ascendente con linterna",
+    "planilla-luna": "Planilla con luna",
+    "arete-rfid-luna": "Arete RFID con luna",
+}
+
 BASES = {
+    **{nombre: (interior_64(nombre), AMBAR) for nombre in LECTURAS_NOCTURNAS},
     "camion-mixer": (CAMION_MIXER, ROJO),
     "implantador": (IMPLANTADOR, ROJO),
     "hoja": (HOJA, VERDE), "espiga": (ESPIGA, AMBAR),
@@ -330,6 +351,7 @@ BASES = {
 
 # (nombre, base, simbolo)  -- simbolo None = base sola
 NUEVOS = [
+    *[(nombre, nombre, None) for nombre in LECTURAS_NOCTURNAS],
     ("implantador", "implantador", None),
     *[(f"implantador-{s}", "implantador", s)
       for s in ("mas", "menos", "check", "x", "lista", "lupa", "flecha", "reloj", "alerta")],
@@ -443,6 +465,7 @@ COLORES_INSIGNIAS_VACA.update({
 
 # bases dibujadas en 64 x 64: (titulo, escala y desplazamiento del cuerpo cuando lleva insignia)
 BASES_64 = {
+    **{nombre: (titulo, "") for nombre, titulo in LECTURAS_NOCTURNAS.items()},
     "comedero": ("Comedero de concreto", "translate(1 -6) scale(.78)"),
     "indicador": ("Indicador digital de pesaje", "translate(0 -1) scale(.78)"),
     "camion-mixer": ("Camión mixer de alimento", "translate(0 1) scale(.78)"),

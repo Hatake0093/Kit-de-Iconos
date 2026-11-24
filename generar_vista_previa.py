@@ -26,12 +26,12 @@ SECCIONES = {
     "Ganado": {"familias": "vaca arete etiqueta", "iconos": "lapida lapida-alerta AsignarArete carnic identificaciones-cedula-vaca identificaciones-hierro"},
     "Partos y reproducción": {"familias": "ternero huella crianza"},
     "Corrales y finca": {"familias": "corral cerca mapa"},
-    "Alimentación": {"familias": "comedero saco hoja espiga", "iconos": " ".join(CAMION_MIXER) + " cargador-frontal-hexagono-integrado comedero-concreto-perspectiva"},
+    "Alimentación": {"familias": "comedero saco hoja espiga planta", "iconos": " ".join(CAMION_MIXER) + " cargador-frontal-hexagono-integrado comedero-concreto-perspectiva"},
     "Medición y pesaje": {"familias": "bascula indicador medidor regla porcentaje"},
     "Sanidad": {"familias": "jeringa implantador botiquin cruz frasco"},
     "Laboratorio": {"familias": "laboratorio matraz"},
     "Compras, pagos y transporte": {"familias": "billete moneda camion"},
-    "Documentos": {"familias": "documento"},
+    "Documentos": {"familias": "documento planilla"},
     "Calendario y tiempo": {"familias": "calendario", "iconos": "LineaTiempo"},
     "Gráficas": {"familias": "grafica barra",
                  "iconos": "AgregarGrafica EditarGrafica TendenciaPositiva TendenciaNegativa"},
@@ -45,7 +45,7 @@ SECCIONES = {
     "Búsqueda, filtros y orden": {"familias": "ordenar", "iconos": "Buscar Filtrar FiltroVacio LimpiarFiltros"},
     "Estado y avisos": {"iconos": "Activar Aprobar Bloquear Cancelar Confirmar Desactivar Desbloquear Rechazar "
                                   "Advertencia Informacion Ayuda2 ayuda prohibido"},
-    "Archivos y carpetas": {"iconos": "AbrirCarpeta Archivero Carpeta2 carpeta carpeta-abierta carpeta-verde Adjuntar Descargar Subir "
+    "Archivos y carpetas": {"iconos": "AbrirCarpeta Archivero Carpeta2 carpeta carpeta-verde Adjuntar Descargar Subir "
                                       "Exportar Importar Guardar GuardarCerrar Imprimir VistaPrevia Plantilla"},
     "Navegación y vistas": {"iconos": "Anterior Siguiente Contraer Expandir Inicio Historial VerDetalle Cuadricula "
                                       "Lista ListaTareas salida"},
@@ -61,6 +61,14 @@ FAMILIA_FORZADA.update({n: "laboratorio" for n in "Calculadora gota-agua".split(
 SECCION_DE_ICONO = {n: s for s, d in SECCIONES.items() for n in d.get("iconos", "").split()}
 SECCION_DE_FAMILIA = {f: s for s, d in SECCIONES.items() for f in d.get("familias", "").split()}
 PALABRAS_CLAVE = {
+    "planta-silos": "planta industrial planta de alimentos batería de silos almacenamiento transportador",
+    "planta-tolva": "planta industrial planta de alimentos torre dosificadora tolva descarga",
+    "planta-nave": "planta industrial planta de alimentos nave de producción portón de carga",
+    "planta-elevador": "planta industrial planta de alimentos elevador de grano silo",
+    "comedero-luna": "lectura nocturna noche luna comedero alimento consumo alimentación",
+    "comedero-linterna": "lectura nocturna noche linterna inspección comedero rectangular alargado ascendente azul alimento consumo alimentación",
+    "planilla-luna": "lectura nocturna noche luna planilla registro datos lecturas",
+    "arete-rfid-luna": "lectura nocturna noche luna arete RFID identificación electrónica ganado",
     "camion-mixer": "camión mixer mezcladora alimento ración tolva reparto alimentación",
     "carnic": "carnic bovino silueta roja ganado vaca tierra verde",
     "hoja-flecha": "cambiar dieta alimentación forraje hoja flecha",

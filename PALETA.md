@@ -155,6 +155,11 @@ misma familia, así que conserva su escala; `generar_faltantes.py` la llama al f
 | `matraz-*` | Vidrio `#CFE3FA`, líquido morado `#8870D4` | Por significado (`gota` azul) |
 | `Guardar`, `GuardarCerrar` | Verde `#24AC88` | Azul en `GuardarCerrar` |
 | `Imprimir`, `Enviar` | Azul `#378CE7` | — |
+| `comedero-luna`, `comedero-linterna` | Azul `#378CE7`, borde marino y alimento ámbar | Luna o linterna ámbar, integrada en la composición |
+| `planilla-luna` | Azul `#378CE7`, papel `#E2F2F5`, marcas verdes | Luna ámbar |
+| `arete-rfid-luna` | Amarillo arete `#F7CF3D`, contorno marino y señal azul | Luna ámbar |
+
+`comedero-linterna` usa la versión azul rectangular alargada, ascendente de izquierda a derecha.
 
 Pendiente: las familias con una sola insignia de color (cerca, camión, jeringa, cruz, engranaje,
 nube, mapa) todavía no usan el color por significado.
