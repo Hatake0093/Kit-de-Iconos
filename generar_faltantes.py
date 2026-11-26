@@ -323,9 +323,20 @@ LECTURAS_NOCTURNAS = {
     "arete-rfid-luna": "Arete RFID con luna",
 }
 
+# bascula de camiones: camion ambar (el de la familia camion, mas chico) sobre plataforma azul con una
+# rayita blanca, como la bascula de dial. La insignia tapa la rueda delantera y el extremo de la plataforma.
+BASCULA_CAMION = ('<rect x="2" y="3" width="16" height="14" rx="2" fill="#F3AD43"/>'
+                  '<polygon points="19,8 24,8 28,13 28,18 19,18" fill="#24465B"/>'
+                  '<polygon points="21,10 23,10 25.5,13 21,13" fill="#E2F2F5"/>'
+                  '<ellipse cx="8" cy="18.5" rx="3.2" ry="3.2" fill="#24465B"/><ellipse cx="8" cy="18.5" rx="1.2" ry="1.2" fill="#FFFFFF"/>'
+                  '<ellipse cx="23" cy="18.5" rx="3.2" ry="3.2" fill="#24465B"/><ellipse cx="23" cy="18.5" rx="1.2" ry="1.2" fill="#FFFFFF"/>'
+                  f'<rect x="2" y="21" width="28" height="8.5" rx="2.5" fill="{AZUL}"/>'
+                  '<polyline points="7,25.2 16,25.2" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>')
+
 BASES = {
     **{nombre: (interior_64(nombre), AMBAR) for nombre in LECTURAS_NOCTURNAS},
     "camion-mixer": (CAMION_MIXER, ROJO),
+    "bascula-camion": (BASCULA_CAMION, AZUL),
     "implantador": (IMPLANTADOR, ROJO),
     "hoja": (HOJA, VERDE), "espiga": (ESPIGA, AMBAR),
     "indicador": (INDICADOR, AZUL),
@@ -368,6 +379,7 @@ NUEVOS = [
     ("barras-mas", "barras", "mas"), ("barras-dinero", "barras", "dolar"), ("barras-flecha", "barras", "flecha"),
     ("cerca-lupa", "cerca", "lupa"), ("cruz-check", "cruz", "check"), ("cruz-lupa", "cruz", "lupa"),
     ("bascula-lista", "bascula", "lista"),
+    ("bascula-camion", "bascula-camion", None), ("bascula-camion-lista", "bascula-camion", "lista"),
     ("comedero", "comedero", None), ("comedero-bajada", "comedero", "abajo"),
     ("comedero-subida", "comedero", "arriba"), ("comedero-lupa", "comedero", "lupa"),
     ("saco-alimento", "saco", None), ("saco-flecha", "saco", "flecha"), ("saco-lista", "saco", "lista"),

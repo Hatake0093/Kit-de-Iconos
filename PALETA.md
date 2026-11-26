@@ -196,6 +196,7 @@ misma familia, así que conserva su escala; `generar_faltantes.py` la llama al f
 | `cerca-*` | Azul marino y verde `#24AC88` | Verde |
 | `camion-*` | Ámbar `#F3AD43` | Por significado; `camion-descarga` verde (remisión de entrada) |
 | `camion-mixer-*` | Cabina `#E2F2F5`, tolva `#E56876` / `#B94A58`, chasis `#24465B` | Por significado; `documento` azul |
+| `bascula-camion-*` | Camión ámbar y cabina marino sobre plataforma azul `#378CE7` | Por significado (`lista` azul) |
 | `jeringa-*` | Morado `#8870D4` | Morado |
 | `indicador-*` | Carcasa `#8A949E`, panel `#24465B`, pantalla `#1F6FC4` | Por significado; descarga azul, carga verde y reloj morado |
 | `implantador-*` | Rosa `#E56876`, gatillo marino y aguja gris | Por significado |
