@@ -92,6 +92,36 @@ def planear_registro(kit_o_manifiesto, archivos_finales):
     return altas, bajas, omitidos
 
 
+RE_SVG_MAL = re.compile(r"(<value>[.][.]" + re.escape(BS) + "Resources" + re.escape(BS)
+                        + r"([^;<]+)[.]svg;)(?!DevExpress[.]Utils[.]Svg[.]SvgImage)[^<]*(</value>)")
+
+
+def mal_tipadas():
+    """SVG del resx cuyo tipo no es DevExpress.Utils.Svg.SvgImage (p. ej. System.Byte[])."""
+    resx, _, _ = leer(RESX)
+    return sorted({m.group(2) for m in RE_SVG_MAL.finditer(resx)})
+
+
+def corregir_tipos(bases):
+    """Deja como SvgImage el resx y la propiedad del Designer de cada base."""
+    resx, bom, nl = leer(RESX)
+    m = re.search(r"[.]svg;(DevExpress[.]Utils[.]Svg[.]SvgImage[^<]*)</value>", resx)
+    tipo = m.group(1) if m else TIPO_SVG
+    resx = RE_SVG_MAL.sub(lambda m: m.group(1) + tipo + m.group(3), resx)
+    escribir(RESX, resx, bom)
+
+    des, bom, nl = leer(DESIGNER)
+    for base in bases:
+        b = re.escape(base)
+        des = re.sub(r"(Property \w+[(][)] As )Byte[(][)](\s+Get\s+Dim obj As Object = ResourceManager"
+                     r'[.]GetObject\("%s", resourceCulture\)\s+Return CType[(]obj,)Byte[(][)]([)])' % b,
+                     r"\1DevExpress.Utils.Svg.SvgImage\2DevExpress.Utils.Svg.SvgImage\3", des)
+        des = re.sub(r"(of type )System[.]Byte\[\](\.\s*'''</summary>\s*Friend ReadOnly Property \w+"
+                     r"[(][)] As DevExpress[.]Utils[.]Svg[.]SvgImage\s+Get\s+Dim obj As Object = ResourceManager"
+                     r'[.]GetObject\("%s")' % b, r"\1DevExpress.Utils.Svg.SvgImage\2", des)
+    escribir(DESIGNER, des, bom)
+
+
 def usados_en_codigo(bases):
     """Archivos .vb que usan Resources.<base>; ignora el propio Designer de recursos y bin/obj."""
     patron = re.compile(r"\bResources\.(%s)\b" % "|".join(re.escape(nombre_propiedad(b)) for b in bases))
@@ -224,10 +254,14 @@ def main():
         finales = set(existentes)
     else:
         finales = (set(existentes) - set(a_borrar)) | set(kit)
-    altas, bajas = [], []
+    altas, bajas, malas = [], [], []
     if not args.sin_registro:
         altas, bajas, omitidos = planear_registro(set(kit) | previos, finales)
-        print(f"Registro:   {len(altas)} por registrar  |  {len(bajas)} por quitar del registro")
+        malas = mal_tipadas()
+        print(f"Registro:   {len(altas)} por registrar  |  {len(bajas)} por quitar del registro  |  "
+              f"{len(malas)} mal tipadas (no SvgImage)")
+        if malas:
+            print("  ~ A SvgImage:", ", ".join(malas[:15]) + (" ..." if len(malas) > 15 else ""))
         for base, falta in altas[:10]:
             print(f"  + {base}  (falta en: {', '.join(falta)})")
         if len(altas) > 10:
@@ -267,7 +301,7 @@ def main():
         MANIFIESTO.write_text("\n".join(sorted(kit)) + "\n", encoding="utf-8")
         print(f"Listo: {len(kit)} svg copiados a {RES}")
 
-    if not args.sin_registro and (altas or bajas):
+    if not args.sin_registro and (altas or bajas or malas):
         if not args.sin_respaldo:
             dest = RESPALDO_REGISTRO / datetime.now().strftime("%Y%m%d_%H%M%S")
             dest.mkdir(parents=True)
@@ -275,7 +309,8 @@ def main():
                 shutil.copy2(p, dest / p.name)
             print(f"Respaldo de resx / Designer / vbproj: {dest}")
         aplicar_registro(altas, bajas)
-        print(f"Registro aplicado: +{len(altas)} / -{len(bajas)} en Resources.resx, "
+        corregir_tipos(mal_tipadas())
+        print(f"Registro aplicado: +{len(altas)} / -{len(bajas)} / {len(malas)} a SvgImage en Resources.resx, "
               f"Resources.Designer.vb y ControlGanaderoPro.vbproj")
         print("Si Visual Studio tiene el proyecto abierto, acepta 'Recargar' cuando lo pida.")
     elif not args.sin_registro:
