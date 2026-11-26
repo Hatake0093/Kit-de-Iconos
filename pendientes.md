@@ -36,6 +36,17 @@ Hoy el kit solo tiene `Buscar.svg` y las variantes `*-lupa` (que significan "bus
 - [ ] Registrar la familia en `generar_faltantes.py` (`BASES` + `NUEVOS`) y añadirla a `generar_vista_previa.py` con sus palabras clave (zoom, acercar, alejar, ampliar, lupa).
 - [ ] Pasar `python auditar_coherencia.py` y regenerar la vista previa con `python generar_vista_previa.py`.
 
+### Icono `adn` (helicoide de ADN)
+
+Crear un icono de hélice de ADN (doble hélice) con el mismo sistema que las demás.
+
+- [ ] Confirmar para qué se usa (genética / mejoramiento del hato, pruebas de ADN, linaje) y qué control o sección lo necesita.
+- [ ] Dibujar `adn.svg` (32×32, `viewBox="0 0 64 64"`, relleno plano, sin degradados ni trazos finos): dos cintas entrelazadas con peldaños.
+- [ ] Elegir el color base dentro de la paleta (`PALETA.md`, sección 1) y anotarlo en la tabla de la sección 5.
+- [ ] Decidir si lleva variantes con insignia (`adn-mas`, `adn-lupa`, `adn-check`, ...) según el color por significado (sección 4).
+- [ ] Registrarlo en `generar_faltantes.py` (`BASES` + `NUEVOS`) y añadirlo con sus palabras clave en `generar_vista_previa.py`.
+- [ ] Pasar `python auditar_coherencia.py` y regenerar la vista previa con `python generar_vista_previa.py`.
+
 ## Hecho
 
 ### 2026-11-21 — Propuestas para Implantes y Lista de Equipos
