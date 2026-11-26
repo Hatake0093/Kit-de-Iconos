@@ -41,6 +41,7 @@ bbiEvaluacionImplantes,Evaluacion de Implantes,jeringa-check,B
 bbiExistenciaGanado,Existencia Ganado,vaca,B
 bbiFormacionCorrales,Formacion de Corrales,cerca-mas,B
 bbiFormatosBA,Formatos BA,documento,A
+bbiFotosLotes,Clasificaciones,identificaciones-cedula-vaca,propuesta
 bbiGraficaAlimento,Graficas (Alimento),GraficaLineas,B
 bbiGraficas,Graficas,GraficaLineas,B
 bbiGraficasGerencial,Graficas Gerenciales,GraficaBarras,B
@@ -53,7 +54,7 @@ bbiLiquidaciones,Liquidaciones,moneda-check,A
 bbiListaCorrales,Lista de Corrales,cerca,B
 bbiListaEquipos,Lista de Equipos,engranaje,B
 bbiListaIndicadores,Indicadores,medidor,A
-bbiListaLecturas,Lecturas,comedero-lupa,A
+bbiListaLecturas,Lecturas,comedero-concreto-perspectiva,A
 bbiListaRecepciones,Lista de Recepcion,camion-mas,B
 bbiListaReses,Lista de Reses,vaca,B
 bbiListaResesCrianza,Reses Crianza,vaca,B
@@ -67,14 +68,14 @@ bbiLoteCrianza,Lote de Crianza,cerca,B
 bbiMortalidadReses,Mortalidad de Reses,lapida,A
 bbiMovimientoCorrales,Movimiento en Corrales,flechas-intercambio,B
 bbiMovimientosPorLote,Movimientos por Lote,flechas-intercambio,B
-bbiNacimientos,Crianza,crianza,propuesta
+bbiNacimientos,Crianza,adn-helicoide,propuesta
 propuesta:Terneros,Terneros,ternero,propuesta
 propuesta:Registrar ternero,Registrar ternero,ternero-mas,propuesta
 propuesta:Cuidado de terneros,Cuidado de terneros,ternero-corazon,propuesta
 propuesta:Historial de partos,Historial de partos,huella-luna-cuna,propuesta
 propuesta:Registro de nacimientos,Registro de nacimientos,ternero-reloj-registro,propuesta
 bbiOperadores,Operadores,usuario-check,A
-bbiParoEquipos,Paro de Equipos,engranaje-pausa,B
+bbiParoEquipos,Paro de Equipos,cargador-frontal-hexagono-integrado,B
 bbiPesajeMateriaPrima,Pesaje de Materia Prima,bascula,B
 bbiPlanDietas,Plan de Dietas,calendario-reloj,B
 bbiPorcentajes,Porcentajes de Servicio,porcentaje,B
@@ -213,3 +214,14 @@ propuesta:Corral manga/Destacado,Corral manga / Destacado,corral-manga-estrella,
 propuesta:Corral manga/Sectores,Corral manga / Sectores,corral-manga-circulo,propuesta
 propuesta:Corral manga/Alerta,Corral manga / Alerta,corral-manga-alerta,propuesta
 propuesta:Cambiar dieta,Cambiar dieta,hoja-flecha,propuesta
+propuesta:Camión mixer,Camión mixer,camion-mixer,propuesta
+propuesta:Indicadores/Indicador,Indicador,indicador,propuesta
+propuesta:Indicadores/Agregar,Agregar,indicador-mas,propuesta
+propuesta:Indicadores/Quitar,Quitar,indicador-menos,propuesta
+propuesta:Indicadores/Confirmar,Confirmar,indicador-check,propuesta
+propuesta:Indicadores/Cancelar,Cancelar,indicador-x,propuesta
+propuesta:Indicadores/Listado,Listado,indicador-lista,propuesta
+propuesta:Indicadores/Buscar,Buscar,indicador-lupa,propuesta
+propuesta:Indicadores/Enviar,Enviar,indicador-flecha,propuesta
+propuesta:Indicadores/Historial,Historial,indicador-reloj,propuesta
+propuesta:Indicadores/Alerta,Alerta,indicador-alerta,propuesta
