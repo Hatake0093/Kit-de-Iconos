@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 484 413" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 516 516" role="img" aria-labelledby="title desc">
   <title id="title">Carnic: silueta de bovino rojo sobre tierra verde</title>
   <desc id="desc">Bovino de perfil mirando a la derecha, con cuernos, cola y cuatro patas. Una franja verde curva forma el suelo.</desc>
+  <!-- dibujo original de 484x413 centrado en un lienzo cuadrado de 516 (margen de 16) -->
+  <g transform="translate(16 51.5)">
   <path fill="#E82126" d="
     M91 137
     C116 126 143 121 169 125
@@ -64,4 +66,5 @@
     C32 134 41 124 54 125
     C67 125 80 132 91 137 Z"/>
   <path fill="#009449" d="M0 376 Q242 328 484 382 V413 H0Z"/>
+  </g>
 </svg>
