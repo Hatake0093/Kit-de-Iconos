@@ -43,7 +43,7 @@ COLOR_POR_SIMBOLO.update({"documento": AZUL, "arribaYabajo": AZUL, "reporte": AZ
 COLORES_INSIGNIAS_VACA.update({"documento-bajada": ROJO, "comedero-bajada": ROJO, "comedero-subida": VERDE})
 # camion: la descarga es la remision de entrada (suma ganado), no un "quitar"
 COLORES_INSIGNIAS_VACA.update({"camion-descarga": VERDE})
-for _familia in ("calendario", "etiqueta", "documento", "usuario", "barras", "comedero", "saco",
+for _familia in ("calendario", "etiqueta", "documento", "usuario", "barras", "comedero", "saco", "carrito",
                  "lapida", "matraz", "arete-rfid", "BaseDatos", "billete", "implantador", "indicador", "camion-mixer", "camion"):
     COLORES_INSIGNIAS_VACA.update({f"{_familia}-{s}": c for s, c in COLOR_POR_SIMBOLO.items()})
     # los nombres usan "dinero" y la tabla por simbolo usa "dolar"

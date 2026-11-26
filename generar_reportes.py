@@ -15,7 +15,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 SVG = os.path.join(AQUI, "simulador de control ganadero", "Kit_semantico", "svg")
 AZUL = "#378CE7"
 # familias con insignia que reciben `-reporte` (documento ya es el reporte; las sueltas con una sola variante no)
-FAMILIAS = ("BaseDatos arete arete-rfid barras bascula billete calendario camion camion-mixer cerca "
+FAMILIAS = ("BaseDatos arete arete-rfid barras bascula billete calendario camion camion-mixer carrito cerca "
             "comedero corral-frontal corral-manga corral-perspectiva cruz engranaje espiga etiqueta hoja "
             "implantador indicador jeringa matraz medidor nube saco usuario vaca").split()
 ARO = '<ellipse cx="25.5" cy="25.5" rx="6.5" ry="6.5" fill="#FFFFFF"/>'
