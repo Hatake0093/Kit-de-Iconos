@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="titulo">
+  <title id="titulo">Ternero al trote</title>
+  <path fill="#B9472B" d="m15 33 6 3-4 9 5 7-3 2-8-8Zm19-1 6 1 1 9-7 6-3-2 6-6Z"/>
+  <path fill="#DE9477" d="M13 29c-6-1-8-5-9-10-3 3-2 7 0 10 3 4 6 5 10 5Z"/>
+  <path fill="#FBF1E6" d="M9 34c0-8 5-13 12-13 8 0 13 4 19 0l4-7 9 6-7 11c-2 5-6 7-8 10l5 5 9 4-2 4-12-5-7-9c-4 0-8-1-12-2l-6 6-5 10-5-1 4-13Z"/>
+  <path fill="#DE9477" d="M9 34c0-9 5-13 12-13 3 0 6 1 8 2 0 4-4 4-6 7-1 4-4 6-8 4l-3 5Z"/>
+  <path fill="#DE9477" d="M34 23c6-1 7-6 9-9l9 6-7 12q-3 5-7 5c3-7-6-6-4-14Z"/>
+  <path fill="#DE9477" d="M44 20c-5-1-8-5-8-9 6-1 10 3 12 6Z"/>
+  <path fill="#FBF1E6" d="M44 14c2-4 7-4 10-1 2 2 2 5 4 7l4 4c0 3-3 5-6 4l-8-4q-7-2-4-10Z"/>
+  <ellipse fill="#24465B" cx="52" cy="18" rx="1.5" ry="1.6"/>
+  <ellipse fill="#24465B" cx="60" cy="24" rx="1.8" ry="1.4"/>
+  <path fill="#24465B" d="m4 51 5 1-2 4-5-1Zm45-2 5 2-1 4-5-2Z"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="titulo">
+  <title id="titulo">Ternero mamando</title>
+  <path fill="#B9472B" d="M5 9q20-4 43 0l-3 14c-3 6-11 9-20 9l-9-2-3 24-6 2 1-25q-5-12-3-22Z"/>
+  <path fill="#FBF1E6" d="M6 11c6-1 12 0 15 3 2 4 6 6 9 5 7-2 10 0 14 3-3 6-11 10-20 10l-8-2 1-9c-4 1-7-2-11-3Z"/>
+  <path fill="#F19EA8" d="M18 28c4 1 9 0 15-1 1 5-1 9-5 10v4q-2 3-4 0v-4l-3-1-1 3q-2 2-3-1l1-5Z"/>
+  <path fill="#DE9477" d="M61 56c-8 4-17 3-23-1l-8-6-5-5c-3-2-2-6 1-7 2-1 4 0 7 2l9 4c5-2 11-3 17-1Z"/>
+  <path fill="#FBF1E6" d="M25 37c4-2 6 2 10 3l6 3c-4 1-5 4-4 8l-7-3-6-6q-2-3 1-5Z"/>
+  <path fill="#B9472B" d="M40 44q10-6 17 0-4 8-15 7Z"/>
+  <ellipse fill="#24465B" cx="33" cy="44" rx="1.6" ry="1.6"/>
+  <ellipse fill="#24465B" cx="25" cy="38" rx="2" ry="1.5"/>
+</svg>

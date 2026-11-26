@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="titulo descripcion">
+  <title id="titulo">Nave de producción</title>
+  <desc id="descripcion">Nave en perspectiva con portón de carga y silo anexo.</desc>
+  <path d="M46 15l7 -5 7 5v25q-7 3 -14 0Z" fill="#B0BEC5"/>
+  <path d="M46 15l7 -5 7 5Z" fill="#24465B"/>
+  <path d="M56 15h4v25l-4 1Z" fill="#8A949E"/>
+  <rect x="46" y="21" width="14" height="2" rx="0" fill="#E2F2F5"/>
+  <path d="M5 36 20 24l20 6-14 13Z" fill="#B0BEC5"/>
+  <path d="m5 36 16-13 20 17v18L5 48Z" fill="#B0BEC5"/>
+  <path d="m41 40 19-12v18L41 58Z" fill="#8A949E"/>
+  <path d="m3 36 18-15 20 17 20-12v4L41 43 21 26 8 37Z" fill="#24465B"/>
+  <path d="m21 21 19-11 21 16-20 12Z" fill="#24AC88"/>
+  <path d="m12 36 15 4v14l-15-4Z" fill="#24465B"/>
+  <path d="m14 39 11 3v3l-11-3Z" fill="#F3AD43"/>
+  <path d="m45 42 11-7v4l-11 7Z" fill="#E2F2F5"/>
+</svg>

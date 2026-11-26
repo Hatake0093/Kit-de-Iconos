@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Arete RFID con luna</title>
+  <desc id="desc">Arete amarillo con señal de radio azul y luna ámbar para la lectura electrónica nocturna.</desc>
+  <path fill="#24465B" d="M16 17A8 8 0 0 1 32 17V21L42 25Q45 26 45 30V55Q45 60 40 60H8Q3 60 3 55V30Q3 26 6 25L16 21Z"/>
+  <path fill="#F7CF3D" d="M19 17A5 5 0 0 1 29 17V22Q29 24 32 25L41 29Q42 29 42 31V55Q42 57 40 57H8Q6 57 6 55V31Q6 29 7 29L16 25Q19 24 19 22Z"/>
+  <circle cx="24" cy="17" r="2.5" fill="#24465B"/>
+  <circle cx="15" cy="40" r="3" fill="#378CE7"/>
+  <path fill="#378CE7" d="M22 33A10 10 0 0 1 22 47L19 44A6 6 0 0 0 19 36ZM29 26A20 20 0 0 1 29 54L26 51A16 16 0 0 0 26 29Z"/>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>

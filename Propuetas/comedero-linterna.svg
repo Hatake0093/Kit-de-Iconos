@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Comedero con linterna</title>
+  <desc id="desc">Linterna que ilumina el alimento de un comedero azul durante la inspección nocturna.</desc>
+  <g transform="rotate(35 49 15)">
+    <path fill="#F7E3BE" d="M43 22H55L61 39H37Z"/>
+    <rect x="44" y="2" width="10" height="16" rx="3" fill="#24465B"/>
+    <rect x="47" y="6" width="4" height="5" rx="1" fill="#378CE7"/>
+    <path fill="#F3AD43" d="M44 15H54L57 22Q57 24 55 24H43Q41 24 41 22Z"/>
+    <rect x="42" y="22" width="14" height="3" rx="1.5" fill="#C98A1B"/>
+  </g>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>

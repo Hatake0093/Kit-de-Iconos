@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Comedero con luna</title>
+  <desc id="desc">Comedero azul con alimento y luna ámbar para la lectura nocturna.</desc>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>

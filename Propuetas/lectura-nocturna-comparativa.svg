@@ -1,0 +1,422 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<rect width="1200" height="650" fill="#F1F5F9"/>
+<g font-family="Segoe UI, Arial, sans-serif">
+<text x="36" y="53" font-size="28" font-weight="700" fill="#24465B">Lectura nocturna · propuestas</text>
+<text x="36" y="83" font-size="15" fill="#526778">Cuatro opciones con la paleta del kit · SVG transparentes de 32 × 32 px</text>
+<rect x="36" y="116" width="264" height="488" rx="16" fill="#FFFFFF"/>
+<text x="54" y="151" font-size="16" font-weight="700" fill="#24465B">1. Comedero + luna</text>
+<text x="54" y="176" font-size="13" fill="#526778">Lectura de alimento</text>
+<svg x="120" y="206" width="96" height="96" viewBox="0 0 64 64">
+  
+  
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<text x="168" y="329" text-anchor="middle" font-size="12" fill="#526778">Ampliado</text>
+<svg x="106" y="356" width="32" height="32" viewBox="0 0 64 64">
+  
+  
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<svg x="202" y="360" width="24" height="24" viewBox="0 0 64 64">
+  
+  
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<text x="122" y="411" text-anchor="middle" font-size="12" fill="#526778">32 px</text>
+<text x="214" y="411" text-anchor="middle" font-size="12" fill="#526778">24 px</text>
+<rect x="50" y="437" width="236" height="112" rx="10" fill="#172B3A"/>
+<svg x="71" y="462" width="64" height="64" viewBox="0 0 64 64">
+  
+  
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<svg x="168" y="478" width="32" height="32" viewBox="0 0 64 64">
+  
+  
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<svg x="232" y="482" width="24" height="24" viewBox="0 0 64 64">
+  
+  
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<text x="168" y="578" text-anchor="middle" font-size="11" fill="#526778">comedero-luna.svg</text>
+<rect x="324" y="116" width="264" height="488" rx="16" fill="#FFFFFF"/>
+<text x="342" y="151" font-size="16" font-weight="700" fill="#24465B">2. Comedero + linterna</text>
+<text x="342" y="176" font-size="13" fill="#526778">Inspección nocturna</text>
+<svg x="408" y="206" width="96" height="96" viewBox="0 0 64 64">
+  
+  
+  <g transform="rotate(35 49 15)">
+    <path fill="#F7E3BE" d="M43 22H55L61 39H37Z"/>
+    <rect x="44" y="2" width="10" height="16" rx="3" fill="#24465B"/>
+    <rect x="47" y="6" width="4" height="5" rx="1" fill="#378CE7"/>
+    <path fill="#F3AD43" d="M44 15H54L57 22Q57 24 55 24H43Q41 24 41 22Z"/>
+    <rect x="42" y="22" width="14" height="3" rx="1.5" fill="#C98A1B"/>
+  </g>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<text x="456" y="329" text-anchor="middle" font-size="12" fill="#526778">Ampliado</text>
+<svg x="394" y="356" width="32" height="32" viewBox="0 0 64 64">
+  
+  
+  <g transform="rotate(35 49 15)">
+    <path fill="#F7E3BE" d="M43 22H55L61 39H37Z"/>
+    <rect x="44" y="2" width="10" height="16" rx="3" fill="#24465B"/>
+    <rect x="47" y="6" width="4" height="5" rx="1" fill="#378CE7"/>
+    <path fill="#F3AD43" d="M44 15H54L57 22Q57 24 55 24H43Q41 24 41 22Z"/>
+    <rect x="42" y="22" width="14" height="3" rx="1.5" fill="#C98A1B"/>
+  </g>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<svg x="490" y="360" width="24" height="24" viewBox="0 0 64 64">
+  
+  
+  <g transform="rotate(35 49 15)">
+    <path fill="#F7E3BE" d="M43 22H55L61 39H37Z"/>
+    <rect x="44" y="2" width="10" height="16" rx="3" fill="#24465B"/>
+    <rect x="47" y="6" width="4" height="5" rx="1" fill="#378CE7"/>
+    <path fill="#F3AD43" d="M44 15H54L57 22Q57 24 55 24H43Q41 24 41 22Z"/>
+    <rect x="42" y="22" width="14" height="3" rx="1.5" fill="#C98A1B"/>
+  </g>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<text x="410" y="411" text-anchor="middle" font-size="12" fill="#526778">32 px</text>
+<text x="502" y="411" text-anchor="middle" font-size="12" fill="#526778">24 px</text>
+<rect x="338" y="437" width="236" height="112" rx="10" fill="#172B3A"/>
+<svg x="359" y="462" width="64" height="64" viewBox="0 0 64 64">
+  
+  
+  <g transform="rotate(35 49 15)">
+    <path fill="#F7E3BE" d="M43 22H55L61 39H37Z"/>
+    <rect x="44" y="2" width="10" height="16" rx="3" fill="#24465B"/>
+    <rect x="47" y="6" width="4" height="5" rx="1" fill="#378CE7"/>
+    <path fill="#F3AD43" d="M44 15H54L57 22Q57 24 55 24H43Q41 24 41 22Z"/>
+    <rect x="42" y="22" width="14" height="3" rx="1.5" fill="#C98A1B"/>
+  </g>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<svg x="456" y="478" width="32" height="32" viewBox="0 0 64 64">
+  
+  
+  <g transform="rotate(35 49 15)">
+    <path fill="#F7E3BE" d="M43 22H55L61 39H37Z"/>
+    <rect x="44" y="2" width="10" height="16" rx="3" fill="#24465B"/>
+    <rect x="47" y="6" width="4" height="5" rx="1" fill="#378CE7"/>
+    <path fill="#F3AD43" d="M44 15H54L57 22Q57 24 55 24H43Q41 24 41 22Z"/>
+    <rect x="42" y="22" width="14" height="3" rx="1.5" fill="#C98A1B"/>
+  </g>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<svg x="520" y="482" width="24" height="24" viewBox="0 0 64 64">
+  
+  
+  <g transform="rotate(35 49 15)">
+    <path fill="#F7E3BE" d="M43 22H55L61 39H37Z"/>
+    <rect x="44" y="2" width="10" height="16" rx="3" fill="#24465B"/>
+    <rect x="47" y="6" width="4" height="5" rx="1" fill="#378CE7"/>
+    <path fill="#F3AD43" d="M44 15H54L57 22Q57 24 55 24H43Q41 24 41 22Z"/>
+    <rect x="42" y="22" width="14" height="3" rx="1.5" fill="#C98A1B"/>
+  </g>
+  <g transform="translate(0 9) scale(.94 .83)">
+    <path fill="#24465B" d="M4 35L29 18L59 28V42L34 60L4 49Z"/>
+    <path fill="#E2F2F5" d="M4 35L29 18L59 28L34 46Z"/>
+    <path fill="#24465B" d="M10 34L30 22L52 29L32 42Z"/>
+    <path fill="#9CC6F2" d="M10 34L30 22L32 27L17 36Z"/>
+    <path fill="#F3AD43" d="M18 35L35 26L46 30L31 39Z"/>
+    <path fill="#378CE7" d="M4 35L34 46V60L4 49Z"/>
+    <path fill="#9CC6F2" d="M34 46L59 28V32L34 50Z"/>
+    <path fill="#378CE7" d="M45 42L47 40.5V51L45 52.5Z"/>
+  </g>
+</svg>
+<text x="456" y="578" text-anchor="middle" font-size="11" fill="#526778">comedero-linterna.svg</text>
+<rect x="612" y="116" width="264" height="488" rx="16" fill="#FFFFFF"/>
+<text x="630" y="151" font-size="16" font-weight="700" fill="#24465B">3. Planilla + luna</text>
+<text x="630" y="176" font-size="13" fill="#526778">Registro de lecturas</text>
+<svg x="696" y="206" width="96" height="96" viewBox="0 0 64 64">
+  
+  
+  <rect x="5" y="12" width="38" height="48" rx="4" fill="#378CE7"/>
+  <rect x="9" y="18" width="30" height="37" rx="2" fill="#E2F2F5"/>
+  <rect x="15" y="9" width="18" height="10" rx="3" fill="#24465B"/>
+  <g fill="#24AC88">
+    <rect x="13" y="26" width="5" height="5" rx="1"/>
+    <rect x="13" y="36" width="5" height="5" rx="1"/>
+    <rect x="13" y="46" width="5" height="5" rx="1"/>
+  </g>
+  <g fill="#24465B">
+    <rect x="22" y="27" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="37" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="47" width="13" height="3" rx="1.5"/>
+  </g>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<text x="744" y="329" text-anchor="middle" font-size="12" fill="#526778">Ampliado</text>
+<svg x="682" y="356" width="32" height="32" viewBox="0 0 64 64">
+  
+  
+  <rect x="5" y="12" width="38" height="48" rx="4" fill="#378CE7"/>
+  <rect x="9" y="18" width="30" height="37" rx="2" fill="#E2F2F5"/>
+  <rect x="15" y="9" width="18" height="10" rx="3" fill="#24465B"/>
+  <g fill="#24AC88">
+    <rect x="13" y="26" width="5" height="5" rx="1"/>
+    <rect x="13" y="36" width="5" height="5" rx="1"/>
+    <rect x="13" y="46" width="5" height="5" rx="1"/>
+  </g>
+  <g fill="#24465B">
+    <rect x="22" y="27" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="37" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="47" width="13" height="3" rx="1.5"/>
+  </g>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<svg x="778" y="360" width="24" height="24" viewBox="0 0 64 64">
+  
+  
+  <rect x="5" y="12" width="38" height="48" rx="4" fill="#378CE7"/>
+  <rect x="9" y="18" width="30" height="37" rx="2" fill="#E2F2F5"/>
+  <rect x="15" y="9" width="18" height="10" rx="3" fill="#24465B"/>
+  <g fill="#24AC88">
+    <rect x="13" y="26" width="5" height="5" rx="1"/>
+    <rect x="13" y="36" width="5" height="5" rx="1"/>
+    <rect x="13" y="46" width="5" height="5" rx="1"/>
+  </g>
+  <g fill="#24465B">
+    <rect x="22" y="27" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="37" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="47" width="13" height="3" rx="1.5"/>
+  </g>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<text x="698" y="411" text-anchor="middle" font-size="12" fill="#526778">32 px</text>
+<text x="790" y="411" text-anchor="middle" font-size="12" fill="#526778">24 px</text>
+<rect x="626" y="437" width="236" height="112" rx="10" fill="#172B3A"/>
+<svg x="647" y="462" width="64" height="64" viewBox="0 0 64 64">
+  
+  
+  <rect x="5" y="12" width="38" height="48" rx="4" fill="#378CE7"/>
+  <rect x="9" y="18" width="30" height="37" rx="2" fill="#E2F2F5"/>
+  <rect x="15" y="9" width="18" height="10" rx="3" fill="#24465B"/>
+  <g fill="#24AC88">
+    <rect x="13" y="26" width="5" height="5" rx="1"/>
+    <rect x="13" y="36" width="5" height="5" rx="1"/>
+    <rect x="13" y="46" width="5" height="5" rx="1"/>
+  </g>
+  <g fill="#24465B">
+    <rect x="22" y="27" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="37" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="47" width="13" height="3" rx="1.5"/>
+  </g>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<svg x="744" y="478" width="32" height="32" viewBox="0 0 64 64">
+  
+  
+  <rect x="5" y="12" width="38" height="48" rx="4" fill="#378CE7"/>
+  <rect x="9" y="18" width="30" height="37" rx="2" fill="#E2F2F5"/>
+  <rect x="15" y="9" width="18" height="10" rx="3" fill="#24465B"/>
+  <g fill="#24AC88">
+    <rect x="13" y="26" width="5" height="5" rx="1"/>
+    <rect x="13" y="36" width="5" height="5" rx="1"/>
+    <rect x="13" y="46" width="5" height="5" rx="1"/>
+  </g>
+  <g fill="#24465B">
+    <rect x="22" y="27" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="37" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="47" width="13" height="3" rx="1.5"/>
+  </g>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<svg x="808" y="482" width="24" height="24" viewBox="0 0 64 64">
+  
+  
+  <rect x="5" y="12" width="38" height="48" rx="4" fill="#378CE7"/>
+  <rect x="9" y="18" width="30" height="37" rx="2" fill="#E2F2F5"/>
+  <rect x="15" y="9" width="18" height="10" rx="3" fill="#24465B"/>
+  <g fill="#24AC88">
+    <rect x="13" y="26" width="5" height="5" rx="1"/>
+    <rect x="13" y="36" width="5" height="5" rx="1"/>
+    <rect x="13" y="46" width="5" height="5" rx="1"/>
+  </g>
+  <g fill="#24465B">
+    <rect x="22" y="27" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="37" width="13" height="3" rx="1.5"/>
+    <rect x="22" y="47" width="13" height="3" rx="1.5"/>
+  </g>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<text x="744" y="578" text-anchor="middle" font-size="11" fill="#526778">planilla-luna.svg</text>
+<rect x="900" y="116" width="264" height="488" rx="16" fill="#FFFFFF"/>
+<text x="918" y="151" font-size="16" font-weight="700" fill="#24465B">4. Arete RFID + luna</text>
+<text x="918" y="176" font-size="13" fill="#526778">Lectura electrónica</text>
+<svg x="984" y="206" width="96" height="96" viewBox="0 0 64 64">
+  
+  
+  <path fill="#24465B" d="M16 17A8 8 0 0 1 32 17V21L42 25Q45 26 45 30V55Q45 60 40 60H8Q3 60 3 55V30Q3 26 6 25L16 21Z"/>
+  <path fill="#F7CF3D" d="M19 17A5 5 0 0 1 29 17V22Q29 24 32 25L41 29Q42 29 42 31V55Q42 57 40 57H8Q6 57 6 55V31Q6 29 7 29L16 25Q19 24 19 22Z"/>
+  <circle cx="24" cy="17" r="2.5" fill="#24465B"/>
+  <circle cx="15" cy="40" r="3" fill="#378CE7"/>
+  <path fill="#378CE7" d="M22 33A10 10 0 0 1 22 47L19 44A6 6 0 0 0 19 36ZM29 26A20 20 0 0 1 29 54L26 51A16 16 0 0 0 26 29Z"/>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<text x="1032" y="329" text-anchor="middle" font-size="12" fill="#526778">Ampliado</text>
+<svg x="970" y="356" width="32" height="32" viewBox="0 0 64 64">
+  
+  
+  <path fill="#24465B" d="M16 17A8 8 0 0 1 32 17V21L42 25Q45 26 45 30V55Q45 60 40 60H8Q3 60 3 55V30Q3 26 6 25L16 21Z"/>
+  <path fill="#F7CF3D" d="M19 17A5 5 0 0 1 29 17V22Q29 24 32 25L41 29Q42 29 42 31V55Q42 57 40 57H8Q6 57 6 55V31Q6 29 7 29L16 25Q19 24 19 22Z"/>
+  <circle cx="24" cy="17" r="2.5" fill="#24465B"/>
+  <circle cx="15" cy="40" r="3" fill="#378CE7"/>
+  <path fill="#378CE7" d="M22 33A10 10 0 0 1 22 47L19 44A6 6 0 0 0 19 36ZM29 26A20 20 0 0 1 29 54L26 51A16 16 0 0 0 26 29Z"/>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<svg x="1066" y="360" width="24" height="24" viewBox="0 0 64 64">
+  
+  
+  <path fill="#24465B" d="M16 17A8 8 0 0 1 32 17V21L42 25Q45 26 45 30V55Q45 60 40 60H8Q3 60 3 55V30Q3 26 6 25L16 21Z"/>
+  <path fill="#F7CF3D" d="M19 17A5 5 0 0 1 29 17V22Q29 24 32 25L41 29Q42 29 42 31V55Q42 57 40 57H8Q6 57 6 55V31Q6 29 7 29L16 25Q19 24 19 22Z"/>
+  <circle cx="24" cy="17" r="2.5" fill="#24465B"/>
+  <circle cx="15" cy="40" r="3" fill="#378CE7"/>
+  <path fill="#378CE7" d="M22 33A10 10 0 0 1 22 47L19 44A6 6 0 0 0 19 36ZM29 26A20 20 0 0 1 29 54L26 51A16 16 0 0 0 26 29Z"/>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<text x="986" y="411" text-anchor="middle" font-size="12" fill="#526778">32 px</text>
+<text x="1078" y="411" text-anchor="middle" font-size="12" fill="#526778">24 px</text>
+<rect x="914" y="437" width="236" height="112" rx="10" fill="#172B3A"/>
+<svg x="935" y="462" width="64" height="64" viewBox="0 0 64 64">
+  
+  
+  <path fill="#24465B" d="M16 17A8 8 0 0 1 32 17V21L42 25Q45 26 45 30V55Q45 60 40 60H8Q3 60 3 55V30Q3 26 6 25L16 21Z"/>
+  <path fill="#F7CF3D" d="M19 17A5 5 0 0 1 29 17V22Q29 24 32 25L41 29Q42 29 42 31V55Q42 57 40 57H8Q6 57 6 55V31Q6 29 7 29L16 25Q19 24 19 22Z"/>
+  <circle cx="24" cy="17" r="2.5" fill="#24465B"/>
+  <circle cx="15" cy="40" r="3" fill="#378CE7"/>
+  <path fill="#378CE7" d="M22 33A10 10 0 0 1 22 47L19 44A6 6 0 0 0 19 36ZM29 26A20 20 0 0 1 29 54L26 51A16 16 0 0 0 26 29Z"/>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<svg x="1032" y="478" width="32" height="32" viewBox="0 0 64 64">
+  
+  
+  <path fill="#24465B" d="M16 17A8 8 0 0 1 32 17V21L42 25Q45 26 45 30V55Q45 60 40 60H8Q3 60 3 55V30Q3 26 6 25L16 21Z"/>
+  <path fill="#F7CF3D" d="M19 17A5 5 0 0 1 29 17V22Q29 24 32 25L41 29Q42 29 42 31V55Q42 57 40 57H8Q6 57 6 55V31Q6 29 7 29L16 25Q19 24 19 22Z"/>
+  <circle cx="24" cy="17" r="2.5" fill="#24465B"/>
+  <circle cx="15" cy="40" r="3" fill="#378CE7"/>
+  <path fill="#378CE7" d="M22 33A10 10 0 0 1 22 47L19 44A6 6 0 0 0 19 36ZM29 26A20 20 0 0 1 29 54L26 51A16 16 0 0 0 26 29Z"/>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<svg x="1096" y="482" width="24" height="24" viewBox="0 0 64 64">
+  
+  
+  <path fill="#24465B" d="M16 17A8 8 0 0 1 32 17V21L42 25Q45 26 45 30V55Q45 60 40 60H8Q3 60 3 55V30Q3 26 6 25L16 21Z"/>
+  <path fill="#F7CF3D" d="M19 17A5 5 0 0 1 29 17V22Q29 24 32 25L41 29Q42 29 42 31V55Q42 57 40 57H8Q6 57 6 55V31Q6 29 7 29L16 25Q19 24 19 22Z"/>
+  <circle cx="24" cy="17" r="2.5" fill="#24465B"/>
+  <circle cx="15" cy="40" r="3" fill="#378CE7"/>
+  <path fill="#378CE7" d="M22 33A10 10 0 0 1 22 47L19 44A6 6 0 0 0 19 36ZM29 26A20 20 0 0 1 29 54L26 51A16 16 0 0 0 26 29Z"/>
+  <path fill="#F3AD43" d="M51 3C39 3 34 17 42 25C49 32 60 27 62 20C51 23 45 13 51 3Z"/>
+</svg>
+<text x="1032" y="578" text-anchor="middle" font-size="11" fill="#526778">arete-rfid-luna.svg</text>
+</g></svg>

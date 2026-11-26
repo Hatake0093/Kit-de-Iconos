@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470">
+<rect width="880" height="470" fill="#F1F5F9"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#24465B">
+<text x="32" y="44" font-size="25" font-weight="700">Planta de alimentos</text>
+<text x="32" y="70" font-size="15">Propuesta de icono industrial simplificado</text>
+<rect x="32" y="94" width="396" height="342" rx="16" fill="#FFFFFF"/>
+<text x="54" y="127" font-size="18" font-weight="600">Actual · saco</text>
+<svg x="134" y="144" width="192" height="192" viewBox="0 0 32 32"><path d="M10 5 H22 L20.5 9.5 C26 12 27 20 25.5 25 C24.5 28 22 29 20 29 H12 C10 29 7.5 28 6.5 25 C5 20 6 12 11.5 9.5 Z" fill="#F3AD43"/><path d="M11.5 9.5 H20.5" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round"/><rect x="10" y="15" width="12" height="9.5" rx="2" fill="#E2F2F5"/><path d="M16 23 V17.5 M16 19.5 L14 18 M16 19.5 L18 18 M16 22 L14 20.5 M16 22 L18 20.5" fill="none" stroke="#24465B" stroke-width="1.2" stroke-linecap="round"/></svg>
+<svg x="118.0" y="350.0" width="32" height="32" viewBox="0 0 32 32"><path d="M10 5 H22 L20.5 9.5 C26 12 27 20 25.5 25 C24.5 28 22 29 20 29 H12 C10 29 7.5 28 6.5 25 C5 20 6 12 11.5 9.5 Z" fill="#F3AD43"/><path d="M11.5 9.5 H20.5" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round"/><rect x="10" y="15" width="12" height="9.5" rx="2" fill="#E2F2F5"/><path d="M16 23 V17.5 M16 19.5 L14 18 M16 19.5 L18 18 M16 22 L14 20.5 M16 22 L18 20.5" fill="none" stroke="#24465B" stroke-width="1.2" stroke-linecap="round"/></svg>
+<text x="134" y="417" text-anchor="middle" font-size="12">32 px</text>
+<svg x="190.0" y="342.0" width="48" height="48" viewBox="0 0 32 32"><path d="M10 5 H22 L20.5 9.5 C26 12 27 20 25.5 25 C24.5 28 22 29 20 29 H12 C10 29 7.5 28 6.5 25 C5 20 6 12 11.5 9.5 Z" fill="#F3AD43"/><path d="M11.5 9.5 H20.5" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round"/><rect x="10" y="15" width="12" height="9.5" rx="2" fill="#E2F2F5"/><path d="M16 23 V17.5 M16 19.5 L14 18 M16 19.5 L18 18 M16 22 L14 20.5 M16 22 L18 20.5" fill="none" stroke="#24465B" stroke-width="1.2" stroke-linecap="round"/></svg>
+<text x="214" y="417" text-anchor="middle" font-size="12">48 px</text>
+<svg x="278.0" y="334.0" width="64" height="64" viewBox="0 0 32 32"><path d="M10 5 H22 L20.5 9.5 C26 12 27 20 25.5 25 C24.5 28 22 29 20 29 H12 C10 29 7.5 28 6.5 25 C5 20 6 12 11.5 9.5 Z" fill="#F3AD43"/><path d="M11.5 9.5 H20.5" fill="none" stroke="#24465B" stroke-width="2" stroke-linecap="round"/><rect x="10" y="15" width="12" height="9.5" rx="2" fill="#E2F2F5"/><path d="M16 23 V17.5 M16 19.5 L14 18 M16 19.5 L18 18 M16 22 L14 20.5 M16 22 L18 20.5" fill="none" stroke="#24465B" stroke-width="1.2" stroke-linecap="round"/></svg>
+<text x="310" y="417" text-anchor="middle" font-size="12">64 px</text>
+<rect x="452" y="94" width="396" height="342" rx="16" fill="#FFFFFF"/>
+<text x="474" y="127" font-size="18" font-weight="600">Propuesta · planta industrial</text>
+<svg x="554" y="144" width="192" height="192" viewBox="0 0 64 64"><title id="titulo">Planta industrial de alimentos</title>
+  <desc id="descripcion">Dos silos cilíndricos conectados a una torre de proceso alta y una nave industrial baja. Colores planos del kit, sin humo ni chimeneas.</desc>
+  <!-- Pasarela que conecta los silos con la torre. -->
+  <path d="M12 18h15l10-8 2 3-11 9H12Z" fill="#24465B"/>
+  <!-- Dos silos: tapas curvas y una cara lateral que sugiere volumen. -->
+  <path d="M4 22h13v29c0 2-13 2-13 0Z" fill="#B0BEC5"/>
+  <path d="M13 22h4v29c0 1-2 1.5-4 1.5Z" fill="#8A949E"/>
+  <ellipse cx="10.5" cy="22" rx="6.5" ry="3" fill="#E2F2F5"/>
+  <path d="M19 19h13v32c0 2-13 2-13 0Z" fill="#B0BEC5"/>
+  <path d="M28 19h4v32c0 1-2 1.5-4 1.5Z" fill="#8A949E"/>
+  <ellipse cx="25.5" cy="19" rx="6.5" ry="3" fill="#E2F2F5"/>
+  <!-- Torre de proceso: estructura alta con tres niveles visibles. -->
+  <rect x="36" y="6" width="14" height="46" rx="1" fill="#378CE7"/>
+  <path d="M46 6h4v46h-4Z" fill="#24465B"/>
+  <path d="M34 5h18v4H34Z" fill="#24465B"/>
+  <path d="M40 14h4v5h-4Zm0 9h4v5h-4Zm0 9h4v5h-4Z" fill="#F3AD43"/>
+  <!-- Nave de producción en primer plano. -->
+  <path d="M25 43h35v15H25Z" fill="#378CE7"/>
+  <path d="M25 43h35v4H25Z" fill="#24465B"/>
+  <path d="m23 43 10-7h20l9 7Z" fill="#24465B"/>
+  <path d="M31 49h8v4h-8Zm12 0h11v9H43Z" fill="#E2F2F5"/>
+  <path d="M48 49h2v9h-2Z" fill="#24465B"/>
+  <rect x="3" y="57" width="58" height="3" rx="1.5" fill="#24465B"/></svg>
+<svg x="538.0" y="350.0" width="32" height="32" viewBox="0 0 64 64"><title id="titulo">Planta industrial de alimentos</title>
+  <desc id="descripcion">Dos silos cilíndricos conectados a una torre de proceso alta y una nave industrial baja. Colores planos del kit, sin humo ni chimeneas.</desc>
+  <!-- Pasarela que conecta los silos con la torre. -->
+  <path d="M12 18h15l10-8 2 3-11 9H12Z" fill="#24465B"/>
+  <!-- Dos silos: tapas curvas y una cara lateral que sugiere volumen. -->
+  <path d="M4 22h13v29c0 2-13 2-13 0Z" fill="#B0BEC5"/>
+  <path d="M13 22h4v29c0 1-2 1.5-4 1.5Z" fill="#8A949E"/>
+  <ellipse cx="10.5" cy="22" rx="6.5" ry="3" fill="#E2F2F5"/>
+  <path d="M19 19h13v32c0 2-13 2-13 0Z" fill="#B0BEC5"/>
+  <path d="M28 19h4v32c0 1-2 1.5-4 1.5Z" fill="#8A949E"/>
+  <ellipse cx="25.5" cy="19" rx="6.5" ry="3" fill="#E2F2F5"/>
+  <!-- Torre de proceso: estructura alta con tres niveles visibles. -->
+  <rect x="36" y="6" width="14" height="46" rx="1" fill="#378CE7"/>
+  <path d="M46 6h4v46h-4Z" fill="#24465B"/>
+  <path d="M34 5h18v4H34Z" fill="#24465B"/>
+  <path d="M40 14h4v5h-4Zm0 9h4v5h-4Zm0 9h4v5h-4Z" fill="#F3AD43"/>
+  <!-- Nave de producción en primer plano. -->
+  <path d="M25 43h35v15H25Z" fill="#378CE7"/>
+  <path d="M25 43h35v4H25Z" fill="#24465B"/>
+  <path d="m23 43 10-7h20l9 7Z" fill="#24465B"/>
+  <path d="M31 49h8v4h-8Zm12 0h11v9H43Z" fill="#E2F2F5"/>
+  <path d="M48 49h2v9h-2Z" fill="#24465B"/>
+  <rect x="3" y="57" width="58" height="3" rx="1.5" fill="#24465B"/></svg>
+<text x="554" y="417" text-anchor="middle" font-size="12">32 px</text>
+<svg x="610.0" y="342.0" width="48" height="48" viewBox="0 0 64 64"><title id="titulo">Planta industrial de alimentos</title>
+  <desc id="descripcion">Dos silos cilíndricos conectados a una torre de proceso alta y una nave industrial baja. Colores planos del kit, sin humo ni chimeneas.</desc>
+  <!-- Pasarela que conecta los silos con la torre. -->
+  <path d="M12 18h15l10-8 2 3-11 9H12Z" fill="#24465B"/>
+  <!-- Dos silos: tapas curvas y una cara lateral que sugiere volumen. -->
+  <path d="M4 22h13v29c0 2-13 2-13 0Z" fill="#B0BEC5"/>
+  <path d="M13 22h4v29c0 1-2 1.5-4 1.5Z" fill="#8A949E"/>
+  <ellipse cx="10.5" cy="22" rx="6.5" ry="3" fill="#E2F2F5"/>
+  <path d="M19 19h13v32c0 2-13 2-13 0Z" fill="#B0BEC5"/>
+  <path d="M28 19h4v32c0 1-2 1.5-4 1.5Z" fill="#8A949E"/>
+  <ellipse cx="25.5" cy="19" rx="6.5" ry="3" fill="#E2F2F5"/>
+  <!-- Torre de proceso: estructura alta con tres niveles visibles. -->
+  <rect x="36" y="6" width="14" height="46" rx="1" fill="#378CE7"/>
+  <path d="M46 6h4v46h-4Z" fill="#24465B"/>
+  <path d="M34 5h18v4H34Z" fill="#24465B"/>
+  <path d="M40 14h4v5h-4Zm0 9h4v5h-4Zm0 9h4v5h-4Z" fill="#F3AD43"/>
+  <!-- Nave de producción en primer plano. -->
+  <path d="M25 43h35v15H25Z" fill="#378CE7"/>
+  <path d="M25 43h35v4H25Z" fill="#24465B"/>
+  <path d="m23 43 10-7h20l9 7Z" fill="#24465B"/>
+  <path d="M31 49h8v4h-8Zm12 0h11v9H43Z" fill="#E2F2F5"/>
+  <path d="M48 49h2v9h-2Z" fill="#24465B"/>
+  <rect x="3" y="57" width="58" height="3" rx="1.5" fill="#24465B"/></svg>
+<text x="634" y="417" text-anchor="middle" font-size="12">48 px</text>
+<svg x="698.0" y="334.0" width="64" height="64" viewBox="0 0 64 64"><title id="titulo">Planta industrial de alimentos</title>
+  <desc id="descripcion">Dos silos cilíndricos conectados a una torre de proceso alta y una nave industrial baja. Colores planos del kit, sin humo ni chimeneas.</desc>
+  <!-- Pasarela que conecta los silos con la torre. -->
+  <path d="M12 18h15l10-8 2 3-11 9H12Z" fill="#24465B"/>
+  <!-- Dos silos: tapas curvas y una cara lateral que sugiere volumen. -->
+  <path d="M4 22h13v29c0 2-13 2-13 0Z" fill="#B0BEC5"/>
+  <path d="M13 22h4v29c0 1-2 1.5-4 1.5Z" fill="#8A949E"/>
+  <ellipse cx="10.5" cy="22" rx="6.5" ry="3" fill="#E2F2F5"/>
+  <path d="M19 19h13v32c0 2-13 2-13 0Z" fill="#B0BEC5"/>
+  <path d="M28 19h4v32c0 1-2 1.5-4 1.5Z" fill="#8A949E"/>
+  <ellipse cx="25.5" cy="19" rx="6.5" ry="3" fill="#E2F2F5"/>
+  <!-- Torre de proceso: estructura alta con tres niveles visibles. -->
+  <rect x="36" y="6" width="14" height="46" rx="1" fill="#378CE7"/>
+  <path d="M46 6h4v46h-4Z" fill="#24465B"/>
+  <path d="M34 5h18v4H34Z" fill="#24465B"/>
+  <path d="M40 14h4v5h-4Zm0 9h4v5h-4Zm0 9h4v5h-4Z" fill="#F3AD43"/>
+  <!-- Nave de producción en primer plano. -->
+  <path d="M25 43h35v15H25Z" fill="#378CE7"/>
+  <path d="M25 43h35v4H25Z" fill="#24465B"/>
+  <path d="m23 43 10-7h20l9 7Z" fill="#24465B"/>
+  <path d="M31 49h8v4h-8Zm12 0h11v9H43Z" fill="#E2F2F5"/>
+  <path d="M48 49h2v9h-2Z" fill="#24465B"/>
+  <rect x="3" y="57" width="58" height="3" rx="1.5" fill="#24465B"/></svg>
+<text x="730" y="417" text-anchor="middle" font-size="12">64 px</text>
+</g></svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="titulo">
+  <title id="titulo">Madre y cría Brahman</title>
+  <path fill="#8A949E" d="m15 31 6 2-2 12-2 8h-4Zm28-1 5 1-1 21h-4Z"/>
+  <path fill="#B0BEC5" d="M6 24c0-7 4-10 11-9l13 1c4 0 6-2 8-6 3-5 9-5 12 1l4 5-3 16-2 5-2 17h-5l-1-18-20-1-6 5-5 12-5-1 5-18Z"/>
+  <path fill="#8A949E" d="M7 21q-4 4-3 17l-2 7 4-1 1-7Z"/>
+  <path fill="#E2F2F5" d="M47 14c1-7 8-9 12-4q3 3 2 11l-3 9q-4 4-8-2l-2-7Z"/>
+  <path fill="#8A949E" d="M48 14q-6 2-7 12 6 0 9-8Zm11-1q4 1 4 10-4-1-5-6Z"/>
+  <ellipse fill="#24465B" cx="54" cy="26" rx="3.8" ry="2.3"/>
+  <ellipse fill="#24465B" cx="52" cy="17" rx="1" ry="1.3"/>
+  <ellipse fill="#24465B" cx="58" cy="17" rx="1" ry="1.3"/>
+  <g transform="translate(1 7) scale(.92)">
+  <path fill="#FBF1E6" d="M6 35q0-5 5-5l16 1 5-5 6 3-4 9-4 4-1 14h-4l-1-13-10-2-3 6-1 9H6l1-12Z"/>
+  <path fill="#DE9477" d="M28 29c2-4 5-6 8-4l4 3-1 7-5 2-5-3Z"/>
+  <path fill="#FBF1E6" d="M32 27q3-4 6-1l3 4-1 6-5 1-3-3Z"/>
+  <path fill="#DE9477" d="M32 28q-6 0-7 7 5 1 8-5Zm6-1q5 0 6 6-4 1-6-3Z"/>
+  <ellipse fill="#24465B" cx="38" cy="34" rx="2" ry="1.5"/>
+  </g>
+</svg>

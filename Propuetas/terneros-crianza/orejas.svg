@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="titulo">
+  <title id="titulo">Ternero de orejas caídas</title>
+  <path fill="#DE9477" d="M22 17C14 16 8 19 5 27 2 34 2 39 5 41c4 2 12-6 16-14Zm20 0c8-1 14 2 17 10 3 7 3 12 0 14-4 2-12-6-16-14Z"/>
+  <path fill="#F19EA8" d="M17 21C9 24 7 31 6 36c5-3 9-8 11-15Zm30 0c8 3 10 10 11 15-5-3-9-8-11-15Z"/>
+  <path fill="#DE9477" d="M15 25C15 12 23 6 32 6s17 6 17 19c0 7-5 12-7 18l-1 5c-1 6-5 9-10 9s-9-4-10-10l-1-5c-2-6-5-10-5-17Z"/>
+  <path fill="#FBF1E6" d="M37 10c8 5 11 10 10 17-1 6-5 10-6 16-1 7-4 11-9 11-4 0-7-2-9-6 4-6 6-10 6-16 0-7 6-9 7-14 1-3 0-6 1-8Z"/>
+  <path fill="#24465B" d="M19 27q4-3 7 1-2 4-5 2Zm18 1q4-4 8-2l-2 3q-4 3-6-1Z"/>
+  <ellipse fill="#DE9477" cx="32" cy="48" rx="10" ry="7"/>
+  <path fill="#24465B" d="M24 46q8-3 16 0c-1 5-5 7-8 7s-7-3-8-7Z"/>
+</svg>
