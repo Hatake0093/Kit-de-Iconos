@@ -60,10 +60,10 @@ Crear un icono de hélice de ADN (doble hélice) con el mismo sistema que las de
 
 ### 2026-10-25 — Propuestas visuales preparadas
 
-- Creados en `Propuetas/` los 10 SVG de `mixer` (base y nueve variantes), interpretado como carro mezclador de alimento y con cuerpo verde.
+- Creados en `Propuestas/` los 10 SVG de `mixer` (base y nueve variantes), interpretado como carro mezclador de alimento y con cuerpo verde.
 - Creados los 3 SVG propuestos de `indicador` (base, descarga y carga), con nuevo diseño de pantalla digital.
 - Creados los 6 SVG propuestos de `camion`, con caja ganadera ventilada e insignias diferenciadas por función.
-- Añadida la lámina `Propuetas/pendientes-vista-previa.svg` y su PNG para comparar los 19 iconos a 64 y 32 px. Criterios de diseño en `Propuetas/pendientes-propuestas.md`.
+- Añadida la lámina `Propuestas/pendientes-vista-previa.svg` y su PNG para comparar los 19 iconos a 64 y 32 px. Criterios de diseño en `Propuestas/pendientes-propuestas.md`.
 
 Esta entrega completa la preparación de propuestas solicitada. La elección definitiva y su incorporación a `Kit_semantico`, generadores, mapa de controles y simulador siguen pendientes en las listas anteriores.
 
@@ -71,12 +71,12 @@ Esta entrega completa la preparación de propuestas solicitada. La elección def
 
 - Incorporado `camion-mixer.svg` con la tolva reducida a la altura de la cabina, según la versión aprobada.
 - Registrado en el buscador bajo Alimentación y en el simulador, Alimentación → Mezclado → Camión mixer.
-- Se conserva el original en `Propuetas/`. Las demás propuestas de mixer, tractor-mixer, indicador y camión mantienen su estado anterior.
+- Se conserva el original en `Propuestas/`. Las demás propuestas de mixer, tractor-mixer, indicador y camión mantienen su estado anterior.
 
 ### 2026-10-26 — Indicador industrial: propuesta revisada
 
-- Redibujadas en `Propuetas/` las tres variantes de indicador siguiendo la nueva referencia: carcasa metálica inclinada, pantalla amplia, teclado y soporte en U.
-- Versiones anteriores conservadas en `Propuetas/Versiones/indicador-anterior/`. La nueva propuesta aún no está incorporada al kit.
+- Redibujadas en `Propuestas/` las tres variantes de indicador siguiendo la nueva referencia: carcasa metálica inclinada, pantalla amplia, teclado y soporte en U.
+- Versiones anteriores conservadas en `Propuestas/Versiones/indicador-anterior/`. La nueva propuesta aún no está incorporada al kit.
 
 ### 2026-10-26 — Indicador frontal aprobado y familia completada
 

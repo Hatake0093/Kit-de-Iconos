@@ -301,7 +301,7 @@ por debajo del 3:1 que WCAG pide para gráficos. Las otras tres variantes oscura
 2. **Ámbar oscuro `#C98A1B` → `#B37A19`** (3,67:1 sobre blanco; 3,19:1 sobre `#E2F2F5`). Mismo tono
    (38°) y sigue leyéndose como ámbar. Para texto o un trazo fino, usar `#986816` (4,85:1). Hay que
    cambiarlo en `generar_faltantes.py`, `normalizar_colores.py`, `auditar_coherencia.py`, `paleta.svg`,
-   las tablas de este documento y las bases de `Propuetas/` (los corrales se derivan de ellas). Afecta
+   las tablas de este documento y las bases de `Propuestas/` (los corrales se derivan de ellas). Afecta
    a unos 46 iconos del kit y a `familias-corrales.svg`.
 3. **Verde: decisión abierta.** El símbolo blanco queda en 2,86:1. Opciones: (a) dejarlo, porque el
    símbolo es grueso y va dentro de un aro blanco; (b) usar `#1B7F65` (4,92:1) como relleno de la

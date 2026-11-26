@@ -80,7 +80,7 @@ Después, en Visual Studio, aceptar «Recargar» si el proyecto estaba abierto.
 
 ## Otras carpetas
 
-- `Propuetas/`: propuestas de diseño en revisión (camiones, corrales, silueta de bovino) en SVG y PNG.
+- `Propuestas/`: propuestas de diseño en revisión (camiones, corrales, silueta de bovino) en SVG y PNG.
 - `Inspiracion/`, `flat-color-icons/`, `phosphor-core/`, `icons/`: repositorios descargados como material de inspiración (no se suben a git).
 - `Respaldos/`: copias de seguridad automáticas previas a cada cambio masivo (antes de normalizar, de regenerar, etc.). No se suben a git.
 - `__pycache__/`: caché de Python, ignorable.
