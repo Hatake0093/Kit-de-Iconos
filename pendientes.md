@@ -34,6 +34,18 @@ Revisar el rediseño del camión y sus variantes. Hoy son seis archivos: `camion
 - [ ] Revisar los controles que lo usan en `mapa_controles.csv`: `Remisiones` (`camion`), `Reparto` y `Salida a Matadero` (`camion-flecha`), `Lista de Recepcion` (`camion-mas`), `Transportistas` (`camion-usuario`), `Programacion de Salidas` e `Indicadores/Ver Servicios` (`camion-lista`). `camion-descarga` no lo usa ningún control.
 - [ ] Pasar `python auditar_coherencia.py` y regenerar la vista previa con `python generar_vista_previa.py`.
 
+### Iconos de zoom (`zoom-mas`, `zoom-menos` y lupa única)
+
+Hoy el kit solo tiene `Buscar.svg` y las variantes `*-lupa` (que significan "buscar/consultar", no "acercar"). Faltan iconos de zoom para visores, croquis y vistas previas.
+
+- [ ] Dibujar `zoom-mas.svg`: lupa con **+** (acercar).
+- [ ] Dibujar `zoom-menos.svg`: lupa con **−** (alejar).
+- [ ] Valorar una **lupa única** (`zoom.svg`, lupa sola) como icono base de la familia, o reutilizar la lupa de `Buscar.svg`; decidir si hace falta distinguirla de "buscar".
+- [ ] Mantener el sistema: 32×32, `viewBox="0 0 64 64"`, relleno plano, sin degradados ni trazos finos; el **+** y el **−** como insignia con color por significado (`PALETA.md`, sección 4).
+- [ ] Anotar el color base en la tabla de la sección 5 de `PALETA.md`.
+- [ ] Registrar la familia en `generar_faltantes.py` (`BASES` + `NUEVOS`) y añadirla a `generar_vista_previa.py` con sus palabras clave (zoom, acercar, alejar, ampliar, lupa).
+- [ ] Pasar `python auditar_coherencia.py` y regenerar la vista previa con `python generar_vista_previa.py`.
+
 ## Hecho
 
 _(vacío)_
